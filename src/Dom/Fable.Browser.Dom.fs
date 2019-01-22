@@ -2983,6 +2983,11 @@ module Dom =
         abstract detail: float
         abstract view: Window
 
+    and [<AllowNullLiteral>] AnimationEvent =
+        inherit Event
+        abstract animationName: string with get, set
+        abstract elapsedTime: float with get, set
+
     and [<AllowNullLiteral>] MouseEvent =
         inherit UIEvent
         abstract altKey: bool
@@ -3023,6 +3028,15 @@ module Dom =
     and [<AllowNullLiteral>] DragEvent =
         inherit MouseEvent
         abstract dataTransfer: DataTransfer
+
+    and [<AllowNullLiteral>] ClipboardEvent =
+        inherit Event
+        abstract clipboardData: DataTransfer
+
+    and [<AllowNullLiteral>] CompositionEvent =
+        inherit UIEvent
+        abstract data: string
+        abstract locale: string
 
     and [<AllowNullLiteral>] DataTransfer =
         abstract dropEffect: string
@@ -3168,6 +3182,11 @@ module Dom =
         abstract origin: string
         abstract ports: obj
         abstract source: Window
+
+    and [<AllowNullLiteral>] TransitionEvent =
+        inherit Event
+        abstract elapsedTime: float with get, set
+        abstract propertyName: string with get, set
 
      and [<AllowNullLiteral>] PageTransitionEvent =
         inherit Event
