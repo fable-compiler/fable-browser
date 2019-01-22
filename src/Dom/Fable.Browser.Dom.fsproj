@@ -7,6 +7,10 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Fable.Browser.DomInterfaces.fs" />
+    <Compile Include="Fable.Browser.DomEvents.fs" />
+    <Compile Include="Fable.Browser.HTMLInterfaces.fs" />
+    <Compile Include="Fable.Browser.Canvas.fs" />
     <Compile Include="Fable.Browser.Dom.fs" />
   </ItemGroup>
   <ItemGroup>
