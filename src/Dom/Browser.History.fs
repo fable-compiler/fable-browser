@@ -1,4 +1,4 @@
-namespace Browser
+namespace Browser.Types
 
 open System
 open Fable.Core
@@ -16,7 +16,3 @@ type [<AllowNullLiteral>] History =
     abstract pushState: statedata: obj * ?title: string * ?url: string -> unit
     /// Updates the most recent entry on the history stack to have the specified data, title, and, if provided, URL. The data is treated as opaque by the DOM; you may specify any JavaScript object that can be serialized.
     abstract replaceState: statedata: obj * ?title: string * ?url: string -> unit
-
-[<AutoOpen>]
-module History =
-    let [<Global>] history: History = jsNative

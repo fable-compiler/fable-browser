@@ -1,7 +1,12 @@
-namespace rec Browser
+namespace Browser.Types
 
 open System
 open Fable.Core
+
+type FileReaderState =
+    | EMPTY = 0
+    | LOADING = 1
+    | DONE = 2
 
 type [<AllowNullLiteral>] FilePropertyBag =
     abstract ``type``: string with get, set
@@ -22,8 +27,8 @@ type [<AllowNullLiteral>] FileList =
 
 type [<AllowNullLiteral>] FileReader =
     inherit EventTarget
-    // TODO
     // abstract error: DOMException with get, set
+    abstract readyState: FileReaderState
     abstract readAsArrayBuffer: blob: Blob -> unit
     abstract readAsBinaryString: blob: Blob -> unit
     abstract readAsDataURL: blob: Blob -> unit
@@ -32,8 +37,3 @@ type [<AllowNullLiteral>] FileReader =
 type [<AllowNullLiteral>] FileReaderType =
     abstract prototype: FileReader with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> FileReader
-
-[<AutoOpen>]
-module File =
-    let [<Global>] File: FileType = jsNative
-    let [<Global>] FileReader: FileReaderType = jsNative

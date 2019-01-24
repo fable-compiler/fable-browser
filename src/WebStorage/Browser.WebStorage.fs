@@ -1,4 +1,4 @@
-namespace Browser
+namespace Browser.Types
 
 open System
 open Fable.Core
@@ -20,6 +20,11 @@ type [<AllowNullLiteral>] StorageEvent =
     abstract oldValue: string
     abstract newValue: string
     abstract storageArea: Storage
+
+namespace Browser
+
+open Fable.Core
+open Browser.Types
 
 [<AutoOpen>]
 module WebStorage =

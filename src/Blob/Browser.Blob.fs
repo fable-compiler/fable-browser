@@ -1,4 +1,4 @@
-namespace Browser
+namespace Browser.Types
 
 open System
 open Fable.Core
@@ -21,6 +21,11 @@ type [<AllowNullLiteral>] Blob =
 
 type [<AllowNullLiteral>] BlobType =
     [<Emit("new $0($1...)")>] abstract Create: ?blobParts: obj[] * ?options: BlobPropertyBag -> Blob
+
+namespace Browser
+
+open Fable.Core
+open Browser.Types
 
 [<AutoOpen>]
 module Blob =

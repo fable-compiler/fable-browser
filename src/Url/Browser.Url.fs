@@ -1,4 +1,4 @@
-namespace Browser
+namespace Browser.Types
 
 open System
 open Fable.Core
@@ -42,6 +42,11 @@ type [<AllowNullLiteral>] URLType =
     abstract createObjectURL: obj -> string
     /// Revokes an object URL previously created using URL.createObjectURL().
     abstract revokeObjectURL: string -> unit
+
+namespace Browser
+
+open Fable.Core
+open Browser.Types
 
 [<AutoOpen>]
 module Url =

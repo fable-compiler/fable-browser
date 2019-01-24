@@ -1,4 +1,4 @@
-namespace Browser
+namespace Browser.Types
 
 open System
 open Fable.Core
@@ -17,6 +17,11 @@ type [<AllowNullLiteral>] Performance =
     abstract now: unit -> float
     abstract setResourceTimingBufferSize: maxSize: float -> unit
     abstract toJSON: unit -> obj
+
+namespace Browser
+
+open Fable.Core
+open Browser.Types
 
 [<AutoOpen>]
 module Performance =

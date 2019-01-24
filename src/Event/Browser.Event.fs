@@ -1,4 +1,4 @@
-namespace rec Browser
+namespace rec Browser.Types
 
 open System
 open Fable.Core
@@ -25,6 +25,11 @@ type [<AllowNullLiteral>] Event =
     abstract stopImmediatePropagation: unit -> unit
     abstract stopPropagation: unit -> unit
 
+type [<AllowNullLiteral>] EventInit =
+    abstract bubbles: bool with get, set
+    abstract cancelable: bool with get, set
+    abstract composed: bool with get, set
+
 type [<AllowNullLiteral>] EventType =
     abstract AT_TARGET: float with get, set
     abstract BUBBLING_PHASE: float with get, set
@@ -36,9 +41,26 @@ type [<AllowNullLiteral>] EventTarget =
     abstract removeEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] EventTargetType =
-    [<Emit("new $0($1...)")>] abstract Create: unit -> EventTarget
+    [<Emit("new $0($1...)")>] abstract Create: ``type``: string * ?eventInitDict: EventInit -> Event
+
+type [<AllowNullLiteral>] CustomEvent =
+    inherit Event
+    abstract detail: obj
+
+type [<AllowNullLiteral>] CustomEventInit =
+    inherit EventInit
+    abstract detail: obj with get, set
+
+type [<AllowNullLiteral>] CustomEventType =
+    [<Emit("new $0($1...)")>] abstract Create: typeArg: string * ?eventInitDict: CustomEventInit -> CustomEvent
+
+namespace Browser
+
+open Fable.Core
+open Browser.Types
 
 [<AutoOpen>]
 module Event =
     let [<Global>] Event: EventType = jsNative
     let [<Global>] EventTarget: EventTargetType = jsNative
+    let [<Global>] CustomEvent: CustomEventType = jsNative
