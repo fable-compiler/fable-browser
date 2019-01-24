@@ -36,7 +36,6 @@ type [<AllowNullLiteral>] CharacterData =
     abstract insertData: offset: float * arg: string -> unit
     abstract replaceData: offset: float * count: float * arg: string -> unit
     abstract substringData: offset: float * count: float -> string
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] CharacterDataType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> CharacterData
@@ -366,7 +365,6 @@ type [<AllowNullLiteral>] Document =
     /// <summary>Writes one or more HTML expressions, followed by a carriage return, to a document in the specified window.</summary>
     /// <param name="content">The text and HTML tags to write.</param>
     abstract writeln: [<ParamArray>] content: string[] -> unit
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] DocumentType =
     abstract entities: NamedNodeMap with get, set
@@ -381,7 +379,6 @@ type [<AllowNullLiteral>] DocumentType =
 type [<AllowNullLiteral>] DocumentFragment =
     inherit Node
     inherit NodeSelector
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] DocumentFragmentType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> DocumentFragment
@@ -538,7 +535,6 @@ type [<AllowNullLiteral>] Element =
     abstract setPointerCapture: pointerId: float -> unit
     abstract getElementsByClassName: classNames: string -> NodeListOf<Element>
     abstract matches: selector: string -> bool
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] ElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> Element
@@ -831,7 +827,6 @@ type [<AllowNullLiteral>] Screen =
     abstract systemXDPI: float with get, set
     abstract systemYDPI: float with get, set
     abstract width: float with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] Location =
     abstract hash: string with get, set
@@ -1023,19 +1018,13 @@ type [<AllowNullLiteral>] Window =
     abstract scroll: ?x: float * ?y: float -> unit
     abstract scrollBy: ?x: float * ?y: float -> unit
     abstract scrollTo: ?x: float * ?y: float -> unit
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
-
-type [<AllowNullLiteral>] AbstractWorker =
-    abstract onerror: (Event -> 'Out) with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] Worker =
     inherit EventTarget
-    inherit AbstractWorker
+    abstract onerror: (Event -> 'Out) with get, set
     abstract onmessage: (MessageEvent -> 'Out) with get, set
     abstract postMessage: message: obj * ?ports: obj -> unit
     abstract terminate: unit -> unit
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] WorkerType =
     [<Emit("new $0($1...)")>] abstract Create: stringUrl: string -> Worker
@@ -1236,8 +1225,6 @@ type [<AllowNullLiteral>] HTMLBodyElement =
     /// Sets or retrieves the text string specified by the option tag.
     abstract text: obj with get, set
     abstract vLink: obj with get, set
-    /// <param name="before">Variant of type Object that specifies an element to insert before, or null to append the object to the collection.</param>
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLBodyElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLBodyElement
@@ -1456,7 +1443,6 @@ type [<AllowNullLiteral>] HTMLElement =
     abstract insertAdjacentText: where: string * text: string -> unit
     abstract scrollIntoView: ?top: bool -> unit
     abstract setActive: unit -> unit
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLElement
@@ -1480,7 +1466,6 @@ type [<AllowNullLiteral>] HTMLEmbedElement =
     abstract units: string with get, set
     /// Sets or retrieves the width of the object.
     abstract width: string with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLEmbedElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLEmbedElement
@@ -1510,7 +1495,6 @@ type [<AllowNullLiteral>] HTMLFontElement =
     inherit HTMLElement
     /// Sets or retrieves the current typeface family.
     abstract face: string with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLFontElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLFontElement
@@ -1595,7 +1579,6 @@ type [<AllowNullLiteral>] HTMLFrameElement =
     abstract src: string with get, set
     /// Sets or retrieves the width of the object.
     abstract width: float with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLFrameElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLFrameElement
@@ -1608,7 +1591,6 @@ type [<AllowNullLiteral>] HTMLHRElement =
     abstract noShade: bool with get, set
     /// Sets or retrieves the width of the object.
     abstract width: float with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLHRElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLHRElement
@@ -1676,7 +1658,6 @@ type [<AllowNullLiteral>] HTMLIFrameElement =
     abstract vspace: float with get, set
     /// Sets or retrieves the width of the object.
     abstract width: string with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLIFrameElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLIFrameElement
@@ -1886,7 +1867,6 @@ type [<AllowNullLiteral>] HTMLLinkElement =
     abstract target: string with get, set
     /// Sets or retrieves the content type of the resource designated by the value attribute.
     abstract ``type``: string with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLLinkElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLLinkElement
@@ -1966,7 +1946,6 @@ type [<AllowNullLiteral>] HTMLMediaElement =
     abstract load: unit -> unit
     abstract pause: unit -> unit
     abstract play: unit -> unit
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLMediaElementType =
     abstract HAVE_CURRENT_DATA: float with get, set
@@ -2080,7 +2059,6 @@ type [<AllowNullLiteral>] HTMLObjectElement =
     abstract checkValidity: unit -> bool
     /// <param name="error">Sets a custom error message that is displayed when a form is submitted.</param>
     abstract setCustomValidity: error: string -> unit
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLObjectElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLObjectElement
@@ -2273,7 +2251,6 @@ type [<AllowNullLiteral>] HTMLStyleElement =
     /// Sets or retrieves the media type.
     abstract media: string with get, set
     abstract ``type``: string with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLStyleElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLStyleElement
@@ -2313,7 +2290,6 @@ type [<AllowNullLiteral>] HTMLTableCellElement =
     abstract scope: string with get, set
     /// Gets or sets the width of the video element.
     abstract width: string with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLTableCellElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTableCellElement
@@ -2326,7 +2302,6 @@ type [<AllowNullLiteral>] HTMLTableColElement =
     /// Sets or retrieves the number of columns in the group.
     abstract span: float with get, set
     abstract width: obj with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLTableColElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTableColElement
@@ -2421,7 +2396,6 @@ type [<AllowNullLiteral>] HTMLTableRowElement =
     /// <summary>Creates a new cell in the table row, and adds the cell to the cells collection.</summary>
     /// <param name="index">Number that specifies where to insert the cell in the tr. The default value is -1, which appends the new cell to the end of the cells collection.</param>
     abstract insertCell: ?index: float -> HTMLTableCellElement
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLTableRowElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTableRowElement
@@ -2436,7 +2410,6 @@ type [<AllowNullLiteral>] HTMLTableSectionElement =
     abstract deleteRow: ?index: float -> unit
     /// <param name="index">Number that specifies where to insert the row in the rows collection. The default value is -1, which appends the new row to the end of the rows collection.</param>
     abstract insertRow: ?index: float -> HTMLTableRowElement
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLTableSectionElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTableSectionElement
@@ -2541,7 +2514,6 @@ type [<AllowNullLiteral>] HTMLVideoElement =
     abstract videoWidth: float with get, set
     abstract width: float with get, set
     abstract getVideoPlaybackQuality: unit -> VideoPlaybackQuality
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLVideoElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLVideoElement
@@ -2577,7 +2549,6 @@ type [<AllowNullLiteral>] VideoTrackList =
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> VideoTrack with get, set
     abstract getTrackById: id: string -> VideoTrack
     abstract item: index: float -> VideoTrack
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] VideoTrackListType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> VideoTrackList
@@ -2628,7 +2599,6 @@ type [<AllowNullLiteral>] AudioTrackList =
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> AudioTrack with get, set
     abstract getTrackById: id: string -> AudioTrack
     abstract item: index: float -> AudioTrack
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] AudioTrackListType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> AudioTrackList
@@ -2655,7 +2625,6 @@ type [<AllowNullLiteral>] TextTrack =
     abstract SHOWING: float with get, set
     abstract addCue: cue: TextTrackCue -> unit
     abstract removeCue: cue: TextTrackCue -> unit
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] TextTrackType =
     abstract DISABLED: float with get, set
@@ -2678,7 +2647,6 @@ type [<AllowNullLiteral>] TextTrackCue =
     abstract text: string with get, set
     abstract track: TextTrack with get, set
     abstract getCueAsHTML: unit -> DocumentFragment
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] TextTrackCueType =
     [<Emit("new $0($1...)")>] abstract Create: startTime: float * endTime: float * text: string -> TextTrackCue
@@ -2698,7 +2666,6 @@ type [<AllowNullLiteral>] TextTrackList =
     abstract onaddtrack: (TrackEvent -> 'Out) with get, set
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> TextTrack with get, set
     abstract item: index: float -> TextTrack
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] TextTrackListType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> TextTrackList
