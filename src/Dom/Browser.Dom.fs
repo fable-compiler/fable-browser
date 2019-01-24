@@ -2928,13 +2928,6 @@ type [<AllowNullLiteral>] DeviceRotationRate =
     abstract beta: float
     abstract gamma: float
 
-type [<AllowNullLiteral>] MessageEvent =
-    inherit Event
-    abstract data: obj
-    abstract origin: string
-    abstract ports: obj
-    abstract source: Window
-
 type [<AllowNullLiteral>] TransitionEvent =
     inherit Event
     abstract elapsedTime: float with get, set

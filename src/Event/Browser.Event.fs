@@ -3,8 +3,6 @@ namespace rec Browser.Types
 open System
 open Fable.Core
 
-// TODO: Add CustomEvent
-
 type [<AllowNullLiteral>] Event =
     abstract bubbles: bool with get, set
     abstract cancelBubble: bool with get, set
@@ -53,6 +51,23 @@ type [<AllowNullLiteral>] CustomEventInit =
 
 type [<AllowNullLiteral>] CustomEventType =
     [<Emit("new $0($1...)")>] abstract Create: typeArg: string * ?eventInitDict: CustomEventInit -> CustomEvent
+
+type [<AllowNullLiteral>] ErrorEvent =
+    inherit Event
+    abstract colno: int
+    abstract error: obj
+    abstract filename: string
+    abstract lineno: int
+    abstract message: string
+
+// MessageEvent is used by several packages (WebSockets, Dom)
+type [<AllowNullLiteral>] MessageEvent =
+    inherit Event
+    abstract data: obj
+    abstract origin: string
+    // TODO: Add it as extension in Channel Messaging API
+    // abstract ports: MessagePort[]
+    abstract source: obj
 
 namespace Browser
 
