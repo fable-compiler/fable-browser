@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Fable.Browser.WebSocket</PackageId>
-    <Version>0.0.0</Version>
-    <PackageVersion>0.0.0</PackageVersion>
+    <Version>1.0.0</Version>
+    <PackageVersion>1.0.0-alpha-001</PackageVersion>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
