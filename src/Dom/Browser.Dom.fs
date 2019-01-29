@@ -1678,7 +1678,6 @@ type [<AllowNullLiteral>] HTMLInputElement =
     abstract formTarget: string with get, set
     /// Sets or retrieves the height of the object.
     abstract height: string with get, set
-    abstract hspace: float with get, set
     abstract indeterminate: bool with get, set
     /// Specifies the ID of a pre-defined datalist of options for an input element.
     abstract list: HTMLElement with get, set
@@ -1686,7 +1685,7 @@ type [<AllowNullLiteral>] HTMLInputElement =
     abstract max: string with get, set
     /// Sets or retrieves the maximum number of characters that the user can enter in a text control.
     /// Defines the maximum, or "done" value for a progress element.
-    abstract maxLength: float with get, set
+    abstract maxLength: int with get, set
     /// Defines the minimum acceptable value for an input element with type="number". When used with the max and step attributes, lets you control the range and increment (such as even numbers only) that the user can enter into an input field.
     abstract min: string with get, set
     /// Sets or retrieves the Boolean value indicating whether multiple items can be selected from a list.
@@ -1703,10 +1702,10 @@ type [<AllowNullLiteral>] HTMLInputElement =
     abstract required: bool with get, set
     /// Gets or sets the end position or offset of a text selection.
     /// Makes the selection equal to the current object.
-    abstract selectionEnd: float with get, set
+    abstract selectionEnd: int with get, set
     /// Gets or sets the starting position or offset of a text selection.
     /// Highlights the input area of a form element.
-    abstract selectionStart: float with get, set
+    abstract selectionStart: int with get, set
     /// Sets or retrieves the number of rows in the list box.
     abstract size: int with get, set
     /// The address or URL of the a media resource that is to be considered.
@@ -1729,7 +1728,6 @@ type [<AllowNullLiteral>] HTMLInputElement =
     /// Returns the input field value as a number.
     /// Sets or retrieves the value which is returned to the server when the form control is submitted.
     abstract valueAsNumber: float with get, set
-    abstract vspace: float with get, set
     /// Sets or gets a value that you can use to implement your own width functionality for the object.
     abstract width: string with get, set
     /// Returns whether an element will successfully validate based on forms validation rules and constraints.
@@ -1743,7 +1741,7 @@ type [<AllowNullLiteral>] HTMLInputElement =
     /// <summary>Sets the start and end positions of a selection in a text field.</summary>
     /// <param name="start">The offset into the text field for the start of the selection.</param>
     /// <param name="end">The offset into the text field for the end of the selection.</param>
-    abstract setSelectionRange: start: float * ``end``: float -> unit
+    abstract setSelectionRange: start: int * ``end``: int -> unit
     /// <summary>Decrements a range input control's value by the value given by the Step attribute. If the optional parameter is used, it will decrement the input control's step value multiplied by the parameter's value.</summary>
     /// <param name="n">Value to decrement the value by.</param>
     abstract stepDown: ?n: float -> unit
@@ -2353,13 +2351,13 @@ type [<AllowNullLiteral>] HTMLTextAreaElement =
     /// Provides a way to direct a user to a specific field when a document loads. This can provide both direction and convenience for a user, reducing the need to click or tab to a field when a page opens. This attribute is true when present on an element, and false when missing.
     abstract autofocus: bool with get, set
     /// Sets or retrieves the width of the object.
-    abstract cols: float with get, set
+    abstract cols: int with get, set
     /// Sets or retrieves the initial contents of the object.
     abstract defaultValue: string with get, set
     abstract disabled: bool with get, set
     abstract form: HTMLFormElement with get, set
     /// Sets or retrieves the maximum number of characters that the user can enter in a text control.
-    abstract maxLength: float with get, set
+    abstract maxLength: int with get, set
     abstract name: string with get, set
     /// Gets or sets a text string that is displayed in an input field as a hint or prompt to users as the format or type of information they need to enter.The text appears in an input field until the user puts focus on the field.
     abstract placeholder: string with get, set
@@ -2367,11 +2365,11 @@ type [<AllowNullLiteral>] HTMLTextAreaElement =
     /// When present, marks an element that can't be submitted without a value.
     abstract required: bool with get, set
     /// Sets or retrieves the number of horizontal rows contained in the object.
-    abstract rows: float with get, set
+    abstract rows: int with get, set
     /// Gets or sets the end position or offset of a text selection.
-    abstract selectionEnd: float with get, set
+    abstract selectionEnd: int with get, set
     /// Gets or sets the starting position or offset of a text selection.
-    abstract selectionStart: float with get, set
+    abstract selectionStart: int with get, set
     abstract status: obj with get, set
     abstract ``type``: string with get, set
     /// Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as "this is a required field". The result is that the user sees validation messages without actually submitting.
@@ -2390,7 +2388,7 @@ type [<AllowNullLiteral>] HTMLTextAreaElement =
     abstract setCustomValidity: error: string -> unit
     /// <param name="start">The offset into the text field for the start of the selection.</param>
     /// <param name="end">The offset into the text field for the end of the selection.</param>
-    abstract setSelectionRange: start: float * ``end``: float -> unit
+    abstract setSelectionRange: start: int * ``end``: int -> unit
 
 type [<AllowNullLiteral>] HTMLTextAreaElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTextAreaElement
