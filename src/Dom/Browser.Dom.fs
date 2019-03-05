@@ -426,6 +426,15 @@ type [<AllowNullLiteral>] Element =
     abstract clientLeft: float with get, set
     abstract clientTop: float with get, set
     abstract clientWidth: float with get, set
+    /// <summary>Returns the closest ancestor of the current element (or the current element itself) which matches the selectors given in a parameter</summary>
+    /// <param name="selectors">DOMString containing a selector list such as "p:hover, .toto + q"</param>
+    /// <exception cref="Fable.Core.JS.SyntaxError">Thrown if the selectors is not a valid selector list string.</exception>
+    /// <returns>The `Element` which is the closest ancestor of the selected elements</returns>
+    abstract closest: selectors : string -> Element option
+    /// <summary>Returns the closest ancestor of the current element (or the current element itself) which matches the selectors given in a parameter</summary>
+    /// <param name="element">The `Element` at the top of the tree of elements to be dealt with</param>
+    /// <returns>The `Element` which is the closest ancestor of the selected elements</returns>
+    abstract closest: element : Element -> Element option
     abstract onariarequest: (AriaRequestEvent -> 'Out) with get, set
     abstract oncommand: (CommandEvent -> 'Out) with get, set
     abstract ongotpointercapture: (PointerEvent -> 'Out) with get, set
