@@ -1,3 +1,7 @@
+### 1.0.0-alpha-004
+
+* Add missing members to FileReader
+
 ### 1.0.0-alpha-003
 
 * Move some APIs to standalone packages

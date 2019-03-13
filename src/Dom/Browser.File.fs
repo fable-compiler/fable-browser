@@ -29,6 +29,11 @@ type [<AllowNullLiteral>] FileReader =
     inherit EventTarget
     // abstract error: DOMException with get, set
     abstract readyState: FileReaderState
+    abstract result: obj
+    abstract onabort: (Event->unit) with get, set
+    abstract onerror: (Event->unit) with get, set
+    abstract onload: (Event->unit) with get, set
+    abstract abort: unit -> unit
     abstract readAsArrayBuffer: blob: Blob -> unit
     abstract readAsBinaryString: blob: Blob -> unit
     abstract readAsDataURL: blob: Blob -> unit
