@@ -1,5 +1,5 @@
 # fable-browser
 
-Fable bindings for [Browser Web APIs](https://developer.mozilla.org/es/docs/Web/API)
+Fable bindings for [Browser Web APIs](https://developer.mozilla.org/docs/Web/API)
 
 - Publish: `npm run build Publish`
