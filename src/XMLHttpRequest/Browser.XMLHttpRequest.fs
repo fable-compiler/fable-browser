@@ -3,11 +3,23 @@ namespace Browser.Types
 open System
 open Fable.Core
 
+type ReadyState = 
+  /// Client has been created. `open()` was not yet called.
+  | Unsent = 0
+  /// `open()` has been called.
+  | Opened = 1
+  /// `send()` has been called, and headers and status are available.
+  | HeadersReceived = 2
+  /// Downloading; responseText holds partial data.
+  | Loading = 3
+  /// The operation is complete.
+  | Done = 4
+
 type [<AllowNullLiteral>] XMLHttpRequest =
     inherit EventTarget
     // inherit XMLHttpRequestUpload
     abstract onreadystatechange: (unit -> unit) with get, set
-    abstract readyState: int
+    abstract readyState: ReadyState
     abstract response: obj
     abstract responseText: string
     abstract responseType: string with get, set
