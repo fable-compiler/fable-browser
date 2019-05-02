@@ -13,6 +13,7 @@ let packages =
       "WebStorage"
       "Dom"
       "XMLHttpRequest"
+      "Svg"
     ]
 
 let ignoreCaseEquals (str1: string) (str2: string) =
