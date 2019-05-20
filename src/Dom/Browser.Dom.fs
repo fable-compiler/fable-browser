@@ -1385,7 +1385,31 @@ type [<AllowNullLiteral>] HTMLElement =
     abstract insertAdjacentHTML: where: string * html: string -> unit
     abstract insertAdjacentText: where: string * text: string -> unit
     abstract scrollIntoView: ?top: bool -> unit
+    abstract scrollIntoView: ?scrollIntoViewOptions: ScrollIntoViewOptions -> unit
     abstract setActive: unit -> unit
+
+[<StringEnum; RequireQualifiedAccess>]
+type ScrollIntoViewOptionsBehavior =
+    | [<CompiledName("auto")>] Auto
+    | [<CompiledName("smooth")>] Smooth
+
+[<StringEnum; RequireQualifiedAccess>]
+type ScrollIntoViewOptionsAlignment =
+    | [<CompiledName("start")>] Start
+    | [<CompiledName("center")>] Center
+    | [<CompiledName("end")>] End
+    | [<CompiledName("nearest")>] Nearest
+
+type ScrollIntoViewOptions =
+    /// Defines the transition animation.
+    /// One of "auto" or "smooth". Defaults to "auto".
+    abstract behavior : ScrollIntoViewOptionsBehavior with get, set
+    /// Defines vertical alignment.
+    /// One of "start", "center", "end", or "nearest". Defaults to "start".
+    abstract block : ScrollIntoViewOptionsAlignment with get, set
+    /// Defines horizontal alignment.
+    /// One of "start", "center", "end", or "nearest". Defaults to "nearest".
+    abstract ``inline`` : ScrollIntoViewOptionsAlignment with get, set
 
 type [<AllowNullLiteral>] HTMLElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLElement
