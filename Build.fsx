@@ -14,6 +14,7 @@ let packages =
       "Dom"
       "XMLHttpRequest"
       "Svg"
+      "Css"
     ]
 
 let ignoreCaseEquals (str1: string) (str2: string) =
