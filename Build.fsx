@@ -31,7 +31,7 @@ match args with
         //             if file.EndsWith(".fsproj") then
         //                 yield projDir, file ]
         [ for pkg in packages do
-            yield (srcDir </> pkg), (pkg + ".fsproj") ]
+            yield (srcDir </> pkg), ("Browser." + pkg + ".fsproj") ]
 
     for projDir, file in projFiles do
         match target with
