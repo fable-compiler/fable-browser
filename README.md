@@ -12,5 +12,10 @@ Fable bindings for [Browser Web APIs](https://developer.mozilla.org/docs/Web/API
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.WebSocket.svg)](https://www.nuget.org/packages/Fable.Browser.WebSocket)|[Fable.Browser.WebSocket](src/WebSocket)|Bindings for the browser WebSocket API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.WebStorage.svg)](https://www.nuget.org/packages/Fable.Browser.WebStorage)|[Fable.Browser.WebStorage](src/WebStorage)|Bindings for the Web Storage API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.XMLHttpRequest.svg)](https://www.nuget.org/packages/Fable.Browser.XMLHttpRequest)|[Fable.Browser.XMLHttpRequest](src/XMLHttpRequest)|Bindings for the browser XMLHttpRequest API|
+|[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Svg.svg)](https://www.nuget.org/packages/Fable.Browser.Svg)|[Fable.Browser.Svg](src/Svg)|Bindings for the browser Svg API|
+|[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Css.svg)](https://www.nuget.org/packages/Fable.Browser.Css)|[Fable.Browser.Css](src/Css)|Bindings for the browser Css API|
+|[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Worker.svg)](https://www.nuget.org/packages/Fable.Browser.Worker)|[Fable.Browser.Worker](src/Worker)|Bindings for the browser Worker API|
+|[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Geolocation.svg)](https://www.nuget.org/packages/Fable.Browser.Geolocation)|[Fable.Browser.Geolocation](src/Geolocation)|Bindings for the browser Geolocation API|
+|[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Navigator.svg)](https://www.nuget.org/packages/Fable.Browser.Navigator)|[Fable.Browser.Navigator](src/Navigator)|Bindings for the browser Navigator API|
 
 - Publish: `npm run build Publish`
