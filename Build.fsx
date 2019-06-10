@@ -15,6 +15,9 @@ let packages =
       "XMLHttpRequest"
       "Svg"
       "Css"
+      "Worker"
+      "Geolocation"
+      "Navigator"
     ]
 
 let ignoreCaseEquals (str1: string) (str2: string) =
