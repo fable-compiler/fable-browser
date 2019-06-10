@@ -18,6 +18,11 @@ and Plugin =
     abstract item: index: int -> MimeType
     abstract namedItem: ``type``: string -> MimeType
 
+type ShareData =
+    abstract url: string with get, set
+    abstract text: string with get, set
+    abstract title: string with get, set
+
 type NavigatorID =
     abstract appName: string
     abstract appVersion: string
@@ -34,42 +39,43 @@ type NavigatorOnLine =
 type Navigator =
     inherit NavigatorID
     inherit NavigatorOnLine
-    // abstract activeVRDisplays
+    // TODO: abstract activeVRDisplays
     abstract appCodeName: string
     abstract appMinorVersion: string
-    // abstract battery
-    // abstract connection
+    // abstract battery // Deprecated
+    // TODO: abstract connection
     abstract cookieEnabled: bool
-    // abstract geolocation
+    abstract geolocation: Geolocation option
     abstract hardwareConcurrency: int
-    // abstract keyboard
+    // TODO: abstract keyboard
     abstract cpuClass: string
-    abstract language: string
-    abstract languages: string[]
-    // abstract locks
-    // abstract mediaCapabilities
+    abstract language: string option
+    abstract languages: string[] option
+    // TODO: abstract locks
+    // TODO: abstract mediaCapabilities
     abstract maxTouchPoints: int
-    abstract mimeTypes: MimeType[]
+    abstract mimeTypes: MimeType[] option
     abstract oscpu: string
-    // abstract permissions: Permissions
+    // TODO: abstract permissions: Permissions
     // abstract platform: string // Not reliable
-    abstract plugins: Plugin[]
-    // abstract serviceWorker: ServiceWorkerContainer
-    // abstract storage: StorageManager
+    abstract plugins: Plugin[] option
+    abstract serviceWorker: ServiceWorkerContainer option
+    // TODO: abstract storage: StorageManager
     abstract userAgent: string
     abstract webdriver: bool
 
 // ## Methods
 
     abstract canShare: unit -> bool
-    // abstract getVRDisplays()
-    // abstract getUserMedia()
-    // abstract sendBeacon()
-    // abstract registerProtocolHandler()
-    // abstract requestMediaKeySystemAccess()
-    // abstract sendBeacon()
-    // abstract share()
-    // abstract vibrate()
+    // TODO: abstract getVRDisplays()
+    // TODO: abstract getUserMedia()
+    // TODO: abstract registerProtocolHandler()
+    // TODO: abstract requestMediaKeySystemAccess()
+    // TODO: abstract sendBeacon()
+    abstract share: ShareData -> JS.Promise<unit>
+    /// Pulses the vibration hardware on the device, if such hardware exists. If the device doesn't support vibration, this method has no effect. If a vibration pattern is already in progress when this method is called, the previous pattern is halted and the new one begins instead.
+    /// - pattern: Provides a pattern of vibration and pause intervals. Each value indicates a number of milliseconds to vibrate or pause, in alternation. You may provide either a single value (to vibrate once for that many milliseconds) or an array of values to alternately vibrate, pause, then vibrate again. See Vibration API for details.
+    abstract vibrate: pattern: obj -> bool
 
 namespace Browser
 

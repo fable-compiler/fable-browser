@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <PackageId>Fable.Browser.Navigator</PackageId>
+    <PackageId>Fable.Browser.Worker</PackageId>
     <Version>0.0.0</Version>
     <PackageVersion>0.0.0</PackageVersion>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Browser.Navigator.fs" />
+    <Compile Include="Browser.Worker.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Fable.Core" Version="3.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Geolocation\Browser.Geolocation.fsproj" />
-    <ProjectReference Include="..\Worker\Browser.Worker.fsproj" />
+    <ProjectReference Include="..\Event\Browser.Event.fsproj" />
   </ItemGroup>
   <!-- This package doesn't contain actual code
        so we don't need to add the sources -->
