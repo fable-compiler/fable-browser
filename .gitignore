@@ -1,4 +1,5 @@
 .vscode/
+.ionide/
 build/
 npm/
 tests/**/out

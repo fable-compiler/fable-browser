@@ -1,3 +1,7 @@
+### 1.0.1
+
+* XMLHttpRequest.timeout property should be settable
+
 ### 1.0.0
 
 * First stable release
