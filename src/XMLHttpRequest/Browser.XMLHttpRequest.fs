@@ -3,7 +3,7 @@ namespace Browser.Types
 open System
 open Fable.Core
 
-type ReadyState = 
+type ReadyState =
   /// Client has been created. `open()` was not yet called.
   | Unsent = 0
   /// `open()` has been called.
@@ -27,7 +27,7 @@ type [<AllowNullLiteral>] XMLHttpRequest =
     abstract responseXML: obj
     abstract status: int
     abstract statusText: string
-    abstract timeout: int
+    abstract timeout: int with get, set
     // abstract upload: XMLHttpRequestUpload
     abstract withCredentials: bool with get, set
     abstract abort: unit -> unit
