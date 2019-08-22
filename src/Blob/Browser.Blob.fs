@@ -22,6 +22,22 @@ type [<AllowNullLiteral>] Blob =
 type [<AllowNullLiteral>] BlobType =
     [<Emit("new $0($1...)")>] abstract Create: ?blobParts: obj[] * ?options: BlobPropertyBag -> Blob
 
+type [<AllowNullLiteral>] FormData =
+    abstract append: name: string * value: string -> unit
+    abstract append: name: string * value: Blob * ?filename: string -> unit
+    abstract delete: name: string -> unit
+    abstract entries: unit -> (string * obj) seq
+    abstract get: name: string -> obj
+    abstract getAll: name: string -> obj[]
+    abstract has: name: string -> bool
+    abstract keys: unit -> string seq
+    abstract set: name: string * value: string -> unit
+    abstract set: name: string * value: Blob * ?filename: string -> unit
+    abstract values: unit -> obj seq
+
+type [<AllowNullLiteral>] FormDataType =
+    [<Emit("new $0($1...)")>] abstract Create: unit -> FormData
+
 namespace Browser
 
 open Fable.Core
@@ -30,3 +46,4 @@ open Browser.Types
 [<AutoOpen>]
 module Blob =
     let [<Global>] Blob: BlobType = jsNative
+    let [<Global>] FormData: FormDataType = jsNative

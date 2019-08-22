@@ -14,7 +14,8 @@
     <PackageReference Include="Fable.Core" Version="3.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Dom\Browser.Dom.fsproj" />
+    <ProjectReference Include="..\Blob\Browser.Blob.fsproj" />
+    <ProjectReference Include="..\Event\Browser.Event.fsproj" />
   </ItemGroup>
   <!-- This package doesn't contain actual code
        so we don't need to add the sources -->
