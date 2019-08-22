@@ -1,3 +1,7 @@
+### 1.1.0
+
+* Add `FormData` extension constructor
+
 ### 1.0.0
 
 * First stable release
