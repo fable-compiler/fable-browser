@@ -2,6 +2,7 @@ namespace Browser.Types
 
 open System
 open Fable.Core
+open Fable.Core.JS
 open Browser
 open Browser.Types
 open System.Collections.Generic

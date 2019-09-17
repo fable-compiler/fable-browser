@@ -18,6 +18,8 @@ let packages =
       "Worker"
       "Geolocation"
       "Navigator"
+      "MediaStream"
+      "WebRTC"
     ]
 
 let ignoreCaseEquals (str1: string) (str2: string) =

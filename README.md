@@ -18,4 +18,9 @@ Fable bindings for [Browser Web APIs](https://developer.mozilla.org/docs/Web/API
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Geolocation.svg)](https://www.nuget.org/packages/Fable.Browser.Geolocation)|[Fable.Browser.Geolocation](src/Geolocation)|Bindings for the browser Geolocation API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Navigator.svg)](https://www.nuget.org/packages/Fable.Browser.Navigator)|[Fable.Browser.Navigator](src/Navigator)|Bindings for the browser Navigator API|
 
-- Publish: `npm run build Publish`
+## Publishing
+
+If you have rights to publish the packages, the only thing you need to do is to bump the version in the appropriate RELEASE_NOTES file and then run `npm run build Publish`. The build script will automatically detect what packages have new versions, update the .fsproj file and push a release. Just make sure:
+
+- Your Nuget API key is in a NUGET_KEY environmental variable
+- The packages you want to publish are listed in the `packages` list of the Build.fsx script
