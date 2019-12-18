@@ -164,7 +164,7 @@ type RTCIceCandidate =
     abstract candidate: string
     abstract ``component``: RTCIceComponent
     abstract foundation: string
-    abstract ip: string
+    abstract ip: string option
     abstract port: uint32
     abstract priority: uint32 option
     abstract protocol: RTCIceProtocol option
@@ -660,7 +660,7 @@ type RTCRtpSender =
     abstract replaceTrack: withTrack:#MediaStreamTrack option -> JS.Promise<unit>
 
     [<Emit("$0.setStreams($1...)")>]
-    abstract setStreams: [<ParamArray>] streams:MediaStream [] -> JS.Promise<unit>
+    abstract setStreams: [<ParamArray>] streams:MediaStream [] -> unit
     abstract getStates: unit -> JS.Promise<RTCStatsReport>
 
 type RTCRtpSenderType =
@@ -798,6 +798,11 @@ type RTCTrackEvent =
     abstract streams: MediaStream array
     abstract transceiver: RTCRtpTransceiver
 
+type RTCRtpTransceiverInit =
+    abstract direction: RTCRtpTransceiverDirection option
+    abstract sendEncodings: RTCRtpEncodingParameters array option
+    abstract streams: MediaStream array option
+
 type RTCPeerConnection =
     inherit EventTarget
     abstract onnegotiationneeded: (Event->unit) with get,set
@@ -822,9 +827,9 @@ type RTCPeerConnection =
 
     abstract createOffer: ?options:RTCOfferOptions -> JS.Promise<RTCSessionDescriptionInit>
     abstract createAnswer: ?options:RTCAnswerOptions -> JS.Promise<RTCSessionDescriptionInit>
-    abstract setLocalDescription: ?description:RTCSessionDescriptionInit -> JS.Promise<unit>
-    abstract setRemoteDescription: ?description:RTCSessionDescriptionInit -> JS.Promise<unit>
-    abstract addIceCandidate: ?candidate:RTCIceCandidateInit-> JS.Promise<unit>
+    abstract setLocalDescription: description:RTCSessionDescriptionInit -> JS.Promise<unit>
+    abstract setRemoteDescription: description:RTCSessionDescriptionInit -> JS.Promise<unit>
+    abstract addIceCandidate: candidate:RTCIceCandidateInit-> JS.Promise<unit>
 
     abstract restartIce: unit -> unit
     abstract getConfiguration: unit -> RTCConfiguration
@@ -836,10 +841,11 @@ type RTCPeerConnection =
     abstract getTransceivers: unit -> ResizeArray<RTCRtpTransceiver>
 
     [<Emit("$0.addTrack($1,$2...)")>]
-    abstract addTrack: track:MediaStreamTrack * [<ParamArray>] streams: MediaStream -> RTCRtpSender
+    abstract addTrack: track:MediaStreamTrack * [<ParamArray>] streams: MediaStream array -> RTCRtpSender
+
     abstract removeTrack: sender:RTCRtpSender -> unit
 
-    abstract addTransceiver: track:MediaStreamTrack * [<ParamArray>] streams: MediaStream -> RTCRtpTransceiver
+    abstract addTransceiver: track:MediaStreamTrack * ?init: RTCRtpTransceiverInit -> RTCRtpTransceiver
     abstract addTransceiver: trackKind:TrackKind -> RTCRtpTransceiver
     abstract ontrack: (RTCTrackEvent->unit) with get,set
 
