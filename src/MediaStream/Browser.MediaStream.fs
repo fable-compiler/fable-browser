@@ -274,9 +274,11 @@ type MediaStreamTrackEvent =
 
 type AudioMediaStreamTrack =
     inherit MediaStreamTrack
+    abstract clone: unit -> AudioMediaStreamTrack
 
 type VideoMediaStreamTrack =
     inherit MediaStreamTrack
+    abstract clone: unit -> VideoMediaStreamTrack
 
 
 type MediaStream =
@@ -294,8 +296,8 @@ type MediaStream =
     abstract onremovetrack: (MediaStreamTrackEvent->unit) with get, set
 
 type MediaStreamType =
-    [<Emit("new $0($1...)")>] abstract Create: unit -> MediaStream
-    [<Emit("new $0($1...)")>] abstract Create: MediaStreamTrack array -> MediaStream
+    [<Emit("new $0($1...)")>] abstract Create: ?streams: MediaStreamTrack array -> MediaStream
+    [<Emit("new $0($1...)")>] abstract Create: streams: MediaStream -> MediaStream
 
 type CanvasCaptureMediaStreamTrack =
     inherit MediaStreamTrack
@@ -344,7 +346,7 @@ module MediaStreams =
     open Browser.Types
     type HTMLCanvasElement with
         [<Emit("$0.captureStream({{$1}})")>]
-        member __.captureStream(framerate:uint32 option) : MediaStreamTrack = failwith ""
+        member __.captureStream(?framerate:uint32) : MediaStream = failwith ""
 
     let [<Emit("navigator.mediaDevices")>] mediaDevices: MediaDevices = jsNative
 
