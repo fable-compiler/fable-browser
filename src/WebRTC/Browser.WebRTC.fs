@@ -661,7 +661,7 @@ type RTCRtpSender =
 
     [<Emit("$0.setStreams($1...)")>]
     abstract setStreams: [<ParamArray>] streams:MediaStream [] -> unit
-    abstract getStates: unit -> JS.Promise<RTCStatsReport>
+    abstract getStats: unit -> JS.Promise<RTCStatsReport>
 
 type RTCRtpSenderType =
     [<Emit("RTCRtpSender.getCapabilities($1)")>]
