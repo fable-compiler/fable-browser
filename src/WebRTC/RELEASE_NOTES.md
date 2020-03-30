@@ -1,3 +1,7 @@
+### 1.0.1
+
+* Fix `RTCRtpReceiver.getStates` should be a `RTCRtpReceiver.getStats`
+
 ### 1.0.0
 
 * First stable release
