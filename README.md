@@ -10,6 +10,7 @@ Fable bindings for [Browser Web APIs](https://developer.mozilla.org/docs/Web/API
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Performance.svg)](https://www.nuget.org/packages/Fable.Browser.Performance)|[Fable.Browser.Performance](src/Performance)|Bindings for the browser Performance API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Url.svg)](https://www.nuget.org/packages/Fable.Browser.Url)|[Fable.Browser.Url](src/Url)|Bindings for the browser Url API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.WebSocket.svg)](https://www.nuget.org/packages/Fable.Browser.WebSocket)|[Fable.Browser.WebSocket](src/WebSocket)|Bindings for the browser WebSocket API|
+|[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.WebRTC.svg)](https://www.nuget.org/packages/Fable.Browser.WebSocket)|[Fable.Browser.WebRTC](src/WebSocket)|Bindings for the browser WebRTC API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.WebStorage.svg)](https://www.nuget.org/packages/Fable.Browser.WebStorage)|[Fable.Browser.WebStorage](src/WebStorage)|Bindings for the Web Storage API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.XMLHttpRequest.svg)](https://www.nuget.org/packages/Fable.Browser.XMLHttpRequest)|[Fable.Browser.XMLHttpRequest](src/XMLHttpRequest)|Bindings for the browser XMLHttpRequest API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Svg.svg)](https://www.nuget.org/packages/Fable.Browser.Svg)|[Fable.Browser.Svg](src/Svg)|Bindings for the browser Svg API|
