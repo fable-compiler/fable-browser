@@ -18,6 +18,8 @@ Fable bindings for [Browser Web APIs](https://developer.mozilla.org/docs/Web/API
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Worker.svg)](https://www.nuget.org/packages/Fable.Browser.Worker)|[Fable.Browser.Worker](src/Worker)|Bindings for the browser Worker API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Geolocation.svg)](https://www.nuget.org/packages/Fable.Browser.Geolocation)|[Fable.Browser.Geolocation](src/Geolocation)|Bindings for the browser Geolocation API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Navigator.svg)](https://www.nuget.org/packages/Fable.Browser.Navigator)|[Fable.Browser.Navigator](src/Navigator)|Bindings for the browser Navigator API|
+|[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.MediaStream.svg)](https://www.nuget.org/packages/Fable.Browser.MediaStream)|[Fable.Browser.MediaStream](src/MediaStream)|Bindings for the browser MediaStream API|
+|[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.MediaQueryList.svg)](https://www.nuget.org/packages/Fable.Browser.MediaQueryList)|[Fable.Browser.MediaQueryList](src/MediaQueryList)|Bindings for the browser MediaQueryList API|
 
 ## Publishing
 
