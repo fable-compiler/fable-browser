@@ -1,4 +1,5 @@
 #load "node_modules/fable-publish-utils/PublishUtils.fs"
+#r "node_modules/fable-metadata/lib/Fable.Core.dll"
 
 open System
 open PublishUtils
@@ -19,6 +20,7 @@ let packages =
       "Geolocation"
       "Navigator"
       "MediaStream"
+      "MediaQueryList"
       "WebRTC"
     ]
 
@@ -43,6 +45,6 @@ match args with
         match target with
         | Some target ->
             if ignoreCaseEquals file.[..(file.Length - 8)] target then
-                pushNuget (projDir </> file)
-        | None -> pushNuget (projDir </> file)
+                pushNuget (projDir </> file) ignore
+        | None -> pushNuget (projDir </> file) ignore
 | _ -> ()
