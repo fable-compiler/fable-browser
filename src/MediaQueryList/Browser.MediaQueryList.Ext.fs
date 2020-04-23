@@ -1,5 +1,5 @@
 [<AutoOpen>]
-module Browser.CssExtensions
+module Browser.MediaQueryListExtensions
 
 open Fable.Core
 open Browser.Types
