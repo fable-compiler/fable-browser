@@ -1,3 +1,7 @@
+### 1.0.2
+
+* `RTCIceCandidateStats.protocol` accepts only `udp` or `tcp` so it could be specify as `RTCIceProtocol` instead of string.
+
 ### 1.0.1
 
 * Fix `RTCRtpReceiver.getStates` should be a `RTCRtpReceiver.getStats`
