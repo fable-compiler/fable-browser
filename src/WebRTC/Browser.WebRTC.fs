@@ -79,12 +79,6 @@ type RTCDataChannelEvent =
     inherit Event
     abstract channel: RTCDataChannel
 
-
-
-
-
-
-
 [<StringEnum>]
 type RTCIceCredentialType =
     | Password
@@ -109,10 +103,6 @@ type RTCIceTransportComponent =
 type RTCIceComponent =
     | [<CompiledName("rtp")>] RTP
     | [<CompiledName("rtcp")>] RTCP
-
-
-
-
 
 type RTCOfferAnswerOptions =
     abstract voiceActivityDetection: bool option with get, set
@@ -582,7 +572,7 @@ type RTCIceCandidateStats =
     abstract networkType: RTCNetworkType
     abstract ip: string
     abstract port: int64
-    abstract protocol: string
+    abstract protocol: RTCIceProtocol
     abstract candidateType: RTCIceCandidateType
     abstract priority: int64
     abstract url: string
