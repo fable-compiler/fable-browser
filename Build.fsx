@@ -45,6 +45,6 @@ match args with
         match target with
         | Some target ->
             if ignoreCaseEquals file.[..(file.Length - 8)] target then
-                pushNuget (projDir </> file) ignore
-        | None -> pushNuget (projDir </> file) ignore
+                pushNuget (projDir </> file) doNothing
+        | None -> pushNuget (projDir </> file) doNothing
 | _ -> ()
