@@ -2824,23 +2824,23 @@ type [<AllowNullLiteral>] CompositionEvent =
     abstract locale: string
 
 type [<AllowNullLiteral>] DataTransfer =
-    abstract dropEffect: string
-    abstract effectAllowed: string
-    abstract files: FileList
-    abstract items: DataTransferItemList
-    abstract types: DOMStringList
+    abstract dropEffect: string with get, set
+    abstract effectAllowed: string with get, set
+    abstract files: FileList with get, set
+    abstract items: DataTransferItemList with get
+    abstract types: DOMStringList with get
     abstract clearData: ?format: string -> bool
     abstract getData: format: string -> string
     abstract setData: format: string * data: string -> bool
 
 type [<AllowNullLiteral>] DataTransferItem =
-    abstract kind: string
-    abstract ``type``: string
+    abstract kind: string with get
+    abstract ``type``: string with get
     abstract getAsFile: unit -> File
     abstract getAsString: _callback: (string -> unit) -> unit
 
 type [<AllowNullLiteral>] DataTransferItemList =
-    abstract length: int
+    abstract length: int with get
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> DataTransferItem
     abstract add: data: File -> DataTransferItem
     abstract clear: unit -> unit
