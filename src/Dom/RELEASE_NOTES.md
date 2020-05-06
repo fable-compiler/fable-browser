@@ -1,3 +1,7 @@
+### 1.2.0
+
+* Add getter/setter to DataTransfer related types
+
 ### 1.1.0
 
 * Add `FormData` extension constructor
