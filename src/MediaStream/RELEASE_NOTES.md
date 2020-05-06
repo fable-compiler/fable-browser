@@ -1,3 +1,8 @@
+### 2.0.0
+
+* Add `MediaStream` suffix where necessary to follow the JavaScript API
+* Add `MediaStreamError`
+
 ### 1.0.0
 
 * First stable release
