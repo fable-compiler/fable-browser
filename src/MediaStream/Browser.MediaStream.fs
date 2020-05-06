@@ -219,7 +219,7 @@ type VideoConstraints =
 // | Constraint of AudioMediaStreamConstraint
 
 
-type StreamContraints =
+type MediaStreamConstraints =
     abstract video:obj with get, set
     abstract audio:obj with get, set
 
@@ -280,6 +280,14 @@ type VideoMediaStreamTrack =
     inherit MediaStreamTrack
     abstract clone: unit -> VideoMediaStreamTrack
 
+type [<AllowNullLiteral>] MediaStreamError =
+    abstract constraintName: string option
+    abstract message: string option
+    abstract name: string
+
+type [<AllowNullLiteral>] MediaStreamErrorType =
+    abstract prototype: MediaStreamError with get, set
+    [<Emit "new $0($1...)">] abstract Create: unit -> obj
 
 type MediaStream =
     inherit EventTarget
@@ -313,21 +321,21 @@ type MediaDeviceInfo =
 type MediaDevices =
     inherit EventTarget
     abstract getSupportedConstraints: unit -> MediaTrackSupportedConstraints
-    abstract getUserMedia: constraints: StreamContraints -> JS.Promise<MediaStream>
+    abstract getUserMedia: constraints: MediaStreamConstraints -> JS.Promise<MediaStream>
     abstract getDisplayMedia: constraints: SharedScreenMediaTrackConstraintSet option -> JS.Promise<MediaStream>
     abstract enumerateDevices: unit -> JS.Promise<ResizeArray<MediaDeviceInfo>>
     abstract ondevicechange: (Event->unit) with get, set
 
 
-type StreamContraintsType =
+type MediaStreamConstraintsType =
     [<Emit("new Object({ video: $1, audio: $2 })")>]
-    abstract Create: video : bool * audio : bool -> StreamContraints
+    abstract Create: video : bool * audio : bool -> MediaStreamConstraints
     [<Emit("new Object({ video: $1, audio: $2 })")>]
-    abstract Create: video : VideoConstraints * audio : bool -> StreamContraints
+    abstract Create: video : VideoConstraints * audio : bool -> MediaStreamConstraints
     [<Emit("new Object({ video: $1, audio: $2 })")>]
-    abstract Create: video : VideoConstraints * audio : AudioConstraint -> StreamContraints
+    abstract Create: video : VideoConstraints * audio : AudioConstraint -> MediaStreamConstraints
     [<Emit("new Object({ video: $1, audio: $2 })")>]
-    abstract Create: video : bool * audio : AudioConstraint -> StreamContraints
+    abstract Create: video : bool * audio : AudioConstraint -> MediaStreamConstraints
 
 type HTMLVideoElement' =
   inherit HTMLVideoElement
@@ -352,7 +360,9 @@ module MediaStreams =
 
     let [<Global>] MediaStream: MediaStreamType = jsNative
 
-    let [<Global>] StreamContraints: StreamContraintsType = jsNative
+    let [<Global>] MediaStreamConstraints: MediaStreamConstraints = jsNative
+
+    let [<Global>] MediaStreamError : MediaStreamErrorType = jsNative
 
 [<RequireQualifiedAccess>]
 module VideoConstraints =
