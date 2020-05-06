@@ -4,14 +4,16 @@ module Browser.CssExtensions
 open Fable.Core
 open Browser.Types
 
+type Window with
+    [<Emit("$0.getComputedStyle($1...)")>]
+    member __.getComputedStyle(elt: Element, ?pseudoElt: string): CSSStyleDeclaration = jsNative
+
 type Document with
     /// Retrieves a collection of styleSheet objects representing the style sheets that correspond to each instance of a link or style object in the document.
     [<Emit("$0.styleSheets{{=$1}}")>]
     member __.styleSheets with get(): StyleSheetList = jsNative and set(v: StyleSheetList) = jsNative
     [<Emit("$0.styleMedia{{=$1}}")>]
     member __.styleMedia with get(): StyleMedia = jsNative and set(v: StyleMedia) = jsNative
-    [<Emit("$0.getComputedStyle($1...)")>]
-    member __.getComputedStyle(elt: Element, ?pseudoElt: string): CSSStyleDeclaration = jsNative
     [<Emit("$0.getMatchedCSSRules($1...)")>]
     member __.getMatchedCSSRules(elt: Element, ?pseudoElt: string): CSSRuleList = jsNative
 
