@@ -1,3 +1,7 @@
+### 2.0.0
+
+* Fix #28: Move `getComputedStyle` to `Window`
+
 ### 1.0.0
 
 * Stable release
