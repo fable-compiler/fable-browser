@@ -36,6 +36,9 @@ type NavigatorID =
 type NavigatorOnLine =
     abstract onLine: bool
 
+type NavigatorUserMediaSuccessCallback = MediaStream -> unit
+type NavigatorUserMediaErrorCallback = MediaStreamError -> unit
+
 type Navigator =
     inherit NavigatorID
     inherit NavigatorOnLine
@@ -68,7 +71,11 @@ type Navigator =
 
     abstract canShare: unit -> bool
     // TODO: abstract getVRDisplays()
-    // TODO: abstract getUserMedia()
+
+    // NOT TODO: Navigator.getUserMedia is deprecated in favor of navigator.mediaDevices.getUserMedia()
+    // See: https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia
+    // abstract getUserMedia: constraints: MediaStreamConstraints * successCallback: NavigatorUserMediaSuccessCallback * errorCallback: NavigatorUserMediaErrorCallback -> unit
+
     // TODO: abstract registerProtocolHandler()
     // TODO: abstract requestMediaKeySystemAccess()
     // TODO: abstract sendBeacon()
