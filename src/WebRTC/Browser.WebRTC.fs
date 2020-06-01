@@ -30,8 +30,6 @@ type RTCDataChannelState =
 | Closing
 | Closed
 
-
-
 type RTCDataChannel =
     inherit EventTarget
     abstract binaryType: BinaryType with get, set
@@ -82,7 +80,7 @@ type RTCDataChannelEvent =
 [<StringEnum>]
 type RTCIceCredentialType =
     | Password
-    | Token
+    | Oauth
 
 type RTCIceServer =
     abstract urls: U2<string, ResizeArray<string>> with get, set
@@ -119,7 +117,6 @@ type RTCIceCandidateInit =
     abstract sdpMid: string option with get, set
     abstract sdpMLineIndex: uint16 option with get, set
     abstract usernameFragment: string option with get, set
-
 
 type RTCIceParameters =
     abstract usernameFragment: string option with get, set
@@ -250,7 +247,6 @@ type RTCDegradationPreference =
 | [<CompiledName("maintain-framerate")>] MaintainFramerate
 | [<CompiledName("maintain-resolution")>] MaintainResolution
 | [<CompiledName("balanced")>] Balanced
-
 
 type RTCRtpCodingParameters =
     abstract rid: string
