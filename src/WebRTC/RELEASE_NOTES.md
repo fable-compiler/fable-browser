@@ -1,3 +1,7 @@
+### 1.2.0
+
+* update `RTCIceCredentialType` prior [RFC 7635](https://tools.ietf.org/html/rfc7635) from `token` to `oauth`.
+
 ### 1.1.0
 
 * `RTCIceCandidateStats.protocol` accepts only `udp` or `tcp` so it could be specified as `RTCIceProtocol` instead of a string. @MNie
