@@ -1,3 +1,7 @@
+### 1.1.1
+
+* Bring back XMLHttpRequestUpload @belka-ew
+
 ### 1.1.0
 
 * Remove Browser.Dom dependency
