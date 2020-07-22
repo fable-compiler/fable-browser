@@ -15,9 +15,11 @@ type ReadyState =
   /// The operation is complete.
   | Done = 4
 
+type [<AllowNullLiteral>] XMLHttpRequestUpload =
+    inherit EventTarget
+
 type [<AllowNullLiteral>] XMLHttpRequest =
     inherit EventTarget
-    // inherit XMLHttpRequestUpload
     abstract onreadystatechange: (unit -> unit) with get, set
     abstract readyState: ReadyState
     abstract response: obj
@@ -28,7 +30,7 @@ type [<AllowNullLiteral>] XMLHttpRequest =
     abstract status: int
     abstract statusText: string
     abstract timeout: int with get, set
-    // abstract upload: XMLHttpRequestUpload
+    abstract upload: XMLHttpRequestUpload
     abstract withCredentials: bool with get, set
     abstract abort: unit -> unit
     abstract getAllResponseHeaders: unit -> string
