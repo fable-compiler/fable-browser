@@ -14,7 +14,6 @@ type [<AllowNullLiteral>] SVGAElement =
     inherit SVGExternalResourcesRequired
     inherit SVGURIReference
     abstract target: SVGAnimatedString with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] SVGAElementType =
     abstract prototype: SVGAElement with get, set
@@ -148,7 +147,6 @@ type [<AllowNullLiteral>] SVGCircleElement =
     abstract cx: SVGAnimatedLength with get, set
     abstract cy: SVGAnimatedLength with get, set
     abstract r: SVGAnimatedLength with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] SVGCircleElementType =
     abstract prototype: SVGCircleElement with get, set
@@ -163,7 +161,6 @@ type [<AllowNullLiteral>] SVGClipPathElement =
     inherit SVGExternalResourcesRequired
     inherit SVGUnitTypes
     abstract clipPathUnits: SVGAnimatedEnumeration with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] SVGClipPathElementType =
     abstract prototype: SVGClipPathElement with get, set
@@ -202,7 +199,6 @@ type [<AllowNullLiteral>] SVGDefsElement =
     inherit SVGTests
     inherit SVGLangSpace
     inherit SVGExternalResourcesRequired
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] SVGDefsElementType =
     abstract prototype: SVGDefsElement with get, set
@@ -212,7 +208,6 @@ type [<AllowNullLiteral>] SVGDescElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGLangSpace
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] SVGDescElementType =
     abstract prototype: SVGDescElement with get, set
@@ -235,7 +230,6 @@ type [<AllowNullLiteral>] SVGElement =
     abstract viewportElement: SVGElement with get, set
     abstract xmlbase: string with get, set
     abstract className: obj with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] SVGElementType =
     abstract prototype: SVGElement with get, set
@@ -275,7 +269,6 @@ type [<AllowNullLiteral>] SVGEllipseElement =
     abstract cy: SVGAnimatedLength with get, set
     abstract rx: SVGAnimatedLength with get, set
     abstract ry: SVGAnimatedLength with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] SVGEllipseElementType =
     abstract prototype: SVGEllipseElement with get, set
@@ -304,7 +297,7 @@ type [<AllowNullLiteral>] SVGFEBlendElement =
     abstract SVG_FEBLEND_MODE_SCREEN: float with get, set
     abstract SVG_FEBLEND_MODE_SOFT_LIGHT: float with get, set
     abstract SVG_FEBLEND_MODE_UNKNOWN: float with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFEBlendElementType =
     abstract prototype: SVGFEBlendElement with get, set
@@ -338,7 +331,7 @@ type [<AllowNullLiteral>] SVGFEColorMatrixElement =
     abstract SVG_FECOLORMATRIX_TYPE_MATRIX: float with get, set
     abstract SVG_FECOLORMATRIX_TYPE_SATURATE: float with get, set
     abstract SVG_FECOLORMATRIX_TYPE_UNKNOWN: float with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFEColorMatrixElementType =
     abstract prototype: SVGFEColorMatrixElement with get, set
@@ -353,7 +346,7 @@ type [<AllowNullLiteral>] SVGFEComponentTransferElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract in1: SVGAnimatedString with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFEComponentTransferElementType =
     abstract prototype: SVGFEComponentTransferElement with get, set
@@ -376,7 +369,7 @@ type [<AllowNullLiteral>] SVGFECompositeElement =
     abstract SVG_FECOMPOSITE_OPERATOR_OVER: float with get, set
     abstract SVG_FECOMPOSITE_OPERATOR_UNKNOWN: float with get, set
     abstract SVG_FECOMPOSITE_OPERATOR_XOR: float with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFECompositeElementType =
     abstract prototype: SVGFECompositeElement with get, set
@@ -408,7 +401,7 @@ type [<AllowNullLiteral>] SVGFEConvolveMatrixElement =
     abstract SVG_EDGEMODE_NONE: float with get, set
     abstract SVG_EDGEMODE_UNKNOWN: float with get, set
     abstract SVG_EDGEMODE_WRAP: float with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFEConvolveMatrixElementType =
     abstract prototype: SVGFEConvolveMatrixElement with get, set
@@ -426,7 +419,7 @@ type [<AllowNullLiteral>] SVGFEDiffuseLightingElement =
     abstract kernelUnitLengthX: SVGAnimatedNumber with get, set
     abstract kernelUnitLengthY: SVGAnimatedNumber with get, set
     abstract surfaceScale: SVGAnimatedNumber with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFEDiffuseLightingElementType =
     abstract prototype: SVGFEDiffuseLightingElement with get, set
@@ -445,7 +438,7 @@ type [<AllowNullLiteral>] SVGFEDisplacementMapElement =
     abstract SVG_CHANNEL_G: float with get, set
     abstract SVG_CHANNEL_R: float with get, set
     abstract SVG_CHANNEL_UNKNOWN: float with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFEDisplacementMapElementType =
     abstract prototype: SVGFEDisplacementMapElement with get, set
@@ -468,7 +461,7 @@ type [<AllowNullLiteral>] SVGFEDistantLightElementType =
 type [<AllowNullLiteral>] SVGFEFloodElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFEFloodElementType =
     abstract prototype: SVGFEFloodElement with get, set
@@ -513,7 +506,7 @@ type [<AllowNullLiteral>] SVGFEGaussianBlurElement =
     abstract stdDeviationX: SVGAnimatedNumber with get, set
     abstract stdDeviationY: SVGAnimatedNumber with get, set
     abstract setStdDeviation: stdDeviationX: float * stdDeviationY: float -> unit
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFEGaussianBlurElementType =
     abstract prototype: SVGFEGaussianBlurElement with get, set
@@ -526,7 +519,7 @@ type [<AllowNullLiteral>] SVGFEImageElement =
     inherit SVGURIReference
     inherit SVGExternalResourcesRequired
     abstract preserveAspectRatio: SVGAnimatedPreserveAspectRatio with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFEImageElementType =
     abstract prototype: SVGFEImageElement with get, set
@@ -535,7 +528,7 @@ type [<AllowNullLiteral>] SVGFEImageElementType =
 type [<AllowNullLiteral>] SVGFEMergeElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFEMergeElementType =
     abstract prototype: SVGFEMergeElement with get, set
@@ -559,7 +552,7 @@ type [<AllowNullLiteral>] SVGFEMorphologyElement =
     abstract SVG_MORPHOLOGY_OPERATOR_DILATE: float with get, set
     abstract SVG_MORPHOLOGY_OPERATOR_ERODE: float with get, set
     abstract SVG_MORPHOLOGY_OPERATOR_UNKNOWN: float with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFEMorphologyElementType =
     abstract prototype: SVGFEMorphologyElement with get, set
@@ -574,7 +567,7 @@ type [<AllowNullLiteral>] SVGFEOffsetElement =
     abstract dx: SVGAnimatedNumber with get, set
     abstract dy: SVGAnimatedNumber with get, set
     abstract in1: SVGAnimatedString with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFEOffsetElementType =
     abstract prototype: SVGFEOffsetElement with get, set
@@ -599,7 +592,7 @@ type [<AllowNullLiteral>] SVGFESpecularLightingElement =
     abstract specularConstant: SVGAnimatedNumber with get, set
     abstract specularExponent: SVGAnimatedNumber with get, set
     abstract surfaceScale: SVGAnimatedNumber with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFESpecularLightingElementType =
     abstract prototype: SVGFESpecularLightingElement with get, set
@@ -624,7 +617,7 @@ type [<AllowNullLiteral>] SVGFETileElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract in1: SVGAnimatedString with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFETileElementType =
     abstract prototype: SVGFETileElement with get, set
@@ -645,7 +638,7 @@ type [<AllowNullLiteral>] SVGFETurbulenceElement =
     abstract SVG_TURBULENCE_TYPE_FRACTALNOISE: float with get, set
     abstract SVG_TURBULENCE_TYPE_TURBULENCE: float with get, set
     abstract SVG_TURBULENCE_TYPE_UNKNOWN: float with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFETurbulenceElementType =
     abstract prototype: SVGFETurbulenceElement with get, set
@@ -673,7 +666,7 @@ type [<AllowNullLiteral>] SVGFilterElement =
     abstract x: SVGAnimatedLength with get, set
     abstract y: SVGAnimatedLength with get, set
     abstract setFilterRes: filterResX: float * filterResY: float -> unit
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGFilterElementType =
     abstract prototype: SVGFilterElement with get, set
@@ -690,7 +683,7 @@ type [<AllowNullLiteral>] SVGForeignObjectElement =
     abstract width: SVGAnimatedLength with get, set
     abstract x: SVGAnimatedLength with get, set
     abstract y: SVGAnimatedLength with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGForeignObjectElementType =
     abstract prototype: SVGForeignObjectElement with get, set
@@ -703,7 +696,7 @@ type [<AllowNullLiteral>] SVGGElement =
     inherit SVGTests
     inherit SVGLangSpace
     inherit SVGExternalResourcesRequired
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGGElementType =
     abstract prototype: SVGGElement with get, set
@@ -722,7 +715,7 @@ type [<AllowNullLiteral>] SVGGradientElement =
     abstract SVG_SPREADMETHOD_REFLECT: float with get, set
     abstract SVG_SPREADMETHOD_REPEAT: float with get, set
     abstract SVG_SPREADMETHOD_UNKNOWN: float with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGGradientElementType =
     abstract prototype: SVGGradientElement with get, set
@@ -745,7 +738,7 @@ type [<AllowNullLiteral>] SVGImageElement =
     abstract width: SVGAnimatedLength with get, set
     abstract x: SVGAnimatedLength with get, set
     abstract y: SVGAnimatedLength with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGImageElementType =
     abstract prototype: SVGImageElement with get, set
@@ -810,7 +803,7 @@ type [<AllowNullLiteral>] SVGLineElement =
     abstract x2: SVGAnimatedLength with get, set
     abstract y1: SVGAnimatedLength with get, set
     abstract y2: SVGAnimatedLength with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGLineElementType =
     abstract prototype: SVGLineElement with get, set
@@ -848,7 +841,7 @@ type [<AllowNullLiteral>] SVGMarkerElement =
     abstract SVG_MARKER_ORIENT_UNKNOWN: float with get, set
     abstract setOrientToAngle: angle: SVGAngle -> unit
     abstract setOrientToAuto: unit -> unit
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGMarkerElementType =
     abstract prototype: SVGMarkerElement with get, set
@@ -873,7 +866,7 @@ type [<AllowNullLiteral>] SVGMaskElement =
     abstract width: SVGAnimatedLength with get, set
     abstract x: SVGAnimatedLength with get, set
     abstract y: SVGAnimatedLength with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGMaskElementType =
     abstract prototype: SVGMaskElement with get, set
@@ -961,7 +954,7 @@ type [<AllowNullLiteral>] SVGPathElement =
     abstract getPathSegAtLength: distance: float -> float
     abstract getPointAtLength: distance: float -> SVGPoint
     abstract getTotalLength: unit -> float
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGPathElementType =
     abstract prototype: SVGPathElement with get, set
@@ -1237,7 +1230,7 @@ type [<AllowNullLiteral>] SVGPatternElement =
     abstract width: SVGAnimatedLength with get, set
     abstract x: SVGAnimatedLength with get, set
     abstract y: SVGAnimatedLength with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGPatternElementType =
     abstract prototype: SVGPatternElement with get, set
@@ -1274,7 +1267,7 @@ type [<AllowNullLiteral>] SVGPolygonElement =
     inherit SVGLangSpace
     inherit SVGExternalResourcesRequired
     inherit SVGAnimatedPoints
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGPolygonElementType =
     abstract prototype: SVGPolygonElement with get, set
@@ -1288,7 +1281,7 @@ type [<AllowNullLiteral>] SVGPolylineElement =
     inherit SVGLangSpace
     inherit SVGExternalResourcesRequired
     inherit SVGAnimatedPoints
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGPolylineElementType =
     abstract prototype: SVGPolylineElement with get, set
@@ -1365,7 +1358,7 @@ type [<AllowNullLiteral>] SVGRectElement =
     abstract width: SVGAnimatedLength with get, set
     abstract x: SVGAnimatedLength with get, set
     abstract y: SVGAnimatedLength with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGRectElementType =
     abstract prototype: SVGRectElement with get, set
@@ -1423,7 +1416,7 @@ type [<AllowNullLiteral>] SVGSVGElement =
     abstract unpauseAnimations: unit -> unit
     abstract unsuspendRedraw: suspendHandleID: float -> unit
     abstract unsuspendRedrawAll: unit -> unit
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGSVGElementType =
     abstract prototype: SVGSVGElement with get, set
@@ -1434,7 +1427,7 @@ type [<AllowNullLiteral>] SVGScriptElement =
     inherit SVGExternalResourcesRequired
     inherit SVGURIReference
     abstract ``type``: string with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGScriptElementType =
     abstract prototype: SVGScriptElement with get, set
@@ -1444,7 +1437,7 @@ type [<AllowNullLiteral>] SVGStopElement =
     inherit SVGElement
     inherit SVGStylable
     abstract offset: SVGAnimatedNumber with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGStopElementType =
     abstract prototype: SVGStopElement with get, set
@@ -1470,7 +1463,7 @@ type [<AllowNullLiteral>] SVGStyleElement =
     abstract media: string with get, set
     abstract title: string with get, set
     abstract ``type``: string with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGStyleElementType =
     abstract prototype: SVGStyleElement with get, set
@@ -1483,7 +1476,7 @@ type [<AllowNullLiteral>] SVGSwitchElement =
     inherit SVGTests
     inherit SVGLangSpace
     inherit SVGExternalResourcesRequired
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGSwitchElementType =
     abstract prototype: SVGSwitchElement with get, set
@@ -1495,7 +1488,7 @@ type [<AllowNullLiteral>] SVGSymbolElement =
     inherit SVGLangSpace
     inherit SVGExternalResourcesRequired
     inherit SVGFitToViewBox
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGSymbolElementType =
     abstract prototype: SVGSymbolElement with get, set
@@ -1529,7 +1522,7 @@ type [<AllowNullLiteral>] SVGTextContentElement =
     abstract getStartPositionOfChar: charnum: float -> SVGPoint
     abstract getSubStringLength: charnum: float * nchars: float -> float
     abstract selectSubString: charnum: float * nchars: float -> unit
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGTextContentElementType =
     abstract prototype: SVGTextContentElement with get, set
@@ -1541,7 +1534,7 @@ type [<AllowNullLiteral>] SVGTextContentElementType =
 type [<AllowNullLiteral>] SVGTextElement =
     inherit SVGTextPositioningElement
     inherit SVGTransformable
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGTextElementType =
     abstract prototype: SVGTextElement with get, set
@@ -1559,7 +1552,7 @@ type [<AllowNullLiteral>] SVGTextPathElement =
     abstract TEXTPATH_SPACINGTYPE_AUTO: float with get, set
     abstract TEXTPATH_SPACINGTYPE_EXACT: float with get, set
     abstract TEXTPATH_SPACINGTYPE_UNKNOWN: float with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGTextPathElementType =
     abstract prototype: SVGTextPathElement with get, set
@@ -1587,7 +1580,7 @@ type [<AllowNullLiteral>] SVGTitleElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGLangSpace
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGTitleElementType =
     abstract prototype: SVGTitleElement with get, set
@@ -1657,7 +1650,7 @@ type [<AllowNullLiteral>] SVGUseElement =
     abstract width: SVGAnimatedLength with get, set
     abstract x: SVGAnimatedLength with get, set
     abstract y: SVGAnimatedLength with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGUseElementType =
     abstract prototype: SVGUseElement with get, set
@@ -1669,7 +1662,7 @@ type [<AllowNullLiteral>] SVGViewElement =
     inherit SVGFitToViewBox
     inherit SVGZoomAndPan
     abstract viewTarget: SVGStringList with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+
 
 type [<AllowNullLiteral>] SVGViewElementType =
     abstract prototype: SVGViewElement with get, set

@@ -360,6 +360,7 @@ type [<AllowNullLiteral>] Document =
     abstract writeln: [<ParamArray>] content: string[] -> unit
 
 type [<AllowNullLiteral>] DocumentType =
+    inherit Node
     abstract entities: NamedNodeMap with get, set
     abstract internalSubset: string with get, set
     abstract name: string with get, set
@@ -367,7 +368,6 @@ type [<AllowNullLiteral>] DocumentType =
     abstract publicId: string with get, set
     abstract systemId: string with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> Document
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] DocumentFragment =
     inherit Node
@@ -993,7 +993,6 @@ type [<AllowNullLiteral>] GlobalEventHandlers =
     abstract onpointerover: (PointerEvent -> 'Out) with get, set
     abstract onpointerup: (PointerEvent -> 'Out) with get, set
     abstract onwheel: (WheelEvent -> 'Out) with get, set
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
 
 type [<AllowNullLiteral>] HTMLAllCollection =
     inherit HTMLCollection
