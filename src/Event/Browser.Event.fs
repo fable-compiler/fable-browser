@@ -33,16 +33,20 @@ type [<AllowNullLiteral>] EventType =
     abstract BUBBLING_PHASE: float with get, set
     abstract CAPTURING_PHASE: float with get, set
 
-type [<AllowNullLiteral>] EventTargetOptions = 
+type [<AllowNullLiteral>] AddEventListenerOptions =
     abstract capture: bool with get, set
     abstract once: bool with get, set
     abstract passive: bool with get, set
 
+type [<AllowNullLiteral>] RemoveEventListenerOptions =
+    abstract capture: bool with get, set
+
 type [<AllowNullLiteral>] EventTarget =
     abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
-    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?options: EventTargetOptions -> unit
+    abstract addEventListener: ``type``: string * listener: (Event->unit) * ?options: AddEventListenerOptions -> unit
     abstract dispatchEvent: evt: Event -> bool
     abstract removeEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
+    abstract removeEventListener: ``type``: string * listener: (Event->unit) * ?options: RemoveEventListenerOptions -> unit
 
 type [<AllowNullLiteral>] EventTargetType =
     [<Emit("new $0($1...)")>] abstract Create: ``type``: string * ?eventInitDict: EventInit -> Event
