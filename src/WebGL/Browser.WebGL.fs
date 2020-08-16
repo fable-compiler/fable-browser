@@ -883,14 +883,12 @@ namespace Browser
 open Browser.Types
 open Fable.Core
 
+[<AutoOpen>]
 module WebGL =
 
     type HTMLCanvasElement with
         [<Emit("$0.getContext('experimental-webgl')")>]
-        member __.``getContext_experimental-webgl``: unit -> WebGLRenderingContext = failwith ""
-
-    type DocumentEvent with
-        member __.createEvent_WebGLContextEvent: unit -> WebGLContextEvent = failwith ""
+        member __.getContext_experimental_webgl(): WebGLRenderingContext = jsNative
 
     let [<Global>] WEBGL_compressed_texture_s3tc: WEBGL_compressed_texture_s3tcType = jsNative
     let [<Global>] WEBGL_debug_renderer_info: WEBGL_debug_renderer_infoType = jsNative
