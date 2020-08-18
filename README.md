@@ -20,6 +20,7 @@ Fable bindings for [Browser Web APIs](https://developer.mozilla.org/docs/Web/API
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Navigator.svg)](https://www.nuget.org/packages/Fable.Browser.Navigator)|[Fable.Browser.Navigator](src/Navigator)|Bindings for the browser Navigator API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.MediaStream.svg)](https://www.nuget.org/packages/Fable.Browser.MediaStream)|[Fable.Browser.MediaStream](src/MediaStream)|Bindings for the browser MediaStream API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.MediaQueryList.svg)](https://www.nuget.org/packages/Fable.Browser.MediaQueryList)|[Fable.Browser.MediaQueryList](src/MediaQueryList)|Bindings for the browser MediaQueryList API|
+|[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.WebGL.svg)](https://www.nuget.org/packages/Fable.Browser.WebGL)|[Fable.Browser.WebGL](src/WebGL)|Bindings for the browser WebGL API|
 
 ## Publishing
 
