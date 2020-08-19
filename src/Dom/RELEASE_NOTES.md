@@ -1,3 +1,8 @@
+### 2.0.0
+
+* Remove `addEventListener` from `DocumentType` and `GlobalEventHandlers` (by @baronfel)
+* Make `DocumentType` inherit from `Node` (by @baronfel)
+
 ### 1.3.0
 
 * Fix #39: Add `event.code` and deprecate `event.keyCode`
