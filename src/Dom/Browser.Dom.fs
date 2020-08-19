@@ -2879,7 +2879,9 @@ type [<AllowNullLiteral>] KeyboardEvent =
     abstract charCode: float
     abstract ctrlKey: bool
     abstract key: string
+    [<Obsolete("event.keyCode is deprecated see https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode for more information")>]
     abstract keyCode: float
+    abstract code: string
     abstract locale: string
     abstract location: float
     abstract metaKey: bool
