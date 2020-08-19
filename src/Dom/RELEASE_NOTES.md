@@ -1,3 +1,7 @@
+### 1.3.0
+
+* Fix #39: Add `event.code` and deprecate `event.keyCode`
+
 ### 1.2.0
 
 * Add getter/setter to DataTransfer related types
