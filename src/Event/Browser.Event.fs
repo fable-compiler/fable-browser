@@ -42,9 +42,11 @@ type [<AllowNullLiteral>] RemoveEventListenerOptions =
     abstract capture: bool with get, set
 
 type [<AllowNullLiteral>] EventTarget =
+    abstract addEventListener: ``type``: string * listener: (Event->unit) -> unit
     abstract addEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
     abstract addEventListener: ``type``: string * listener: (Event->unit) * ?options: AddEventListenerOptions -> unit
     abstract dispatchEvent: evt: Event -> bool
+    abstract removeEventListener: ``type``: string * listener: (Event->unit) -> unit
     abstract removeEventListener: ``type``: string * listener: (Event->unit) * ?useCapture: bool -> unit
     abstract removeEventListener: ``type``: string * listener: (Event->unit) * ?options: RemoveEventListenerOptions -> unit
 

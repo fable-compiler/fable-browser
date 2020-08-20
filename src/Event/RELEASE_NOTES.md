@@ -1,3 +1,7 @@
+### 1.2.0
+
+* Add an overload for `addEventListener` and `removeEventListener` without the third argument in order to avoid forcing the user to pass the third optional argument and helps F# compiler determine which overload to use
+
 ### 1.1.0
 
 * Add missing overload for `addEventListener` and `removeEventListener` on type `EventTarget` (by @baronfel)
