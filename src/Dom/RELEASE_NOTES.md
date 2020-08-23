@@ -1,3 +1,7 @@
+### 2.0.1
+
+* Upgrade to Fable.Browser.Dom 1.2.1 to force usage of the new overloads of addListener|removeListener
+
 ### 2.0.0
 
 * Remove `addEventListener` from `DocumentType` and `GlobalEventHandlers` (by @baronfel)

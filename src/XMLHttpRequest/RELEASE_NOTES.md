@@ -1,3 +1,7 @@
+### 1.1.2
+
+* Upgrade to Fable.Browser.Dom 1.2.1 to force usage of the new overloads of addListener|removeListener
+
 ### 1.1.1
 
 * Bring back XMLHttpRequestUpload @belka-ew
