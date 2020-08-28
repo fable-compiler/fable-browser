@@ -1,3 +1,7 @@
+### 1.0.2
+
+* Add Clipboard async API.
+
 ### 1.0.1
 
 * Add missing dependency on Fable.Browser.MediaStream

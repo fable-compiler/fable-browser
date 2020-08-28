@@ -2,6 +2,7 @@ namespace Browser.Types
 
 open System
 open Fable.Core
+open Fable.Core.JS
 
 type MimeType =
     abstract description: string
@@ -23,6 +24,10 @@ type ShareData =
     abstract text: string with get, set
     abstract title: string with get, set
 
+type Clipboard =
+    abstract writeText: string -> Promise<obj>
+    abstract readText: unit -> Promise<string>
+    
 type NavigatorID =
     abstract appName: string
     abstract appVersion: string
@@ -46,6 +51,7 @@ type Navigator =
     abstract appCodeName: string
     abstract appMinorVersion: string
     // abstract battery // Deprecated
+    abstract clipboard: Clipboard option
     // TODO: abstract connection
     abstract cookieEnabled: bool
     abstract geolocation: Geolocation option
