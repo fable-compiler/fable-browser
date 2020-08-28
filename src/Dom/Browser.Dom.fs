@@ -2709,6 +2709,11 @@ type [<AllowNullLiteral>] CanvasRenderingContext2D =
     abstract strokeText: text: string * x: float * y: float * ?maxWidth: float -> unit
     abstract transform: m11: float * m12: float * m21: float * m22: float * dx: float * dy: float -> unit
     abstract translate: x: float * y: float -> unit
+    abstract drawFocusIfNeeded: element : HTMLElement -> unit
+    abstract drawFocusIfNeeded: path : string * element : HTMLElement -> unit
+    abstract ellipse: x: float * y: float * radiusX: float * radiusY: float * rotation: float * startAngle: float * endAngle:float * ?anticlockwise: bool -> unit
+    abstract isPointInStroke: x:float * y: float -> bool
+    abstract isPointInStroke: path: string * x: float * y: float -> bool
 
 type [<AllowNullLiteral>] CanvasRenderingContext2DType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> CanvasRenderingContext2D
