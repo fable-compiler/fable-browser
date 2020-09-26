@@ -72,6 +72,7 @@ module Dom =
     let [<Global>] HTMLHtmlElement: HTMLHtmlElementType = jsNative
     let [<Global>] HTMLIFrameElement: HTMLIFrameElementType = jsNative
     let [<Global>] HTMLImageElement: ImageType = jsNative
+    let [<Global>] Image: ImageType = jsNative
     let [<Global>] HTMLInputElement: HTMLInputElementType = jsNative
     let [<Global>] HTMLLIElement: HTMLLIElementType = jsNative
     let [<Global>] HTMLLabelElement: HTMLLabelElementType = jsNative

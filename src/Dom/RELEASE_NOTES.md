@@ -1,3 +1,7 @@
+### 2.1.1
+
+* Fix #25: Image constructor for HTMLImageElement
+
 ### 2.1.0
 
 * Add missing APIs on CanvasRenderingContext2D

@@ -1668,7 +1668,8 @@ type [<AllowNullLiteral>] HTMLImageElement =
     abstract y: float with get, set
 
 type [<AllowNullLiteral>] ImageType =
-    [<Emit("new $0($1...)")>] abstract Create: ?width: float * ?height: float -> HTMLImageElement
+    // Constructor must be Image, see #25
+    [<Emit("new Image($1...)")>] abstract Create: ?width: float * ?height: float -> HTMLImageElement
 
 type [<AllowNullLiteral>] HTMLInputElement =
     inherit HTMLElement
