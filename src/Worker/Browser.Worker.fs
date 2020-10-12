@@ -77,6 +77,11 @@ type ServiceWorkerContainer =
     abstract getRegistrations: unit -> JS.Promise<ServiceWorkerRegistration[]>
     abstract startMessages: unit -> unit
 
+namespace Browser
+
+open Browser.Types
+open Fable.Core
+
 [<AutoOpen>]
-module Event =
+module Worker =
     let [<Global>] Worker: WorkerConstructor = jsNative
