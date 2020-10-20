@@ -1,3 +1,7 @@
+### 2.1.2
+
+* Fix #48: FSharp.Core dependency @forki
+
 ### 2.1.1
 
 * Fix #25: Image constructor for HTMLImageElement
