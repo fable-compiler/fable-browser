@@ -1,3 +1,7 @@
+### 1.3.0
+
+* `RTCIceCandidateStats.relayProtocol` accepts only `tcp`/`tls` or `udp` so it could be specified as `RTCRelayProtocol` instead of a string. @MNie
+
 ### 1.2.0
 
 * update `RTCIceCredentialType` prior [RFC 7635](https://tools.ietf.org/html/rfc7635) from `token` to `oauth`.
