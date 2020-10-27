@@ -234,13 +234,10 @@ type RTCDtlsTransport =
     abstract onstatechange: (Event -> unit) with get, set
     abstract onerror: (Event -> unit) with get, set
 
-
-
 type RTCRtpContributingSource =
     abstract audioLevel: float option
     abstract uint32: float
     abstract timestamp: float
-
 
 [<StringEnum>]
 type RTCDegradationPreference =
@@ -313,7 +310,7 @@ type RTCCodecType =
 | Encode
 | Decode
 
-type  RTCCodecStats =
+type RTCCodecStats =
     inherit RTCStats
     abstract payloadType: uint32
     abstract codecType:  RTCCodecType
@@ -562,6 +559,12 @@ type RTCNetworkType =
 | Vpn
 | Unknown
 
+[<StringEnum>]
+type RTCRelayProtocol =
+| [<CompiledName("tcp")>] TCP
+| [<CompiledName("tls")>] TLS
+| [<CompiledName("udp")>] UDP
+
 type RTCIceCandidateStats =
     inherit RTCStats
     abstract transportId: string
@@ -572,7 +575,7 @@ type RTCIceCandidateStats =
     abstract candidateType: RTCIceCandidateType
     abstract priority: int64
     abstract url: string
-    abstract relayProtocol: string
+    abstract relayProtocol: RTCRelayProtocol
     abstract deleted: bool
 
 type RTCCertificateStats =
@@ -661,7 +664,6 @@ type RTCRtpTransceiverDirection =
 | [<CompiledName("recvonly")>] RecvOnly
 | [<CompiledName("inactive")>] Inactive
 
-
 type RTCRtpTransceiver =
     abstract mid: string option
     abstract sender: RTCRtpSender
@@ -704,11 +706,9 @@ type RTCSessionDescription =
     abstract sdp: string
     abstract toJSON: unit -> RTCSessionDescriptionInit
 
-
 type RTCSessionDescriptionType =
     [<Emit "new $0($1...)">] abstract Create: ?message: RTCSessionDescriptionInit -> RTCSessionDescription
     [<Emit "new $0({sdp:$1})">] abstract Create: sdp: string -> RTCSessionDescription
-
 
 type RTCPeerConnectionIceEvent =
     inherit Event
@@ -761,7 +761,6 @@ type RTCBundlePolicy =
 | Balance // On BUNDLE-aware connections, the ICE agent should gather candidates for all of the media types in use (audio, video, and data). Otherwise, the ICE agent should only negotiate one audio and video track on separate transports.
 | [<CompiledName("max-compat")>] MaxCompat // The ICE agent should gather candidates for each track, using separate transports to negotiate all media tracks for connections which aren't BUNDLE-compatible.
 | [<CompiledName("max-bundle")>] MaxBundle // The ICE agent should gather candidates for just one track. If the connection isn't BUNDLE-compatible, then the ICE agent should negotiate just one media track.
-
 
 [<StringEnum>]
 type RTCRtcpMuxPolicy =
@@ -865,5 +864,4 @@ module WebRTC =
     let [<Global>] RTCSessionDescriptionInit: RTCSessionDescriptionInitType = jsNative
     let [<Global>] RTCConfiguration: RTCConfigurationType = jsNative
     let [<Global>] RTCIceServer: RTCIceServerType = jsNative
-
     let [<Global>] RTCDataChannelInit: RTCDataChannelInitType = jsNative
