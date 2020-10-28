@@ -25,7 +25,7 @@ type ShareData =
     abstract title: string with get, set
 
 type Clipboard =
-    abstract writeText: string -> Promise<obj>
+    abstract writeText: string -> Promise<unit>
     abstract readText: unit -> Promise<string>
     
 type NavigatorID =

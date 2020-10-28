@@ -485,7 +485,7 @@ type RTCDataChannelStats =
     inherit RTCStats
     abstract label: string
     abstract protocol: string
-    abstract dataChannelIdentifier: int64
+    abstract dataChannelIdentifier: uint32
     abstract transportId: string
     abstract state: RTCDataChannelState
     abstract messagesSent: uint32
@@ -645,10 +645,10 @@ type RTCIceCandidateStats =
     abstract transportId: string
     abstract networkType: RTCNetworkType
     abstract ip: string
-    abstract port: int64
+    abstract port: uint32
     abstract protocol: RTCIceProtocol
     abstract candidateType: RTCIceCandidateType
-    abstract priority: int64
+    abstract priority: uint32
     abstract url: string
     abstract relayProtocol: RTCRelayProtocol
     abstract deleted: bool
