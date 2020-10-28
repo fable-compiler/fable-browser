@@ -1,3 +1,8 @@
+### 1.2.1
+
+* Add more stat properties to `RTCInboundRtpStreamStats` and `RTCOutboundRtpStreamStats`
+* Add `SdpSemantics` enum
+
 ### 1.2.0
 
 * update `RTCIceCredentialType` prior [RFC 7635](https://tools.ietf.org/html/rfc7635) from `token` to `oauth`.
