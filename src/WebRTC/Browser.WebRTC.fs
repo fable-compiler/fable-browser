@@ -304,7 +304,7 @@ type RTCStatsType =
 | Certificate
 
 type RTCStats =
-    abstract timestamp: double
+    abstract timestamp: float
     abstract ``type``: RTCStatsType
     abstract id: string
 
@@ -339,7 +339,7 @@ type RTCRtpStreamStats =
 type RTCReceivedRtpStreamStats =
     inherit RTCRtpStreamStats
     abstract packetsReceived: uint32
-    abstract packetsLost: int64
+    abstract packetsLost: uint32
     abstract jitter: float
     abstract packetsDiscarded: uint32
     abstract packetsRepaired: uint32
@@ -354,17 +354,50 @@ type RTCReceivedRtpStreamStats =
 
 type RTCInboundRtpStreamStats =
     inherit RTCReceivedRtpStreamStats
+    [<Obsolete("This field was made obsolete in April 2020 as a follow-up to track stats having been made obsolete.")>]
     abstract trackId: string
     abstract receiverId: string
     abstract remoteId: string
     abstract framesDecoded: uint32
-    abstract lastPacketReceivedTimestamp: float
-    abstract averageRtcpInterval: float
+    abstract keyFramesDecoded:  uint32
+    abstract frameWidth:  uint32
+    abstract frameHeight:  uint32
+    abstract frameBitDepth:  uint32
+    abstract framesPerSecond:  float
+    abstract qpSum:  uint32
+    abstract totalDecodeTime:  float
+    abstract totalInterFrameDelay:  float
+    abstract totalSquaredInterFrameDelay:  float
+    abstract voiceActivityFlag:  bool
+    abstract lastPacketReceivedTimestamp:  float
+    abstract averageRtcpInterval:  float
+    abstract headerBytesReceived:  uint32
     abstract fecPacketsReceived:  uint32
-    abstract bytesReceived: uint32
+    abstract fecPacketsDiscarded:  uint32
+    abstract bytesReceived:  uint32
     abstract packetsFailedDecryption:  uint32
-    abstract packetsDuplicated: uint32
-    abstract perDscpPacketsReceived: Dictionary<string, uint32>
+    abstract packetsDuplicated:  uint32
+    abstract perDscpPacketsReceived:  Dictionary<string, uint32>
+    abstract nackCount:  uint32
+    abstract firCount:  uint32
+    abstract pliCount:  uint32
+    abstract sliCount:  uint32
+    abstract estimatedPlayoutTimestamp:  float
+    abstract jitterBufferDelay:  float
+    abstract jitterBufferEmittedCount:  uint32
+    abstract totalSamplesReceived:  uint32
+    abstract samplesDecodedWithSilk:  uint32
+    abstract samplesDecodedWithCelt:  uint32
+    abstract concealedSamples:  uint32
+    abstract silentConcealedSamples:  uint32
+    abstract concealmentEvents:  uint32
+    abstract insertedSamplesForDeceleration:  uint32
+    abstract removedSamplesForAcceleration:  uint32
+    abstract audioLevel:  float
+    abstract totalAudioEnergy:  float
+    abstract totalSamplesDuration:  float
+    abstract framesReceived:  uint32
+    abstract decoderImplementation: string
 
 type RTCSentRtpStreamStats =
     inherit RTCRtpStreamStats
@@ -383,17 +416,48 @@ type RTCQualityLimitationReason =
 
 type RTCOutboundRtpStreamStats =
     inherit RTCSentRtpStreamStats
+    [<Obsolete("This field was made obsolete in April 2020 as a follow-up to track stats having been made obsolete.")>]
     abstract trackId: string
+    abstract rtxSsrc: uint32
+    abstract mediaSourceId: string
     abstract senderId: string
     abstract remoteId: string
+    abstract rid: string
     abstract lastPacketSentTimestamp: float
+    abstract headerBytesSent: uint32
+    abstract packetsDiscardedOnSend: uint32
+    abstract bytesDiscardedOnSend: uint32
+    abstract fecPacketsSent: uint32
+    abstract retransmittedPacketsSent: uint32
+    abstract retransmittedBytesSent: uint32
     abstract targetBitrate: float
+    abstract totalEncodedBytesTarget: uint32
+    abstract frameWidth: uint32
+    abstract frameHeight: uint32
+    abstract frameBitDepth: uint32
+    abstract framesPerSecond: float
+    abstract framesSent: uint32
+    abstract hugeFramesSent: uint32
     abstract framesEncoded: uint32
+    abstract keyFramesEncoded: uint32
+    abstract framesDiscardedOnSend: uint32
+    abstract qpSum: uint32
+    abstract totalSamplesSent: uint32
+    abstract samplesEncodedWithSilk: uint32
+    abstract samplesEncodedWithCelt: uint32
+    abstract voiceActivityFlag: bool
     abstract totalEncodeTime: float
+    abstract totalPacketSendDelay: float
     abstract averageRtcpInterval: float
     abstract qualityLimitationReason: RTCQualityLimitationReason
     abstract qualityLimitationDurations: Dictionary<string, float>
+    abstract qualityLimitationResolutionChanges: uint32
     abstract perDscpPacketsSent: Dictionary<string, uint32>
+    abstract nackCount: uint32
+    abstract firCount: uint32
+    abstract pliCount: uint32
+    abstract sliCount: uint32
+    abstract encoderImplementation: string
 
 type RTCRemoteInboundRtpStreamStats =
     inherit RTCReceivedRtpStreamStats
@@ -486,6 +550,9 @@ type RTCAudioReceiverStats =
     abstract concealedSamples: uint32
     abstract concealmentEvents: uint32
 
+type RTCReceiverAudioTrackAttachmentStats =
+    inherit RTCAudioHandlerStats
+
 type RTCVideoReceiverStats =
     inherit RTCVideoHandlerStats
     abstract estimatedPlayoutTimestamp: float
@@ -498,7 +565,15 @@ type RTCVideoReceiverStats =
     abstract partialFramesLost: uint32
     abstract fullFramesLost: uint32
 
-type RTCIceRole = obj
+type RTCReceiverVideoTrackAttachmentStats =
+    inherit RTCVideoReceiverStats
+
+[<StringEnum>]
+type RTCIceRole =
+| Unknown
+| Controlling
+| Controlled
+
 type RTCTransportStats =
     inherit RTCStats
     abstract packetsSent:uint32
@@ -768,6 +843,13 @@ type RTCRtcpMuxPolicy =
 | Negotiate //Instructs the ICE agent to gather both RTP and RTCP candidates. If the remote peer can multiplex RTCP, then RTCP candidates are multiplexed atop the corresponding RTP candidates. Otherwise, both the RTP and RTCP candidates are returned, separately.
 | Require //Tells the ICE agent to gather ICE candidates for only RTP, and to multiplex RTCP atop them. If the remote peer doesn't support RTCP multiplexing, then session negotiation fails.
 
+
+[<StringEnum>]
+type SdpSemantics =
+| [<CompiledName "plan-b">] PlanB
+| [<CompiledName "unified-plan">] Unified
+
+
 type RTCConfiguration =
     abstract iceServers: ResizeArray<RTCIceServer> option with get, set
     abstract iceTransportPolicy: RTCIceTransportPolicy option with get, set
@@ -776,6 +858,7 @@ type RTCConfiguration =
     abstract peerIdentity: string option with get, set
     abstract certificates: ResizeArray<RTCCertificate> option with get, set
     abstract iceCandidatePoolSize: uint32 option with get, set
+    abstract sdpSemantics: SdpSemantics option with get, set
 
 type RTCTrackEvent =
     inherit Event
