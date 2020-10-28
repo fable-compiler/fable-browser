@@ -1,5 +1,7 @@
 ### 1.3.0
 
+* Add more stat properties to `RTCInboundRtpStreamStats` and `RTCOutboundRtpStreamStats`
+* Add `SdpSemantics` enum
 * `RTCIceCandidateStats.relayProtocol` accepts only `tcp`/`tls` or `udp` so it could be specified as `RTCRelayProtocol` instead of a string. @MNie
 
 ### 1.2.0
