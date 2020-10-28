@@ -1,3 +1,12 @@
+### 3.0.0
+
+* Add `ImageMediaTrackConstraintSet`
+* Fix ContrainXXX should allow single value or constrain object
+* Fix some bad type names
+* Set `MediaTrackCapabilities` properties optional
+* Add strongly typed methods on `AudioMediaStreamTrack` and `VideoMediaStreamTrack`
+* Set `MediaDeviceInfo` kind as an enum
+
 ### 2.0.1
 
 * Upgrade to Fable.Browser.Dom 1.2.1 to force usage of the new overloads of addListener|removeListener

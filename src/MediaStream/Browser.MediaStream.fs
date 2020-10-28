@@ -24,9 +24,19 @@ type MediaTrackSupportedConstraints =
     abstract deviceId:bool option with get, set
     abstract groupId:bool option with get, set
 
+    abstract displaySurface:bool option with get, set
+    abstract logicalSurface:bool option with get, set
+    abstract cursor:bool option with get, set
+    abstract restrictOwnAudio:bool option with get, set
+
 type Range<'T> =
     abstract max: 'T option with get, set
     abstract min: 'T option with get, set
+
+type SteppedRange<'T> =
+    abstract max: 'T option with get, set
+    abstract min: 'T option with get, set
+    abstract step: 'T option with get, set
 
 type ULongRange = Range<uint32>
 type DoubleRange = Range<float>
@@ -48,11 +58,16 @@ type ConstrainOrRange<'T> =
 type ConstrainOrRangeULong = ConstrainOrRange<uint32>
 type ConstrainOrRangeDouble = ConstrainOrRange<float>
 
-type ConstrainULong = Constrain<uint32>
-type ConstrainDouble = Constrain<float>
-type ConstrainString = Constrain<string>
-type ConstrainBoolean = Constrain<bool>
 
+[<Erase>]
+type ConstrainOrValue<'T> =
+    | Value of 'T
+    | Constrain of Constrain<'T>
+
+type ConstrainULong = ConstrainOrValue<uint32>
+type ConstrainDouble = ConstrainOrValue<float>
+type ConstrainBoolean = ConstrainOrValue<bool>
+type ConstrainString = ConstrainOrValue<string>
 
 type MediaTrackConstraintSet =
     abstract deviceId: ConstrainString option with get, set
@@ -62,7 +77,19 @@ type MediaTrackSettings =
     abstract deviceId: string
     abstract groupId: string
 
+[<Obsolete("Naming changed, please use AudioMediaTrackConstraintSet")>]
 type AudioConstraint =
+    inherit MediaTrackConstraintSet
+    abstract autoGainControl: ConstrainBoolean option with get, set
+    abstract channelCount: ConstrainOrRangeULong option with get, set
+    abstract echoCancellation: ConstrainBoolean option with get, set
+    abstract latency: ConstrainOrRangeDouble option with get, set
+    abstract noiseSuppression: ConstrainBoolean option with get, set
+    abstract sampleRate: ConstrainOrRangeULong option with get, set
+    abstract sampleSize: ConstrainOrRangeULong option with get, set
+    abstract volume: ConstrainOrRangeDouble option with get, set
+
+type AudioMediaTrackConstraintSet =
     inherit MediaTrackConstraintSet
     abstract autoGainControl: ConstrainBoolean option with get, set
     abstract channelCount: ConstrainOrRangeULong option with get, set
@@ -163,6 +190,7 @@ type VideoMediaTrackConstraintSet =
 
 type VideoMediaTrackSettings =
     inherit MediaTrackSettings
+    inherit ImageMediaTrackSettings
     abstract aspectRatio: float
     abstract facingMode: FacingMode
     abstract frameRate: double
@@ -187,41 +215,44 @@ type DisplaySurface =
 
 type ConstrainDisplaySurface = Constrain<ResizeArray<DisplaySurface>>
 
-type SharedScreenMediaTrackConstraintSet =
-    inherit MediaTrackConstraintSet
-    abstract cursor: ConstrainCursor option with get, set
-    abstract displaySurface: ConstrainDisplaySurface option with get, set
-    abstract logicalSurface: ConstrainBoolean option with get, set
-
 type SharedScreenMediaTrackSettings =
     inherit MediaTrackSettings
     abstract cursor: Cursor
     abstract displaySurface: DisplaySurface
     abstract logicalSurface: bool
 
-
 type MediaTrackConstraints =
     inherit MediaTrackConstraintSet
     abstract advanced: ResizeArray<MediaTrackConstraintSet> option with get, set
 
-type VideoConstraints =
-    inherit MediaTrackConstraintSet
+type VideoMediaTrackConstraints =
+    inherit VideoMediaTrackConstraintSet
     inherit ImageMediaTrackConstraintSet
+    inherit MediaTrackConstraints
 
-// [<Erase>]
-// type VideoMediaStreamConstraint =
-// | Bool of bool
-// | Camera of VideoConstraints
+type AudioMediaTrackConstraints =
+    inherit AudioMediaTrackConstraintSet
+    inherit MediaTrackConstraints
 
-// [<Erase>]
-// type AudioMediaStreamConstraint =
-// | Bool of bool
-// | Constraint of AudioMediaStreamConstraint
+type SharedScreenMediaTrackConstraintSet =
+    inherit VideoMediaTrackConstraints
+    abstract cursor: ConstrainCursor option with get, set
+    abstract displaySurface: ConstrainDisplaySurface option with get, set
+    abstract logicalSurface: ConstrainBoolean option with get, set
+    abstract restrictOwnAudio: ConstrainBoolean option with get, set
 
+[<Erase>]
+type StreamConstraintOrBool<'T> =
+    | Bool of bool
+    | Constraint of 'T
 
 type MediaStreamConstraints =
-    abstract video:obj with get, set
-    abstract audio:obj with get, set
+    abstract video:StreamConstraintOrBool<VideoMediaTrackConstraints> with get, set
+    abstract audio:StreamConstraintOrBool<AudioMediaTrackConstraints> with get, set
+
+type DisplayMediaStreamConstraints =
+    abstract video:StreamConstraintOrBool<SharedScreenMediaTrackConstraintSet> with get, set
+    abstract audio:StreamConstraintOrBool<AudioMediaTrackConstraints> with get, set
 
 [<StringEnum>]
 type TrackKind =
@@ -234,22 +265,34 @@ type MediaStreamTrackState =
 | Live
 | Ended
 
+
 type MediaTrackCapabilities =
-    abstract width: ULongRange
-    abstract height: ULongRange
-    abstract aspectRatio: DoubleRange
-    abstract frameRate: DoubleRange
-    abstract facingMode: FacingMode array
-    abstract resizeMode: ResizeMode array
-    abstract sampleRate: ULongRange
-    abstract sampleSize: ULongRange
-    abstract echoCancellation: bool array
-    abstract autoGainControl: bool array
-    abstract noiseSuppression: bool array
-    abstract latency: DoubleRange
-    abstract channelCount: ULongRange
-    abstract deviceId: string
-    abstract groupId: string
+    abstract width: ULongRange option
+    abstract height: ULongRange option
+    abstract aspectRatio: DoubleRange option
+    abstract frameRate: DoubleRange option
+    abstract facingMode: FacingMode array option
+    abstract resizeMode: ResizeMode array option
+    abstract sampleRate: ULongRange option
+    abstract sampleSize: ULongRange option
+    abstract echoCancellation: bool array option
+    abstract autoGainControl: bool array option
+    abstract noiseSuppression: bool array option
+    abstract latency: DoubleRange option
+    abstract channelCount: ULongRange option
+    abstract deviceId: string option
+    abstract groupId: string option
+
+    abstract colorTemperature: SteppedRange<uint32> option
+    abstract exposureMode: ShotMode array option
+    abstract exposureCompensation: SteppedRange<float> option
+    abstract exposureTime: SteppedRange<uint32> option
+    abstract focusDistance: SteppedRange<float> option
+    abstract focusMode: ShotMode array option
+    abstract iso: SteppedRange<uint32> option
+    abstract torch: bool option
+    abstract whiteBalanceMode: ShotMode array option
+    abstract zoom: SteppedRange<uint32> option
 
 type MediaStreamTrack =
     inherit EventTarget
@@ -267,7 +310,7 @@ type MediaStreamTrack =
     abstract getCapabilities: unit -> MediaTrackCapabilities
     abstract getConstraints: unit -> MediaTrackConstraints
     abstract getSettings: unit -> MediaTrackSettings
-    abstract applyConstraints: ?constraints:MediaTrackConstraints -> JS.Promise<unit>
+    abstract applyConstraints: constraints:#MediaTrackConstraints option -> JS.Promise<unit>
 
 type MediaStreamTrackEvent =
     abstract track: MediaStreamTrack
@@ -275,10 +318,16 @@ type MediaStreamTrackEvent =
 type AudioMediaStreamTrack =
     inherit MediaStreamTrack
     abstract clone: unit -> AudioMediaStreamTrack
+    abstract applyConstraints: constraints:AudioMediaTrackConstraints option -> JS.Promise<unit>
+    abstract getConstraints: unit -> AudioMediaTrackConstraints
+    abstract getSettings: unit -> AudioMediaTrackSettings
 
 type VideoMediaStreamTrack =
     inherit MediaStreamTrack
     abstract clone: unit -> VideoMediaStreamTrack
+    abstract applyConstraints: constraints:VideoMediaTrackConstraints option -> JS.Promise<unit>
+    abstract getConstraints: unit -> VideoMediaTrackConstraints
+    abstract getSettings: unit -> VideoMediaTrackSettings
 
 type [<AllowNullLiteral>] MediaStreamError =
     abstract constraintName: string option
@@ -312,17 +361,23 @@ type CanvasCaptureMediaStreamTrack =
     abstract canvas: HTMLCanvasElement
     abstract requestFrame : unit -> unit
 
+[<StringEnum>]
+type MediaDeviceKind =
+| [<CompiledName("videoinput")>] VideoInput
+| [<CompiledName("audioinput")>] AudioInput
+| [<CompiledName("audiooutput")>] AudioOutput
+
 type MediaDeviceInfo =
     abstract deviceId: string
     abstract groupId: string
-    abstract kind: string
+    abstract kind: MediaDeviceKind
     abstract label: string
 
 type MediaDevices =
     inherit EventTarget
     abstract getSupportedConstraints: unit -> MediaTrackSupportedConstraints
     abstract getUserMedia: constraints: MediaStreamConstraints -> JS.Promise<MediaStream>
-    abstract getDisplayMedia: constraints: SharedScreenMediaTrackConstraintSet option -> JS.Promise<MediaStream>
+    abstract getDisplayMedia: ?constraints: DisplayMediaStreamConstraints -> JS.Promise<MediaStream>
     abstract enumerateDevices: unit -> JS.Promise<ResizeArray<MediaDeviceInfo>>
     abstract ondevicechange: (Event->unit) with get, set
 
@@ -331,11 +386,11 @@ type MediaStreamConstraintsType =
     [<Emit("new Object({ video: $1, audio: $2 })")>]
     abstract Create: video : bool * audio : bool -> MediaStreamConstraints
     [<Emit("new Object({ video: $1, audio: $2 })")>]
-    abstract Create: video : VideoConstraints * audio : bool -> MediaStreamConstraints
+    abstract Create: video : VideoMediaTrackConstraints * audio : bool -> MediaStreamConstraints
     [<Emit("new Object({ video: $1, audio: $2 })")>]
-    abstract Create: video : VideoConstraints * audio : AudioConstraint -> MediaStreamConstraints
+    abstract Create: video : VideoMediaTrackConstraints * audio : AudioMediaTrackConstraints -> MediaStreamConstraints
     [<Emit("new Object({ video: $1, audio: $2 })")>]
-    abstract Create: video : bool * audio : AudioConstraint -> MediaStreamConstraints
+    abstract Create: video : bool * audio : AudioMediaTrackConstraints -> MediaStreamConstraints
 
 type HTMLVideoElement' =
   inherit HTMLVideoElement
@@ -363,20 +418,3 @@ module MediaStreams =
     let [<Global>] MediaStreamConstraints: MediaStreamConstraints = jsNative
 
     let [<Global>] MediaStreamError : MediaStreamErrorType = jsNative
-
-[<RequireQualifiedAccess>]
-module VideoConstraints =
-    open Fable.Core.JsInterop
-    open Browser.Types
-
-    let Create (setter) =
-        jsOptions<VideoConstraints> setter
-
-[<RequireQualifiedAccess>]
-module AudioConstraint =
-    open Fable.Core.JsInterop
-    open Browser.Types
-
-    let Create (setter) =
-        jsOptions<VideoConstraints> setter
-
