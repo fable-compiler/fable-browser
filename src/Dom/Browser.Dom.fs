@@ -805,6 +805,12 @@ type [<AllowNullLiteral>] WindowBase64 =
     abstract atob: encodedString: string -> string
     abstract btoa: rawString: string -> string
 
+type [<AllowNullLiteral>] WindowURI =
+    abstract decodeURI: encodedURI: string -> string
+    abstract encodeURI: uri: string -> string
+    abstract decodeURIComponent: encodedUri: string -> string
+    abstract encodeURIComponent: str: string -> string
+
 type [<AllowNullLiteral>] Window =
     inherit EventTarget
     inherit WindowTimers
@@ -812,6 +818,7 @@ type [<AllowNullLiteral>] Window =
     inherit WindowLocalStorage
     inherit GlobalEventHandlers
     inherit WindowBase64
+    inherit WindowURI
     // TODO
     // abstract performance: Performance with get, set
     // abstract clientInformation: Navigator with get, set
