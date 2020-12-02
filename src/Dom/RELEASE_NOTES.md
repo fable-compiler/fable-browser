@@ -1,3 +1,7 @@
+### 2.2.0
+
+* Fix #52: Add decodeURI, encodeURI, decodeURIComponent, encodeURIComponent to a `window` @MNie
+
 ### 2.1.2
 
 * Fix #48: FSharp.Core dependency @forki
