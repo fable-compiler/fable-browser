@@ -46,9 +46,9 @@ type NavigatorUserMediaErrorCallback = MediaStreamError -> unit
 
 [<StringEnum; RequireQualifiedAccess>]
 type PermissionState =
-    | [<CompiledName("granted")>] Granted
-    | [<CompiledName("denied")>] Denied
-    | [<CompiledName("prompt")>] Prompt
+    | Granted
+    | Denied
+    | Prompt
 
 [<AllowNullLiteral>]
 type PermissionStatus =
@@ -56,28 +56,28 @@ type PermissionStatus =
     abstract status: PermissionState
     abstract onchange: (Event -> 'Out) with get, set
 
-[<StringEnum; RequireQualifiedAccess>]
+[<StringEnum(CaseRules.KebabCase); RequireQualifiedAccess>]
 type PermissionName =
-    | [<CompiledName("geolocation")>] Geolocation
-    | [<CompiledName("notifications")>] Notifications
-    | [<CompiledName("push")>] Push
-    | [<CompiledName("midi")>] Midi
-    | [<CompiledName("camera")>] Camera
-    | [<CompiledName("microphone")>] Microphone
-    | [<CompiledName("speaker-selection")>] SpeakerSelection
-    | [<CompiledName("device-info")>] DeviceInfo
-    | [<CompiledName("background-fetch")>] BackgroundFetch
-    | [<CompiledName("background-sync")>] BackgroundSync
-    | [<CompiledName("bluetooth")>] Bluetooth
-    | [<CompiledName("persistent-storage")>] PersistentStorage
-    | [<CompiledName("ambient-light-sensor")>] AmbientLightSensor
-    | [<CompiledName("accelerometer")>] Accelerometer
-    | [<CompiledName("gyroscope")>] Gyroscope
-    | [<CompiledName("magnetometer")>] Magnetometer
-    | [<CompiledName("clipboard-read")>] ClipboardRead
-    | [<CompiledName("clipboard-write")>] ClipboardWrite
-    | [<CompiledName("display-capture")>] DisplayCapture
-    | [<CompiledName("nfc")>] NFC
+    | Geolocation
+    | Notifications
+    | Push
+    | Midi
+    | Camera
+    | Microphone
+    | SpeakerSelection
+    | DeviceInfo
+    | BackgroundFetch
+    | BackgroundSync
+    | Bluetooth
+    | PersistentStorage
+    | AmbientLightSensor
+    | Accelerometer
+    | Gyroscope
+    | Magnetometer
+    | ClipboardRead
+    | ClipboardWrite
+    | DisplayCapture
+    | NFC
 
 type PermissionDescriptor = {
     name: PermissionName

@@ -1,6 +1,6 @@
 ### 1.2.0
 
-* Add Permissions API.
+* Add Permissions API. @MNie
 
 ### 1.1.0
 

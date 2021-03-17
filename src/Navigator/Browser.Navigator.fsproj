@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Fable.Browser.Navigator</PackageId>
-    <Version>1.1.0</Version>
-    <PackageVersion>1.1.0</PackageVersion>
+    <Version>1.2.0</Version>
+    <PackageVersion>1.2.0</PackageVersion>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
@@ -11,7 +11,7 @@
     <Compile Include="Browser.Navigator.fs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Fable.Core" Version="3.0.0" />
+    <PackageReference Include="Fable.Core" Version="3.1.5" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Geolocation\Browser.Geolocation.fsproj" />
