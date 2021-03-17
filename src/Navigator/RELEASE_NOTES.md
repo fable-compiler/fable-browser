@@ -1,3 +1,7 @@
+### 1.2.0
+
+* Add Permissions API.
+
 ### 1.1.0
 
 * Add Clipboard async API.

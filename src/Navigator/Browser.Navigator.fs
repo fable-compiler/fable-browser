@@ -27,7 +27,7 @@ type ShareData =
 type Clipboard =
     abstract writeText: string -> Promise<unit>
     abstract readText: unit -> Promise<string>
-    
+
 type NavigatorID =
     abstract appName: string
     abstract appVersion: string
@@ -43,6 +43,52 @@ type NavigatorOnLine =
 
 type NavigatorUserMediaSuccessCallback = MediaStream -> unit
 type NavigatorUserMediaErrorCallback = MediaStreamError -> unit
+
+[<StringEnum; RequireQualifiedAccess>]
+type PermissionState =
+    | [<CompiledName("granted")>] Granted
+    | [<CompiledName("denied")>] Denied
+    | [<CompiledName("prompt")>] Prompt
+
+[<AllowNullLiteral>]
+type PermissionStatus =
+    abstract state: PermissionState
+    abstract status: PermissionState
+    abstract onchange: (Event -> 'Out) with get, set
+
+[<StringEnum; RequireQualifiedAccess>]
+type PermissionName =
+    | [<CompiledName("geolocation")>] Geolocation
+    | [<CompiledName("notifications")>] Notifications
+    | [<CompiledName("push")>] Push
+    | [<CompiledName("midi")>] Midi
+    | [<CompiledName("camera")>] Camera
+    | [<CompiledName("microphone")>] Microphone
+    | [<CompiledName("speaker-selection")>] SpeakerSelection
+    | [<CompiledName("device-info")>] DeviceInfo
+    | [<CompiledName("background-fetch")>] BackgroundFetch
+    | [<CompiledName("background-sync")>] BackgroundSync
+    | [<CompiledName("bluetooth")>] Bluetooth
+    | [<CompiledName("persistent-storage")>] PersistentStorage
+    | [<CompiledName("ambient-light-sensor")>] AmbientLightSensor
+    | [<CompiledName("accelerometer")>] Accelerometer
+    | [<CompiledName("gyroscope")>] Gyroscope
+    | [<CompiledName("magnetometer")>] Magnetometer
+    | [<CompiledName("clipboard-read")>] ClipboardRead
+    | [<CompiledName("clipboard-write")>] ClipboardWrite
+    | [<CompiledName("display-capture")>] DisplayCapture
+    | [<CompiledName("nfc")>] NFC
+
+type PermissionDescriptor = {
+    name: PermissionName
+    userVisibleOnly: bool
+    sysex: bool
+}
+
+type Permissions =
+    abstract query: (PermissionDescriptor -> JS.Promise<PermissionStatus>)
+    // TODO, currently not supported in any browser: abstract request: unit -> unit
+    // TODO, currently not supported in any browser: abstract requestAll: unit -> unit
 
 type Navigator =
     inherit NavigatorID
@@ -65,7 +111,7 @@ type Navigator =
     abstract maxTouchPoints: int
     abstract mimeTypes: MimeType[] option
     abstract oscpu: string
-    // TODO: abstract permissions: Permissions
+    abstract permissions: Permissions
     // abstract platform: string // Not reliable
     abstract plugins: Plugin[] option
     abstract serviceWorker: ServiceWorkerContainer option
