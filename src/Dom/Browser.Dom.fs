@@ -1317,10 +1317,10 @@ type [<AllowNullLiteral>] HTMLElement =
     abstract onabort: (Event -> 'Out) with get, set
     abstract onactivate: (UIEvent -> 'Out) with get, set
     abstract onbeforeactivate: (UIEvent -> 'Out) with get, set
-    abstract onbeforecopy: (DragEvent -> 'Out) with get, set
-    abstract onbeforecut: (DragEvent -> 'Out) with get, set
+    abstract onbeforecopy: (ClipboardEvent -> 'Out) with get, set
+    abstract onbeforecut: (ClipboardEvent -> 'Out) with get, set
     abstract onbeforedeactivate: (UIEvent -> 'Out) with get, set
-    abstract onbeforepaste: (DragEvent -> 'Out) with get, set
+    abstract onbeforepaste: (ClipboardEvent -> 'Out) with get, set
     abstract onblur: (FocusEvent -> 'Out) with get, set
     abstract oncanplay: (Event -> 'Out) with get, set
     abstract oncanplaythrough: (Event -> 'Out) with get, set
