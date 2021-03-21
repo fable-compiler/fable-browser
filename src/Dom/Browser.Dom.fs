@@ -1327,9 +1327,9 @@ type [<AllowNullLiteral>] HTMLElement =
     abstract onchange: (Event -> 'Out) with get, set
     abstract onclick: (MouseEvent -> 'Out) with get, set
     abstract oncontextmenu: (PointerEvent -> 'Out) with get, set
-    abstract oncopy: (DragEvent -> 'Out) with get, set
+    abstract oncopy: (ClipboardEvent -> 'Out) with get, set
     abstract oncuechange: (Event -> 'Out) with get, set
-    abstract oncut: (DragEvent -> 'Out) with get, set
+    abstract oncut: (ClipboardEvent -> 'Out) with get, set
     abstract ondblclick: (MouseEvent -> 'Out) with get, set
     abstract ondeactivate: (UIEvent -> 'Out) with get, set
     abstract ondrag: (DragEvent -> 'Out) with get, set
@@ -1360,7 +1360,7 @@ type [<AllowNullLiteral>] HTMLElement =
     abstract onmouseover: (MouseEvent -> 'Out) with get, set
     abstract onmouseup: (MouseEvent -> 'Out) with get, set
     abstract onmousewheel: (MouseWheelEvent -> 'Out) with get, set
-    abstract onpaste: (DragEvent -> 'Out) with get, set
+    abstract onpaste: (ClipboardEvent -> 'Out) with get, set
     abstract onpause: (Event -> 'Out) with get, set
     abstract onplay: (Event -> 'Out) with get, set
     abstract onplaying: (Event -> 'Out) with get, set
