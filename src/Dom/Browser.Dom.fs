@@ -137,6 +137,10 @@ type [<AllowNullLiteral>] Document =
     abstract onclick: (MouseEvent -> 'Out) with get, set
     /// Fires when the user clicks the right mouse button in the client area, opening the context menu.
     abstract oncontextmenu: (PointerEvent -> 'Out) with get, set
+    /// Fires when the user has initiated a "copy" action through the browser's user interface.
+    abstract oncopy: (ClipboardEvent -> 'Out) with get, set
+    /// Fires when the user has initiated a "cut" action through the browser's user interface.
+    abstract oncut: (ClipboardEvent -> 'Out) with get, set
     /// Fires when the user double-clicks the object.
     abstract ondblclick: (MouseEvent -> 'Out) with get, set
     /// Fires when the activeElement is changed from the current object to another object in the parent document.
@@ -193,6 +197,8 @@ type [<AllowNullLiteral>] Document =
     abstract onmouseup: (MouseEvent -> 'Out) with get, set
     /// Fires when the wheel button is rotated.
     abstract onmousewheel: (MouseWheelEvent -> 'Out) with get, set
+    /// Fires when the user has initiated a "paste" action through the browser's user interface.
+    abstract onpaste: (ClipboardEvent -> 'Out) with get, set
     /// Occurs when playback is paused.
     abstract onpause: (Event -> 'Out) with get, set
     /// Occurs when the play method is requested.
