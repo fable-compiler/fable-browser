@@ -1323,19 +1323,19 @@ type [<AllowNullLiteral>] HTMLElement =
     abstract onabort: (Event -> 'Out) with get, set
     abstract onactivate: (UIEvent -> 'Out) with get, set
     abstract onbeforeactivate: (UIEvent -> 'Out) with get, set
-    abstract onbeforecopy: (DragEvent -> 'Out) with get, set
-    abstract onbeforecut: (DragEvent -> 'Out) with get, set
+    abstract onbeforecopy: (ClipboardEvent -> 'Out) with get, set
+    abstract onbeforecut: (ClipboardEvent -> 'Out) with get, set
     abstract onbeforedeactivate: (UIEvent -> 'Out) with get, set
-    abstract onbeforepaste: (DragEvent -> 'Out) with get, set
+    abstract onbeforepaste: (ClipboardEvent -> 'Out) with get, set
     abstract onblur: (FocusEvent -> 'Out) with get, set
     abstract oncanplay: (Event -> 'Out) with get, set
     abstract oncanplaythrough: (Event -> 'Out) with get, set
     abstract onchange: (Event -> 'Out) with get, set
     abstract onclick: (MouseEvent -> 'Out) with get, set
     abstract oncontextmenu: (PointerEvent -> 'Out) with get, set
-    abstract oncopy: (DragEvent -> 'Out) with get, set
+    abstract oncopy: (ClipboardEvent -> 'Out) with get, set
     abstract oncuechange: (Event -> 'Out) with get, set
-    abstract oncut: (DragEvent -> 'Out) with get, set
+    abstract oncut: (ClipboardEvent -> 'Out) with get, set
     abstract ondblclick: (MouseEvent -> 'Out) with get, set
     abstract ondeactivate: (UIEvent -> 'Out) with get, set
     abstract ondrag: (DragEvent -> 'Out) with get, set
@@ -1366,7 +1366,7 @@ type [<AllowNullLiteral>] HTMLElement =
     abstract onmouseover: (MouseEvent -> 'Out) with get, set
     abstract onmouseup: (MouseEvent -> 'Out) with get, set
     abstract onmousewheel: (MouseWheelEvent -> 'Out) with get, set
-    abstract onpaste: (DragEvent -> 'Out) with get, set
+    abstract onpaste: (ClipboardEvent -> 'Out) with get, set
     abstract onpause: (Event -> 'Out) with get, set
     abstract onplay: (Event -> 'Out) with get, set
     abstract onplaying: (Event -> 'Out) with get, set
