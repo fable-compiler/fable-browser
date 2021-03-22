@@ -1,3 +1,8 @@
+### 2.2.1
+
+* Fix #56: Clipboard API event handler argument types @kodfodrasz
+* Add event handler properties for clipboard events to Document @kodfodrasz
+
 ### 2.2.0
 
 * Fix #52: Add decodeURI, encodeURI, decodeURIComponent, encodeURIComponent to a `window` @MNie
