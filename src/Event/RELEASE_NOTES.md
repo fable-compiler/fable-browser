@@ -1,3 +1,7 @@
+### 1.3.0
+
+* Add GamepadEvent (by @rastreus)
+
 ### 1.2.1
 
 * Make explicit overloads for (add | remove)EventListener (by @Zaid-Ajaj)
