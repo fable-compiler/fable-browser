@@ -13,6 +13,6 @@ type Navigator with
     member __.webkitGetGamepads(): unit -> ResizeArray<float> = jsNative
 
 type Window with
-    member __.ongamepadconnected with get(): (GamepadEvent -> obj) = jsNative and set(v: GamepadEvent) = jsNative
-    member __.ongamepaddisconnected with get(): (GamepadEvent -> obj) = jsNative and set(v: GamepadEvent) = jsNative
+    member __.ongamepadconnected with get(): (GamepadEvent -> 'Out) = jsNative and set(v: GamepadEvent -> 'Out) = jsNative
+    member __.ongamepaddisconnected with get(): (GamepadEvent -> 'Out) = jsNative and set(v: GamepadEvent -> 'Out) = jsNative
     
