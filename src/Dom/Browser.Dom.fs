@@ -1551,6 +1551,8 @@ type [<AllowNullLiteral>] HTMLFrameElement =
     /// Sets or retrieves whether the user can resize the frame.
     abstract noResize: bool with get, set
     abstract onload: (Event -> 'Out) with get, set
+    abstract ongamepadconnected: (GamepadEvent -> 'Out) with get, set
+    abstract ongamepaddisconnected: (GamepadEvent -> 'Out) with get, set
     /// Sets or retrieves whether the frame can be scrolled.
     abstract scrolling: string with get, set
     abstract security: obj with get, set

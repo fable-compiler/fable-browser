@@ -17,6 +17,7 @@
     <ProjectReference Include="..\Geolocation\Browser.Geolocation.fsproj" />
     <ProjectReference Include="..\Worker\Browser.Worker.fsproj" />
     <ProjectReference Include="..\MediaStream\Browser.MediaStream.fsproj" />
+    <ProjectReference Include="..\Gamepad\Browser.Gamepad.fsproj" />
   </ItemGroup>
   <!-- This package doesn't contain actual code
        so we don't need to add the sources -->
