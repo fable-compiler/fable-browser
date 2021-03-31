@@ -1,3 +1,7 @@
+### 1.3.0
+
+* Add Gamepad API (by @rastreus)
+
 ### 1.2.0
 
 * Add Permissions API. @MNie

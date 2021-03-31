@@ -81,6 +81,16 @@ type [<AllowNullLiteral>] MessageEvent =
     // abstract ports: MessagePort[]
     abstract source: obj
 
+[<StringEnum>]
+type GamepadEventType =
+    | [<CompiledName("gamepadconnected")>] GamepadConnected
+    | [<CompiledName("gamepaddisconnected")>] GamepadDisconnected
+
+type [<AllowNullLiteral>] GamepadEvent =
+    inherit Event
+    [<Emit("new $0($1...)")>] abstract Create: typeArg: GamepadEventType * ?options: Gamepad
+    abstract gamepad: Gamepad
+
 namespace Browser
 
 open Fable.Core

@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Fable.Browser.Event</PackageId>
-    <Version>1.2.1</Version>
-    <PackageVersion>1.2.1</PackageVersion>
+    <Version>1.3.0</Version>
+    <PackageVersion>1.3.0</PackageVersion>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
@@ -13,9 +13,7 @@
   <ItemGroup>
     <PackageReference Include="Fable.Core" Version="3.0.0" />
   </ItemGroup>
-  <!-- This package doesn't contain actual code
-       so we don't need to add the sources -->
-  <!-- <ItemGroup>
-    <Content Include="*.fsproj; *.fs" PackagePath="fable\" />
-  </ItemGroup> -->
+  <ItemGroup>
+    <ProjectReference Include="..\Gamepad\Browser.Gamepad.fsproj" />
+  </ItemGroup>
 </Project>

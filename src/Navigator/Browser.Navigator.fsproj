@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Fable.Browser.Navigator</PackageId>
-    <Version>1.2.0</Version>
-    <PackageVersion>1.2.0</PackageVersion>
+    <Version>1.3.0</Version>
+    <PackageVersion>1.3.0</PackageVersion>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
@@ -17,6 +17,7 @@
     <ProjectReference Include="..\Geolocation\Browser.Geolocation.fsproj" />
     <ProjectReference Include="..\Worker\Browser.Worker.fsproj" />
     <ProjectReference Include="..\MediaStream\Browser.MediaStream.fsproj" />
+    <ProjectReference Include="..\Gamepad\Browser.Gamepad.fsproj" />
   </ItemGroup>
   <!-- This package doesn't contain actual code
        so we don't need to add the sources -->

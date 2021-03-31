@@ -1,3 +1,7 @@
+### 2.3.0
+
+* Add event handler properties for gamepad events to Window (by @rastreus)
+
 ### 2.2.1
 
 * Fix #56: Clipboard API event handler argument types @kodfodrasz
