@@ -12,7 +12,7 @@
     <Compile Include="Browser.File.fs" />
     <Compile Include="Browser.History.fs" />
     <Compile Include="Browser.Dom.fs" />
-    <Compile Include="Browser.Dom.Ext.fs" />    
+    <Compile Include="Browser.Dom.Ext.fs" />
     <Compile Include="Browser.Dom.Api.fs" />
   </ItemGroup>
   <ItemGroup>

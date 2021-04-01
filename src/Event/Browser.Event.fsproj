@@ -16,4 +16,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Gamepad\Browser.Gamepad.fsproj" />
   </ItemGroup>
+  <!-- This package doesn't contain actual code
+       so we don't need to add the sources -->
+  <!-- <ItemGroup>
+    <Content Include="*.fsproj; *.fs" PackagePath="fable\" />
+  </ItemGroup> -->
 </Project>

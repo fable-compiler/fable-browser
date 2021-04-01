@@ -7,6 +7,7 @@ open PublishUtils
 // ATTENTION: Packages must appear in dependency order
 let packages =
     [ "Blob"
+      "Gamepad"
       "Event"
       "Performance"
       "Url"
