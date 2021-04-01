@@ -919,6 +919,8 @@ type [<AllowNullLiteral>] Window =
     abstract onsubmit: (Event -> 'Out) with get, set
     abstract onsuspend: (Event -> 'Out) with get, set
     abstract ontimeupdate: (Event -> 'Out) with get, set
+    abstract ongamepadconnected: (GamepadEvent -> 'Out) with get, set
+    abstract ongamepaddisconnected: (GamepadEvent -> 'Out) with get, set
     abstract ontouchcancel: obj with get, set
     abstract ontouchend: obj with get, set
     abstract ontouchmove: obj with get, set

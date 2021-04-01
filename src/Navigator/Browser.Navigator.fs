@@ -118,6 +118,8 @@ type Navigator =
     // TODO: abstract storage: StorageManager
     abstract userAgent: string
     abstract webdriver: bool
+    abstract getGamepads: unit -> ResizeArray<Gamepad option>
+    abstract webkitGetGamepads: unit -> ResizeArray<float>
 
 // ## Methods
 
