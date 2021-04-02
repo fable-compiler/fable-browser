@@ -22,6 +22,30 @@ Fable bindings for [Browser Web APIs](https://developer.mozilla.org/docs/Web/API
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.MediaQueryList.svg)](https://www.nuget.org/packages/Fable.Browser.MediaQueryList)|[Fable.Browser.MediaQueryList](src/MediaQueryList)|Bindings for the browser MediaQueryList API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.WebGL.svg)](https://www.nuget.org/packages/Fable.Browser.WebGL)|[Fable.Browser.WebGL](src/WebGL)|Bindings for the browser WebGL API|
 
+## Usage
+
+After installing one of the Nuget packages you can access the API. For that, you only need to open the `Browser` namespace.
+
+```fsharp
+open Browser
+
+let fooEl = document.getElementById("foo")
+```
+
+Note the API values are actually contained in an `[<AutoOpen>]` module, so if you need to fully qualify the value to avoid name conflicts, use the full module name (same as the Nuget package without `Fable.` prefix):
+
+```fsharp
+let fooEl = Browser.Dom.document.getElementById("foo")
+```
+
+If you need to reference one of the types in the package, open the `Browser.Types` namespace:
+
+```fsharp
+open Browser.Types
+
+let handleClick (ev: MouseEvent) = printfn "click!"
+```
+
 ## Publishing
 
 If you have rights to publish the packages, the only thing you need to do is to bump the version in the appropriate RELEASE_NOTES file and then run `npm run build Publish`. The build script will automatically detect what packages have new versions, update the .fsproj file and push a release. Just make sure:
