@@ -6,7 +6,6 @@
     <PackageVersion>1.1.1</PackageVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Browser.MediaQueryList.fs" />
