@@ -4,8 +4,9 @@
     <PackageId>Fable.Browser.WebSocket</PackageId>
     <Version>1.0.1</Version>
     <PackageVersion>1.0.1</PackageVersion>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Browser.WebSocket.fs" />
