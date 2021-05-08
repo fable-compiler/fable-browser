@@ -1,0 +1,9 @@
+<Project>
+    <!-- NuGet Metadata -->
+    <PropertyGroup>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)\LICENSE.txt" Visible="false" Pack="true" PackagePath="$(PackageLicenseFile)" />
+    </ItemGroup>
+</Project>
