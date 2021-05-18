@@ -422,6 +422,15 @@ type [<AllowNullLiteral>] DOMTokenList =
 type [<AllowNullLiteral>] DOMTokenListType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> DOMTokenList
 
+type [<StringEnum>] ScrollBehaviour =
+    | Auto
+    | Smooth
+
+type ScrollToOptions =
+    {| top : float
+       left : float
+       behavior: ScrollBehaviour |}
+
 type [<AllowNullLiteral>] Element =
     inherit Node
     inherit GlobalEventHandlers
@@ -480,6 +489,9 @@ type [<AllowNullLiteral>] Element =
     abstract setPointerCapture: pointerId: float -> unit
     abstract getElementsByClassName: classNames: string -> NodeListOf<Element>
     abstract matches: selector: string -> bool
+    abstract scroll : ScrollToOptions -> unit
+    abstract scrollBy : ScrollToOptions -> unit
+    abstract scrollTo : ScrollToOptions -> unit
 
 type [<AllowNullLiteral>] ElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> Element
@@ -972,6 +984,9 @@ type [<AllowNullLiteral>] Window =
     abstract scroll: ?x: float * ?y: float -> unit
     abstract scrollBy: ?x: float * ?y: float -> unit
     abstract scrollTo: ?x: float * ?y: float -> unit
+    abstract scroll : ScrollToOptions -> unit
+    abstract scrollBy : ScrollToOptions -> unit
+    abstract scrollTo : ScrollToOptions -> unit
 
 type [<AllowNullLiteral>] AbstractWorker =
     abstract onerror: (Event -> 'Out) with get, set
