@@ -422,15 +422,6 @@ type [<AllowNullLiteral>] DOMTokenList =
 type [<AllowNullLiteral>] DOMTokenListType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> DOMTokenList
 
-type [<StringEnum>] ScrollBehaviour =
-    | Auto
-    | Smooth
-
-type ScrollToOptions =
-    {| top : float
-       left : float
-       behavior: ScrollBehaviour |}
-
 type [<AllowNullLiteral>] Element =
     inherit Node
     inherit GlobalEventHandlers
@@ -489,6 +480,9 @@ type [<AllowNullLiteral>] Element =
     abstract setPointerCapture: pointerId: float -> unit
     abstract getElementsByClassName: classNames: string -> NodeListOf<Element>
     abstract matches: selector: string -> bool
+    abstract scroll: ?x: float * ?y: float -> unit
+    abstract scrollBy: ?x: float * ?y: float -> unit
+    abstract scrollTo: ?x: float * ?y: float -> unit
     abstract scroll : ScrollToOptions -> unit
     abstract scrollBy : ScrollToOptions -> unit
     abstract scrollTo : ScrollToOptions -> unit
@@ -1418,12 +1412,12 @@ type [<AllowNullLiteral>] HTMLElement =
     abstract setActive: unit -> unit
 
 [<StringEnum; RequireQualifiedAccess>]
-type ScrollIntoViewOptionsBehavior =
+type ScrollBehavior =
     | Auto
     | Smooth
 
 [<StringEnum; RequireQualifiedAccess>]
-type ScrollIntoViewOptionsAlignment =
+type ScrollAlignment =
     | Start
     | Center
     | End
@@ -1432,13 +1426,18 @@ type ScrollIntoViewOptionsAlignment =
 type ScrollIntoViewOptions =
     /// Defines the transition animation.
     /// One of "auto" or "smooth". Defaults to "auto".
-    abstract behavior : ScrollIntoViewOptionsBehavior with get, set
+    abstract behavior : ScrollBehavior with get, set
     /// Defines vertical alignment.
     /// One of "start", "center", "end", or "nearest". Defaults to "start".
-    abstract block : ScrollIntoViewOptionsAlignment with get, set
+    abstract block : ScrollAlignment with get, set
     /// Defines horizontal alignment.
     /// One of "start", "center", "end", or "nearest". Defaults to "nearest".
-    abstract ``inline`` : ScrollIntoViewOptionsAlignment with get, set
+    abstract ``inline`` : ScrollAlignment with get, set
+
+type ScrollToOptions =
+    {| top : float
+       left : float
+       behavior: ScrollBehavior |}
 
 type [<AllowNullLiteral>] HTMLElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLElement

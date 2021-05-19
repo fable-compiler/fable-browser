@@ -1,3 +1,7 @@
+### 2.4.0
+
+* Add ScrollToOptions support @saboco
+
 ### 2.3.0
 
 * Add event handler properties for gamepad events to Window (by @rastreus)
