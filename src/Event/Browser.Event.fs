@@ -53,16 +53,16 @@ type [<AllowNullLiteral>] EventTarget =
 type [<AllowNullLiteral>] EventTargetType =
     [<Emit("new $0($1...)")>] abstract Create: ``type``: string * ?eventInitDict: EventInit -> Event
 
-type [<AllowNullLiteral>] CustomEvent =
+type [<AllowNullLiteral>] CustomEvent<'T> =
     inherit Event
-    abstract detail: obj
+    abstract detail: 'T option
 
-type [<AllowNullLiteral>] CustomEventInit =
+type [<AllowNullLiteral>] CustomEventInit<'T> =
     inherit EventInit
-    abstract detail: obj with get, set
+    abstract detail: 'T option with get, set
 
-type [<AllowNullLiteral>] CustomEventType =
-    [<Emit("new $0($1...)")>] abstract Create: typeArg: string * ?eventInitDict: CustomEventInit -> CustomEvent
+type [<AllowNullLiteral>] CustomEventType<'T> =
+    [<Emit("new $0($1...)")>] abstract Create<'T> : typeArg: string * ?eventInitDict: CustomEventInit<'T> -> CustomEvent<'T>
 
 type [<AllowNullLiteral>] ErrorEvent =
     inherit Event
@@ -100,4 +100,4 @@ open Browser.Types
 module Event =
     let [<Global>] Event: EventType = jsNative
     let [<Global>] EventTarget: EventTargetType = jsNative
-    let [<Global>] CustomEvent: CustomEventType = jsNative
+    let [<Global>] CustomEvent<'T> : CustomEventType<'T> = jsNative
