@@ -1,11 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "build": "fable build.fsx --run"
+    "build": "dotnet fsi build.fsx"
   },
   "dependencies": {
-    "fable-compiler-js": "^1.3.1",
-    "fable-metadata": "^1.4.0",
-    "fable-publish-utils": "^1.2.1"
+    "fable-publish-utils": "^2.1.0"
   }
 }

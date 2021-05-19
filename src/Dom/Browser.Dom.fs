@@ -317,7 +317,6 @@ type [<AllowNullLiteral>] Document =
     abstract focus: unit -> unit
     /// <summary>Returns a reference to the first object with the specified value of the ID or NAME attribute.</summary>
     /// <param name="elementId">String that specifies the ID value. Case-insensitive.</param>
-    /// <param name="elementId">String that specifies the ID value. Case-insensitive.</param>
     abstract getElementById: elementId: string -> HTMLElement
     abstract getElementsByClassName: classNames: string -> NodeListOf<Element>
     /// <summary>Gets a collection of objects based on the value of the NAME or ID attribute.</summary>
@@ -1251,7 +1250,8 @@ type [<AllowNullLiteral>] HTMLCanvasElement =
     abstract getContext: contextId: string * ?contextAttributes: obj -> obj
     /// <summary>Returns the content of the current canvas as an image that you can use as a source for another canvas or an HTML element.</summary>
     /// <param name="type">The standard MIME type for the image format to return. If you do not specify this parameter, the default value is a PNG format image.</param>
-    abstract toDataURL: ?``type``: string * [<ParamArray>] args: obj[] -> string
+    /// <param name="encoderOptions">A Number between 0 and 1 indicating the image quality to use for image formats that use lossy compression such as image/jpeg and image/webp. The default value is 0.92.</param>
+    abstract toDataURL: ?``type``: string * ?encoderOptions: float -> string
     /// Returns a blob object encoded as a Portable Network Graphics (PNG) format from a canvas image or drawing.
     abstract toBlob : (Blob -> unit) * ?mimeType:string * ?quality: float -> unit
 
