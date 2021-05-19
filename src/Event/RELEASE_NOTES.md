@@ -1,3 +1,7 @@
+### 1.4.0
+
+* Make CustomEvent generic @AngelMunoz
+
 ### 1.3.0
 
 * Add GamepadEvent (by @rastreus)
