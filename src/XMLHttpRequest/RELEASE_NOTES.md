@@ -1,3 +1,7 @@
+### 1.1.3
+
+* Add licence to Nuget package @nojaf
+
 ### 1.1.2
 
 * Upgrade to Fable.Browser.Dom 1.2.1 to force usage of the new overloads of addListener|removeListener
