@@ -1,3 +1,7 @@
+### 2.4.2
+
+* Release a new version because one of the dependencies had the licence information missing
+
 ### 2.4.1
 
 * Add licence to Nuget package @nojaf
