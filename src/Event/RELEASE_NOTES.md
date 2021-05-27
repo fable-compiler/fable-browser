@@ -1,3 +1,7 @@
+### 1.4.1
+
+* Add licence to Nuget package @nojaf
+
 ### 1.4.0
 
 * Make CustomEvent generic @AngelMunoz

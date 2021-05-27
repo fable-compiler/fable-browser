@@ -336,3 +336,4 @@ ASALocalRun/
 .mfractor/
 src/.DS_Store
 .DS_Store
+temp/

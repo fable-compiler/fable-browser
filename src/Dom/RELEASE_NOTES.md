@@ -1,3 +1,7 @@
+### 2.4.1
+
+* Add licence to Nuget package @nojaf
+
 ### 2.4.0
 
 * Add ScrollToOptions support @saboco

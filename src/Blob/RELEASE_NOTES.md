@@ -1,3 +1,7 @@
+### 1.1.1
+
+* Add licence to Nuget package @nojaf
+
 ### 1.1.0
 
 * Add `FormData`
