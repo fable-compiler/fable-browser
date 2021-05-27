@@ -1,3 +1,11 @@
+### 1.3.4
+
+* Downgrade FSharp.Core to 4.7.2
+
+### 1.3.3
+
+* Downgrade FSharp.Core to 4.7.2
+
 ### 1.3.2
 
 * Upgrade to Fable.Browser.Gamepad 1.0.1 to use the version with the licence information in it

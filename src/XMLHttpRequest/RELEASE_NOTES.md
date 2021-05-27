@@ -1,3 +1,11 @@
+### 1.1.6
+
+* Downgrade FSharp.Core to 4.7.2
+
+### 1.1.5
+
+* Downgrade FSharp.Core to 4.7.2
+
 ### 1.1.4
 
 * Release a new version because one of the dependencies had the licence information missing
