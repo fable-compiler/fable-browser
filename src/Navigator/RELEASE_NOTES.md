@@ -1,3 +1,7 @@
+### 2.0.0
+
+* Fix #67: Make `PermissionDescriptor` use interface instead of a record. This is a pure binding so we don't include source files for now
+
 ### 1.3.4
 
 * Downgrade FSharp.Core to 4.7.2

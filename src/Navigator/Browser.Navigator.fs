@@ -79,11 +79,11 @@ type PermissionName =
     | DisplayCapture
     | NFC
 
-type PermissionDescriptor = {
-    name: PermissionName
-    userVisibleOnly: bool
-    sysex: bool
-}
+[<AllowNullLiteral>]
+type PermissionDescriptor =
+    abstract name: PermissionName
+    abstract userVisibleOnly: bool
+    abstract sysex: bool
 
 type Permissions =
     abstract query: (PermissionDescriptor -> JS.Promise<PermissionStatus>)
