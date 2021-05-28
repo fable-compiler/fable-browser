@@ -1,6 +1,6 @@
 ### 2.1.0
 
-* Fix #67: Make all fields in `PermissionDescriptor` "settable".
+* Fix #67: Make all fields in `PermissionDescriptor` "settable" (by @MNie)
 
 ### 2.0.0
 
