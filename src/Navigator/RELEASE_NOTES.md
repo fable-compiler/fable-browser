@@ -1,3 +1,7 @@
+### 2.1.0
+
+* Fix #67: Make all fields in `PermissionDescriptor` "settable".
+
 ### 2.0.0
 
 * Fix #67: Make `PermissionDescriptor` use interface instead of a record. This is a pure binding so we don't include source files for now

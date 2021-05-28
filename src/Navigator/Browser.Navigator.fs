@@ -81,9 +81,9 @@ type PermissionName =
 
 [<AllowNullLiteral>]
 type PermissionDescriptor =
-    abstract name: PermissionName
-    abstract userVisibleOnly: bool
-    abstract sysex: bool
+    abstract name: PermissionName with get, set
+    abstract userVisibleOnly: bool with get, set
+    abstract sysex: bool with get, set
 
 type Permissions =
     abstract query: (PermissionDescriptor -> JS.Promise<PermissionStatus>)
