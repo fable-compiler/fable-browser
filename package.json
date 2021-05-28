@@ -4,6 +4,6 @@
     "publish": "dotnet fsi build.fsx Publish"
   },
   "dependencies": {
-    "fable-publish-utils": "^2.1.0"
+    "fable-publish-utils": "^2.2.0"
   }
 }
