@@ -62,7 +62,7 @@ type [<AllowNullLiteral>] CustomEventInit<'T> =
     abstract detail: 'T option with get, set
 
 type [<AllowNullLiteral>] CustomEventType<'T> =
-    [<Emit("new $0($1...)")>] abstract Create<'T> : typeArg: string * ?eventInitDict: CustomEventInit<'T> -> CustomEvent<'T>
+    [<Emit("new CustomEvent($1...)")>] abstract Create<'T> : typeArg: string * ?eventInitDict: CustomEventInit<'T> -> CustomEvent<'T>
 
 type [<AllowNullLiteral>] ErrorEvent =
     inherit Event
