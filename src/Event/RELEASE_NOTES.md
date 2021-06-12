@@ -1,3 +1,8 @@
+### 1.4.5
+
+* Fix Fable #2463 @forki
+* Add back non-generic CustomEvent
+
 ### 1.4.4
 
 * Downgrade FSharp.Core to 4.7.2
