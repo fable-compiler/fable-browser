@@ -50,5 +50,5 @@ let handleClick (ev: MouseEvent) = printfn "click!"
 
 If you have rights to publish the packages, the only thing you need to do is to bump the version in the appropriate RELEASE_NOTES file and then run `npm run publish`. The build script will automatically detect what packages have new versions, update the .fsproj file and push a release. Just make sure:
 
-- Your Nuget API key is in a NUGET_KEY environmental variable
+- Your Nuget API key is in a FABLE_NUGET_KEY environmental variable
 - The packages you want to publish are listed in the `packages` list of the Build.fsx script

@@ -1,3 +1,7 @@
+### 3.1.0
+
+* Fix #70: Wrong type for MediaStreamConstraints in Browser.MediaStream (by @Nhowka)
+
 ### 3.0.4
 
 * Downgrade FSharp.Core to 4.7.2
