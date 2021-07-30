@@ -415,6 +415,6 @@ module MediaStreams =
 
     let [<Global>] MediaStream: MediaStreamType = jsNative
 
-    let [<Global>] MediaStreamConstraints: MediaStreamConstraints = jsNative
+    let [<Global>] MediaStreamConstraints: MediaStreamConstraintsType = jsNative
 
     let [<Global>] MediaStreamError : MediaStreamErrorType = jsNative
