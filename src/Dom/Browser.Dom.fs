@@ -1311,8 +1311,6 @@ type [<AllowNullLiteral>] HTMLDocumentType =
 
 type [<AllowNullLiteral>] HTMLElement =
     inherit Element
-    // TODO
-    // abstract style: CSSStyleDeclaration with get, set
     abstract accessKey: string with get, set
     abstract children: HTMLCollection with get, set
     abstract contentEditable: string with get, set
