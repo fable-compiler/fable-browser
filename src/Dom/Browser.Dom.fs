@@ -485,6 +485,41 @@ type [<AllowNullLiteral>] Element =
     abstract scroll : ScrollToOptions -> unit
     abstract scrollBy : ScrollToOptions -> unit
     abstract scrollTo : ScrollToOptions -> unit
+    /// Returns the open shadow root that is hosted by the element, or null if no open shadow root is present.
+    abstract shadowRoot: ShadowRoot with get
+    /// Attaches a shadow DOM tree to the specified element and returns a reference to its ShadowRoot.
+    abstract attachShadow: ShadowRootInit -> ShadowRoot
+
+type [<AllowNullLiteral>] ShadowRootInit =
+    /// A string specifying the encapsulation mode for the shadow DOM tree. This can be one of: 'open' or 'closed'
+    /// a closed shadow root will deny access to the node(s) from JavaScript outside
+    abstract mode: string with get, set
+    /// A boolean that, when set to true, specifies behavior that mitigates custom element issues around focusability.
+    /// When a non-focusable part of the shadow DOM is clicked, the first focusable part is given focus,
+    /// and the shadow host is given any available :focus styling.
+    abstract delegatesFocus: bool with get, set
+
+/// The ShadowRoot interface of the Shadow DOM API is the root node of a DOM subtree
+/// that is rendered separately from a document's main DOM tree.
+/// You can retrieve a reference to an element's shadow root using its Element.shadowRoot property,
+/// provided it was created using Element.attachShadow() with the mode option set to open.
+type [<AllowNullLiteral>] ShadowRoot =
+    inherit DocumentFragment
+    inherit Element
+    /// Returns the Element within the shadow tree that has focus.
+    abstract activeElement: Element with get
+    /// The element that's currently in full screen mode for this shadow tree.
+    abstract fullscreenElement: Element with get
+    /// Returns a reference to the DOM element the ShadowRoot is attached to.
+    abstract host: Element with get
+    /// The mode of the ShadowRoot — either open or closed.
+    /// This defines whether or not the shadow root's internal features are accessible from JavaScript.
+    abstract mode: string with get
+    /// Returns the Element within the shadow tree that is currently being presented in picture-in-picture mode.
+    abstract pictureInPictureElement: Element with get
+    /// Returns the Element set as the target for mouse events while the pointer is locked.
+    /// null if lock is pending, pointer is unlocked, or if the target is in another tree.
+    abstract pointerLockElement: Element with get
 
 type [<AllowNullLiteral>] ElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> Element
