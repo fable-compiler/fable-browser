@@ -524,6 +524,21 @@ type [<AllowNullLiteral>] CSSStyleSheet =
     abstract insertRule: rule: string * ?index: float -> float
     abstract removeImport: lIndex: float -> unit
     abstract removeRule: lIndex: float -> unit
+    /// <summary>
+    /// replaces the content of the stylesheet with the content passed into it.
+    /// The method returns a promise that resolves with a CSSStyleSheet object.
+    /// </summary>
+    /// <remarks>
+    /// The replaceSync() and CSSStyleSheet.replace() methods can only be used on a stylesheet created with the CSSStyleSheet() constructor.
+    /// </remarks>
+    abstract replace: string -> JS.Promise<CSSStyleSheet>
+    /// <summary>
+    /// synchronously replaces the content of the stylesheet with the content passed into it.
+    /// </summary>
+    /// <remarks>
+    /// The replaceSync() and CSSStyleSheet.replace() methods can only be used on a stylesheet created with the CSSStyleSheet() constructor.
+    /// </remarks>
+    abstract replaceSync: string -> CSSStyleSheet
 
 type CSSStyleSheetType =
     abstract prototype: CSSStyleSheet with get, set
