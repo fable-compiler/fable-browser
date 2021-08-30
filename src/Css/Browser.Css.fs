@@ -538,7 +538,7 @@ type [<AllowNullLiteral>] CSSStyleSheet =
     /// <remarks>
     /// The replaceSync() and CSSStyleSheet.replace() methods can only be used on a stylesheet created with the CSSStyleSheet() constructor.
     /// </remarks>
-    abstract replaceSync: string -> CSSStyleSheet
+    abstract replaceSync: string -> unit
 
 type CSSStyleSheetType =
     abstract prototype: CSSStyleSheet with get, set
