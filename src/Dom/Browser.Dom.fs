@@ -482,18 +482,28 @@ type [<AllowNullLiteral>] Element =
     abstract scroll: ?x: float * ?y: float -> unit
     abstract scrollBy: ?x: float * ?y: float -> unit
     abstract scrollTo: ?x: float * ?y: float -> unit
-    abstract scroll : ScrollToOptions -> unit
-    abstract scrollBy : ScrollToOptions -> unit
-    abstract scrollTo : ScrollToOptions -> unit
+    [<Emit("$0.scroll({ top: $1, left: $2, behavior: $3 })")>]
+    abstract scroll: top: float * left: float * behavior: ScrollBehavior -> unit
+    [<Emit("$0.scrollBy({ top: $1, left: $2, behavior: $3 })")>]
+    abstract scrollBy: top: float * left: float * behavior: ScrollBehavior -> unit
+    [<Emit("$0.scrollTo({ top: $1, left: $2, behavior: $3 })")>]
+    abstract scrollTo: top: float * left: float * behavior: ScrollBehavior -> unit
     /// Returns the open shadow root that is hosted by the element, or null if no open shadow root is present.
-    abstract shadowRoot: ShadowRoot with get
+    abstract shadowRoot: ShadowRoot
     /// Attaches a shadow DOM tree to the specified element and returns a reference to its ShadowRoot.
     abstract attachShadow: ShadowRootInit -> ShadowRoot
+
+[<StringEnum; RequireQualifiedAccess>]
+type EncapsulationMode =
+    /// Elements of the shadow root are accessible from JavaScript outside the root
+    | Open
+    /// Denies access to the node(s) of a closed shadow root from JavaScript outside it
+    | Closed
 
 type [<AllowNullLiteral>] ShadowRootInit =
     /// A string specifying the encapsulation mode for the shadow DOM tree. This can be one of: 'open' or 'closed'
     /// a closed shadow root will deny access to the node(s) from JavaScript outside
-    abstract mode: string with get, set
+    abstract mode: EncapsulationMode with get, set
     /// A boolean that, when set to true, specifies behavior that mitigates custom element issues around focusability.
     /// When a non-focusable part of the shadow DOM is clicked, the first focusable part is given focus,
     /// and the shadow host is given any available :focus styling.
@@ -507,19 +517,19 @@ type [<AllowNullLiteral>] ShadowRoot =
     inherit DocumentFragment
     inherit Element
     /// Returns the Element within the shadow tree that has focus.
-    abstract activeElement: Element with get
+    abstract activeElement: Element
     /// The element that's currently in full screen mode for this shadow tree.
-    abstract fullscreenElement: Element with get
+    abstract fullscreenElement: Element
     /// Returns a reference to the DOM element the ShadowRoot is attached to.
-    abstract host: Element with get
+    abstract host: Element
     /// The mode of the ShadowRoot — either open or closed.
     /// This defines whether or not the shadow root's internal features are accessible from JavaScript.
-    abstract mode: string with get
+    abstract mode: EncapsulationMode
     /// Returns the Element within the shadow tree that is currently being presented in picture-in-picture mode.
-    abstract pictureInPictureElement: Element with get
+    abstract pictureInPictureElement: Element
     /// Returns the Element set as the target for mouse events while the pointer is locked.
     /// null if lock is pending, pointer is unlocked, or if the target is in another tree.
-    abstract pointerLockElement: Element with get
+    abstract pointerLockElement: Element
 
 type [<AllowNullLiteral>] ElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> Element
@@ -1012,13 +1022,15 @@ type [<AllowNullLiteral>] Window =
     abstract scroll: ?x: float * ?y: float -> unit
     abstract scrollBy: ?x: float * ?y: float -> unit
     abstract scrollTo: ?x: float * ?y: float -> unit
-    abstract scroll : ScrollToOptions -> unit
-    abstract scrollBy : ScrollToOptions -> unit
-    abstract scrollTo : ScrollToOptions -> unit
+    [<Emit("$0.scroll({ top: $1, left: $2, behavior: $3 })")>]
+    abstract scroll: top: float * left: float * behavior: ScrollBehavior -> unit
+    [<Emit("$0.scrollBy({ top: $1, left: $2, behavior: $3 })")>]
+    abstract scrollBy: top: float * left: float * behavior: ScrollBehavior -> unit
+    [<Emit("$0.scrollTo({ top: $1, left: $2, behavior: $3 })")>]
+    abstract scrollTo: top: float * left: float * behavior: ScrollBehavior -> unit
 
 type [<AllowNullLiteral>] AbstractWorker =
     abstract onerror: (Event -> 'Out) with get, set
-
 
 type [<AllowNullLiteral>] Worker =
     inherit EventTarget
@@ -1466,11 +1478,6 @@ type ScrollIntoViewOptions =
     /// Defines horizontal alignment.
     /// One of "start", "center", "end", or "nearest". Defaults to "nearest".
     abstract ``inline`` : ScrollAlignment with get, set
-
-type ScrollToOptions =
-    {| top : float
-       left : float
-       behavior: ScrollBehavior |}
 
 type [<AllowNullLiteral>] HTMLElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLElement
@@ -2894,20 +2901,20 @@ type [<AllowNullLiteral>] DataTransfer =
     abstract dropEffect: string with get, set
     abstract effectAllowed: string with get, set
     abstract files: FileList with get, set
-    abstract items: DataTransferItemList with get
-    abstract types: DOMStringList with get
+    abstract items: DataTransferItemList
+    abstract types: DOMStringList
     abstract clearData: ?format: string -> bool
     abstract getData: format: string -> string
     abstract setData: format: string * data: string -> bool
 
 type [<AllowNullLiteral>] DataTransferItem =
-    abstract kind: string with get
-    abstract ``type``: string with get
+    abstract kind: string
+    abstract ``type``: string
     abstract getAsFile: unit -> File
     abstract getAsString: _callback: (string -> unit) -> unit
 
 type [<AllowNullLiteral>] DataTransferItemList =
-    abstract length: int with get
+    abstract length: int
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> DataTransferItem
     abstract add: data: File -> DataTransferItem
     abstract clear: unit -> unit

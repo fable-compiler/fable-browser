@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Fable.Browser.Dom</PackageId>
-    <Version>2.4.4</Version>
-    <PackageVersion>2.4.4</PackageVersion>
+    <Version>2.5.0</Version>
+    <PackageVersion>2.5.0-beta-001</PackageVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>

@@ -1,3 +1,7 @@
+### 2.1.0-beta-001
+
+* Add shadow root types @AngelMunoz
+
 ### 2.0.4
 
 * Downgrade FSharp.Core to 4.7.2

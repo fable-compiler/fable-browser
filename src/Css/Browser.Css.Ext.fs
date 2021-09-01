@@ -14,19 +14,16 @@ type Element with
     [<Emit("$0.adoptedStyleSheets{{=$1}}")>]
     member __.adoptedStyleSheets with get(): CSSStyleSheet array = jsNative and set(v: CSSStyleSheet array) = jsNative
 
-type Document with 
-    /// returns this DocumentOrShadow adopted stylesheets or sets them.
-    /// https://wicg.github.io/construct-stylesheets/#using-constructed-stylesheets
-    [<Emit("$0.adoptedStyleSheets{{=$1}}")>]
-    member __.adoptedStyleSheets with get(): CSSStyleSheet array = jsNative and set(v: CSSStyleSheet array) = jsNative
-
 type ShadowRoot with
     /// Returns a StyleSheetList of CSSStyleSheet objects for stylesheets explicitly linked into, or embedded in a shadow tree.
     [<Emit("$0.styleSheets")>]
     member __.styleSheets: StyleSheetList = jsNative
 
-
 type Document with
+    /// returns this DocumentOrShadowRoot adopted stylesheets or sets them.
+    /// https://wicg.github.io/construct-stylesheets/#using-constructed-stylesheets
+    [<Emit("$0.adoptedStyleSheets{{=$1}}")>]
+    member __.adoptedStyleSheets with get(): CSSStyleSheet array = jsNative and set(v: CSSStyleSheet array) = jsNative
     /// Retrieves a collection of styleSheet objects representing the style sheets that correspond to each instance of a link or style object in the document.
     [<Emit("$0.styleSheets{{=$1}}")>]
     member __.styleSheets with get(): StyleSheetList = jsNative and set(v: StyleSheetList) = jsNative
