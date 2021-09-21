@@ -1,4 +1,4 @@
-### 2.5.0-beta-001
+### 2.5.0
 
 * Add shadow root types @AngelMunoz
 
