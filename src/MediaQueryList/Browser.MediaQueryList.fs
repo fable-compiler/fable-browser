@@ -7,7 +7,7 @@ type [<AllowNullLiteral>] MediaQueryList =
     inherit EventTarget
     abstract matches: bool with get, set
     abstract media: string with get, set
-    abstract onchange: (Event -> 'Out) with get, set
+    abstract onchange: (Event -> obj) with get, set
 
 type [<AllowNullLiteral>] MediaQueryListType =
     abstract prototype: MediaQueryList with get, set

@@ -216,16 +216,16 @@ type [<AllowNullLiteral>] SVGDescElementType =
 type [<AllowNullLiteral>] SVGElement =
     inherit Element
     abstract id: string with get, set
-    abstract onclick: (MouseEvent -> 'Out) with get, set
-    abstract ondblclick: (MouseEvent -> 'Out) with get, set
-    abstract onfocusin: (FocusEvent -> 'Out) with get, set
-    abstract onfocusout: (FocusEvent -> 'Out) with get, set
-    abstract onload: (Event -> 'Out) with get, set
-    abstract onmousedown: (MouseEvent -> 'Out) with get, set
-    abstract onmousemove: (MouseEvent -> 'Out) with get, set
-    abstract onmouseout: (MouseEvent -> 'Out) with get, set
-    abstract onmouseover: (MouseEvent -> 'Out) with get, set
-    abstract onmouseup: (MouseEvent -> 'Out) with get, set
+    abstract onclick: (MouseEvent -> obj) with get, set
+    abstract ondblclick: (MouseEvent -> obj) with get, set
+    abstract onfocusin: (FocusEvent -> obj) with get, set
+    abstract onfocusout: (FocusEvent -> obj) with get, set
+    abstract onload: (Event -> obj) with get, set
+    abstract onmousedown: (MouseEvent -> obj) with get, set
+    abstract onmousemove: (MouseEvent -> obj) with get, set
+    abstract onmouseout: (MouseEvent -> obj) with get, set
+    abstract onmouseover: (MouseEvent -> obj) with get, set
+    abstract onmouseup: (MouseEvent -> obj) with get, set
     abstract ownerSVGElement: SVGSVGElement with get, set
     abstract viewportElement: SVGElement with get, set
     abstract xmlbase: string with get, set
@@ -1379,12 +1379,12 @@ type [<AllowNullLiteral>] SVGSVGElement =
     abstract currentScale: float with get, set
     abstract currentTranslate: SVGPoint with get, set
     abstract height: SVGAnimatedLength with get, set
-    abstract onabort: (Event -> 'Out) with get, set
-    abstract onerror: (Event -> 'Out) with get, set
-    abstract onresize: (UIEvent -> 'Out) with get, set
-    abstract onscroll: (UIEvent -> 'Out) with get, set
-    abstract onunload: (Event -> 'Out) with get, set
-    abstract onzoom: (SVGZoomEvent -> 'Out) with get, set
+    abstract onabort: (Event -> obj) with get, set
+    abstract onerror: (Event -> obj) with get, set
+    abstract onresize: (UIEvent -> obj) with get, set
+    abstract onscroll: (UIEvent -> obj) with get, set
+    abstract onunload: (Event -> obj) with get, set
+    abstract onzoom: (SVGZoomEvent -> obj) with get, set
     abstract pixelUnitToMillimeterX: float with get, set
     abstract pixelUnitToMillimeterY: float with get, set
     abstract screenPixelToMillimeterX: float with get, set
