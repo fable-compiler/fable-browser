@@ -119,128 +119,128 @@ type [<AllowNullLiteral>] Document =
     abstract location: Location with get, set
     abstract media: string with get, set
     /// Fires when the user aborts the download.
-    abstract onabort: (Event -> 'Out) with get, set
+    abstract onabort: (Event -> unit) with get, set
     /// Fires when the object is set as the active element.
-    abstract onactivate: (UIEvent -> 'Out) with get, set
+    abstract onactivate: (UIEvent -> unit) with get, set
     /// Fires immediately before the object is set as the active element.
-    abstract onbeforeactivate: (UIEvent -> 'Out) with get, set
+    abstract onbeforeactivate: (UIEvent -> unit) with get, set
     /// Fires immediately before the activeElement is changed from the current object to another object in the parent document.
-    abstract onbeforedeactivate: (UIEvent -> 'Out) with get, set
+    abstract onbeforedeactivate: (UIEvent -> unit) with get, set
     /// Fires when the object loses the input focus.
-    abstract onblur: (FocusEvent -> 'Out) with get, set
+    abstract onblur: (FocusEvent -> unit) with get, set
     /// Occurs when playback is possible, but would require further buffering.
-    abstract oncanplay: (Event -> 'Out) with get, set
-    abstract oncanplaythrough: (Event -> 'Out) with get, set
+    abstract oncanplay: (Event -> unit) with get, set
+    abstract oncanplaythrough: (Event -> unit) with get, set
     /// Fires when the contents of the object or selection have changed.
-    abstract onchange: (Event -> 'Out) with get, set
+    abstract onchange: (Event -> unit) with get, set
     /// Fires when the user clicks the left mouse button on the object
-    abstract onclick: (MouseEvent -> 'Out) with get, set
+    abstract onclick: (MouseEvent -> unit) with get, set
     /// Fires when the user clicks the right mouse button in the client area, opening the context menu.
-    abstract oncontextmenu: (PointerEvent -> 'Out) with get, set
+    abstract oncontextmenu: (PointerEvent -> unit) with get, set
     /// Fires when the user has initiated a "copy" action through the browser's user interface.
-    abstract oncopy: (ClipboardEvent -> 'Out) with get, set
+    abstract oncopy: (ClipboardEvent -> unit) with get, set
     /// Fires when the user has initiated a "cut" action through the browser's user interface.
-    abstract oncut: (ClipboardEvent -> 'Out) with get, set
+    abstract oncut: (ClipboardEvent -> unit) with get, set
     /// Fires when the user double-clicks the object.
-    abstract ondblclick: (MouseEvent -> 'Out) with get, set
+    abstract ondblclick: (MouseEvent -> unit) with get, set
     /// Fires when the activeElement is changed from the current object to another object in the parent document.
-    abstract ondeactivate: (UIEvent -> 'Out) with get, set
+    abstract ondeactivate: (UIEvent -> unit) with get, set
     /// Fires on the source object continuously during a drag operation.
-    abstract ondrag: (DragEvent -> 'Out) with get, set
+    abstract ondrag: (DragEvent -> unit) with get, set
     /// Fires on the source object when the user releases the mouse at the close of a drag operation.
-    abstract ondragend: (DragEvent -> 'Out) with get, set
+    abstract ondragend: (DragEvent -> unit) with get, set
     /// Fires on the target element when the user drags the object to a valid drop target.
-    abstract ondragenter: (DragEvent -> 'Out) with get, set
+    abstract ondragenter: (DragEvent -> unit) with get, set
     /// Fires on the target object when the user moves the mouse out of a valid drop target during a drag operation.
-    abstract ondragleave: (DragEvent -> 'Out) with get, set
+    abstract ondragleave: (DragEvent -> unit) with get, set
     /// Fires on the target element continuously while the user drags the object over a valid drop target.
-    abstract ondragover: (DragEvent -> 'Out) with get, set
+    abstract ondragover: (DragEvent -> unit) with get, set
     /// Fires on the source object when the user starts to drag a text selection or selected object.
-    abstract ondragstart: (DragEvent -> 'Out) with get, set
-    abstract ondrop: (DragEvent -> 'Out) with get, set
+    abstract ondragstart: (DragEvent -> unit) with get, set
+    abstract ondrop: (DragEvent -> unit) with get, set
     /// Occurs when the duration attribute is updated.
-    abstract ondurationchange: (Event -> 'Out) with get, set
+    abstract ondurationchange: (Event -> unit) with get, set
     /// Occurs when the media element is reset to its initial state.
-    abstract onemptied: (Event -> 'Out) with get, set
+    abstract onemptied: (Event -> unit) with get, set
     /// Occurs when the end of playback is reached.
-    abstract onended: (Event -> 'Out) with get, set
+    abstract onended: (Event -> unit) with get, set
     /// Fires when an error occurs during object loading.
-    abstract onerror: (Event -> 'Out) with get, set
+    abstract onerror: (Event -> unit) with get, set
     /// Fires when the object receives focus.
-    abstract onfocus: (FocusEvent -> 'Out) with get, set
-    abstract onfullscreenchange: (Event -> 'Out) with get, set
-    abstract onfullscreenerror: (Event -> 'Out) with get, set
-    abstract oninput: (Event -> 'Out) with get, set
+    abstract onfocus: (FocusEvent -> unit) with get, set
+    abstract onfullscreenchange: (Event -> unit) with get, set
+    abstract onfullscreenerror: (Event -> unit) with get, set
+    abstract oninput: (Event -> unit) with get, set
     /// Fires when the user presses a key.
-    abstract onkeydown: (KeyboardEvent -> 'Out) with get, set
+    abstract onkeydown: (KeyboardEvent -> unit) with get, set
     /// Fires when the user presses an alphanumeric key.
-    abstract onkeypress: (KeyboardEvent -> 'Out) with get, set
+    abstract onkeypress: (KeyboardEvent -> unit) with get, set
     /// Fires when the user releases a key.
-    abstract onkeyup: (KeyboardEvent -> 'Out) with get, set
+    abstract onkeyup: (KeyboardEvent -> unit) with get, set
     /// Fires immediately after the browser loads the object.
-    abstract onload: (Event -> 'Out) with get, set
+    abstract onload: (Event -> unit) with get, set
     /// Occurs when media data is loaded at the current playback position.
-    abstract onloadeddata: (Event -> 'Out) with get, set
+    abstract onloadeddata: (Event -> unit) with get, set
     /// Occurs when the duration and dimensions of the media have been determined.
-    abstract onloadedmetadata: (Event -> 'Out) with get, set
+    abstract onloadedmetadata: (Event -> unit) with get, set
     /// Occurs when Internet Explorer begins looking for media data.
-    abstract onloadstart: (Event -> 'Out) with get, set
+    abstract onloadstart: (Event -> unit) with get, set
     /// Fires when the user clicks the object with either mouse button.
-    abstract onmousedown: (MouseEvent -> 'Out) with get, set
+    abstract onmousedown: (MouseEvent -> unit) with get, set
     /// Fires when the user moves the mouse over the object.
-    abstract onmousemove: (MouseEvent -> 'Out) with get, set
+    abstract onmousemove: (MouseEvent -> unit) with get, set
     /// Fires when the user moves the mouse pointer outside the boundaries of the object.
-    abstract onmouseout: (MouseEvent -> 'Out) with get, set
+    abstract onmouseout: (MouseEvent -> unit) with get, set
     /// Fires when the user moves the mouse pointer into the object.
-    abstract onmouseover: (MouseEvent -> 'Out) with get, set
+    abstract onmouseover: (MouseEvent -> unit) with get, set
     /// Fires when the user releases a mouse button while the mouse is over the object.
-    abstract onmouseup: (MouseEvent -> 'Out) with get, set
+    abstract onmouseup: (MouseEvent -> unit) with get, set
     /// Fires when the wheel button is rotated.
-    abstract onmousewheel: (MouseWheelEvent -> 'Out) with get, set
+    abstract onmousewheel: (MouseWheelEvent -> unit) with get, set
     /// Fires when the user has initiated a "paste" action through the browser's user interface.
-    abstract onpaste: (ClipboardEvent -> 'Out) with get, set
+    abstract onpaste: (ClipboardEvent -> unit) with get, set
     /// Occurs when playback is paused.
-    abstract onpause: (Event -> 'Out) with get, set
+    abstract onpause: (Event -> unit) with get, set
     /// Occurs when the play method is requested.
-    abstract onplay: (Event -> 'Out) with get, set
+    abstract onplay: (Event -> unit) with get, set
     /// Occurs when the audio or video has started playing.
-    abstract onplaying: (Event -> 'Out) with get, set
-    abstract onpointerlockchange: (Event -> 'Out) with get, set
-    abstract onpointerlockerror: (Event -> 'Out) with get, set
+    abstract onplaying: (Event -> unit) with get, set
+    abstract onpointerlockchange: (Event -> unit) with get, set
+    abstract onpointerlockerror: (Event -> unit) with get, set
     /// Occurs to indicate progress while downloading media data.
-    abstract onprogress: (ProgressEvent -> 'Out) with get, set
+    abstract onprogress: (ProgressEvent -> unit) with get, set
     /// Occurs when the playback rate is increased or decreased.
-    abstract onratechange: (Event -> 'Out) with get, set
+    abstract onratechange: (Event -> unit) with get, set
     /// Fires when the state of the object has changed.
-    abstract onreadystatechange: (ProgressEvent -> 'Out) with get, set
+    abstract onreadystatechange: (ProgressEvent -> unit) with get, set
     /// Fires when the user resets a form.
-    abstract onreset: (Event -> 'Out) with get, set
+    abstract onreset: (Event -> unit) with get, set
     /// Fires when the user repositions the scroll box in the scroll bar on the object.
-    abstract onscroll: (UIEvent -> 'Out) with get, set
+    abstract onscroll: (UIEvent -> unit) with get, set
     /// Occurs when the seek operation ends.
-    abstract onseeked: (Event -> 'Out) with get, set
+    abstract onseeked: (Event -> unit) with get, set
     /// Occurs when the current playback position is moved.
-    abstract onseeking: (Event -> 'Out) with get, set
+    abstract onseeking: (Event -> unit) with get, set
     /// Fires when the current selection changes.
-    abstract onselect: (UIEvent -> 'Out) with get, set
-    abstract onselectstart: (Event -> 'Out) with get, set
+    abstract onselect: (UIEvent -> unit) with get, set
+    abstract onselectstart: (Event -> unit) with get, set
     /// Occurs when the download has stopped.
-    abstract onstalled: (Event -> 'Out) with get, set
+    abstract onstalled: (Event -> unit) with get, set
     /// Fires when the user clicks the Stop button or leaves the Web page.
-    abstract onstop: (Event -> 'Out) with get, set
-    abstract onsubmit: (Event -> 'Out) with get, set
+    abstract onstop: (Event -> unit) with get, set
+    abstract onsubmit: (Event -> unit) with get, set
     /// Occurs if the load operation has been intentionally halted.
-    abstract onsuspend: (Event -> 'Out) with get, set
+    abstract onsuspend: (Event -> unit) with get, set
     /// Occurs to indicate the current playback position.
-    abstract ontimeupdate: (Event -> 'Out) with get, set
-    abstract ontouchcancel: (TouchEvent -> 'Out) with get, set
-    abstract ontouchend: (TouchEvent -> 'Out) with get, set
-    abstract ontouchmove: (TouchEvent -> 'Out) with get, set
-    abstract ontouchstart: (TouchEvent -> 'Out) with get, set
+    abstract ontimeupdate: (Event -> unit) with get, set
+    abstract ontouchcancel: (TouchEvent -> unit) with get, set
+    abstract ontouchend: (TouchEvent -> unit) with get, set
+    abstract ontouchmove: (TouchEvent -> unit) with get, set
+    abstract ontouchstart: (TouchEvent -> unit) with get, set
     /// Occurs when the volume is changed, or playback is muted or unmuted.
-    abstract onvolumechange: (Event -> 'Out) with get, set
+    abstract onvolumechange: (Event -> unit) with get, set
     /// Occurs when playback stops because the next frame of a video resource is not available.
-    abstract onwaiting: (Event -> 'Out) with get, set
+    abstract onwaiting: (Event -> unit) with get, set
     abstract plugins: HTMLCollection with get, set
     abstract pointerLockElement: Element with get, set
     /// Retrieves a value that indicates the current state of the object.
@@ -440,14 +440,14 @@ type [<AllowNullLiteral>] Element =
     /// <param name="element">The `Element` at the top of the tree of elements to be dealt with</param>
     /// <returns>The `Element` which is the closest ancestor of the selected elements</returns>
     abstract closest: element : Element -> Element option
-    abstract onariarequest: (AriaRequestEvent -> 'Out) with get, set
-    abstract oncommand: (CommandEvent -> 'Out) with get, set
-    abstract ongotpointercapture: (PointerEvent -> 'Out) with get, set
-    abstract onlostpointercapture: (PointerEvent -> 'Out) with get, set
-    abstract ontouchcancel: (TouchEvent -> 'Out) with get, set
-    abstract ontouchend: (TouchEvent -> 'Out) with get, set
-    abstract ontouchmove: (TouchEvent -> 'Out) with get, set
-    abstract ontouchstart: (TouchEvent -> 'Out) with get, set
+    abstract onariarequest: (AriaRequestEvent -> unit) with get, set
+    abstract oncommand: (CommandEvent -> unit) with get, set
+    abstract ongotpointercapture: (PointerEvent -> unit) with get, set
+    abstract onlostpointercapture: (PointerEvent -> unit) with get, set
+    abstract ontouchcancel: (TouchEvent -> unit) with get, set
+    abstract ontouchend: (TouchEvent -> unit) with get, set
+    abstract ontouchmove: (TouchEvent -> unit) with get, set
+    abstract ontouchstart: (TouchEvent -> unit) with get, set
     abstract scrollHeight: float with get, set
     abstract scrollLeft: float with get, set
     abstract scrollTop: float with get, set
@@ -902,82 +902,82 @@ type [<AllowNullLiteral>] Window =
     abstract menubar: BarProp with get, set
     abstract name: string with get, set
     abstract offscreenBuffering: bool with get, set
-    abstract onabort: (Event -> 'Out) with get, set
-    abstract onafterprint: (Event -> 'Out) with get, set
-    abstract onbeforeprint: (Event -> 'Out) with get, set
-    abstract onbeforeunload: (BeforeUnloadEvent -> 'Out) with get, set
-    abstract onblur: (FocusEvent -> 'Out) with get, set
-    abstract oncanplay: (Event -> 'Out) with get, set
-    abstract oncanplaythrough: (Event -> 'Out) with get, set
-    abstract onchange: (Event -> 'Out) with get, set
-    abstract onclick: (MouseEvent -> 'Out) with get, set
-    abstract oncompassneedscalibration: (Event -> 'Out) with get, set
-    abstract oncontextmenu: (PointerEvent -> 'Out) with get, set
-    abstract ondblclick: (MouseEvent -> 'Out) with get, set
-    abstract ondevicemotion: (DeviceMotionEvent -> 'Out) with get, set
-    abstract ondeviceorientation: (DeviceOrientationEvent -> 'Out) with get, set
-    abstract ondrag: (DragEvent -> 'Out) with get, set
-    abstract ondragend: (DragEvent -> 'Out) with get, set
-    abstract ondragenter: (DragEvent -> 'Out) with get, set
-    abstract ondragleave: (DragEvent -> 'Out) with get, set
-    abstract ondragover: (DragEvent -> 'Out) with get, set
-    abstract ondragstart: (DragEvent -> 'Out) with get, set
-    abstract ondrop: (DragEvent -> 'Out) with get, set
-    abstract ondurationchange: (Event -> 'Out) with get, set
-    abstract onemptied: (Event -> 'Out) with get, set
-    abstract onended: (Event -> 'Out) with get, set
-    abstract onerror: (Event -> 'Out) with get, set
-    abstract onfocus: (FocusEvent -> 'Out) with get, set
-    abstract onhashchange: (HashChangeEvent -> 'Out) with get, set
-    abstract oninput: (Event -> 'Out) with get, set
-    abstract onkeydown: (KeyboardEvent -> 'Out) with get, set
-    abstract onkeypress: (KeyboardEvent -> 'Out) with get, set
-    abstract onkeyup: (KeyboardEvent -> 'Out) with get, set
-    abstract onload: (Event -> 'Out) with get, set
-    abstract onloadeddata: (Event -> 'Out) with get, set
-    abstract onloadedmetadata: (Event -> 'Out) with get, set
-    abstract onloadstart: (Event -> 'Out) with get, set
-    abstract onmessage: (MessageEvent -> 'Out) with get, set
-    abstract onmousedown: (MouseEvent -> 'Out) with get, set
-    abstract onmouseenter: (MouseEvent -> 'Out) with get, set
-    abstract onmouseleave: (MouseEvent -> 'Out) with get, set
-    abstract onmousemove: (MouseEvent -> 'Out) with get, set
-    abstract onmouseout: (MouseEvent -> 'Out) with get, set
-    abstract onmouseover: (MouseEvent -> 'Out) with get, set
-    abstract onmouseup: (MouseEvent -> 'Out) with get, set
-    abstract onmousewheel: (MouseWheelEvent -> 'Out) with get, set
-    abstract onoffline: (Event -> 'Out) with get, set
-    abstract ononline: (Event -> 'Out) with get, set
-    abstract onorientationchange: (Event -> 'Out) with get, set
-    abstract onpagehide: (PageTransitionEvent -> 'Out) with get, set
-    abstract onpageshow: (PageTransitionEvent -> 'Out) with get, set
-    abstract onpause: (Event -> 'Out) with get, set
-    abstract onplay: (Event -> 'Out) with get, set
-    abstract onplaying: (Event -> 'Out) with get, set
-    abstract onpopstate: (PopStateEvent -> 'Out) with get, set
-    abstract onprogress: (ProgressEvent -> 'Out) with get, set
-    abstract onratechange: (Event -> 'Out) with get, set
-    abstract onreadystatechange: (ProgressEvent -> 'Out) with get, set
-    abstract onreset: (Event -> 'Out) with get, set
-    abstract onresize: (UIEvent -> 'Out) with get, set
-    abstract onscroll: (UIEvent -> 'Out) with get, set
-    abstract onseeked: (Event -> 'Out) with get, set
-    abstract onseeking: (Event -> 'Out) with get, set
-    abstract onselect: (UIEvent -> 'Out) with get, set
-    abstract onstalled: (Event -> 'Out) with get, set
-    abstract onstorage: (StorageEvent -> 'Out) with get, set
-    abstract onsubmit: (Event -> 'Out) with get, set
-    abstract onsuspend: (Event -> 'Out) with get, set
-    abstract ontimeupdate: (Event -> 'Out) with get, set
-    abstract ongamepadconnected: (GamepadEvent -> 'Out) with get, set
-    abstract ongamepaddisconnected: (GamepadEvent -> 'Out) with get, set
+    abstract onabort: (Event -> unit) with get, set
+    abstract onafterprint: (Event -> unit) with get, set
+    abstract onbeforeprint: (Event -> unit) with get, set
+    abstract onbeforeunload: (BeforeUnloadEvent -> unit) with get, set
+    abstract onblur: (FocusEvent -> unit) with get, set
+    abstract oncanplay: (Event -> unit) with get, set
+    abstract oncanplaythrough: (Event -> unit) with get, set
+    abstract onchange: (Event -> unit) with get, set
+    abstract onclick: (MouseEvent -> unit) with get, set
+    abstract oncompassneedscalibration: (Event -> unit) with get, set
+    abstract oncontextmenu: (PointerEvent -> unit) with get, set
+    abstract ondblclick: (MouseEvent -> unit) with get, set
+    abstract ondevicemotion: (DeviceMotionEvent -> unit) with get, set
+    abstract ondeviceorientation: (DeviceOrientationEvent -> unit) with get, set
+    abstract ondrag: (DragEvent -> unit) with get, set
+    abstract ondragend: (DragEvent -> unit) with get, set
+    abstract ondragenter: (DragEvent -> unit) with get, set
+    abstract ondragleave: (DragEvent -> unit) with get, set
+    abstract ondragover: (DragEvent -> unit) with get, set
+    abstract ondragstart: (DragEvent -> unit) with get, set
+    abstract ondrop: (DragEvent -> unit) with get, set
+    abstract ondurationchange: (Event -> unit) with get, set
+    abstract onemptied: (Event -> unit) with get, set
+    abstract onended: (Event -> unit) with get, set
+    abstract onerror: (Event -> unit) with get, set
+    abstract onfocus: (FocusEvent -> unit) with get, set
+    abstract onhashchange: (HashChangeEvent -> unit) with get, set
+    abstract oninput: (Event -> unit) with get, set
+    abstract onkeydown: (KeyboardEvent -> unit) with get, set
+    abstract onkeypress: (KeyboardEvent -> unit) with get, set
+    abstract onkeyup: (KeyboardEvent -> unit) with get, set
+    abstract onload: (Event -> unit) with get, set
+    abstract onloadeddata: (Event -> unit) with get, set
+    abstract onloadedmetadata: (Event -> unit) with get, set
+    abstract onloadstart: (Event -> unit) with get, set
+    abstract onmessage: (MessageEvent -> unit) with get, set
+    abstract onmousedown: (MouseEvent -> unit) with get, set
+    abstract onmouseenter: (MouseEvent -> unit) with get, set
+    abstract onmouseleave: (MouseEvent -> unit) with get, set
+    abstract onmousemove: (MouseEvent -> unit) with get, set
+    abstract onmouseout: (MouseEvent -> unit) with get, set
+    abstract onmouseover: (MouseEvent -> unit) with get, set
+    abstract onmouseup: (MouseEvent -> unit) with get, set
+    abstract onmousewheel: (MouseWheelEvent -> unit) with get, set
+    abstract onoffline: (Event -> unit) with get, set
+    abstract ononline: (Event -> unit) with get, set
+    abstract onorientationchange: (Event -> unit) with get, set
+    abstract onpagehide: (PageTransitionEvent -> unit) with get, set
+    abstract onpageshow: (PageTransitionEvent -> unit) with get, set
+    abstract onpause: (Event -> unit) with get, set
+    abstract onplay: (Event -> unit) with get, set
+    abstract onplaying: (Event -> unit) with get, set
+    abstract onpopstate: (PopStateEvent -> unit) with get, set
+    abstract onprogress: (ProgressEvent -> unit) with get, set
+    abstract onratechange: (Event -> unit) with get, set
+    abstract onreadystatechange: (ProgressEvent -> unit) with get, set
+    abstract onreset: (Event -> unit) with get, set
+    abstract onresize: (UIEvent -> unit) with get, set
+    abstract onscroll: (UIEvent -> unit) with get, set
+    abstract onseeked: (Event -> unit) with get, set
+    abstract onseeking: (Event -> unit) with get, set
+    abstract onselect: (UIEvent -> unit) with get, set
+    abstract onstalled: (Event -> unit) with get, set
+    abstract onstorage: (StorageEvent -> unit) with get, set
+    abstract onsubmit: (Event -> unit) with get, set
+    abstract onsuspend: (Event -> unit) with get, set
+    abstract ontimeupdate: (Event -> unit) with get, set
+    abstract ongamepadconnected: (GamepadEvent -> unit) with get, set
+    abstract ongamepaddisconnected: (GamepadEvent -> unit) with get, set
     abstract ontouchcancel: obj with get, set
     abstract ontouchend: obj with get, set
     abstract ontouchmove: obj with get, set
     abstract ontouchstart: obj with get, set
-    abstract onunload: (Event -> 'Out) with get, set
-    abstract onvolumechange: (Event -> 'Out) with get, set
-    abstract onwaiting: (Event -> 'Out) with get, set
+    abstract onunload: (Event -> unit) with get, set
+    abstract onvolumechange: (Event -> unit) with get, set
+    abstract onwaiting: (Event -> unit) with get, set
     abstract opener: Window with get, set
     abstract orientation: string with get, set
     abstract outerHeight: float with get, set
@@ -1030,12 +1030,12 @@ type [<AllowNullLiteral>] Window =
     abstract scrollTo: top: float * left: float * behavior: ScrollBehavior -> unit
 
 type [<AllowNullLiteral>] AbstractWorker =
-    abstract onerror: (Event -> 'Out) with get, set
+    abstract onerror: (Event -> unit) with get, set
 
 type [<AllowNullLiteral>] Worker =
     inherit EventTarget
     inherit AbstractWorker
-    abstract onmessage: (MessageEvent -> 'Out) with get, set
+    abstract onmessage: (MessageEvent -> unit) with get, set
     abstract postMessage: message: obj * ?ports: obj -> unit
     abstract terminate: unit -> unit
 
@@ -1054,15 +1054,15 @@ type [<AllowNullLiteral>] GetSVGDocument =
     abstract getSVGDocument: unit -> Document
 
 type [<AllowNullLiteral>] GlobalEventHandlers =
-    abstract onpointercancel: (PointerEvent -> 'Out) with get, set
-    abstract onpointerdown: (PointerEvent -> 'Out) with get, set
-    abstract onpointerenter: (PointerEvent -> 'Out) with get, set
-    abstract onpointerleave: (PointerEvent -> 'Out) with get, set
-    abstract onpointermove: (PointerEvent -> 'Out) with get, set
-    abstract onpointerout: (PointerEvent -> 'Out) with get, set
-    abstract onpointerover: (PointerEvent -> 'Out) with get, set
-    abstract onpointerup: (PointerEvent -> 'Out) with get, set
-    abstract onwheel: (WheelEvent -> 'Out) with get, set
+    abstract onpointercancel: (PointerEvent -> unit) with get, set
+    abstract onpointerdown: (PointerEvent -> unit) with get, set
+    abstract onpointerenter: (PointerEvent -> unit) with get, set
+    abstract onpointerleave: (PointerEvent -> unit) with get, set
+    abstract onpointermove: (PointerEvent -> unit) with get, set
+    abstract onpointerout: (PointerEvent -> unit) with get, set
+    abstract onpointerover: (PointerEvent -> unit) with get, set
+    abstract onpointerup: (PointerEvent -> unit) with get, set
+    abstract onwheel: (WheelEvent -> unit) with get, set
 
 type [<AllowNullLiteral>] HTMLAllCollection =
     inherit HTMLCollection
@@ -1217,23 +1217,23 @@ type [<AllowNullLiteral>] HTMLBodyElement =
     abstract link: obj with get, set
     /// Sets or retrieves whether the browser automatically performs wordwrap.
     abstract noWrap: bool with get, set
-    abstract onafterprint: (Event -> 'Out) with get, set
-    abstract onbeforeprint: (Event -> 'Out) with get, set
-    abstract onbeforeunload: (BeforeUnloadEvent -> 'Out) with get, set
-    abstract onblur: (FocusEvent -> 'Out) with get, set
-    abstract onerror: (Event -> 'Out) with get, set
-    abstract onfocus: (FocusEvent -> 'Out) with get, set
-    abstract onhashchange: (HashChangeEvent -> 'Out) with get, set
-    abstract onload: (Event -> 'Out) with get, set
-    abstract onmessage: (MessageEvent -> 'Out) with get, set
-    abstract onoffline: (Event -> 'Out) with get, set
-    abstract ononline: (Event -> 'Out) with get, set
-    abstract onorientationchange: (Event -> 'Out) with get, set
-    abstract onpagehide: (PageTransitionEvent -> 'Out) with get, set
-    abstract onpageshow: (PageTransitionEvent -> 'Out) with get, set
-    abstract onpopstate: (PopStateEvent -> 'Out) with get, set
-    abstract onresize: (UIEvent -> 'Out) with get, set
-    abstract onunload: (Event -> 'Out) with get, set
+    abstract onafterprint: (Event -> unit) with get, set
+    abstract onbeforeprint: (Event -> unit) with get, set
+    abstract onbeforeunload: (BeforeUnloadEvent -> unit) with get, set
+    abstract onblur: (FocusEvent -> unit) with get, set
+    abstract onerror: (Event -> unit) with get, set
+    abstract onfocus: (FocusEvent -> unit) with get, set
+    abstract onhashchange: (HashChangeEvent -> unit) with get, set
+    abstract onload: (Event -> unit) with get, set
+    abstract onmessage: (MessageEvent -> unit) with get, set
+    abstract onoffline: (Event -> unit) with get, set
+    abstract ononline: (Event -> unit) with get, set
+    abstract onorientationchange: (Event -> unit) with get, set
+    abstract onpagehide: (PageTransitionEvent -> unit) with get, set
+    abstract onpageshow: (PageTransitionEvent -> unit) with get, set
+    abstract onpopstate: (PopStateEvent -> unit) with get, set
+    abstract onresize: (UIEvent -> unit) with get, set
+    abstract onunload: (Event -> unit) with get, set
     /// Sets or retrieves the text string specified by the option tag.
     abstract text: obj with get, set
     abstract vLink: obj with get, set
@@ -1376,70 +1376,70 @@ type [<AllowNullLiteral>] HTMLElement =
     abstract offsetParent: Element with get, set
     abstract offsetTop: float with get, set
     abstract offsetWidth: float with get, set
-    abstract onabort: (Event -> 'Out) with get, set
-    abstract onactivate: (UIEvent -> 'Out) with get, set
-    abstract onbeforeactivate: (UIEvent -> 'Out) with get, set
-    abstract onbeforecopy: (ClipboardEvent -> 'Out) with get, set
-    abstract onbeforecut: (ClipboardEvent -> 'Out) with get, set
-    abstract onbeforedeactivate: (UIEvent -> 'Out) with get, set
-    abstract onbeforepaste: (ClipboardEvent -> 'Out) with get, set
-    abstract onblur: (FocusEvent -> 'Out) with get, set
-    abstract oncanplay: (Event -> 'Out) with get, set
-    abstract oncanplaythrough: (Event -> 'Out) with get, set
-    abstract onchange: (Event -> 'Out) with get, set
-    abstract onclick: (MouseEvent -> 'Out) with get, set
-    abstract oncontextmenu: (PointerEvent -> 'Out) with get, set
-    abstract oncopy: (ClipboardEvent -> 'Out) with get, set
-    abstract oncuechange: (Event -> 'Out) with get, set
-    abstract oncut: (ClipboardEvent -> 'Out) with get, set
-    abstract ondblclick: (MouseEvent -> 'Out) with get, set
-    abstract ondeactivate: (UIEvent -> 'Out) with get, set
-    abstract ondrag: (DragEvent -> 'Out) with get, set
-    abstract ondragend: (DragEvent -> 'Out) with get, set
-    abstract ondragenter: (DragEvent -> 'Out) with get, set
-    abstract ondragleave: (DragEvent -> 'Out) with get, set
-    abstract ondragover: (DragEvent -> 'Out) with get, set
-    abstract ondragstart: (DragEvent -> 'Out) with get, set
-    abstract ondrop: (DragEvent -> 'Out) with get, set
-    abstract ondurationchange: (Event -> 'Out) with get, set
-    abstract onemptied: (Event -> 'Out) with get, set
-    abstract onended: (Event -> 'Out) with get, set
-    abstract onerror: (Event -> 'Out) with get, set
-    abstract onfocus: (FocusEvent -> 'Out) with get, set
-    abstract oninput: (Event -> 'Out) with get, set
-    abstract onkeydown: (KeyboardEvent -> 'Out) with get, set
-    abstract onkeypress: (KeyboardEvent -> 'Out) with get, set
-    abstract onkeyup: (KeyboardEvent -> 'Out) with get, set
-    abstract onload: (Event -> 'Out) with get, set
-    abstract onloadeddata: (Event -> 'Out) with get, set
-    abstract onloadedmetadata: (Event -> 'Out) with get, set
-    abstract onloadstart: (Event -> 'Out) with get, set
-    abstract onmousedown: (MouseEvent -> 'Out) with get, set
-    abstract onmouseenter: (MouseEvent -> 'Out) with get, set
-    abstract onmouseleave: (MouseEvent -> 'Out) with get, set
-    abstract onmousemove: (MouseEvent -> 'Out) with get, set
-    abstract onmouseout: (MouseEvent -> 'Out) with get, set
-    abstract onmouseover: (MouseEvent -> 'Out) with get, set
-    abstract onmouseup: (MouseEvent -> 'Out) with get, set
-    abstract onmousewheel: (MouseWheelEvent -> 'Out) with get, set
-    abstract onpaste: (ClipboardEvent -> 'Out) with get, set
-    abstract onpause: (Event -> 'Out) with get, set
-    abstract onplay: (Event -> 'Out) with get, set
-    abstract onplaying: (Event -> 'Out) with get, set
-    abstract onprogress: (ProgressEvent -> 'Out) with get, set
-    abstract onratechange: (Event -> 'Out) with get, set
-    abstract onreset: (Event -> 'Out) with get, set
-    abstract onscroll: (UIEvent -> 'Out) with get, set
-    abstract onseeked: (Event -> 'Out) with get, set
-    abstract onseeking: (Event -> 'Out) with get, set
-    abstract onselect: (UIEvent -> 'Out) with get, set
-    abstract onselectstart: (Event -> 'Out) with get, set
-    abstract onstalled: (Event -> 'Out) with get, set
-    abstract onsubmit: (Event -> 'Out) with get, set
-    abstract onsuspend: (Event -> 'Out) with get, set
-    abstract ontimeupdate: (Event -> 'Out) with get, set
-    abstract onvolumechange: (Event -> 'Out) with get, set
-    abstract onwaiting: (Event -> 'Out) with get, set
+    abstract onabort: (Event -> unit) with get, set
+    abstract onactivate: (UIEvent -> unit) with get, set
+    abstract onbeforeactivate: (UIEvent -> unit) with get, set
+    abstract onbeforecopy: (ClipboardEvent -> unit) with get, set
+    abstract onbeforecut: (ClipboardEvent -> unit) with get, set
+    abstract onbeforedeactivate: (UIEvent -> unit) with get, set
+    abstract onbeforepaste: (ClipboardEvent -> unit) with get, set
+    abstract onblur: (FocusEvent -> unit) with get, set
+    abstract oncanplay: (Event -> unit) with get, set
+    abstract oncanplaythrough: (Event -> unit) with get, set
+    abstract onchange: (Event -> unit) with get, set
+    abstract onclick: (MouseEvent -> unit) with get, set
+    abstract oncontextmenu: (PointerEvent -> unit) with get, set
+    abstract oncopy: (ClipboardEvent -> unit) with get, set
+    abstract oncuechange: (Event -> unit) with get, set
+    abstract oncut: (ClipboardEvent -> unit) with get, set
+    abstract ondblclick: (MouseEvent -> unit) with get, set
+    abstract ondeactivate: (UIEvent -> unit) with get, set
+    abstract ondrag: (DragEvent -> unit) with get, set
+    abstract ondragend: (DragEvent -> unit) with get, set
+    abstract ondragenter: (DragEvent -> unit) with get, set
+    abstract ondragleave: (DragEvent -> unit) with get, set
+    abstract ondragover: (DragEvent -> unit) with get, set
+    abstract ondragstart: (DragEvent -> unit) with get, set
+    abstract ondrop: (DragEvent -> unit) with get, set
+    abstract ondurationchange: (Event -> unit) with get, set
+    abstract onemptied: (Event -> unit) with get, set
+    abstract onended: (Event -> unit) with get, set
+    abstract onerror: (Event -> unit) with get, set
+    abstract onfocus: (FocusEvent -> unit) with get, set
+    abstract oninput: (Event -> unit) with get, set
+    abstract onkeydown: (KeyboardEvent -> unit) with get, set
+    abstract onkeypress: (KeyboardEvent -> unit) with get, set
+    abstract onkeyup: (KeyboardEvent -> unit) with get, set
+    abstract onload: (Event -> unit) with get, set
+    abstract onloadeddata: (Event -> unit) with get, set
+    abstract onloadedmetadata: (Event -> unit) with get, set
+    abstract onloadstart: (Event -> unit) with get, set
+    abstract onmousedown: (MouseEvent -> unit) with get, set
+    abstract onmouseenter: (MouseEvent -> unit) with get, set
+    abstract onmouseleave: (MouseEvent -> unit) with get, set
+    abstract onmousemove: (MouseEvent -> unit) with get, set
+    abstract onmouseout: (MouseEvent -> unit) with get, set
+    abstract onmouseover: (MouseEvent -> unit) with get, set
+    abstract onmouseup: (MouseEvent -> unit) with get, set
+    abstract onmousewheel: (MouseWheelEvent -> unit) with get, set
+    abstract onpaste: (ClipboardEvent -> unit) with get, set
+    abstract onpause: (Event -> unit) with get, set
+    abstract onplay: (Event -> unit) with get, set
+    abstract onplaying: (Event -> unit) with get, set
+    abstract onprogress: (ProgressEvent -> unit) with get, set
+    abstract onratechange: (Event -> unit) with get, set
+    abstract onreset: (Event -> unit) with get, set
+    abstract onscroll: (UIEvent -> unit) with get, set
+    abstract onseeked: (Event -> unit) with get, set
+    abstract onseeking: (Event -> unit) with get, set
+    abstract onselect: (UIEvent -> unit) with get, set
+    abstract onselectstart: (Event -> unit) with get, set
+    abstract onstalled: (Event -> unit) with get, set
+    abstract onsubmit: (Event -> unit) with get, set
+    abstract onsuspend: (Event -> unit) with get, set
+    abstract ontimeupdate: (Event -> unit) with get, set
+    abstract onvolumechange: (Event -> unit) with get, set
+    abstract onwaiting: (Event -> unit) with get, set
     abstract outerHTML: string with get, set
     abstract outerText: string with get, set
     abstract spellcheck: bool with get, set
@@ -1606,7 +1606,7 @@ type [<AllowNullLiteral>] HTMLFrameElement =
     abstract name: string with get, set
     /// Sets or retrieves whether the user can resize the frame.
     abstract noResize: bool with get, set
-    abstract onload: (Event -> 'Out) with get, set
+    abstract onload: (Event -> unit) with get, set
     /// Sets or retrieves whether the frame can be scrolled.
     abstract scrolling: string with get, set
     abstract security: obj with get, set
@@ -1683,7 +1683,7 @@ type [<AllowNullLiteral>] HTMLIFrameElement =
     abstract name: string with get, set
     /// Sets or retrieves whether the user can resize the frame.
     abstract noResize: bool with get, set
-    abstract onload: (Event -> 'Out) with get, set
+    abstract onload: (Event -> unit) with get, set
     /// Sets or retrieves whether the frame can be scrolled.
     abstract scrolling: string with get, set
     abstract security: obj with get, set
@@ -2575,9 +2575,9 @@ type [<AllowNullLiteral>] VideoTrackType =
 type [<AllowNullLiteral>] VideoTrackList =
     inherit EventTarget
     abstract length: int
-    abstract onaddtrack: (TrackEvent -> 'Out) with get, set
-    abstract onchange: (Event -> 'Out) with get, set
-    abstract onremovetrack: (TrackEvent -> 'Out) with get, set
+    abstract onaddtrack: (TrackEvent -> unit) with get, set
+    abstract onchange: (Event -> unit) with get, set
+    abstract onremovetrack: (TrackEvent -> unit) with get, set
     abstract selectedIndex: int with get, set
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> VideoTrack with get, set
     abstract getTrackById: id: string -> VideoTrack
@@ -2626,9 +2626,9 @@ type [<AllowNullLiteral>] AudioTrackType =
 type [<AllowNullLiteral>] AudioTrackList =
     inherit EventTarget
     abstract length: int
-    abstract onaddtrack: (TrackEvent -> 'Out) with get, set
-    abstract onchange: (Event -> 'Out) with get, set
-    abstract onremovetrack: (TrackEvent -> 'Out) with get, set
+    abstract onaddtrack: (TrackEvent -> unit) with get, set
+    abstract onchange: (Event -> unit) with get, set
+    abstract onremovetrack: (TrackEvent -> unit) with get, set
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> AudioTrack with get, set
     abstract getTrackById: id: string -> AudioTrack
     abstract item: index: float -> AudioTrack
@@ -2645,9 +2645,9 @@ type [<AllowNullLiteral>] TextTrack =
     abstract label: string with get, set
     abstract language: string with get, set
     abstract mode: obj with get, set
-    abstract oncuechange: (Event -> 'Out) with get, set
-    abstract onerror: (Event -> 'Out) with get, set
-    abstract onload: (Event -> 'Out) with get, set
+    abstract oncuechange: (Event -> unit) with get, set
+    abstract onerror: (Event -> unit) with get, set
+    abstract onload: (Event -> unit) with get, set
     abstract readyState: float with get, set
     abstract DISABLED: float with get, set
     abstract ERROR: float with get, set
@@ -2673,8 +2673,8 @@ type [<AllowNullLiteral>] TextTrackCue =
     inherit EventTarget
     abstract endTime: float with get, set
     abstract id: string with get, set
-    abstract onenter: (Event -> 'Out) with get, set
-    abstract onexit: (Event -> 'Out) with get, set
+    abstract onenter: (Event -> unit) with get, set
+    abstract onexit: (Event -> unit) with get, set
     abstract pauseOnExit: bool with get, set
     abstract startTime: float with get, set
     abstract text: string with get, set
@@ -2696,7 +2696,7 @@ type [<AllowNullLiteral>] TextTrackCueListType =
 type [<AllowNullLiteral>] TextTrackList =
     inherit EventTarget
     abstract length: int
-    abstract onaddtrack: (TrackEvent -> 'Out) with get, set
+    abstract onaddtrack: (TrackEvent -> unit) with get, set
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> TextTrack with get, set
     abstract item: index: float -> TextTrack
 
