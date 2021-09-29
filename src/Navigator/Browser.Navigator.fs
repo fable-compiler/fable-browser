@@ -54,7 +54,7 @@ type PermissionState =
 type PermissionStatus =
     abstract state: PermissionState
     abstract status: PermissionState
-    abstract onchange: (Event -> 'Out) with get, set
+    abstract onchange: (Event -> unit) with get, set
 
 [<StringEnum(CaseRules.KebabCase); RequireQualifiedAccess>]
 type PermissionName =
