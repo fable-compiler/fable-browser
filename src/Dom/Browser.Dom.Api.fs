@@ -1,5 +1,4 @@
 namespace Fable.Import
-open Fable.Import
 
 [<System.Obsolete("Use Browser")>]
 module Browser =

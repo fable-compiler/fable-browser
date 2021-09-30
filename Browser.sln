@@ -41,6 +41,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.XMLHttpRequest", "s
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Gamepad", "src\Gamepad\Browser.Gamepad.fsproj", "{8A976D4C-F48B-4E83-B8C1-58B85C8E2AFF}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Test", "test\Test.fsproj", "{090973C4-D7EE-4161-B76A-81F04C666713}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -270,6 +272,18 @@ Global
 		{8A976D4C-F48B-4E83-B8C1-58B85C8E2AFF}.Release|x64.Build.0 = Release|Any CPU
 		{8A976D4C-F48B-4E83-B8C1-58B85C8E2AFF}.Release|x86.ActiveCfg = Release|Any CPU
 		{8A976D4C-F48B-4E83-B8C1-58B85C8E2AFF}.Release|x86.Build.0 = Release|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|x64.Build.0 = Debug|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|x86.Build.0 = Debug|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|x64.ActiveCfg = Release|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|x64.Build.0 = Release|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|x86.ActiveCfg = Release|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BBB5024A-52F8-463B-B8CC-04DEB842852B} = {D9506C1D-DF7A-4975-B4A9-80B2EF4ADA2E}

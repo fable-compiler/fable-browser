@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Because Fable.Lit has a dependency on Fable.Browser.Dom, we need to reference the sources instead -->
+    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit/Template.fs" />
+    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit/Lit.fs" />
+    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit/HMR.fs" />
+    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit/Hook.fs" />
+    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit/LitElement.fs" />
+    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit.Test/Expect.fs" />
+    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit.Test/Expect.Dom.fs" />
+    <!-- <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit.Test/Expect.Elmish.fs" /> -->
+    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit.Test/WebTestRunner.fs" />
+
+    <Compile Include="EventTest.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\Dom\Browser.Dom.fsproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Fable.Core" Version="3.3.1" />
+    <PackageReference Include="Fable.Promise" Version="3.1.0" />
+  </ItemGroup>
+</Project>

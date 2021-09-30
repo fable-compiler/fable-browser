@@ -29,6 +29,7 @@ type [<AllowNullLiteral>] EventInit =
     abstract composed: bool with get, set
 
 type [<AllowNullLiteral>] EventType =
+    [<Emit("new $0($1...)")>] abstract Create: ``type``: string * ?eventInitDict: EventInit -> Event
     abstract AT_TARGET: float with get, set
     abstract BUBBLING_PHASE: float with get, set
     abstract CAPTURING_PHASE: float with get, set
@@ -51,7 +52,7 @@ type [<AllowNullLiteral>] EventTarget =
     abstract removeEventListener: ``type``: string * listener: (Event->unit) * options: RemoveEventListenerOptions -> unit
 
 type [<AllowNullLiteral>] EventTargetType =
-    [<Emit("new $0($1...)")>] abstract Create: ``type``: string * ?eventInitDict: EventInit -> Event
+    [<Emit("new $0($1...)")>] abstract Create: unit -> EventTarget
 
 type [<AllowNullLiteral>] CustomEvent =
     inherit Event
@@ -71,7 +72,7 @@ type [<AllowNullLiteral>] CustomEventInit<'T> =
 
 type [<AllowNullLiteral>] CustomEventType =
     [<Emit("new $0($1...)")>] abstract Create : typeArg: string * ?eventInitDict: CustomEventInit -> CustomEvent
-    [<Emit("new $0($1...)")>] abstract Create<'T> : typeArg: string * ?eventInitDict: CustomEventInit<'T> -> CustomEvent<'T>
+    [<Emit("new $0($1...)")>] abstract Create : typeArg: string * ?eventInitDict: CustomEventInit<'T> -> CustomEvent<'T>
 
 type [<AllowNullLiteral>] ErrorEvent =
     inherit Event
