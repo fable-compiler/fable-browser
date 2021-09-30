@@ -1,3 +1,7 @@
+### 1.2.0
+
+* Fix #78: Invalid IL @jwosty
+
 ### 1.1.5
 
 * Downgrade FSharp.Core to 4.7.2

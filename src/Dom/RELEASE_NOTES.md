@@ -1,3 +1,7 @@
+### 2.6.0
+
+* Fix #78: Invalid IL @jwosty
+
 ### 2.5.0
 
 * Add shadow root types @AngelMunoz

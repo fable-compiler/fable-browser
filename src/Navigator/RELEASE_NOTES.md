@@ -1,3 +1,7 @@
+### 2.2.0
+
+* Fix #78: Invalid IL @jwosty
+
 ### 2.1.0
 
 * Fix #67: Make all fields in `PermissionDescriptor` "settable" (by @MNie)
