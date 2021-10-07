@@ -1,3 +1,3 @@
 source https://api.nuget.org/v3/index.json
 
-github fable-compiler/Fable.Lit:main
+github fable-compiler/Fable.Expect:main

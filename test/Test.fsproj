@@ -4,15 +4,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- Because Fable.Lit has a dependency on Fable.Browser.Dom, we need to reference the sources instead -->
-    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit/Template.fs" />
-    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit/Lit.fs" />
-    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit/HMR.fs" />
-    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit/Hook.fs" />
-    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit/LitElement.fs" />
-    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit.Test/Expect.fs" />
-    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit.Test/Expect.Dom.fs" />
-    <!-- <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit.Test/Expect.Elmish.fs" /> -->
-    <Compile Include="../paket-files/fable-compiler/Fable.Lit/src/Lit.Test/WebTestRunner.fs" />
+    <Compile Include="../paket-files/fable-compiler/Fable.Expect/src/Fable.Expect/Expect.fs" />
+    <Compile Include="../paket-files/fable-compiler/Fable.Expect/src/Fable.Expect/Expect.Dom.fs" />
+    <!-- <Compile Include="../paket-files/fable-compiler/Fable.Expect/src/Fable.Expect/Expect.Elmish.fs" /> -->
+    <Compile Include="../paket-files/fable-compiler/Fable.Expect/src/Fable.Expect/WebTestRunner.fs" />
 
     <Compile Include="EventTest.fs" />
   </ItemGroup>

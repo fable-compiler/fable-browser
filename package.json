@@ -6,11 +6,8 @@
     "test": "dotnet fable test -o build/test --run web-test-runner build/test/*Test.js --node-resolve",
     "test:watch": "dotnet fable watch test -o build/test --run web-test-runner build/test/*Test.js --node-resolve --watch"
   },
-  "dependencies": {
-    "fable-publish-utils": "^2.2.0",
-    "lit": "^2.0.0"
-  },
   "devDependencies": {
-    "@web/test-runner": "^0.13.18"
+    "@web/test-runner": "^0.13.18",
+    "@web/test-runner-commands": "^0.5.13"
   }
 }

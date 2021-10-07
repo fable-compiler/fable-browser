@@ -1,4 +1,4 @@
 
 GITHUB
-  remote: fable-compiler/Fable.Lit
-    FULLPROJECT (3ec226ffee14f6015d825ed1e1f11e8afe8ef6c4)
+  remote: fable-compiler/Fable.Expect
+    FULLPROJECT (ae6ea7a4fadff6e78da0f077f925121206284d0d)
