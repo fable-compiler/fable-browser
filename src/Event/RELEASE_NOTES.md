@@ -1,3 +1,7 @@
+### 1.4.6
+
+* Fix Event and CustomEvent constructors
+
 ### 1.4.5
 
 * Fix Fable #2463 @forki
