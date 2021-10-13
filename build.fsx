@@ -22,6 +22,7 @@ let packages =
       "Geolocation"
       "Navigator"
       "MediaStream"
+      "MediaRecorder"
       "MediaQueryList"
       "WebRTC"
       "WebGL"
