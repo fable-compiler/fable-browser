@@ -2,6 +2,7 @@ namespace Browser.Types
 
 open System
 open Fable.Core
+open Fable.Core.JS
 
 [<StringEnum; RequireQualifiedAccess>]
 type BlobEndings =
@@ -15,6 +16,7 @@ type [<AllowNullLiteral>] BlobPropertyBag =
     abstract endings: BlobEndings with get, set
 
 type [<AllowNullLiteral>] Blob =
+    abstract arrayBuffer: unit -> Promise<ArrayBuffer>
     abstract size: int
     abstract ``type``: string
     abstract slice: ?start: int * ?``end``: int * ?contentType: string -> Blob
