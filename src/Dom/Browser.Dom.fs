@@ -570,6 +570,7 @@ type [<AllowNullLiteral>] Node =
     abstract lastChild: Node with get, set
     abstract localName: string with get, set
     abstract namespaceURI: string with get, set
+    abstract nextElementSibling: Element with get, set
     abstract nextSibling: Node with get, set
     abstract nodeName: string with get, set
     abstract nodeType: float with get, set
@@ -578,6 +579,7 @@ type [<AllowNullLiteral>] Node =
     abstract parentElement: HTMLElement with get, set
     abstract parentNode: Node with get, set
     abstract prefix: string with get, set
+    abstract previousElementSibling: Element with get, set
     abstract previousSibling: Node with get, set
     abstract textContent: string with get, set
     abstract ATTRIBUTE_NODE: float with get, set
