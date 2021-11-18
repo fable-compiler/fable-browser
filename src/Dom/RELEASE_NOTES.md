@@ -1,3 +1,7 @@
+### 2.7.0
+
+* Fix #86: Add `nextElementSibling` and `previousElementSibling` methods
+
 ### 2.6.0
 
 * Fix #78: Invalid IL @jwosty
