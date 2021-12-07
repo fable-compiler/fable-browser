@@ -3,8 +3,14 @@ namespace Browser.Types
 open System
 open Fable.Core
 
+[<StringEnum; RequireQualifiedAccess>]
+type ScrollRestoration =
+    | Auto
+    | Manual
+
 type [<AllowNullLiteral>] History =
     abstract length: int
+    abstract scrollRestoration : ScrollRestoration with get, set
     abstract state: obj with get, set
     /// Equivalent to history.go(-1)
     abstract back: unit -> unit
