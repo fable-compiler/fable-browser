@@ -808,6 +808,32 @@ type [<AllowNullLiteral>] TreeWalkerType =
 type [<AllowNullLiteral>] BarProp =
     abstract visible: bool with get, set
 
+[<StringEnum; RequireQualifiedAccess>]
+type ScreenOrientationType =
+    | [<CompiledName("portrait-primary")>] PortraitPrimary
+    | [<CompiledName("portrait-secondary")>] PortraitSecondary
+    | [<CompiledName("landscape-primary")>] LandscapePrimary
+    | [<CompiledName("landscape-secondary")>] LandscapeSecondary
+
+[<StringEnum; RequireQualifiedAccess>]
+type OrientationLockType =
+    | [<CompiledName("any")>] Any
+    | [<CompiledName("natural")>] Natural
+    | [<CompiledName("landscape")>] Landscape
+    | [<CompiledName("portrait")>] Portrait
+    | [<CompiledName("portrait-primary")>] PortraitPrimary
+    | [<CompiledName("portrait-secondary")>] PortraitSecondary
+    | [<CompiledName("landscape-primary")>] LandscapePrimary
+    | [<CompiledName("landscape-secondary")>] LandscapeSecondary
+
+type [<AllowNullLiteral>] ScreenOrientation =
+    inherit EventTarget
+    abstract ``type``: ScreenOrientationType
+    abstract angle: int
+    abstract onchange: (Event -> unit) with get, set
+    abstract lock: OrientationLockType -> JS.Promise<unit>
+    abstract unlock: unit -> unit
+
 type [<AllowNullLiteral>] Screen =
     inherit EventTarget
     abstract availHeight: float with get, set
@@ -824,6 +850,7 @@ type [<AllowNullLiteral>] Screen =
     abstract systemXDPI: float with get, set
     abstract systemYDPI: float with get, set
     abstract width: float with get, set
+    abstract orientation: ScreenOrientation with get, set
 
 type [<AllowNullLiteral>] Location =
     abstract hash: string with get, set
