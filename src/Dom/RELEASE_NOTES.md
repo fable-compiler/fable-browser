@@ -1,6 +1,6 @@
 ### 2.8.0
 
-* Fix #89: Add `orientation` to `window.screen`
+* Fix #89: Add `orientation` to `window.screen` @sumeetdas
 
 ### 2.7.0
 
