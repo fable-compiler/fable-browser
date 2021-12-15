@@ -1,3 +1,7 @@
+### 2.8.0
+
+* Fix #89: Add `orientation` to `window.screen`
+
 ### 2.7.0
 
 * Fix #86: Add `nextElementSibling` and `previousElementSibling` methods
