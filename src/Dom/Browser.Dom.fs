@@ -808,23 +808,23 @@ type [<AllowNullLiteral>] TreeWalkerType =
 type [<AllowNullLiteral>] BarProp =
     abstract visible: bool with get, set
 
-[<StringEnum; RequireQualifiedAccess>]
+[<StringEnum(CaseRules.KebabCase); RequireQualifiedAccess>]
 type ScreenOrientationType =
-    | [<CompiledName("portrait-primary")>] PortraitPrimary
-    | [<CompiledName("portrait-secondary")>] PortraitSecondary
-    | [<CompiledName("landscape-primary")>] LandscapePrimary
-    | [<CompiledName("landscape-secondary")>] LandscapeSecondary
+    | PortraitPrimary
+    | PortraitSecondary
+    | LandscapePrimary
+    | LandscapeSecondary
 
-[<StringEnum; RequireQualifiedAccess>]
+[<StringEnum(CaseRules.KebabCase); RequireQualifiedAccess>]
 type OrientationLockType =
-    | [<CompiledName("any")>] Any
-    | [<CompiledName("natural")>] Natural
-    | [<CompiledName("landscape")>] Landscape
-    | [<CompiledName("portrait")>] Portrait
-    | [<CompiledName("portrait-primary")>] PortraitPrimary
-    | [<CompiledName("portrait-secondary")>] PortraitSecondary
-    | [<CompiledName("landscape-primary")>] LandscapePrimary
-    | [<CompiledName("landscape-secondary")>] LandscapeSecondary
+    | Any
+    | Natural
+    | Landscape
+    | Portrait
+    | PortraitPrimary
+    | PortraitSecondary
+    | LandscapePrimary
+    | LandscapeSecondary
 
 type [<AllowNullLiteral>] ScreenOrientation =
     inherit EventTarget
