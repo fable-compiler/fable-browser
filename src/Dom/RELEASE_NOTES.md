@@ -1,3 +1,7 @@
+### 2.9.0
+
+* PR #91: Add support for `Element.toggleAttribute`
+
 ### 2.8.0
 
 * Fix #89: Add `orientation` to `window.screen` @sumeetdas
