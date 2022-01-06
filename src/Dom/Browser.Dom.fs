@@ -476,8 +476,7 @@ type [<AllowNullLiteral>] Element =
     abstract setAttributeNS: namespaceURI: string * qualifiedName: string * value: string -> unit
     abstract setAttributeNode: newAttr: Attr -> Attr
     abstract setAttributeNodeNS: newAttr: Attr -> Attr
-    [<Emit("$0.toggleAttribute($1, $2 ?? undefined)")>]
-    abstract toggleAttribute: name: string * force: bool option -> bool
+    abstract toggleAttribute: name: string * ?force: bool -> bool
     abstract setPointerCapture: pointerId: float -> unit
     abstract getElementsByClassName: classNames: string -> NodeListOf<Element>
     abstract matches: selector: string -> bool
