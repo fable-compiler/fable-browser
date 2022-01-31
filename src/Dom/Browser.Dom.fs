@@ -1312,6 +1312,9 @@ type [<AllowNullLiteral>] HTMLButtonElement =
     /// <summary>Sets a custom error message that is displayed when a form is submitted.</summary>
     /// <param name="error">Sets a custom error message that is displayed when a form is submitted.</param>
     abstract setCustomValidity: error: string -> unit
+    /// The reportValidity() method of the HTMLInputElement interface performs the same validity checking steps as the checkValidity() method. If the value is invalid, this method also fires the invalid event on the element, and (if the event isn't canceled) reports the problem to the user.
+    /// Returns true if the element's value has no validity problems; otherwise, returns false.
+    abstract reportValidity: unit -> bool
 
 type [<AllowNullLiteral>] HTMLButtonElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLButtonElement
