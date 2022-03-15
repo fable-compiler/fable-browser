@@ -3,7 +3,7 @@ namespace Browser.Types
 open System
 open Fable.Core
 
-type [<AllowNullLiteral>] URLSearchParams =
+type [<AllowNullLiteral; Global>] URLSearchParams =
     /// Appends a specified key/value pair as a new search parameter.
     abstract append: name: string * value: string -> unit
     /// Deletes the given search parameter, and its associated value, from the list of all search parameters.
@@ -20,7 +20,7 @@ type [<AllowNullLiteral>] URLSearchParams =
 type [<AllowNullLiteral>] URLSearchParamsType =
     [<Emit("new $0($1...)")>] abstract Create: arg: obj -> URLSearchParams
 
-type [<AllowNullLiteral>] URL =
+type [<AllowNullLiteral; Global>] URL =
     abstract hash: string with get, set
     abstract host: string with get, set
     abstract hostname: string with get, set

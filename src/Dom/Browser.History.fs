@@ -8,7 +8,7 @@ type ScrollRestoration =
     | Auto
     | Manual
 
-type [<AllowNullLiteral>] History =
+type [<AllowNullLiteral; Global>] History =
     abstract length: int
     abstract scrollRestoration : ScrollRestoration with get, set
     abstract state: obj with get, set

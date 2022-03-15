@@ -37,7 +37,7 @@ type PositionOptions =
     abstract timeout: int option with get, set
     abstract maximumAge: int option with get, set
 
-type Geolocation =
+type [<Global>] Geolocation =
     abstract clearWatch: watchId: float -> unit
     abstract getCurrentPosition: successCallback: (Position->unit) * ?errorCallback: (PositionError->unit) * ?options: PositionOptions -> unit
     abstract watchPosition: successCallback: (Position->unit) * ?errorCallback: (PositionError->unit) * ?options: PositionOptions -> float

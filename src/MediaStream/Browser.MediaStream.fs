@@ -294,7 +294,7 @@ type MediaTrackCapabilities =
     abstract whiteBalanceMode: ShotMode array option
     abstract zoom: SteppedRange<uint32> option
 
-type MediaStreamTrack =
+type [<Global>] MediaStreamTrack =
     inherit EventTarget
     abstract kind: TrackKind
     abstract id: string
@@ -312,7 +312,7 @@ type MediaStreamTrack =
     abstract getSettings: unit -> MediaTrackSettings
     abstract applyConstraints: constraints:#MediaTrackConstraints option -> JS.Promise<unit>
 
-type MediaStreamTrackEvent =
+type [<Global>] MediaStreamTrackEvent =
     abstract track: MediaStreamTrack
 
 type AudioMediaStreamTrack =
@@ -338,7 +338,7 @@ type [<AllowNullLiteral>] MediaStreamErrorType =
     abstract prototype: MediaStreamError with get, set
     [<Emit "new $0($1...)">] abstract Create: unit -> obj
 
-type MediaStream =
+type [<Global>] MediaStream =
     inherit EventTarget
     abstract active: bool
     abstract id: string
@@ -367,13 +367,13 @@ type MediaDeviceKind =
 | [<CompiledName("audioinput")>] AudioInput
 | [<CompiledName("audiooutput")>] AudioOutput
 
-type MediaDeviceInfo =
+type [<Global>] MediaDeviceInfo =
     abstract deviceId: string
     abstract groupId: string
     abstract kind: MediaDeviceKind
     abstract label: string
 
-type MediaDevices =
+type [<Global>] MediaDevices =
     inherit EventTarget
     abstract getSupportedConstraints: unit -> MediaTrackSupportedConstraints
     abstract getUserMedia: constraints: MediaStreamConstraints -> JS.Promise<MediaStream>

@@ -6,7 +6,7 @@ open Fable.Core
 type [<AllowNullLiteral>] CSS =
     abstract supports: property: string * ?value: string -> bool
 
-type [<AllowNullLiteral>] CSSConditionRule =
+type [<AllowNullLiteral; Global>] CSSConditionRule =
     inherit CSSGroupingRule
     abstract conditionText: string with get, set
 
@@ -14,7 +14,7 @@ type CSSConditionRuleType =
     abstract prototype: CSSConditionRule with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSConditionRule
 
-type [<AllowNullLiteral>] CSSFontFaceRule =
+type [<AllowNullLiteral; Global>] CSSFontFaceRule =
     inherit CSSRule
     abstract style: CSSStyleDeclaration with get, set
 
@@ -22,7 +22,7 @@ type CSSFontFaceRuleType =
     abstract prototype: CSSFontFaceRule with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSFontFaceRule
 
-type [<AllowNullLiteral>] CSSGroupingRule =
+type [<AllowNullLiteral; Global>] CSSGroupingRule =
     inherit CSSRule
     abstract cssRules: CSSRuleList with get, set
     abstract deleteRule: ?index: float -> unit
@@ -32,7 +32,7 @@ type CSSGroupingRuleType =
     abstract prototype: CSSGroupingRule with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSGroupingRule
 
-type [<AllowNullLiteral>] CSSImportRule =
+type [<AllowNullLiteral; Global>] CSSImportRule =
     inherit CSSRule
     abstract href: string with get, set
     // TODO
@@ -43,7 +43,7 @@ type CSSImportRuleType =
     abstract prototype: CSSImportRule with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSImportRule
 
-type [<AllowNullLiteral>] CSSKeyframeRule =
+type [<AllowNullLiteral; Global>] CSSKeyframeRule =
     inherit CSSRule
     abstract keyText: string with get, set
     abstract style: CSSStyleDeclaration with get, set
@@ -52,7 +52,7 @@ type CSSKeyframeRuleType =
     abstract prototype: CSSKeyframeRule with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSKeyframeRule
 
-type [<AllowNullLiteral>] CSSKeyframesRule =
+type [<AllowNullLiteral; Global>] CSSKeyframesRule =
     inherit CSSRule
     abstract cssRules: CSSRuleList with get, set
     abstract name: string with get, set
@@ -64,7 +64,7 @@ type CSSKeyframesRuleType =
     abstract prototype: CSSKeyframesRule with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSKeyframesRule
 
-type [<AllowNullLiteral>] CSSMediaRule =
+type [<AllowNullLiteral; Global>] CSSMediaRule =
     inherit CSSConditionRule
     /// TODO
     // abstract media: MediaList with get, set
@@ -73,7 +73,7 @@ type CSSMediaRuleType =
     abstract prototype: CSSMediaRule with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSMediaRule
 
-type [<AllowNullLiteral>] CSSNamespaceRule =
+type [<AllowNullLiteral; Global>] CSSNamespaceRule =
     inherit CSSRule
     abstract namespaceURI: string with get, set
     abstract prefix: string with get, set
@@ -82,7 +82,7 @@ type CSSNamespaceRuleType =
     abstract prototype: CSSNamespaceRule with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSNamespaceRule
 
-type [<AllowNullLiteral>] CSSPageRule =
+type [<AllowNullLiteral; Global>] CSSPageRule =
     inherit CSSRule
     abstract pseudoClass: string with get, set
     abstract selector: string with get, set
@@ -93,7 +93,7 @@ type CSSPageRuleType =
     abstract prototype: CSSPageRule with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSPageRule
 
-type [<AllowNullLiteral>] CSSRule =
+type [<AllowNullLiteral; Global>] CSSRule =
     abstract cssText: string with get, set
     abstract parentRule: CSSRule with get, set
     abstract parentStyleSheet: CSSStyleSheet with get, set
@@ -127,7 +127,7 @@ type CSSRuleType =
     abstract VIEWPORT_RULE: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSRule
 
-type [<AllowNullLiteral>] CSSRuleList =
+type [<AllowNullLiteral; Global>] CSSRuleList =
     abstract length: float with get, set
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> CSSRule with get, set
     abstract item: index: float -> CSSRule
@@ -136,7 +136,7 @@ type CSSRuleListType =
     abstract prototype: CSSRuleList with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSRuleList
 
-type [<AllowNullLiteral>] CSSStyleDeclaration =
+type [<AllowNullLiteral; Global>] CSSStyleDeclaration =
     abstract alignContent: string with get, set
     abstract alignItems: string with get, set
     abstract alignSelf: string with get, set
@@ -493,7 +493,7 @@ type CSSStyleDeclarationType =
     abstract prototype: CSSStyleDeclaration with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSStyleDeclaration
 
-type [<AllowNullLiteral>] CSSStyleRule =
+type [<AllowNullLiteral; Global>] CSSStyleRule =
     inherit CSSRule
     abstract readOnly: bool with get, set
     abstract selectorText: string with get, set
@@ -503,7 +503,7 @@ type CSSStyleRuleType =
     abstract prototype: CSSStyleRule with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSStyleRule
 
-type [<AllowNullLiteral>] CSSStyleSheet =
+type [<AllowNullLiteral; Global>] CSSStyleSheet =
     inherit StyleSheet
     abstract cssRules: CSSRuleList with get, set
     abstract cssText: string with get, set
@@ -544,14 +544,14 @@ type CSSStyleSheetType =
     abstract prototype: CSSStyleSheet with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSStyleSheet
 
-type [<AllowNullLiteral>] CSSSupportsRule =
+type [<AllowNullLiteral; Global>] CSSSupportsRule =
     inherit CSSConditionRule
 
 type CSSSupportsRuleType =
     abstract prototype: CSSSupportsRule with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> CSSSupportsRule
 
-type [<AllowNullLiteral>] StyleMedia =
+type [<AllowNullLiteral; Global>] StyleMedia =
     abstract ``type``: string with get, set
     abstract matchMedium: mediaquery: string -> bool
 
@@ -559,7 +559,7 @@ type StyleMediaType =
     abstract prototype: StyleMedia with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> StyleMedia
 
-type [<AllowNullLiteral>] StyleSheet =
+type [<AllowNullLiteral; Global>] StyleSheet =
     abstract disabled: bool with get, set
     abstract href: string with get, set
     // TODO
@@ -573,7 +573,7 @@ type StyleSheetType =
     abstract prototype: StyleSheet with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> StyleSheet
 
-type [<AllowNullLiteral>] StyleSheetList =
+type [<AllowNullLiteral; Global>] StyleSheetList =
     abstract length: float with get, set
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> StyleSheet with get, set
     abstract item: ?index: float -> StyleSheet
@@ -582,7 +582,7 @@ type StyleSheetListType =
     abstract prototype: StyleSheetList with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> StyleSheetList
 
-type [<AllowNullLiteral>] StyleSheetPageList =
+type [<AllowNullLiteral; Global>] StyleSheetPageList =
     abstract length: float with get, set
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> CSSPageRule with get, set
     abstract item: index: float -> CSSPageRule

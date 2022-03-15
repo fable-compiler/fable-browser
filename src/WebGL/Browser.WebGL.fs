@@ -16,14 +16,14 @@ type [<AllowNullLiteral>] WebGLContextEventInit =
     inherit EventInit
     abstract statusMessage: string option with get, set
 
-type [<AllowNullLiteral>] WebGLObject =
+type [<AllowNullLiteral; Global>] WebGLObject =
     interface end
 
 type [<AllowNullLiteral>] WebGLObjectType =
     abstract prototype: WebGLObject with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> WebGLObject
 
-type [<AllowNullLiteral>] WEBGL_compressed_texture_s3tc =
+type [<AllowNullLiteral; Global>] WEBGL_compressed_texture_s3tc =
     abstract COMPRESSED_RGBA_S3TC_DXT1_EXT: float with get, set
     abstract COMPRESSED_RGBA_S3TC_DXT3_EXT: float with get, set
     abstract COMPRESSED_RGBA_S3TC_DXT5_EXT: float with get, set
@@ -37,7 +37,7 @@ type [<AllowNullLiteral>] WEBGL_compressed_texture_s3tcType =
     abstract COMPRESSED_RGB_S3TC_DXT1_EXT: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> WEBGL_compressed_texture_s3tc
 
-type [<AllowNullLiteral>] WEBGL_debug_renderer_info =
+type [<AllowNullLiteral; Global>] WEBGL_debug_renderer_info =
     abstract UNMASKED_RENDERER_WEBGL: float with get, set
     abstract UNMASKED_VENDOR_WEBGL: float with get, set
 
@@ -47,7 +47,7 @@ type [<AllowNullLiteral>] WEBGL_debug_renderer_infoType =
     abstract UNMASKED_VENDOR_WEBGL: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> WEBGL_debug_renderer_info
 
-type [<AllowNullLiteral>] WEBGL_depth_texture =
+type [<AllowNullLiteral; Global>] WEBGL_depth_texture =
     abstract UNSIGNED_INT_24_8_WEBGL: float with get, set
 
 type [<AllowNullLiteral>] WEBGL_depth_textureType =
@@ -55,7 +55,7 @@ type [<AllowNullLiteral>] WEBGL_depth_textureType =
     abstract UNSIGNED_INT_24_8_WEBGL: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> WEBGL_depth_texture
 
-type [<AllowNullLiteral>] WebGLActiveInfo =
+type [<AllowNullLiteral; Global>] WebGLActiveInfo =
     abstract name: string with get, set
     abstract size: float with get, set
     abstract ``type``: float with get, set
@@ -64,14 +64,14 @@ type [<AllowNullLiteral>] WebGLActiveInfoType =
     abstract prototype: WebGLActiveInfo with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> WebGLActiveInfo
 
-type [<AllowNullLiteral>] WebGLBuffer =
+type [<AllowNullLiteral; Global>] WebGLBuffer =
     inherit WebGLObject
 
 type [<AllowNullLiteral>] WebGLBufferType =
     abstract prototype: WebGLBuffer with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> WebGLBuffer
 
-type [<AllowNullLiteral>] WebGLContextEvent =
+type [<AllowNullLiteral; Global>] WebGLContextEvent =
     inherit Event
     abstract statusMessage: string with get, set
 
@@ -79,7 +79,7 @@ type [<AllowNullLiteral>] WebGLContextEventType =
     abstract prototype: WebGLContextEvent with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> WebGLContextEvent
 
-type [<AllowNullLiteral>] WebGLFramebuffer =
+type [<AllowNullLiteral; Global>] WebGLFramebuffer =
     inherit WebGLObject
 
 
@@ -87,28 +87,28 @@ type [<AllowNullLiteral>] WebGLFramebufferType =
     abstract prototype: WebGLFramebuffer with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> WebGLFramebuffer
 
-type [<AllowNullLiteral>] WebGLProgram =
+type [<AllowNullLiteral; Global>] WebGLProgram =
     inherit WebGLObject
 
 type [<AllowNullLiteral>] WebGLProgramType =
     abstract prototype: WebGLProgram with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> WebGLProgram
 
-type [<AllowNullLiteral>] WebGLRenderbuffer =
+type [<AllowNullLiteral; Global>] WebGLRenderbuffer =
     inherit WebGLObject
 
 type [<AllowNullLiteral>] WebGLRenderbufferType =
     abstract prototype: WebGLRenderbuffer with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> WebGLRenderbuffer
 
-type [<AllowNullLiteral>] WebGLShader =
+type [<AllowNullLiteral; Global>] WebGLShader =
     inherit WebGLObject
 
 type [<AllowNullLiteral>] WebGLShaderType =
     abstract prototype: WebGLShader with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> WebGLShader
 
-type [<AllowNullLiteral>] WebGLShaderPrecisionFormat =
+type [<AllowNullLiteral; Global>] WebGLShaderPrecisionFormat =
     abstract precision: float with get, set
     abstract rangeMax: float with get, set
     abstract rangeMin: float with get, set
@@ -117,21 +117,21 @@ type [<AllowNullLiteral>] WebGLShaderPrecisionFormatType =
     abstract prototype: WebGLShaderPrecisionFormat with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> WebGLShaderPrecisionFormat
 
-type [<AllowNullLiteral>] WebGLTexture =
+type [<AllowNullLiteral; Global>] WebGLTexture =
     inherit WebGLObject
 
 type [<AllowNullLiteral>] WebGLTextureType =
     abstract prototype: WebGLTexture with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> WebGLTexture
 
-type [<AllowNullLiteral>] WebGLUniformLocation =
+type [<AllowNullLiteral; Global>] WebGLUniformLocation =
     interface end
 
 type [<AllowNullLiteral>] WebGLUniformLocationType =
     abstract prototype: WebGLUniformLocation with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> WebGLUniformLocation
 
-type [<AllowNullLiteral>] WebGLRenderingContext =
+type [<AllowNullLiteral; Global>] WebGLRenderingContext =
     abstract canvas: HTMLCanvasElement with get, set
     abstract drawingBufferHeight: float with get, set
     abstract drawingBufferWidth: float with get, set

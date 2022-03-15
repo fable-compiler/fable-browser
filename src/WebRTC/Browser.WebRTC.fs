@@ -11,7 +11,7 @@ type RTCDtlsFingerprint =
     abstract algorithm: string option with get, set
     abstract value: string with get, set
 
-type RTCCertificate =
+type [<Global>] RTCCertificate =
     abstract expires: float
     abstract getFingerprints: unit -> RTCDtlsFingerprint array
 
@@ -30,7 +30,7 @@ type RTCDataChannelState =
 | Closing
 | Closed
 
-type RTCDataChannel =
+type [<Global>] RTCDataChannel =
     inherit EventTarget
     abstract binaryType: BinaryType with get, set
     abstract bufferedAmount: uint32
@@ -73,7 +73,7 @@ type RTCDataChannelInitType =
     [<Emit("new Object({ordered:true,protocol:'',negotiated:false,priority:'low'})")>]
     abstract Create:unit -> RTCDataChannelInit
 
-type RTCDataChannelEvent =
+type [<Global>] RTCDataChannelEvent =
     inherit Event
     abstract channel: RTCDataChannel
 
@@ -147,7 +147,7 @@ type RTCIceCandidateType =
 | Prflx
 | Relay
 
-type RTCIceCandidate =
+type [<Global>] RTCIceCandidate =
     abstract candidate: string
     abstract ``component``: RTCIceComponent
     abstract foundation: string
@@ -199,7 +199,7 @@ type RTCIceTransportState =
 | Failed //The RTCIceTransport has finished the gathering process, has received the "no more candidates" notification from the remote peer, and has finished checking pairs of candidates, without successfully finding a pair that is both valid and for which consent can be obtained. This is a terminal state, indicating that the connection cannot be achieved or maintained.
 | Closed //The transport has shut down and is no int64er responding to STUN requests.
 
-type RTCIceTransport =
+type [<Global>] RTCIceTransport =
     inherit EventTarget
     abstract ``component``: RTCIceTransportComponent
     abstract gatheringState: RTCIceGatheringState
@@ -226,7 +226,7 @@ type RTCDtlsTransportState =
 | Closed
 | Failed
 
-type RTCDtlsTransport =
+type [<Global>] RTCDtlsTransport =
     inherit EventTarget
     abstract state: RTCDtlsTransportState
     abstract iceTransport: RTCIceTransport
@@ -662,7 +662,7 @@ type RTCCertificateStats =
 
 type RTCStatsReport = System.Collections.Generic.Dictionary<string,RTCStats>
 
-type RTCRtpReceiver =
+type [<Global>] RTCRtpReceiver =
     abstract track: MediaStreamTrack
     abstract rtcpTransport: RTCDtlsTransport option
     abstract transport: RTCDtlsTransport option
@@ -712,7 +712,7 @@ type RTCRtpSendParameters =
     abstract encodings: ResizeArray<RTCRtpEncodingParameters> with get, set
     abstract degradationPreference: RTCDegradationPreference option with get, set
 
-type RTCRtpSender =
+type [<Global>] RTCRtpSender =
     //TODO: abstract dtmf: obj
     abstract rtcpTransport: RTCDtlsTransport option
     abstract transport: RTCDtlsTransport option
@@ -739,7 +739,7 @@ type RTCRtpTransceiverDirection =
 | [<CompiledName("recvonly")>] RecvOnly
 | [<CompiledName("inactive")>] Inactive
 
-type RTCRtpTransceiver =
+type [<Global>] RTCRtpTransceiver =
     abstract mid: string option
     abstract sender: RTCRtpSender
     abstract receiver: RTCRtpReceiver
@@ -754,7 +754,7 @@ type RTCSctpTransportState =
 | Connected
 | Closed
 
-type RTCSctpTransport =
+type [<Global>] RTCSctpTransport =
     inherit EventTarget
     abstract transport: RTCDtlsTransport
     abstract state: RTCSctpTransportState
@@ -776,7 +776,7 @@ type RTCSessionDescriptionInit =
 type RTCSessionDescriptionInitType =
     [<Emit "({type:$1, sdp:$2})">] abstract Create: ``type``:RTCSdpType * sdp:string  -> RTCSessionDescriptionInit
 
-type RTCSessionDescription =
+type [<Global>] RTCSessionDescription =
     abstract ``type``: RTCSdpType
     abstract sdp: string
     abstract toJSON: unit -> RTCSessionDescriptionInit
@@ -785,12 +785,12 @@ type RTCSessionDescriptionType =
     [<Emit "new $0($1...)">] abstract Create: ?message: RTCSessionDescriptionInit -> RTCSessionDescription
     [<Emit "new $0({sdp:$1})">] abstract Create: sdp: string -> RTCSessionDescription
 
-type RTCPeerConnectionIceEvent =
+type [<Global>] RTCPeerConnectionIceEvent =
     inherit Event
     abstract candidate: RTCIceCandidate option
     abstract url: string option
 
-type RTCPeerConnectionIceErrorEvent =
+type [<Global>] RTCPeerConnectionIceErrorEvent =
     inherit Event
     abstract hostCandidate: string
     abstract url: string
@@ -859,7 +859,7 @@ type RTCConfiguration =
     abstract iceCandidatePoolSize: uint32 option with get, set
     abstract sdpSemantics: SdpSemantics option with get, set
 
-type RTCTrackEvent =
+type [<Global>] RTCTrackEvent =
     inherit Event
     abstract receiver: RTCRtpReceiver
     abstract track: MediaStreamTrack
@@ -871,7 +871,7 @@ type RTCRtpTransceiverInit =
     abstract sendEncodings: RTCRtpEncodingParameters array option
     abstract streams: MediaStream array option
 
-type RTCPeerConnection =
+type [<Global>] RTCPeerConnection =
     inherit EventTarget
     abstract onnegotiationneeded: (Event->unit) with get,set
     abstract onicecandidate: (RTCPeerConnectionIceEvent->unit) with get,set

@@ -12,7 +12,7 @@ type [<AllowNullLiteral>] FilePropertyBag =
     abstract ``type``: string with get, set
     abstract lastModified: float with get, set
 
-type [<AllowNullLiteral>] File =
+type [<AllowNullLiteral; Global>] File =
     inherit Blob
     abstract lastModified: float
     abstract name: string
@@ -20,12 +20,12 @@ type [<AllowNullLiteral>] File =
 type [<AllowNullLiteral>] FileType =
     [<Emit("new $0($1...)")>] abstract Create: parts: obj[] * filename: string * ?properties: FilePropertyBag -> File
 
-type [<AllowNullLiteral>] FileList =
+type [<AllowNullLiteral; Global>] FileList =
     abstract length: int
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> File
     abstract item: index: int -> File
 
-type [<AllowNullLiteral>] FileReader =
+type [<AllowNullLiteral; Global>] FileReader =
     inherit EventTarget
     // abstract error: DOMException with get, set
     abstract readyState: FileReaderState

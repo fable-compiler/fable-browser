@@ -3,7 +3,7 @@ namespace Browser.Types
 open System
 open Fable.Core
 
-type [<AllowNullLiteral>] Storage =
+type [<AllowNullLiteral; Global>] Storage =
     abstract length: int
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: key: string -> string with get, set
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> string with get, set
@@ -13,7 +13,7 @@ type [<AllowNullLiteral>] Storage =
     abstract removeItem: key: string -> unit
     abstract setItem: key: string * data: string -> unit
 
-type [<AllowNullLiteral>] StorageEvent =
+type [<AllowNullLiteral; Global>] StorageEvent =
     inherit Event
     abstract url: string
     abstract key: string

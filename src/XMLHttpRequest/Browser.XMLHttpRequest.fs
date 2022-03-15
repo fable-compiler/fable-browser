@@ -15,10 +15,10 @@ type ReadyState =
   /// The operation is complete.
   | Done = 4
 
-type [<AllowNullLiteral>] XMLHttpRequestUpload =
+type [<AllowNullLiteral; Global>] XMLHttpRequestUpload =
     inherit EventTarget
 
-type [<AllowNullLiteral>] XMLHttpRequest =
+type [<AllowNullLiteral; Global>] XMLHttpRequest =
     inherit EventTarget
     abstract onreadystatechange: (unit -> unit) with get, set
     abstract readyState: ReadyState

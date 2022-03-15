@@ -6,7 +6,7 @@ open Fable.Core
 type AbstractWorker =
     abstract onerror: (ErrorEvent -> unit) with get, set
 
-type Worker =
+type [<Global>] Worker =
     inherit EventTarget
     inherit AbstractWorker
     abstract onmessage: (MessageEvent -> unit) with get, set
@@ -43,13 +43,13 @@ type ServiceWorkerState =
     | Activated
     | Redundant
 
-type ServiceWorker =
+type [<Global>] ServiceWorker =
     inherit Worker
     abstract scriptURL: string
     abstract state: ServiceWorkerState
     abstract onstatechange: (Event -> unit) option with get, set
 
-type ServiceWorkerRegistration =
+type [<Global>] ServiceWorkerRegistration =
     abstract scope: string
     abstract installing: ServiceWorker option
     abstract waiting: ServiceWorker option
@@ -66,7 +66,7 @@ type ServiceWorkerRegistrationOptions =
     /// A USVString representing a URL that defines a service worker's registration scope; that is, what range of URLs a service worker can control. This is usually a relative URL. It is relative to the base URL of the application. By default, the scope value for a service worker registration is set to the directory where the service worker script is located.
     abstract scope: string with get, set
 
-type ServiceWorkerContainer =
+type [<Global>] ServiceWorkerContainer =
     abstract controller: ServiceWorker option
     abstract ready: JS.Promise<ServiceWorkerRegistration>
     abstract oncontrollerchange: (Event -> unit) with get, set
