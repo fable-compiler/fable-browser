@@ -3,7 +3,7 @@ namespace Browser.Types
 open System
 open Fable.Core
 
-type [<AllowNullLiteral>] DOMException =
+type [<AllowNullLiteral; Global>] DOMException =
     abstract code: float with get, set
     abstract message: string with get, set
     abstract name: string with get, set

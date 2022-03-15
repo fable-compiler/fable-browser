@@ -5,7 +5,7 @@ open Fable.Core
 
 // ## SVG Elements
 
-type [<AllowNullLiteral>] SVGAElement =
+type [<AllowNullLiteral; Global>] SVGAElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -19,7 +19,7 @@ type [<AllowNullLiteral>] SVGAElementType =
     abstract prototype: SVGAElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGAElement
 
-type [<AllowNullLiteral>] SVGAngle =
+type [<AllowNullLiteral; Global>] SVGAngle =
     abstract unitType: float with get, set
     abstract value: float with get, set
     abstract valueAsString: string with get, set
@@ -41,7 +41,7 @@ type [<AllowNullLiteral>] SVGAngleType =
     abstract SVG_ANGLETYPE_UNSPECIFIED: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGAngle
 
-type [<AllowNullLiteral>] SVGAnimatedAngle =
+type [<AllowNullLiteral; Global>] SVGAnimatedAngle =
     abstract animVal: SVGAngle with get, set
     abstract baseVal: SVGAngle with get, set
 
@@ -49,7 +49,7 @@ type [<AllowNullLiteral>] SVGAnimatedAngleType =
     abstract prototype: SVGAnimatedAngle with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGAnimatedAngle
 
-type [<AllowNullLiteral>] SVGAnimatedBoolean =
+type [<AllowNullLiteral; Global>] SVGAnimatedBoolean =
     abstract animVal: bool with get, set
     abstract baseVal: bool with get, set
 
@@ -57,7 +57,7 @@ type [<AllowNullLiteral>] SVGAnimatedBooleanType =
     abstract prototype: SVGAnimatedBoolean with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGAnimatedBoolean
 
-type [<AllowNullLiteral>] SVGAnimatedEnumeration =
+type [<AllowNullLiteral; Global>] SVGAnimatedEnumeration =
     abstract animVal: float with get, set
     abstract baseVal: float with get, set
 
@@ -65,7 +65,7 @@ type [<AllowNullLiteral>] SVGAnimatedEnumerationType =
     abstract prototype: SVGAnimatedEnumeration with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGAnimatedEnumeration
 
-type [<AllowNullLiteral>] SVGAnimatedInteger =
+type [<AllowNullLiteral; Global>] SVGAnimatedInteger =
     abstract animVal: float with get, set
     abstract baseVal: float with get, set
 
@@ -73,7 +73,7 @@ type [<AllowNullLiteral>] SVGAnimatedIntegerType =
     abstract prototype: SVGAnimatedInteger with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGAnimatedInteger
 
-type [<AllowNullLiteral>] SVGAnimatedLength =
+type [<AllowNullLiteral; Global>] SVGAnimatedLength =
     abstract animVal: SVGLength with get, set
     abstract baseVal: SVGLength with get, set
 
@@ -81,7 +81,7 @@ type [<AllowNullLiteral>] SVGAnimatedLengthType =
     abstract prototype: SVGAnimatedLength with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGAnimatedLength
 
-type [<AllowNullLiteral>] SVGAnimatedLengthList =
+type [<AllowNullLiteral; Global>] SVGAnimatedLengthList =
     abstract animVal: SVGLengthList with get, set
     abstract baseVal: SVGLengthList with get, set
 
@@ -89,7 +89,7 @@ type [<AllowNullLiteral>] SVGAnimatedLengthListType =
     abstract prototype: SVGAnimatedLengthList with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGAnimatedLengthList
 
-type [<AllowNullLiteral>] SVGAnimatedNumber =
+type [<AllowNullLiteral; Global>] SVGAnimatedNumber =
     abstract animVal: float with get, set
     abstract baseVal: float with get, set
 
@@ -97,7 +97,7 @@ type [<AllowNullLiteral>] SVGAnimatedNumberType =
     abstract prototype: SVGAnimatedNumber with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGAnimatedNumber
 
-type [<AllowNullLiteral>] SVGAnimatedNumberList =
+type [<AllowNullLiteral; Global>] SVGAnimatedNumberList =
     abstract animVal: SVGNumberList with get, set
     abstract baseVal: SVGNumberList with get, set
 
@@ -105,7 +105,7 @@ type [<AllowNullLiteral>] SVGAnimatedNumberListType =
     abstract prototype: SVGAnimatedNumberList with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGAnimatedNumberList
 
-type [<AllowNullLiteral>] SVGAnimatedPreserveAspectRatio =
+type [<AllowNullLiteral; Global>] SVGAnimatedPreserveAspectRatio =
     abstract animVal: SVGPreserveAspectRatio with get, set
     abstract baseVal: SVGPreserveAspectRatio with get, set
 
@@ -113,7 +113,7 @@ type [<AllowNullLiteral>] SVGAnimatedPreserveAspectRatioType =
     abstract prototype: SVGAnimatedPreserveAspectRatio with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGAnimatedPreserveAspectRatio
 
-type [<AllowNullLiteral>] SVGAnimatedRect =
+type [<AllowNullLiteral; Global>] SVGAnimatedRect =
     abstract animVal: SVGRect with get, set
     abstract baseVal: SVGRect with get, set
 
@@ -121,7 +121,7 @@ type [<AllowNullLiteral>] SVGAnimatedRectType =
     abstract prototype: SVGAnimatedRect with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGAnimatedRect
 
-type [<AllowNullLiteral>] SVGAnimatedString =
+type [<AllowNullLiteral; Global>] SVGAnimatedString =
     abstract animVal: string with get, set
     abstract baseVal: string with get, set
 
@@ -129,7 +129,7 @@ type [<AllowNullLiteral>] SVGAnimatedStringType =
     abstract prototype: SVGAnimatedString with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGAnimatedString
 
-type [<AllowNullLiteral>] SVGAnimatedTransformList =
+type [<AllowNullLiteral; Global>] SVGAnimatedTransformList =
     abstract animVal: SVGTransformList with get, set
     abstract baseVal: SVGTransformList with get, set
 
@@ -137,7 +137,7 @@ type [<AllowNullLiteral>] SVGAnimatedTransformListType =
     abstract prototype: SVGAnimatedTransformList with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGAnimatedTransformList
 
-type [<AllowNullLiteral>] SVGCircleElement =
+type [<AllowNullLiteral; Global>] SVGCircleElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -152,7 +152,7 @@ type [<AllowNullLiteral>] SVGCircleElementType =
     abstract prototype: SVGCircleElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGCircleElement
 
-type [<AllowNullLiteral>] SVGClipPathElement =
+type [<AllowNullLiteral; Global>] SVGClipPathElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -166,7 +166,7 @@ type [<AllowNullLiteral>] SVGClipPathElementType =
     abstract prototype: SVGClipPathElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGClipPathElement
 
-type [<AllowNullLiteral>] SVGComponentTransferFunctionElement =
+type [<AllowNullLiteral; Global>] SVGComponentTransferFunctionElement =
     inherit SVGElement
     abstract amplitude: SVGAnimatedNumber with get, set
     abstract exponent: SVGAnimatedNumber with get, set
@@ -192,7 +192,7 @@ type [<AllowNullLiteral>] SVGComponentTransferFunctionElementType =
     abstract SVG_FECOMPONENTTRANSFER_TYPE_UNKNOWN: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGComponentTransferFunctionElement
 
-type [<AllowNullLiteral>] SVGDefsElement =
+type [<AllowNullLiteral; Global>] SVGDefsElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -204,7 +204,7 @@ type [<AllowNullLiteral>] SVGDefsElementType =
     abstract prototype: SVGDefsElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGDefsElement
 
-type [<AllowNullLiteral>] SVGDescElement =
+type [<AllowNullLiteral; Global>] SVGDescElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGLangSpace
@@ -213,7 +213,7 @@ type [<AllowNullLiteral>] SVGDescElementType =
     abstract prototype: SVGDescElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGDescElement
 
-type [<AllowNullLiteral>] SVGElement =
+type [<AllowNullLiteral; Global>] SVGElement =
     inherit Element
     abstract id: string with get, set
     abstract onclick: (MouseEvent -> unit) with get, set
@@ -235,7 +235,7 @@ type [<AllowNullLiteral>] SVGElementType =
     abstract prototype: SVGElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGElement
 
-type [<AllowNullLiteral>] SVGElementInstance =
+type [<AllowNullLiteral; Global>] SVGElementInstance =
     inherit EventTarget
     abstract childNodes: SVGElementInstanceList with get, set
     abstract correspondingElement: SVGElement with get, set
@@ -250,7 +250,7 @@ type [<AllowNullLiteral>] SVGElementInstanceType =
     abstract prototype: SVGElementInstance with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGElementInstance
 
-type [<AllowNullLiteral>] SVGElementInstanceList =
+type [<AllowNullLiteral; Global>] SVGElementInstanceList =
     abstract length: float with get, set
     abstract item: index: float -> SVGElementInstance
 
@@ -258,7 +258,7 @@ type [<AllowNullLiteral>] SVGElementInstanceListType =
     abstract prototype: SVGElementInstanceList with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGElementInstanceList
 
-type [<AllowNullLiteral>] SVGEllipseElement =
+type [<AllowNullLiteral; Global>] SVGEllipseElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -274,7 +274,7 @@ type [<AllowNullLiteral>] SVGEllipseElementType =
     abstract prototype: SVGEllipseElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGEllipseElement
 
-type [<AllowNullLiteral>] SVGFEBlendElement =
+type [<AllowNullLiteral; Global>] SVGFEBlendElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract in1: SVGAnimatedString with get, set
@@ -320,7 +320,7 @@ type [<AllowNullLiteral>] SVGFEBlendElementType =
     abstract SVG_FEBLEND_MODE_UNKNOWN: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEBlendElement
 
-type [<AllowNullLiteral>] SVGFEColorMatrixElement =
+type [<AllowNullLiteral; Global>] SVGFEColorMatrixElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract in1: SVGAnimatedString with get, set
@@ -342,7 +342,7 @@ type [<AllowNullLiteral>] SVGFEColorMatrixElementType =
     abstract SVG_FECOLORMATRIX_TYPE_UNKNOWN: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEColorMatrixElement
 
-type [<AllowNullLiteral>] SVGFEComponentTransferElement =
+type [<AllowNullLiteral; Global>] SVGFEComponentTransferElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract in1: SVGAnimatedString with get, set
@@ -352,7 +352,7 @@ type [<AllowNullLiteral>] SVGFEComponentTransferElementType =
     abstract prototype: SVGFEComponentTransferElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEComponentTransferElement
 
-type [<AllowNullLiteral>] SVGFECompositeElement =
+type [<AllowNullLiteral; Global>] SVGFECompositeElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract in1: SVGAnimatedString with get, set
@@ -382,7 +382,7 @@ type [<AllowNullLiteral>] SVGFECompositeElementType =
     abstract SVG_FECOMPOSITE_OPERATOR_XOR: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFECompositeElement
 
-type [<AllowNullLiteral>] SVGFEConvolveMatrixElement =
+type [<AllowNullLiteral; Global>] SVGFEConvolveMatrixElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract bias: SVGAnimatedNumber with get, set
@@ -411,7 +411,7 @@ type [<AllowNullLiteral>] SVGFEConvolveMatrixElementType =
     abstract SVG_EDGEMODE_WRAP: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEConvolveMatrixElement
 
-type [<AllowNullLiteral>] SVGFEDiffuseLightingElement =
+type [<AllowNullLiteral; Global>] SVGFEDiffuseLightingElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract diffuseConstant: SVGAnimatedNumber with get, set
@@ -425,7 +425,7 @@ type [<AllowNullLiteral>] SVGFEDiffuseLightingElementType =
     abstract prototype: SVGFEDiffuseLightingElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEDiffuseLightingElement
 
-type [<AllowNullLiteral>] SVGFEDisplacementMapElement =
+type [<AllowNullLiteral; Global>] SVGFEDisplacementMapElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract in1: SVGAnimatedString with get, set
@@ -449,7 +449,7 @@ type [<AllowNullLiteral>] SVGFEDisplacementMapElementType =
     abstract SVG_CHANNEL_UNKNOWN: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEDisplacementMapElement
 
-type [<AllowNullLiteral>] SVGFEDistantLightElement =
+type [<AllowNullLiteral; Global>] SVGFEDistantLightElement =
     inherit SVGElement
     abstract azimuth: SVGAnimatedNumber with get, set
     abstract elevation: SVGAnimatedNumber with get, set
@@ -458,7 +458,7 @@ type [<AllowNullLiteral>] SVGFEDistantLightElementType =
     abstract prototype: SVGFEDistantLightElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEDistantLightElement
 
-type [<AllowNullLiteral>] SVGFEFloodElement =
+type [<AllowNullLiteral; Global>] SVGFEFloodElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
 
@@ -467,7 +467,7 @@ type [<AllowNullLiteral>] SVGFEFloodElementType =
     abstract prototype: SVGFEFloodElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEFloodElement
 
-type [<AllowNullLiteral>] SVGFEFuncAElement =
+type [<AllowNullLiteral; Global>] SVGFEFuncAElement =
     inherit SVGComponentTransferFunctionElement
 
 
@@ -475,7 +475,7 @@ type [<AllowNullLiteral>] SVGFEFuncAElementType =
     abstract prototype: SVGFEFuncAElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEFuncAElement
 
-type [<AllowNullLiteral>] SVGFEFuncBElement =
+type [<AllowNullLiteral; Global>] SVGFEFuncBElement =
     inherit SVGComponentTransferFunctionElement
 
 
@@ -483,7 +483,7 @@ type [<AllowNullLiteral>] SVGFEFuncBElementType =
     abstract prototype: SVGFEFuncBElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEFuncBElement
 
-type [<AllowNullLiteral>] SVGFEFuncGElement =
+type [<AllowNullLiteral; Global>] SVGFEFuncGElement =
     inherit SVGComponentTransferFunctionElement
 
 
@@ -491,7 +491,7 @@ type [<AllowNullLiteral>] SVGFEFuncGElementType =
     abstract prototype: SVGFEFuncGElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEFuncGElement
 
-type [<AllowNullLiteral>] SVGFEFuncRElement =
+type [<AllowNullLiteral; Global>] SVGFEFuncRElement =
     inherit SVGComponentTransferFunctionElement
 
 
@@ -499,7 +499,7 @@ type [<AllowNullLiteral>] SVGFEFuncRElementType =
     abstract prototype: SVGFEFuncRElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEFuncRElement
 
-type [<AllowNullLiteral>] SVGFEGaussianBlurElement =
+type [<AllowNullLiteral; Global>] SVGFEGaussianBlurElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract in1: SVGAnimatedString with get, set
@@ -512,7 +512,7 @@ type [<AllowNullLiteral>] SVGFEGaussianBlurElementType =
     abstract prototype: SVGFEGaussianBlurElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEGaussianBlurElement
 
-type [<AllowNullLiteral>] SVGFEImageElement =
+type [<AllowNullLiteral; Global>] SVGFEImageElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     inherit SVGLangSpace
@@ -525,7 +525,7 @@ type [<AllowNullLiteral>] SVGFEImageElementType =
     abstract prototype: SVGFEImageElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEImageElement
 
-type [<AllowNullLiteral>] SVGFEMergeElement =
+type [<AllowNullLiteral; Global>] SVGFEMergeElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
 
@@ -534,7 +534,7 @@ type [<AllowNullLiteral>] SVGFEMergeElementType =
     abstract prototype: SVGFEMergeElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEMergeElement
 
-type [<AllowNullLiteral>] SVGFEMergeNodeElement =
+type [<AllowNullLiteral; Global>] SVGFEMergeNodeElement =
     inherit SVGElement
     abstract in1: SVGAnimatedString with get, set
 
@@ -542,7 +542,7 @@ type [<AllowNullLiteral>] SVGFEMergeNodeElementType =
     abstract prototype: SVGFEMergeNodeElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEMergeNodeElement
 
-type [<AllowNullLiteral>] SVGFEMorphologyElement =
+type [<AllowNullLiteral; Global>] SVGFEMorphologyElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract in1: SVGAnimatedString with get, set
@@ -561,7 +561,7 @@ type [<AllowNullLiteral>] SVGFEMorphologyElementType =
     abstract SVG_MORPHOLOGY_OPERATOR_UNKNOWN: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEMorphologyElement
 
-type [<AllowNullLiteral>] SVGFEOffsetElement =
+type [<AllowNullLiteral; Global>] SVGFEOffsetElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract dx: SVGAnimatedNumber with get, set
@@ -573,7 +573,7 @@ type [<AllowNullLiteral>] SVGFEOffsetElementType =
     abstract prototype: SVGFEOffsetElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEOffsetElement
 
-type [<AllowNullLiteral>] SVGFEPointLightElement =
+type [<AllowNullLiteral; Global>] SVGFEPointLightElement =
     inherit SVGElement
     abstract x: SVGAnimatedNumber with get, set
     abstract y: SVGAnimatedNumber with get, set
@@ -583,7 +583,7 @@ type [<AllowNullLiteral>] SVGFEPointLightElementType =
     abstract prototype: SVGFEPointLightElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFEPointLightElement
 
-type [<AllowNullLiteral>] SVGFESpecularLightingElement =
+type [<AllowNullLiteral; Global>] SVGFESpecularLightingElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract in1: SVGAnimatedString with get, set
@@ -598,7 +598,7 @@ type [<AllowNullLiteral>] SVGFESpecularLightingElementType =
     abstract prototype: SVGFESpecularLightingElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFESpecularLightingElement
 
-type [<AllowNullLiteral>] SVGFESpotLightElement =
+type [<AllowNullLiteral; Global>] SVGFESpotLightElement =
     inherit SVGElement
     abstract limitingConeAngle: SVGAnimatedNumber with get, set
     abstract pointsAtX: SVGAnimatedNumber with get, set
@@ -613,7 +613,7 @@ type [<AllowNullLiteral>] SVGFESpotLightElementType =
     abstract prototype: SVGFESpotLightElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFESpotLightElement
 
-type [<AllowNullLiteral>] SVGFETileElement =
+type [<AllowNullLiteral; Global>] SVGFETileElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract in1: SVGAnimatedString with get, set
@@ -623,7 +623,7 @@ type [<AllowNullLiteral>] SVGFETileElementType =
     abstract prototype: SVGFETileElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFETileElement
 
-type [<AllowNullLiteral>] SVGFETurbulenceElement =
+type [<AllowNullLiteral; Global>] SVGFETurbulenceElement =
     inherit SVGElement
     inherit SVGFilterPrimitiveStandardAttributes
     abstract baseFrequencyX: SVGAnimatedNumber with get, set
@@ -650,7 +650,7 @@ type [<AllowNullLiteral>] SVGFETurbulenceElementType =
     abstract SVG_TURBULENCE_TYPE_UNKNOWN: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFETurbulenceElement
 
-type [<AllowNullLiteral>] SVGFilterElement =
+type [<AllowNullLiteral; Global>] SVGFilterElement =
     inherit SVGElement
     inherit SVGUnitTypes
     inherit SVGStylable
@@ -672,7 +672,7 @@ type [<AllowNullLiteral>] SVGFilterElementType =
     abstract prototype: SVGFilterElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGFilterElement
 
-type [<AllowNullLiteral>] SVGForeignObjectElement =
+type [<AllowNullLiteral; Global>] SVGForeignObjectElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -689,7 +689,7 @@ type [<AllowNullLiteral>] SVGForeignObjectElementType =
     abstract prototype: SVGForeignObjectElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGForeignObjectElement
 
-type [<AllowNullLiteral>] SVGGElement =
+type [<AllowNullLiteral; Global>] SVGGElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -702,7 +702,7 @@ type [<AllowNullLiteral>] SVGGElementType =
     abstract prototype: SVGGElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGGElement
 
-type [<AllowNullLiteral>] SVGGradientElement =
+type [<AllowNullLiteral; Global>] SVGGradientElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGExternalResourcesRequired
@@ -725,7 +725,7 @@ type [<AllowNullLiteral>] SVGGradientElementType =
     abstract SVG_SPREADMETHOD_UNKNOWN: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGGradientElement
 
-type [<AllowNullLiteral>] SVGImageElement =
+type [<AllowNullLiteral; Global>] SVGImageElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -744,7 +744,7 @@ type [<AllowNullLiteral>] SVGImageElementType =
     abstract prototype: SVGImageElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGImageElement
 
-type [<AllowNullLiteral>] SVGLength =
+type [<AllowNullLiteral; Global>] SVGLength =
     abstract unitType: float with get, set
     abstract value: float with get, set
     abstract valueAsString: string with get, set
@@ -778,7 +778,7 @@ type [<AllowNullLiteral>] SVGLengthType =
     abstract SVG_LENGTHTYPE_UNKNOWN: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGLength
 
-type [<AllowNullLiteral>] SVGLengthList =
+type [<AllowNullLiteral; Global>] SVGLengthList =
     abstract numberOfItems: float with get, set
     abstract appendItem: newItem: SVGLength -> SVGLength
     abstract clear: unit -> unit
@@ -792,7 +792,7 @@ type [<AllowNullLiteral>] SVGLengthListType =
     abstract prototype: SVGLengthList with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGLengthList
 
-type [<AllowNullLiteral>] SVGLineElement =
+type [<AllowNullLiteral; Global>] SVGLineElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -809,7 +809,7 @@ type [<AllowNullLiteral>] SVGLineElementType =
     abstract prototype: SVGLineElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGLineElement
 
-type [<AllowNullLiteral>] SVGLinearGradientElement =
+type [<AllowNullLiteral; Global>] SVGLinearGradientElement =
     inherit SVGGradientElement
     abstract x1: SVGAnimatedLength with get, set
     abstract x2: SVGAnimatedLength with get, set
@@ -820,7 +820,7 @@ type [<AllowNullLiteral>] SVGLinearGradientElementType =
     abstract prototype: SVGLinearGradientElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGLinearGradientElement
 
-type [<AllowNullLiteral>] SVGMarkerElement =
+type [<AllowNullLiteral; Global>] SVGMarkerElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGLangSpace
@@ -853,7 +853,7 @@ type [<AllowNullLiteral>] SVGMarkerElementType =
     abstract SVG_MARKER_ORIENT_UNKNOWN: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGMarkerElement
 
-type [<AllowNullLiteral>] SVGMaskElement =
+type [<AllowNullLiteral; Global>] SVGMaskElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTests
@@ -872,7 +872,7 @@ type [<AllowNullLiteral>] SVGMaskElementType =
     abstract prototype: SVGMaskElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGMaskElement
 
-type [<AllowNullLiteral>] SVGMatrix =
+type [<AllowNullLiteral; Global>] SVGMatrix =
     abstract a: float with get, set
     abstract b: float with get, set
     abstract c: float with get, set
@@ -895,7 +895,7 @@ type [<AllowNullLiteral>] SVGMatrixType =
     abstract prototype: SVGMatrix with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGMatrix
 
-type [<AllowNullLiteral>] SVGMetadataElement =
+type [<AllowNullLiteral; Global>] SVGMetadataElement =
     inherit SVGElement
 
 
@@ -903,14 +903,14 @@ type [<AllowNullLiteral>] SVGMetadataElementType =
     abstract prototype: SVGMetadataElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGMetadataElement
 
-type [<AllowNullLiteral>] SVGNumber =
+type [<AllowNullLiteral; Global>] SVGNumber =
     abstract value: float with get, set
 
 type [<AllowNullLiteral>] SVGNumberType =
     abstract prototype: SVGNumber with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGNumber
 
-type [<AllowNullLiteral>] SVGNumberList =
+type [<AllowNullLiteral; Global>] SVGNumberList =
     abstract numberOfItems: float with get, set
     abstract appendItem: newItem: SVGNumber -> SVGNumber
     abstract clear: unit -> unit
@@ -924,7 +924,7 @@ type [<AllowNullLiteral>] SVGNumberListType =
     abstract prototype: SVGNumberList with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGNumberList
 
-type [<AllowNullLiteral>] SVGPathElement =
+type [<AllowNullLiteral; Global>] SVGPathElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -960,7 +960,7 @@ type [<AllowNullLiteral>] SVGPathElementType =
     abstract prototype: SVGPathElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathElement
 
-type [<AllowNullLiteral>] SVGPathSeg =
+type [<AllowNullLiteral; Global>] SVGPathSeg =
     abstract pathSegType: float with get, set
     abstract pathSegTypeAsLetter: string with get, set
     abstract PATHSEG_ARC_ABS: float with get, set
@@ -1008,7 +1008,7 @@ type [<AllowNullLiteral>] SVGPathSegType =
     abstract PATHSEG_UNKNOWN: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSeg
 
-type [<AllowNullLiteral>] SVGPathSegArcAbs =
+type [<AllowNullLiteral; Global>] SVGPathSegArcAbs =
     inherit SVGPathSeg
     abstract angle: float with get, set
     abstract largeArcFlag: bool with get, set
@@ -1022,7 +1022,7 @@ type [<AllowNullLiteral>] SVGPathSegArcAbsType =
     abstract prototype: SVGPathSegArcAbs with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegArcAbs
 
-type [<AllowNullLiteral>] SVGPathSegArcRel =
+type [<AllowNullLiteral; Global>] SVGPathSegArcRel =
     inherit SVGPathSeg
     abstract angle: float with get, set
     abstract largeArcFlag: bool with get, set
@@ -1036,7 +1036,7 @@ type [<AllowNullLiteral>] SVGPathSegArcRelType =
     abstract prototype: SVGPathSegArcRel with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegArcRel
 
-type [<AllowNullLiteral>] SVGPathSegClosePath =
+type [<AllowNullLiteral; Global>] SVGPathSegClosePath =
     inherit SVGPathSeg
 
 
@@ -1044,7 +1044,7 @@ type [<AllowNullLiteral>] SVGPathSegClosePathType =
     abstract prototype: SVGPathSegClosePath with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegClosePath
 
-type [<AllowNullLiteral>] SVGPathSegCurvetoCubicAbs =
+type [<AllowNullLiteral; Global>] SVGPathSegCurvetoCubicAbs =
     inherit SVGPathSeg
     abstract x: float with get, set
     abstract x1: float with get, set
@@ -1057,7 +1057,7 @@ type [<AllowNullLiteral>] SVGPathSegCurvetoCubicAbsType =
     abstract prototype: SVGPathSegCurvetoCubicAbs with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegCurvetoCubicAbs
 
-type [<AllowNullLiteral>] SVGPathSegCurvetoCubicRel =
+type [<AllowNullLiteral; Global>] SVGPathSegCurvetoCubicRel =
     inherit SVGPathSeg
     abstract x: float with get, set
     abstract x1: float with get, set
@@ -1070,7 +1070,7 @@ type [<AllowNullLiteral>] SVGPathSegCurvetoCubicRelType =
     abstract prototype: SVGPathSegCurvetoCubicRel with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegCurvetoCubicRel
 
-type [<AllowNullLiteral>] SVGPathSegCurvetoCubicSmoothAbs =
+type [<AllowNullLiteral; Global>] SVGPathSegCurvetoCubicSmoothAbs =
     inherit SVGPathSeg
     abstract x: float with get, set
     abstract x2: float with get, set
@@ -1081,7 +1081,7 @@ type [<AllowNullLiteral>] SVGPathSegCurvetoCubicSmoothAbsType =
     abstract prototype: SVGPathSegCurvetoCubicSmoothAbs with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegCurvetoCubicSmoothAbs
 
-type [<AllowNullLiteral>] SVGPathSegCurvetoCubicSmoothRel =
+type [<AllowNullLiteral; Global>] SVGPathSegCurvetoCubicSmoothRel =
     inherit SVGPathSeg
     abstract x: float with get, set
     abstract x2: float with get, set
@@ -1092,7 +1092,7 @@ type [<AllowNullLiteral>] SVGPathSegCurvetoCubicSmoothRelType =
     abstract prototype: SVGPathSegCurvetoCubicSmoothRel with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegCurvetoCubicSmoothRel
 
-type [<AllowNullLiteral>] SVGPathSegCurvetoQuadraticAbs =
+type [<AllowNullLiteral; Global>] SVGPathSegCurvetoQuadraticAbs =
     inherit SVGPathSeg
     abstract x: float with get, set
     abstract x1: float with get, set
@@ -1103,7 +1103,7 @@ type [<AllowNullLiteral>] SVGPathSegCurvetoQuadraticAbsType =
     abstract prototype: SVGPathSegCurvetoQuadraticAbs with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegCurvetoQuadraticAbs
 
-type [<AllowNullLiteral>] SVGPathSegCurvetoQuadraticRel =
+type [<AllowNullLiteral; Global>] SVGPathSegCurvetoQuadraticRel =
     inherit SVGPathSeg
     abstract x: float with get, set
     abstract x1: float with get, set
@@ -1114,7 +1114,7 @@ type [<AllowNullLiteral>] SVGPathSegCurvetoQuadraticRelType =
     abstract prototype: SVGPathSegCurvetoQuadraticRel with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegCurvetoQuadraticRel
 
-type [<AllowNullLiteral>] SVGPathSegCurvetoQuadraticSmoothAbs =
+type [<AllowNullLiteral; Global>] SVGPathSegCurvetoQuadraticSmoothAbs =
     inherit SVGPathSeg
     abstract x: float with get, set
     abstract y: float with get, set
@@ -1123,7 +1123,7 @@ type [<AllowNullLiteral>] SVGPathSegCurvetoQuadraticSmoothAbsType =
     abstract prototype: SVGPathSegCurvetoQuadraticSmoothAbs with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegCurvetoQuadraticSmoothAbs
 
-type [<AllowNullLiteral>] SVGPathSegCurvetoQuadraticSmoothRel =
+type [<AllowNullLiteral; Global>] SVGPathSegCurvetoQuadraticSmoothRel =
     inherit SVGPathSeg
     abstract x: float with get, set
     abstract y: float with get, set
@@ -1132,7 +1132,7 @@ type [<AllowNullLiteral>] SVGPathSegCurvetoQuadraticSmoothRelType =
     abstract prototype: SVGPathSegCurvetoQuadraticSmoothRel with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegCurvetoQuadraticSmoothRel
 
-type [<AllowNullLiteral>] SVGPathSegLinetoAbs =
+type [<AllowNullLiteral; Global>] SVGPathSegLinetoAbs =
     inherit SVGPathSeg
     abstract x: float with get, set
     abstract y: float with get, set
@@ -1141,7 +1141,7 @@ type [<AllowNullLiteral>] SVGPathSegLinetoAbsType =
     abstract prototype: SVGPathSegLinetoAbs with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegLinetoAbs
 
-type [<AllowNullLiteral>] SVGPathSegLinetoHorizontalAbs =
+type [<AllowNullLiteral; Global>] SVGPathSegLinetoHorizontalAbs =
     inherit SVGPathSeg
     abstract x: float with get, set
 
@@ -1149,7 +1149,7 @@ type [<AllowNullLiteral>] SVGPathSegLinetoHorizontalAbsType =
     abstract prototype: SVGPathSegLinetoHorizontalAbs with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegLinetoHorizontalAbs
 
-type [<AllowNullLiteral>] SVGPathSegLinetoHorizontalRel =
+type [<AllowNullLiteral; Global>] SVGPathSegLinetoHorizontalRel =
     inherit SVGPathSeg
     abstract x: float with get, set
 
@@ -1157,7 +1157,7 @@ type [<AllowNullLiteral>] SVGPathSegLinetoHorizontalRelType =
     abstract prototype: SVGPathSegLinetoHorizontalRel with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegLinetoHorizontalRel
 
-type [<AllowNullLiteral>] SVGPathSegLinetoRel =
+type [<AllowNullLiteral; Global>] SVGPathSegLinetoRel =
     inherit SVGPathSeg
     abstract x: float with get, set
     abstract y: float with get, set
@@ -1166,7 +1166,7 @@ type [<AllowNullLiteral>] SVGPathSegLinetoRelType =
     abstract prototype: SVGPathSegLinetoRel with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegLinetoRel
 
-type [<AllowNullLiteral>] SVGPathSegLinetoVerticalAbs =
+type [<AllowNullLiteral; Global>] SVGPathSegLinetoVerticalAbs =
     inherit SVGPathSeg
     abstract y: float with get, set
 
@@ -1174,7 +1174,7 @@ type [<AllowNullLiteral>] SVGPathSegLinetoVerticalAbsType =
     abstract prototype: SVGPathSegLinetoVerticalAbs with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegLinetoVerticalAbs
 
-type [<AllowNullLiteral>] SVGPathSegLinetoVerticalRel =
+type [<AllowNullLiteral; Global>] SVGPathSegLinetoVerticalRel =
     inherit SVGPathSeg
     abstract y: float with get, set
 
@@ -1182,7 +1182,7 @@ type [<AllowNullLiteral>] SVGPathSegLinetoVerticalRelType =
     abstract prototype: SVGPathSegLinetoVerticalRel with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegLinetoVerticalRel
 
-type [<AllowNullLiteral>] SVGPathSegList =
+type [<AllowNullLiteral; Global>] SVGPathSegList =
     abstract numberOfItems: float with get, set
     abstract appendItem: newItem: SVGPathSeg -> SVGPathSeg
     abstract clear: unit -> unit
@@ -1196,7 +1196,7 @@ type [<AllowNullLiteral>] SVGPathSegListType =
     abstract prototype: SVGPathSegList with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegList
 
-type [<AllowNullLiteral>] SVGPathSegMovetoAbs =
+type [<AllowNullLiteral; Global>] SVGPathSegMovetoAbs =
     inherit SVGPathSeg
     abstract x: float with get, set
     abstract y: float with get, set
@@ -1205,7 +1205,7 @@ type [<AllowNullLiteral>] SVGPathSegMovetoAbsType =
     abstract prototype: SVGPathSegMovetoAbs with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegMovetoAbs
 
-type [<AllowNullLiteral>] SVGPathSegMovetoRel =
+type [<AllowNullLiteral; Global>] SVGPathSegMovetoRel =
     inherit SVGPathSeg
     abstract x: float with get, set
     abstract y: float with get, set
@@ -1214,7 +1214,7 @@ type [<AllowNullLiteral>] SVGPathSegMovetoRelType =
     abstract prototype: SVGPathSegMovetoRel with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPathSegMovetoRel
 
-type [<AllowNullLiteral>] SVGPatternElement =
+type [<AllowNullLiteral; Global>] SVGPatternElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTests
@@ -1236,7 +1236,7 @@ type [<AllowNullLiteral>] SVGPatternElementType =
     abstract prototype: SVGPatternElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPatternElement
 
-type [<AllowNullLiteral>] SVGPoint =
+type [<AllowNullLiteral; Global>] SVGPoint =
     abstract x: float with get, set
     abstract y: float with get, set
     abstract matrixTransform: matrix: SVGMatrix -> SVGPoint
@@ -1245,7 +1245,7 @@ type [<AllowNullLiteral>] SVGPointType =
     abstract prototype: SVGPoint with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPoint
 
-type [<AllowNullLiteral>] SVGPointList =
+type [<AllowNullLiteral; Global>] SVGPointList =
     abstract numberOfItems: float with get, set
     abstract appendItem: newItem: SVGPoint -> SVGPoint
     abstract clear: unit -> unit
@@ -1259,7 +1259,7 @@ type [<AllowNullLiteral>] SVGPointListType =
     abstract prototype: SVGPointList with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPointList
 
-type [<AllowNullLiteral>] SVGPolygonElement =
+type [<AllowNullLiteral; Global>] SVGPolygonElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -1273,7 +1273,7 @@ type [<AllowNullLiteral>] SVGPolygonElementType =
     abstract prototype: SVGPolygonElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPolygonElement
 
-type [<AllowNullLiteral>] SVGPolylineElement =
+type [<AllowNullLiteral; Global>] SVGPolylineElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -1287,7 +1287,7 @@ type [<AllowNullLiteral>] SVGPolylineElementType =
     abstract prototype: SVGPolylineElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPolylineElement
 
-type [<AllowNullLiteral>] SVGPreserveAspectRatio =
+type [<AllowNullLiteral; Global>] SVGPreserveAspectRatio =
     abstract align: float with get, set
     abstract meetOrSlice: float with get, set
     abstract SVG_MEETORSLICE_MEET: float with get, set
@@ -1323,7 +1323,7 @@ type [<AllowNullLiteral>] SVGPreserveAspectRatioType =
     abstract SVG_PRESERVEASPECTRATIO_XMINYMIN: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGPreserveAspectRatio
 
-type [<AllowNullLiteral>] SVGRadialGradientElement =
+type [<AllowNullLiteral; Global>] SVGRadialGradientElement =
     inherit SVGGradientElement
     abstract cx: SVGAnimatedLength with get, set
     abstract cy: SVGAnimatedLength with get, set
@@ -1335,7 +1335,7 @@ type [<AllowNullLiteral>] SVGRadialGradientElementType =
     abstract prototype: SVGRadialGradientElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGRadialGradientElement
 
-type [<AllowNullLiteral>] SVGRect =
+type [<AllowNullLiteral; Global>] SVGRect =
     abstract height: float with get, set
     abstract width: float with get, set
     abstract x: float with get, set
@@ -1345,7 +1345,7 @@ type [<AllowNullLiteral>] SVGRectType =
     abstract prototype: SVGRect with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGRect
 
-type [<AllowNullLiteral>] SVGRectElement =
+type [<AllowNullLiteral; Global>] SVGRectElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -1364,7 +1364,7 @@ type [<AllowNullLiteral>] SVGRectElementType =
     abstract prototype: SVGRectElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGRectElement
 
-type [<AllowNullLiteral>] SVGSVGElement =
+type [<AllowNullLiteral; Global>] SVGSVGElement =
     inherit SVGElement
     inherit DocumentEvent
     inherit SVGLocatable
@@ -1422,7 +1422,7 @@ type [<AllowNullLiteral>] SVGSVGElementType =
     abstract prototype: SVGSVGElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGSVGElement
 
-type [<AllowNullLiteral>] SVGScriptElement =
+type [<AllowNullLiteral; Global>] SVGScriptElement =
     inherit SVGElement
     inherit SVGExternalResourcesRequired
     inherit SVGURIReference
@@ -1433,7 +1433,7 @@ type [<AllowNullLiteral>] SVGScriptElementType =
     abstract prototype: SVGScriptElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGScriptElement
 
-type [<AllowNullLiteral>] SVGStopElement =
+type [<AllowNullLiteral; Global>] SVGStopElement =
     inherit SVGElement
     inherit SVGStylable
     abstract offset: SVGAnimatedNumber with get, set
@@ -1443,7 +1443,7 @@ type [<AllowNullLiteral>] SVGStopElementType =
     abstract prototype: SVGStopElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGStopElement
 
-type [<AllowNullLiteral>] SVGStringList =
+type [<AllowNullLiteral; Global>] SVGStringList =
     abstract numberOfItems: float with get, set
     abstract appendItem: newItem: string -> string
     abstract clear: unit -> unit
@@ -1457,7 +1457,7 @@ type [<AllowNullLiteral>] SVGStringListType =
     abstract prototype: SVGStringList with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGStringList
 
-type [<AllowNullLiteral>] SVGStyleElement =
+type [<AllowNullLiteral; Global>] SVGStyleElement =
     inherit SVGElement
     inherit SVGLangSpace
     abstract media: string with get, set
@@ -1469,7 +1469,7 @@ type [<AllowNullLiteral>] SVGStyleElementType =
     abstract prototype: SVGStyleElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGStyleElement
 
-type [<AllowNullLiteral>] SVGSwitchElement =
+type [<AllowNullLiteral; Global>] SVGSwitchElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -1482,7 +1482,7 @@ type [<AllowNullLiteral>] SVGSwitchElementType =
     abstract prototype: SVGSwitchElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGSwitchElement
 
-type [<AllowNullLiteral>] SVGSymbolElement =
+type [<AllowNullLiteral; Global>] SVGSymbolElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGLangSpace
@@ -1494,7 +1494,7 @@ type [<AllowNullLiteral>] SVGSymbolElementType =
     abstract prototype: SVGSymbolElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGSymbolElement
 
-type [<AllowNullLiteral>] SVGTSpanElement =
+type [<AllowNullLiteral; Global>] SVGTSpanElement =
     inherit SVGTextPositioningElement
 
 
@@ -1502,7 +1502,7 @@ type [<AllowNullLiteral>] SVGTSpanElementType =
     abstract prototype: SVGTSpanElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGTSpanElement
 
-type [<AllowNullLiteral>] SVGTextContentElement =
+type [<AllowNullLiteral; Global>] SVGTextContentElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTests
@@ -1531,7 +1531,7 @@ type [<AllowNullLiteral>] SVGTextContentElementType =
     abstract LENGTHADJUST_UNKNOWN: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGTextContentElement
 
-type [<AllowNullLiteral>] SVGTextElement =
+type [<AllowNullLiteral; Global>] SVGTextElement =
     inherit SVGTextPositioningElement
     inherit SVGTransformable
 
@@ -1540,7 +1540,7 @@ type [<AllowNullLiteral>] SVGTextElementType =
     abstract prototype: SVGTextElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGTextElement
 
-type [<AllowNullLiteral>] SVGTextPathElement =
+type [<AllowNullLiteral; Global>] SVGTextPathElement =
     inherit SVGTextContentElement
     inherit SVGURIReference
     abstract ``method``: SVGAnimatedEnumeration with get, set
@@ -1564,7 +1564,7 @@ type [<AllowNullLiteral>] SVGTextPathElementType =
     abstract TEXTPATH_SPACINGTYPE_UNKNOWN: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGTextPathElement
 
-type [<AllowNullLiteral>] SVGTextPositioningElement =
+type [<AllowNullLiteral; Global>] SVGTextPositioningElement =
     inherit SVGTextContentElement
     abstract dx: SVGAnimatedLengthList with get, set
     abstract dy: SVGAnimatedLengthList with get, set
@@ -1576,7 +1576,7 @@ type [<AllowNullLiteral>] SVGTextPositioningElementType =
     abstract prototype: SVGTextPositioningElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGTextPositioningElement
 
-type [<AllowNullLiteral>] SVGTitleElement =
+type [<AllowNullLiteral; Global>] SVGTitleElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGLangSpace
@@ -1586,7 +1586,7 @@ type [<AllowNullLiteral>] SVGTitleElementType =
     abstract prototype: SVGTitleElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGTitleElement
 
-type [<AllowNullLiteral>] SVGTransform =
+type [<AllowNullLiteral; Global>] SVGTransform =
     abstract angle: float with get, set
     abstract matrix: SVGMatrix with get, set
     abstract ``type``: float with get, set
@@ -1615,7 +1615,7 @@ type [<AllowNullLiteral>] SVGTransformType =
     abstract SVG_TRANSFORM_UNKNOWN: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGTransform
 
-type [<AllowNullLiteral>] SVGTransformList =
+type [<AllowNullLiteral; Global>] SVGTransformList =
     abstract numberOfItems: float with get, set
     abstract appendItem: newItem: SVGTransform -> SVGTransform
     abstract clear: unit -> unit
@@ -1631,12 +1631,12 @@ type [<AllowNullLiteral>] SVGTransformListType =
     abstract prototype: SVGTransformList with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGTransformList
 
-type [<AllowNullLiteral>] SVGUnitTypes =
+type [<AllowNullLiteral; Global>] SVGUnitTypes =
     abstract SVG_UNIT_TYPE_OBJECTBOUNDINGBOX: float with get, set
     abstract SVG_UNIT_TYPE_UNKNOWN: float with get, set
     abstract SVG_UNIT_TYPE_USERSPACEONUSE: float with get, set
 
-type [<AllowNullLiteral>] SVGUseElement =
+type [<AllowNullLiteral; Global>] SVGUseElement =
     inherit SVGElement
     inherit SVGStylable
     inherit SVGTransformable
@@ -1656,7 +1656,7 @@ type [<AllowNullLiteral>] SVGUseElementType =
     abstract prototype: SVGUseElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGUseElement
 
-type [<AllowNullLiteral>] SVGViewElement =
+type [<AllowNullLiteral; Global>] SVGViewElement =
     inherit SVGElement
     inherit SVGExternalResourcesRequired
     inherit SVGFitToViewBox
@@ -1668,7 +1668,7 @@ type [<AllowNullLiteral>] SVGViewElementType =
     abstract prototype: SVGViewElement with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGViewElement
 
-type [<AllowNullLiteral>] SVGZoomAndPan =
+type [<AllowNullLiteral; Global>] SVGZoomAndPan =
     abstract zoomAndPan: float with get, set
 
 type [<AllowNullLiteral>] SVGZoomAndPanType =
@@ -1676,7 +1676,7 @@ type [<AllowNullLiteral>] SVGZoomAndPanType =
     abstract SVG_ZOOMANDPAN_MAGNIFY: float with get, set
     abstract SVG_ZOOMANDPAN_UNKNOWN: float with get, set
 
-type [<AllowNullLiteral>] SVGZoomEvent =
+type [<AllowNullLiteral; Global>] SVGZoomEvent =
     inherit UIEvent
     abstract newScale: float with get, set
     abstract newTranslate: SVGPoint with get, set
@@ -1688,17 +1688,17 @@ type [<AllowNullLiteral>] SVGZoomEventType =
     abstract prototype: SVGZoomEvent with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> SVGZoomEvent
 
-type [<AllowNullLiteral>] SVGAnimatedPathData =
+type [<AllowNullLiteral; Global>] SVGAnimatedPathData =
         abstract pathSegList: SVGPathSegList with get, set
 
-type [<AllowNullLiteral>] SVGAnimatedPoints =
+type [<AllowNullLiteral; Global>] SVGAnimatedPoints =
     abstract animatedPoints: SVGPointList with get, set
     abstract points: SVGPointList with get, set
 
-type [<AllowNullLiteral>] SVGExternalResourcesRequired =
+type [<AllowNullLiteral; Global>] SVGExternalResourcesRequired =
     abstract externalResourcesRequired: SVGAnimatedBoolean with get, set
 
-type [<AllowNullLiteral>] SVGFilterPrimitiveStandardAttributes =
+type [<AllowNullLiteral; Global>] SVGFilterPrimitiveStandardAttributes =
     inherit SVGStylable
     abstract height: SVGAnimatedLength with get, set
     abstract result: SVGAnimatedString with get, set
@@ -1706,15 +1706,15 @@ type [<AllowNullLiteral>] SVGFilterPrimitiveStandardAttributes =
     abstract x: SVGAnimatedLength with get, set
     abstract y: SVGAnimatedLength with get, set
 
-type [<AllowNullLiteral>] SVGFitToViewBox =
+type [<AllowNullLiteral; Global>] SVGFitToViewBox =
     abstract preserveAspectRatio: SVGAnimatedPreserveAspectRatio with get, set
     abstract viewBox: SVGAnimatedRect with get, set
 
-type [<AllowNullLiteral>] SVGLangSpace =
+type [<AllowNullLiteral; Global>] SVGLangSpace =
     abstract xmllang: string with get, set
     abstract xmlspace: string with get, set
 
-type [<AllowNullLiteral>] SVGLocatable =
+type [<AllowNullLiteral; Global>] SVGLocatable =
     abstract farthestViewportElement: SVGElement with get, set
     abstract nearestViewportElement: SVGElement with get, set
     abstract getBBox: unit -> SVGRect
@@ -1722,19 +1722,19 @@ type [<AllowNullLiteral>] SVGLocatable =
     abstract getScreenCTM: unit -> SVGMatrix
     abstract getTransformToElement: element: SVGElement -> SVGMatrix
 
-type [<AllowNullLiteral>] SVGStylable =
+type [<AllowNullLiteral; Global>] SVGStylable =
     abstract className: obj with get, set
     // abstract style: CSSStyleDeclaration with get, set
 
-type [<AllowNullLiteral>] SVGTests =
+type [<AllowNullLiteral; Global>] SVGTests =
     abstract requiredExtensions: SVGStringList with get, set
     abstract requiredFeatures: SVGStringList with get, set
     abstract systemLanguage: SVGStringList with get, set
     abstract hasExtension: extension: string -> bool
 
-type [<AllowNullLiteral>] SVGTransformable =
+type [<AllowNullLiteral; Global>] SVGTransformable =
     inherit SVGLocatable
     abstract transform: SVGAnimatedTransformList with get, set
 
-type [<AllowNullLiteral>] SVGURIReference =
+type [<AllowNullLiteral; Global>] SVGURIReference =
     abstract href: SVGAnimatedString with get, set

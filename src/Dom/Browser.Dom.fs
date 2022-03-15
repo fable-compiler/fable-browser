@@ -3,7 +3,7 @@ namespace rec Browser.Types
 open System
 open Fable.Core
 
-type [<AllowNullLiteral>] Attr =
+type [<AllowNullLiteral; Global>] Attr =
     inherit Node
     abstract name: string with get, set
     abstract ownerElement: Element with get, set
@@ -13,13 +13,13 @@ type [<AllowNullLiteral>] Attr =
 type [<AllowNullLiteral>] AttrType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> Attr
 
-type [<AllowNullLiteral>] CDATASection =
+type [<AllowNullLiteral; Global>] CDATASection =
     inherit Text
 
 type [<AllowNullLiteral>] CDATASectionType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> CDATASection
 
-type [<AllowNullLiteral>] CharacterData =
+type [<AllowNullLiteral; Global>] CharacterData =
     inherit Node
     inherit ChildNode
     abstract data: string with get, set
@@ -36,14 +36,14 @@ type [<AllowNullLiteral>] CharacterDataType =
 type [<AllowNullLiteral>] ChildNode =
     abstract remove: unit -> unit
 
-type [<AllowNullLiteral>] Comment =
+type [<AllowNullLiteral; Global>] Comment =
     inherit CharacterData
     abstract text: string with get, set
 
 type [<AllowNullLiteral>] CommentType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> Comment
 
-type [<AllowNullLiteral>] Document =
+type [<AllowNullLiteral; Global>] Document =
     inherit Node
     inherit GlobalEventHandlers
     inherit NodeSelector
@@ -364,7 +364,7 @@ type [<AllowNullLiteral>] Document =
     /// <param name="content">The text and HTML tags to write.</param>
     abstract writeln: [<ParamArray>] content: string[] -> unit
 
-type [<AllowNullLiteral>] DocumentType =
+type [<AllowNullLiteral; Global>] DocumentType =
     inherit Node
     abstract entities: NamedNodeMap with get, set
     abstract internalSubset: string with get, set
@@ -374,7 +374,7 @@ type [<AllowNullLiteral>] DocumentType =
     abstract systemId: string with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> Document
 
-type [<AllowNullLiteral>] DocumentFragment =
+type [<AllowNullLiteral; Global>] DocumentFragment =
     inherit Node
     inherit NodeSelector
 
@@ -384,7 +384,7 @@ type [<AllowNullLiteral>] DocumentFragmentType =
 type [<AllowNullLiteral>] DocumentTypeType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> DocumentType
 
-type [<AllowNullLiteral>] DOMImplementation =
+type [<AllowNullLiteral; Global>] DOMImplementation =
     abstract createDocument: namespaceURI: string * qualifiedName: string * doctype: DocumentType -> Document
     abstract createDocumentType: qualifiedName: string * publicId: string * systemId: string -> DocumentType
     abstract createHTMLDocument: title: string -> Document
@@ -393,7 +393,7 @@ type [<AllowNullLiteral>] DOMImplementation =
 type [<AllowNullLiteral>] DOMImplementationType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> DOMImplementation
 
-type [<AllowNullLiteral>] DOMStringList =
+type [<AllowNullLiteral; Global>] DOMStringList =
     abstract length: int
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> string with get, set
     abstract contains: str: string -> bool
@@ -402,13 +402,13 @@ type [<AllowNullLiteral>] DOMStringList =
 type [<AllowNullLiteral>] DOMStringListType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> DOMStringList
 
-type [<AllowNullLiteral>] DOMStringMap =
+type [<AllowNullLiteral; Global>] DOMStringMap =
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: name: string -> string with get, set
 
 type [<AllowNullLiteral>] DOMStringMapType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> DOMStringMap
 
-type [<AllowNullLiteral>] DOMTokenList =
+type [<AllowNullLiteral; Global>] DOMTokenList =
     abstract length: int
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> string with get, set
     abstract add: [<ParamArray>] token: string[] -> unit
@@ -421,7 +421,7 @@ type [<AllowNullLiteral>] DOMTokenList =
 type [<AllowNullLiteral>] DOMTokenListType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> DOMTokenList
 
-type [<AllowNullLiteral>] Element =
+type [<AllowNullLiteral; Global>] Element =
     inherit Node
     inherit GlobalEventHandlers
     inherit NodeSelector
@@ -514,7 +514,7 @@ type [<AllowNullLiteral>] ShadowRootInit =
 /// that is rendered separately from a document's main DOM tree.
 /// You can retrieve a reference to an element's shadow root using its Element.shadowRoot property,
 /// provided it was created using Element.attachShadow() with the mode option set to open.
-type [<AllowNullLiteral>] ShadowRoot =
+type [<AllowNullLiteral; Global>] ShadowRoot =
     inherit DocumentFragment
     inherit Element
     /// Returns the Element within the shadow tree that has focus.
@@ -535,7 +535,7 @@ type [<AllowNullLiteral>] ShadowRoot =
 type [<AllowNullLiteral>] ElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> Element
 
-type [<AllowNullLiteral>] HTMLCollection =
+type [<AllowNullLiteral; Global>] HTMLCollection =
     /// Sets or retrieves the number of objects in a collection.
     abstract length: int
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> Element with get, set
@@ -548,7 +548,7 @@ type [<AllowNullLiteral>] HTMLCollection =
 type [<AllowNullLiteral>] HTMLCollectionType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLCollection
 
-type [<AllowNullLiteral>] NamedNodeMap =
+type [<AllowNullLiteral; Global>] NamedNodeMap =
     abstract length: int
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> Attr with get, set
     abstract getNamedItem: name: string -> Attr
@@ -562,7 +562,7 @@ type [<AllowNullLiteral>] NamedNodeMap =
 type [<AllowNullLiteral>] NamedNodeMapType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> NamedNodeMap
 
-type [<AllowNullLiteral>] Node =
+type [<AllowNullLiteral; Global>] Node =
     inherit EventTarget
     abstract attributes: NamedNodeMap with get, set
     abstract baseURI: string with get, set
@@ -642,7 +642,7 @@ type [<AllowNullLiteral>] NodeSelector =
     abstract querySelector: selectors: string -> Element
     abstract querySelectorAll: selectors: string -> NodeListOf<Element>
 
-type [<AllowNullLiteral>] NodeFilter =
+type [<AllowNullLiteral; Global>] NodeFilter =
     abstract acceptNode: n: Node -> float
 
 type [<AllowNullLiteral>] NodeFilterType =
@@ -663,7 +663,7 @@ type [<AllowNullLiteral>] NodeFilterType =
     abstract SHOW_PROCESSING_INSTRUCTION: float with get, set
     abstract SHOW_TEXT: float with get, set
 
-type [<AllowNullLiteral>] NodeIterator =
+type [<AllowNullLiteral; Global>] NodeIterator =
     abstract filter: NodeFilter with get, set
     abstract root: Node with get, set
     abstract whatToShow: float with get, set
@@ -674,7 +674,7 @@ type [<AllowNullLiteral>] NodeIterator =
 type [<AllowNullLiteral>] NodeIteratorType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> NodeIterator
 
-type [<AllowNullLiteral>] NodeList =
+type [<AllowNullLiteral; Global>] NodeList =
     abstract length: int
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> Node with get, set
     abstract item: index: float -> Node
@@ -688,14 +688,14 @@ type [<AllowNullLiteral>] NodeListOf<'TNode> =
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> 'TNode with get, set
     abstract item: index: float -> 'TNode
 
-type [<AllowNullLiteral>] ProcessingInstruction =
+type [<AllowNullLiteral; Global>] ProcessingInstruction =
     inherit CharacterData
     abstract target: string with get, set
 
 type [<AllowNullLiteral>] ProcessingInstructionType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> ProcessingInstruction
 
-type [<AllowNullLiteral>] Selection =
+type [<AllowNullLiteral; Global>] Selection =
     abstract anchorNode: Node with get, set
     abstract anchorOffset: float with get, set
     abstract focusNode: Node with get, set
@@ -721,7 +721,7 @@ type [<AllowNullLiteral>] Selection =
 type [<AllowNullLiteral>] SelectionType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> Selection
 
-type [<AllowNullLiteral>] ClientRect =
+type [<AllowNullLiteral; Global>] ClientRect =
     abstract bottom: float with get, set
     abstract height: float with get, set
     abstract left: float with get, set
@@ -732,7 +732,7 @@ type [<AllowNullLiteral>] ClientRect =
 type [<AllowNullLiteral>] ClientRectType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> ClientRect
 
-type [<AllowNullLiteral>] Range =
+type [<AllowNullLiteral; Global>] Range =
     abstract collapsed: bool with get, set
     abstract commonAncestorContainer: Node with get, set
     abstract endContainer: Node with get, set
@@ -773,7 +773,7 @@ type [<AllowNullLiteral>] RangeType =
     abstract START_TO_START: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> Range
 
-type [<AllowNullLiteral>] Text =
+type [<AllowNullLiteral; Global>] Text =
     inherit CharacterData
     abstract wholeText: string with get, set
     abstract replaceWholeText: content: string -> Text
@@ -782,7 +782,7 @@ type [<AllowNullLiteral>] Text =
 type [<AllowNullLiteral>] TextType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> Text
 
-type [<AllowNullLiteral>] TimeRanges =
+type [<AllowNullLiteral; Global>] TimeRanges =
     abstract length: int
     abstract ``end``: index: float -> float
     abstract start: index: float -> float
@@ -790,7 +790,7 @@ type [<AllowNullLiteral>] TimeRanges =
 type [<AllowNullLiteral>] TimeRangesType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> TimeRanges
 
-type [<AllowNullLiteral>] TreeWalker =
+type [<AllowNullLiteral; Global>] TreeWalker =
     abstract currentNode: Node with get, set
     abstract filter: NodeFilter with get, set
     abstract root: Node with get, set
@@ -835,7 +835,7 @@ type [<AllowNullLiteral>] ScreenOrientation =
     abstract lock: OrientationLockType -> JS.Promise<unit>
     abstract unlock: unit -> unit
 
-type [<AllowNullLiteral>] Screen =
+type [<AllowNullLiteral; Global>] Screen =
     inherit EventTarget
     abstract availHeight: float with get, set
     abstract availWidth: float with get, set
@@ -853,7 +853,7 @@ type [<AllowNullLiteral>] Screen =
     abstract width: float with get, set
     abstract orientation: ScreenOrientation with get, set
 
-type [<AllowNullLiteral>] Location =
+type [<AllowNullLiteral; Global>] Location =
     abstract hash: string with get, set
     abstract host: string with get, set
     abstract hostname: string with get, set
@@ -897,7 +897,7 @@ type [<AllowNullLiteral>] WindowURI =
     abstract decodeURIComponent: encodedUri: string -> string
     abstract encodeURIComponent: str: string -> string
 
-type [<AllowNullLiteral>] Window =
+type [<AllowNullLiteral; Global>] Window =
     inherit EventTarget
     inherit WindowTimers
     inherit WindowSessionStorage
@@ -1062,7 +1062,7 @@ type [<AllowNullLiteral>] Window =
 type [<AllowNullLiteral>] AbstractWorker =
     abstract onerror: (Event -> unit) with get, set
 
-type [<AllowNullLiteral>] Worker =
+type [<AllowNullLiteral; Global>] Worker =
     inherit EventTarget
     inherit AbstractWorker
     abstract onmessage: (MessageEvent -> unit) with get, set
@@ -1072,7 +1072,7 @@ type [<AllowNullLiteral>] Worker =
 type [<AllowNullLiteral>] WorkerType =
     [<Emit("new $0($1...)")>] abstract Create: stringUrl: string -> Worker
 
-type [<AllowNullLiteral>] XMLDocument =
+type [<AllowNullLiteral; Global>] XMLDocument =
     inherit Document
 
 type [<AllowNullLiteral>] XMLDocumentType =
@@ -1094,7 +1094,7 @@ type [<AllowNullLiteral>] GlobalEventHandlers =
     abstract onpointerup: (PointerEvent -> unit) with get, set
     abstract onwheel: (WheelEvent -> unit) with get, set
 
-type [<AllowNullLiteral>] HTMLAllCollection =
+type [<AllowNullLiteral; Global>] HTMLAllCollection =
     inherit HTMLCollection
     /// Sets or retrieves the shape of the object.
     /// Retrieves a select object or an object from an options collection.
@@ -1103,7 +1103,7 @@ type [<AllowNullLiteral>] HTMLAllCollection =
 type [<AllowNullLiteral>] HTMLAllCollectionType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLAllCollection
 
-type [<AllowNullLiteral>] HTMLAnchorElement =
+type [<AllowNullLiteral; Global>] HTMLAnchorElement =
     inherit HTMLElement
     abstract Methods: string with get, set
     /// Sets or retrieves the character set used to encode the object.
@@ -1156,7 +1156,7 @@ type [<AllowNullLiteral>] HTMLAnchorElement =
 type [<AllowNullLiteral>] HTMLAnchorElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLAnchorElement
 
-type [<AllowNullLiteral>] HTMLAreaElement =
+type [<AllowNullLiteral; Global>] HTMLAreaElement =
     inherit HTMLElement
     /// Sets or retrieves a text alternative to the graphic.
     abstract alt: string with get, set
@@ -1190,7 +1190,7 @@ type [<AllowNullLiteral>] HTMLAreaElement =
 type [<AllowNullLiteral>] HTMLAreaElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLAreaElement
 
-type [<AllowNullLiteral>] HTMLAreasCollection =
+type [<AllowNullLiteral; Global>] HTMLAreasCollection =
     inherit HTMLCollection
     /// <summary>Adds an element to the areas, controlRange, or options collection.</summary>
     /// <param name="element">Variant of type Number that specifies the index position in the collection where the element is placed. If no value is given, the method places the element at the end of the collection.</param>
@@ -1203,13 +1203,13 @@ type [<AllowNullLiteral>] HTMLAreasCollection =
 type [<AllowNullLiteral>] HTMLAreasCollectionType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLAreasCollection
 
-type [<AllowNullLiteral>] HTMLAudioElement =
+type [<AllowNullLiteral; Global>] HTMLAudioElement =
     inherit HTMLMediaElement
 
 type [<AllowNullLiteral>] HTMLAudioElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLAudioElement
 
-type [<AllowNullLiteral>] HTMLBRElement =
+type [<AllowNullLiteral; Global>] HTMLBRElement =
     inherit HTMLElement
     /// Sets or retrieves the side on which floating objects are not to be positioned when any IHTMLBlockElement is inserted into the document.
     abstract clear: string with get, set
@@ -1217,7 +1217,7 @@ type [<AllowNullLiteral>] HTMLBRElement =
 type [<AllowNullLiteral>] HTMLBRElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLBRElement
 
-type [<AllowNullLiteral>] HTMLBaseElement =
+type [<AllowNullLiteral; Global>] HTMLBaseElement =
     inherit HTMLElement
     /// Sets or retrieves a destination URL or an anchor point.
     abstract href: string with get, set
@@ -1227,7 +1227,7 @@ type [<AllowNullLiteral>] HTMLBaseElement =
 type [<AllowNullLiteral>] HTMLBaseElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLBaseElement
 
-type [<AllowNullLiteral>] HTMLBlockElement =
+type [<AllowNullLiteral; Global>] HTMLBlockElement =
     inherit HTMLElement
     /// Sets or retrieves reference information about the object.
     abstract cite: string with get, set
@@ -1238,7 +1238,7 @@ type [<AllowNullLiteral>] HTMLBlockElement =
 type [<AllowNullLiteral>] HTMLBlockElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLBlockElement
 
-type [<AllowNullLiteral>] HTMLBodyElement =
+type [<AllowNullLiteral; Global>] HTMLBodyElement =
     inherit HTMLElement
     abstract aLink: obj with get, set
     abstract background: string with get, set
@@ -1271,7 +1271,7 @@ type [<AllowNullLiteral>] HTMLBodyElement =
 type [<AllowNullLiteral>] HTMLBodyElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLBodyElement
 
-type [<AllowNullLiteral>] HTMLButtonElement =
+type [<AllowNullLiteral; Global>] HTMLButtonElement =
     inherit HTMLElement
     /// Provides a way to direct a user to a specific field when a document loads. This can provide both direction and convenience for a user, reducing the need to click or tab to a field when a page opens. This attribute is true when present on an element, and false when missing.
     abstract autofocus: bool with get, set
@@ -1319,7 +1319,7 @@ type [<AllowNullLiteral>] HTMLButtonElement =
 type [<AllowNullLiteral>] HTMLButtonElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLButtonElement
 
-type [<AllowNullLiteral>] HTMLCanvasElement =
+type [<AllowNullLiteral; Global>] HTMLCanvasElement =
     inherit HTMLElement
     /// Gets or sets the height of a canvas element on a document.
     abstract height: float with get, set
@@ -1338,7 +1338,7 @@ type [<AllowNullLiteral>] HTMLCanvasElement =
 type [<AllowNullLiteral>] HTMLCanvasElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLCanvasElement
 
-type [<AllowNullLiteral>] HTMLDDElement =
+type [<AllowNullLiteral; Global>] HTMLDDElement =
     inherit HTMLElement
     /// Sets or retrieves whether the browser automatically performs wordwrap.
     abstract noWrap: bool with get, set
@@ -1346,35 +1346,35 @@ type [<AllowNullLiteral>] HTMLDDElement =
 type [<AllowNullLiteral>] HTMLDDElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLDDElement
 
-type [<AllowNullLiteral>] HTMLDListElement =
+type [<AllowNullLiteral; Global>] HTMLDListElement =
     inherit HTMLElement
     abstract compact: bool with get, set
 
 type [<AllowNullLiteral>] HTMLDListElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLDListElement
 
-type [<AllowNullLiteral>] HTMLDTElement =
+type [<AllowNullLiteral; Global>] HTMLDTElement =
     inherit HTMLElement
     abstract noWrap: bool with get, set
 
 type [<AllowNullLiteral>] HTMLDTElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLDTElement
 
-type [<AllowNullLiteral>] HTMLDataListElement =
+type [<AllowNullLiteral; Global>] HTMLDataListElement =
     inherit HTMLElement
     abstract options: HTMLCollection with get, set
 
 type [<AllowNullLiteral>] HTMLDataListElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLDataListElement
 
-type [<AllowNullLiteral>] HTMLDirectoryElement =
+type [<AllowNullLiteral; Global>] HTMLDirectoryElement =
     inherit HTMLElement
     abstract compact: bool with get, set
 
 type [<AllowNullLiteral>] HTMLDirectoryElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLDirectoryElement
 
-type [<AllowNullLiteral>] HTMLDivElement =
+type [<AllowNullLiteral; Global>] HTMLDivElement =
     inherit HTMLElement
     /// Sets or retrieves how the object is aligned with adjacent text.
     abstract align: string with get, set
@@ -1383,13 +1383,13 @@ type [<AllowNullLiteral>] HTMLDivElement =
 type [<AllowNullLiteral>] HTMLDivElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLDivElement
 
-type [<AllowNullLiteral>] HTMLDocument =
+type [<AllowNullLiteral; Global>] HTMLDocument =
     inherit Document
 
 type [<AllowNullLiteral>] HTMLDocumentType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLDocument
 
-type [<AllowNullLiteral>] HTMLElement =
+type [<AllowNullLiteral; Global>] HTMLElement =
     inherit Element
     abstract accessKey: string with get, set
     abstract children: HTMLCollection with get, set
@@ -1515,7 +1515,7 @@ type ScrollIntoViewOptions =
 type [<AllowNullLiteral>] HTMLElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLElement
 
-type [<AllowNullLiteral>] HTMLEmbedElement =
+type [<AllowNullLiteral; Global>] HTMLEmbedElement =
     inherit HTMLElement
     inherit GetSVGDocument
     /// Sets or retrieves the height of the object.
@@ -1538,7 +1538,7 @@ type [<AllowNullLiteral>] HTMLEmbedElement =
 type [<AllowNullLiteral>] HTMLEmbedElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLEmbedElement
 
-type [<AllowNullLiteral>] HTMLFieldSetElement =
+type [<AllowNullLiteral; Global>] HTMLFieldSetElement =
     inherit HTMLElement
     /// Sets or retrieves a value that indicates the table alignment.
     abstract align: string with get, set
@@ -1559,7 +1559,7 @@ type [<AllowNullLiteral>] HTMLFieldSetElement =
 type [<AllowNullLiteral>] HTMLFieldSetElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLFieldSetElement
 
-type [<AllowNullLiteral>] HTMLFontElement =
+type [<AllowNullLiteral; Global>] HTMLFontElement =
     inherit HTMLElement
     /// Sets or retrieves the current typeface family.
     abstract face: string with get, set
@@ -1567,7 +1567,7 @@ type [<AllowNullLiteral>] HTMLFontElement =
 type [<AllowNullLiteral>] HTMLFontElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLFontElement
 
-type [<AllowNullLiteral>] HTMLFormElement =
+type [<AllowNullLiteral; Global>] HTMLFormElement =
     inherit HTMLElement
     /// Sets or retrieves a list of character encodings for input data that must be accepted by the server processing the form.
     /// Sets or retrieves a comma-separated list of content types.
@@ -1610,7 +1610,7 @@ type [<AllowNullLiteral>] HTMLFormElement =
 type [<AllowNullLiteral>] HTMLFormElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLFormElement
 
-type [<AllowNullLiteral>] HTMLFrameElement =
+type [<AllowNullLiteral; Global>] HTMLFrameElement =
     inherit HTMLElement
     inherit GetSVGDocument
     /// Specifies the properties of a border drawn around an object.
@@ -1651,7 +1651,7 @@ type [<AllowNullLiteral>] HTMLFrameElement =
 type [<AllowNullLiteral>] HTMLFrameElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLFrameElement
 
-type [<AllowNullLiteral>] HTMLHRElement =
+type [<AllowNullLiteral; Global>] HTMLHRElement =
     inherit HTMLElement
     /// Sets or retrieves how the object is aligned with adjacent text.
     abstract align: string with get, set
@@ -1663,14 +1663,14 @@ type [<AllowNullLiteral>] HTMLHRElement =
 type [<AllowNullLiteral>] HTMLHRElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLHRElement
 
-type [<AllowNullLiteral>] HTMLHeadElement =
+type [<AllowNullLiteral; Global>] HTMLHeadElement =
     inherit HTMLElement
     abstract profile: string with get, set
 
 type [<AllowNullLiteral>] HTMLHeadElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLHeadElement
 
-type [<AllowNullLiteral>] HTMLHeadingElement =
+type [<AllowNullLiteral; Global>] HTMLHeadingElement =
     inherit HTMLElement
     /// Sets or retrieves how the object is aligned with adjacent text.
     abstract align: string with get, set
@@ -1679,7 +1679,7 @@ type [<AllowNullLiteral>] HTMLHeadingElement =
 type [<AllowNullLiteral>] HTMLHeadingElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLHeadingElement
 
-type [<AllowNullLiteral>] HTMLHtmlElement =
+type [<AllowNullLiteral; Global>] HTMLHtmlElement =
     inherit HTMLElement
     /// Sets or retrieves the DTD version that governs the current document.
     abstract version: string with get, set
@@ -1687,7 +1687,7 @@ type [<AllowNullLiteral>] HTMLHtmlElement =
 type [<AllowNullLiteral>] HTMLHtmlElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLHtmlElement
 
-type [<AllowNullLiteral>] HTMLIFrameElement =
+type [<AllowNullLiteral; Global>] HTMLIFrameElement =
     inherit HTMLElement
     inherit GetSVGDocument
     /// Sets or retrieves how the object is aligned with adjacent text.
@@ -1730,7 +1730,7 @@ type [<AllowNullLiteral>] HTMLIFrameElement =
 type [<AllowNullLiteral>] HTMLIFrameElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLIFrameElement
 
-type [<AllowNullLiteral>] HTMLImageElement =
+type [<AllowNullLiteral; Global>] HTMLImageElement =
     inherit HTMLElement
     /// Sets or retrieves how the object is aligned with adjacent text.
     abstract align: string with get, set
@@ -1773,7 +1773,7 @@ type [<AllowNullLiteral>] ImageType =
     // Constructor must be Image, see #25
     [<Emit("new Image($1...)")>] abstract Create: ?width: float * ?height: float -> HTMLImageElement
 
-type [<AllowNullLiteral>] HTMLInputElement =
+type [<AllowNullLiteral; Global>] HTMLInputElement =
     inherit HTMLElement
     /// Returns a FileList object on a file type input object.
     abstract files: FileList with get, set
@@ -1886,7 +1886,7 @@ type [<AllowNullLiteral>] HTMLInputElement =
 type [<AllowNullLiteral>] HTMLInputElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLInputElement
 
-type [<AllowNullLiteral>] HTMLLIElement =
+type [<AllowNullLiteral; Global>] HTMLLIElement =
     inherit HTMLElement
     /// Sets or retrieves the MIME type of the object.
     abstract ``type``: string with get, set
@@ -1896,7 +1896,7 @@ type [<AllowNullLiteral>] HTMLLIElement =
 type [<AllowNullLiteral>] HTMLLIElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLLIElement
 
-type [<AllowNullLiteral>] HTMLLabelElement =
+type [<AllowNullLiteral; Global>] HTMLLabelElement =
     inherit HTMLElement
     abstract form: HTMLFormElement with get, set
     /// Sets or retrieves the object to which the given label object is assigned.
@@ -1905,7 +1905,7 @@ type [<AllowNullLiteral>] HTMLLabelElement =
 type [<AllowNullLiteral>] HTMLLabelElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLLabelElement
 
-type [<AllowNullLiteral>] HTMLLegendElement =
+type [<AllowNullLiteral; Global>] HTMLLegendElement =
     inherit HTMLElement
     /// Sets or retrieves how the object is aligned with adjacent text.
     abstract align: string with get, set
@@ -1914,7 +1914,7 @@ type [<AllowNullLiteral>] HTMLLegendElement =
 type [<AllowNullLiteral>] HTMLLegendElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLLegendElement
 
-type [<AllowNullLiteral>] HTMLLinkElement =
+type [<AllowNullLiteral; Global>] HTMLLinkElement =
     inherit HTMLElement
     // TODO
     // inherit LinkStyle
@@ -1937,7 +1937,7 @@ type [<AllowNullLiteral>] HTMLLinkElement =
 type [<AllowNullLiteral>] HTMLLinkElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLLinkElement
 
-type [<AllowNullLiteral>] HTMLMapElement =
+type [<AllowNullLiteral; Global>] HTMLMapElement =
     inherit HTMLElement
     /// Retrieves a collection of the area objects defined for the given map object.
     abstract areas: HTMLAreasCollection with get, set
@@ -1947,7 +1947,7 @@ type [<AllowNullLiteral>] HTMLMapElement =
 type [<AllowNullLiteral>] HTMLMapElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLMapElement
 
-type [<AllowNullLiteral>] HTMLMediaElement =
+type [<AllowNullLiteral; Global>] HTMLMediaElement =
     inherit HTMLElement
     /// Returns an AudioTrackList object with the audio tracks for a given video element.
     abstract audioTracks: AudioTrackList with get, set
@@ -2025,7 +2025,7 @@ type [<AllowNullLiteral>] HTMLMediaElementType =
     abstract NETWORK_NO_SOURCE: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLMediaElement
 
-type [<AllowNullLiteral>] HTMLMenuElement =
+type [<AllowNullLiteral; Global>] HTMLMenuElement =
     inherit HTMLElement
     abstract compact: bool with get, set
     /// Sets or retrieves the MIME type for the associated scripting engine.
@@ -2034,7 +2034,7 @@ type [<AllowNullLiteral>] HTMLMenuElement =
 type [<AllowNullLiteral>] HTMLMenuElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLMenuElement
 
-type [<AllowNullLiteral>] HTMLMetaElement =
+type [<AllowNullLiteral; Global>] HTMLMetaElement =
     inherit HTMLElement
     /// Sets or retrieves the character set used to encode the object.
     abstract charset: string with get, set
@@ -2050,7 +2050,7 @@ type [<AllowNullLiteral>] HTMLMetaElement =
 type [<AllowNullLiteral>] HTMLMetaElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLMetaElement
 
-type [<AllowNullLiteral>] HTMLModElement =
+type [<AllowNullLiteral; Global>] HTMLModElement =
     inherit HTMLElement
     /// Sets or retrieves reference information about the object.
     abstract cite: string with get, set
@@ -2060,14 +2060,14 @@ type [<AllowNullLiteral>] HTMLModElement =
 type [<AllowNullLiteral>] HTMLModElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLModElement
 
-type [<AllowNullLiteral>] HTMLNextIdElement =
+type [<AllowNullLiteral; Global>] HTMLNextIdElement =
     inherit HTMLElement
     abstract n: string with get, set
 
 type [<AllowNullLiteral>] HTMLNextIdElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLNextIdElement
 
-type [<AllowNullLiteral>] HTMLOListElement =
+type [<AllowNullLiteral; Global>] HTMLOListElement =
     inherit HTMLElement
     abstract compact: bool with get, set
     abstract start: float with get, set
@@ -2077,7 +2077,7 @@ type [<AllowNullLiteral>] HTMLOListElement =
 type [<AllowNullLiteral>] HTMLOListElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLOListElement
 
-type [<AllowNullLiteral>] HTMLObjectElement =
+type [<AllowNullLiteral; Global>] HTMLObjectElement =
     inherit HTMLElement
     inherit GetSVGDocument
     /// Retrieves a string of the URL where the object tag can be found. This is often the href of the document that the object is in, or the value set by a base element.
@@ -2129,7 +2129,7 @@ type [<AllowNullLiteral>] HTMLObjectElement =
 type [<AllowNullLiteral>] HTMLObjectElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLObjectElement
 
-type [<AllowNullLiteral>] HTMLOptGroupElement =
+type [<AllowNullLiteral; Global>] HTMLOptGroupElement =
     inherit HTMLElement
     /// Sets or retrieves the status of an option.
     abstract defaultSelected: bool with get, set
@@ -2149,7 +2149,7 @@ type [<AllowNullLiteral>] HTMLOptGroupElement =
 type [<AllowNullLiteral>] HTMLOptGroupElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLOptGroupElement
 
-type [<AllowNullLiteral>] HTMLOptionElement =
+type [<AllowNullLiteral; Global>] HTMLOptionElement =
     inherit HTMLElement
     /// Sets or retrieves the status of an option.
     abstract defaultSelected: bool with get, set
@@ -2170,7 +2170,7 @@ type [<AllowNullLiteral>] HTMLOptionElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLOptionElement
     abstract create: unit -> HTMLOptionElement
 
-type [<AllowNullLiteral>] HTMLParagraphElement =
+type [<AllowNullLiteral; Global>] HTMLParagraphElement =
     inherit HTMLElement
     /// Sets or retrieves how the object is aligned with adjacent text.
     abstract align: string with get, set
@@ -2179,7 +2179,7 @@ type [<AllowNullLiteral>] HTMLParagraphElement =
 type [<AllowNullLiteral>] HTMLParagraphElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLParagraphElement
 
-type [<AllowNullLiteral>] HTMLParamElement =
+type [<AllowNullLiteral; Global>] HTMLParamElement =
     inherit HTMLElement
     abstract name: string with get, set
     /// Retrieves the CSS language in which the style sheet is written.
@@ -2193,7 +2193,7 @@ type [<AllowNullLiteral>] HTMLParamElement =
 type [<AllowNullLiteral>] HTMLParamElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLParamElement
 
-type [<AllowNullLiteral>] HTMLPhraseElement =
+type [<AllowNullLiteral; Global>] HTMLPhraseElement =
     inherit HTMLElement
     abstract cite: string with get, set
     abstract dateTime: string with get, set
@@ -2201,7 +2201,7 @@ type [<AllowNullLiteral>] HTMLPhraseElement =
 type [<AllowNullLiteral>] HTMLPhraseElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLPhraseElement
 
-type [<AllowNullLiteral>] HTMLPreElement =
+type [<AllowNullLiteral; Global>] HTMLPreElement =
     inherit HTMLElement
     abstract cite: string with get, set
     abstract clear: string with get, set
@@ -2211,7 +2211,7 @@ type [<AllowNullLiteral>] HTMLPreElement =
 type [<AllowNullLiteral>] HTMLPreElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLPreElement
 
-type [<AllowNullLiteral>] HTMLProgressElement =
+type [<AllowNullLiteral; Global>] HTMLProgressElement =
     inherit HTMLElement
     abstract form: HTMLFormElement with get, set
     abstract max: float with get, set
@@ -2222,7 +2222,7 @@ type [<AllowNullLiteral>] HTMLProgressElement =
 type [<AllowNullLiteral>] HTMLProgressElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLProgressElement
 
-type [<AllowNullLiteral>] HTMLQuoteElement =
+type [<AllowNullLiteral; Global>] HTMLQuoteElement =
     inherit HTMLElement
     abstract cite: string with get, set
     abstract dateTime: string with get, set
@@ -2230,7 +2230,7 @@ type [<AllowNullLiteral>] HTMLQuoteElement =
 type [<AllowNullLiteral>] HTMLQuoteElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLQuoteElement
 
-type [<AllowNullLiteral>] HTMLScriptElement =
+type [<AllowNullLiteral; Global>] HTMLScriptElement =
     inherit HTMLElement
     abstract async: bool with get, set
     /// Sets or retrieves the character set used to encode the object.
@@ -2250,7 +2250,7 @@ type [<AllowNullLiteral>] HTMLScriptElement =
 type [<AllowNullLiteral>] HTMLScriptElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLScriptElement
 
-type [<AllowNullLiteral>] HTMLSelectElement =
+type [<AllowNullLiteral; Global>] HTMLSelectElement =
     inherit HTMLElement
     /// Provides a way to direct a user to a specific field when a document loads. This can provide both direction and convenience for a user, reducing the need to click or tab to a field when a page opens. This attribute is true when present on an element, and false when missing.
     abstract autofocus: bool with get, set
@@ -2293,7 +2293,7 @@ type [<AllowNullLiteral>] HTMLSelectElement =
 type [<AllowNullLiteral>] HTMLSelectElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLSelectElement
 
-type [<AllowNullLiteral>] HTMLSourceElement =
+type [<AllowNullLiteral; Global>] HTMLSourceElement =
     inherit HTMLElement
     /// Gets or sets the intended media type of the media source.
     abstract media: string with get, set
@@ -2303,14 +2303,14 @@ type [<AllowNullLiteral>] HTMLSourceElement =
 type [<AllowNullLiteral>] HTMLSourceElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLSourceElement
 
-type [<AllowNullLiteral>] HTMLSpanElement =
+type [<AllowNullLiteral; Global>] HTMLSpanElement =
     inherit HTMLElement
 
 
 type [<AllowNullLiteral>] HTMLSpanElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLSpanElement
 
-type [<AllowNullLiteral>] HTMLStyleElement =
+type [<AllowNullLiteral; Global>] HTMLStyleElement =
     inherit HTMLElement
     // TODO
     // inherit LinkStyle
@@ -2321,7 +2321,7 @@ type [<AllowNullLiteral>] HTMLStyleElement =
 type [<AllowNullLiteral>] HTMLStyleElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLStyleElement
 
-type [<AllowNullLiteral>] HTMLTableCaptionElement =
+type [<AllowNullLiteral; Global>] HTMLTableCaptionElement =
     inherit HTMLElement
     /// Sets or retrieves the alignment of the object relative to the display or table.
     abstract align: string with get, set
@@ -2331,7 +2331,7 @@ type [<AllowNullLiteral>] HTMLTableCaptionElement =
 type [<AllowNullLiteral>] HTMLTableCaptionElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTableCaptionElement
 
-type [<AllowNullLiteral>] HTMLTableCellElement =
+type [<AllowNullLiteral; Global>] HTMLTableCellElement =
     inherit HTMLElement
     inherit HTMLTableAlignment
     /// Sets or retrieves abbreviated text for the object.
@@ -2360,7 +2360,7 @@ type [<AllowNullLiteral>] HTMLTableCellElement =
 type [<AllowNullLiteral>] HTMLTableCellElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTableCellElement
 
-type [<AllowNullLiteral>] HTMLTableColElement =
+type [<AllowNullLiteral; Global>] HTMLTableColElement =
     inherit HTMLElement
     inherit HTMLTableAlignment
     /// Sets or retrieves how the object is aligned with adjacent text.
@@ -2372,14 +2372,14 @@ type [<AllowNullLiteral>] HTMLTableColElement =
 type [<AllowNullLiteral>] HTMLTableColElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTableColElement
 
-type [<AllowNullLiteral>] HTMLTableDataCellElement =
+type [<AllowNullLiteral; Global>] HTMLTableDataCellElement =
     inherit HTMLTableCellElement
 
 
 type [<AllowNullLiteral>] HTMLTableDataCellElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTableDataCellElement
 
-type [<AllowNullLiteral>] HTMLTableElement =
+type [<AllowNullLiteral; Global>] HTMLTableElement =
     inherit HTMLElement
     /// Sets or retrieves a value that indicates the table alignment.
     abstract align: string with get, set
@@ -2435,7 +2435,7 @@ type [<AllowNullLiteral>] HTMLTableElement =
 type [<AllowNullLiteral>] HTMLTableElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTableElement
 
-type [<AllowNullLiteral>] HTMLTableHeaderCellElement =
+type [<AllowNullLiteral; Global>] HTMLTableHeaderCellElement =
     inherit HTMLTableCellElement
     /// Sets or retrieves the group of cells in a table to which the object's information applies.
     abstract scope: string with get, set
@@ -2443,7 +2443,7 @@ type [<AllowNullLiteral>] HTMLTableHeaderCellElement =
 type [<AllowNullLiteral>] HTMLTableHeaderCellElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTableHeaderCellElement
 
-type [<AllowNullLiteral>] HTMLTableRowElement =
+type [<AllowNullLiteral; Global>] HTMLTableRowElement =
     inherit HTMLElement
     inherit HTMLTableAlignment
     abstract align: string with get, set
@@ -2466,7 +2466,7 @@ type [<AllowNullLiteral>] HTMLTableRowElement =
 type [<AllowNullLiteral>] HTMLTableRowElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTableRowElement
 
-type [<AllowNullLiteral>] HTMLTableSectionElement =
+type [<AllowNullLiteral; Global>] HTMLTableSectionElement =
     inherit HTMLElement
     inherit HTMLTableAlignment
     abstract align: string with get, set
@@ -2480,7 +2480,7 @@ type [<AllowNullLiteral>] HTMLTableSectionElement =
 type [<AllowNullLiteral>] HTMLTableSectionElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTableSectionElement
 
-type [<AllowNullLiteral>] HTMLTextAreaElement =
+type [<AllowNullLiteral; Global>] HTMLTextAreaElement =
     inherit HTMLElement
     /// Provides a way to direct a user to a specific field when a document loads. This can provide both direction and convenience for a user, reducing the need to click or tab to a field when a page opens. This attribute is true when present on an element, and false when missing.
     abstract autofocus: bool with get, set
@@ -2527,14 +2527,14 @@ type [<AllowNullLiteral>] HTMLTextAreaElement =
 type [<AllowNullLiteral>] HTMLTextAreaElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTextAreaElement
 
-type [<AllowNullLiteral>] HTMLTitleElement =
+type [<AllowNullLiteral; Global>] HTMLTitleElement =
     inherit HTMLElement
     abstract text: string with get, set
 
 type [<AllowNullLiteral>] HTMLTitleElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTitleElement
 
-type [<AllowNullLiteral>] HTMLTrackElement =
+type [<AllowNullLiteral; Global>] HTMLTrackElement =
     inherit HTMLElement
     abstract ``default``: bool with get, set
     abstract kind: string with get, set
@@ -2555,7 +2555,7 @@ type [<AllowNullLiteral>] HTMLTrackElementType =
     abstract NONE: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTrackElement
 
-type [<AllowNullLiteral>] HTMLUListElement =
+type [<AllowNullLiteral; Global>] HTMLUListElement =
     inherit HTMLElement
     abstract compact: bool with get, set
     abstract ``type``: string with get, set
@@ -2563,13 +2563,13 @@ type [<AllowNullLiteral>] HTMLUListElement =
 type [<AllowNullLiteral>] HTMLUListElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLUListElement
 
-type [<AllowNullLiteral>] HTMLUnknownElement =
+type [<AllowNullLiteral; Global>] HTMLUnknownElement =
     inherit HTMLElement
 
 type [<AllowNullLiteral>] HTMLUnknownElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLUnknownElement
 
-type [<AllowNullLiteral>] HTMLVideoElement =
+type [<AllowNullLiteral; Global>] HTMLVideoElement =
     inherit HTMLMediaElement
     abstract height: float with get, set
     /// Gets or sets a URL of an image to display, for example, like a movie poster. This can be a still frame from the video, or another image if no video data is available.
@@ -2584,7 +2584,7 @@ type [<AllowNullLiteral>] HTMLVideoElement =
 type [<AllowNullLiteral>] HTMLVideoElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLVideoElement
 
-type [<AllowNullLiteral>] VideoPlaybackQuality =
+type [<AllowNullLiteral; Global>] VideoPlaybackQuality =
     abstract corruptedVideoFrames: float with get, set
     abstract creationTime: float with get, set
     abstract droppedVideoFrames: float with get, set
@@ -2594,7 +2594,7 @@ type [<AllowNullLiteral>] VideoPlaybackQuality =
 type [<AllowNullLiteral>] VideoPlaybackQualityType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> VideoPlaybackQuality
 
-type [<AllowNullLiteral>] VideoTrack =
+type [<AllowNullLiteral; Global>] VideoTrack =
     abstract id: string with get, set
     abstract kind: string with get, set
     abstract label: string with get, set
@@ -2605,7 +2605,7 @@ type [<AllowNullLiteral>] VideoTrack =
 type [<AllowNullLiteral>] VideoTrackType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> VideoTrack
 
-type [<AllowNullLiteral>] VideoTrackList =
+type [<AllowNullLiteral; Global>] VideoTrackList =
     inherit EventTarget
     abstract length: int
     abstract onaddtrack: (TrackEvent -> unit) with get, set
@@ -2619,7 +2619,7 @@ type [<AllowNullLiteral>] VideoTrackList =
 type [<AllowNullLiteral>] VideoTrackListType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> VideoTrackList
 
-type [<AllowNullLiteral>] SourceBuffer =
+type [<AllowNullLiteral; Global>] SourceBuffer =
     inherit EventTarget
     abstract appendWindowEnd: float with get, set
     abstract appendWindowStart: float with get, set
@@ -2636,7 +2636,7 @@ type [<AllowNullLiteral>] SourceBuffer =
 type [<AllowNullLiteral>] SourceBufferType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> SourceBuffer
 
-type [<AllowNullLiteral>] SourceBufferList =
+type [<AllowNullLiteral; Global>] SourceBufferList =
     inherit EventTarget
     abstract length: int
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> SourceBuffer with get, set
@@ -2645,7 +2645,7 @@ type [<AllowNullLiteral>] SourceBufferList =
 type [<AllowNullLiteral>] SourceBufferListType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> SourceBufferList
 
-type [<AllowNullLiteral>] AudioTrack =
+type [<AllowNullLiteral; Global>] AudioTrack =
     abstract enabled: bool with get, set
     abstract id: string with get, set
     abstract kind: string with get, set
@@ -2656,7 +2656,7 @@ type [<AllowNullLiteral>] AudioTrack =
 type [<AllowNullLiteral>] AudioTrackType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> AudioTrack
 
-type [<AllowNullLiteral>] AudioTrackList =
+type [<AllowNullLiteral; Global>] AudioTrackList =
     inherit EventTarget
     abstract length: int
     abstract onaddtrack: (TrackEvent -> unit) with get, set
@@ -2669,7 +2669,7 @@ type [<AllowNullLiteral>] AudioTrackList =
 type [<AllowNullLiteral>] AudioTrackListType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> AudioTrackList
 
-type [<AllowNullLiteral>] TextTrack =
+type [<AllowNullLiteral; Global>] TextTrack =
     inherit EventTarget
     abstract activeCues: TextTrackCueList with get, set
     abstract cues: TextTrackCueList with get, set
@@ -2702,7 +2702,7 @@ type [<AllowNullLiteral>] TextTrackType =
     abstract SHOWING: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> TextTrack
 
-type [<AllowNullLiteral>] TextTrackCue =
+type [<AllowNullLiteral; Global>] TextTrackCue =
     inherit EventTarget
     abstract endTime: float with get, set
     abstract id: string with get, set
@@ -2717,7 +2717,7 @@ type [<AllowNullLiteral>] TextTrackCue =
 type [<AllowNullLiteral>] TextTrackCueType =
     [<Emit("new $0($1...)")>] abstract Create: startTime: float * endTime: float * text: string -> TextTrackCue
 
-type [<AllowNullLiteral>] TextTrackCueList =
+type [<AllowNullLiteral; Global>] TextTrackCueList =
     abstract length: int
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> TextTrackCue with get, set
     abstract getCueById: id: string -> TextTrackCue
@@ -2726,7 +2726,7 @@ type [<AllowNullLiteral>] TextTrackCueList =
 type [<AllowNullLiteral>] TextTrackCueListType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> TextTrackCueList
 
-type [<AllowNullLiteral>] TextTrackList =
+type [<AllowNullLiteral; Global>] TextTrackList =
     inherit EventTarget
     abstract length: int
     abstract onaddtrack: (TrackEvent -> unit) with get, set
@@ -2746,19 +2746,19 @@ type [<AllowNullLiteral>] HTMLTableAlignment =
 
 // ## CANVAS
 
-type [<AllowNullLiteral>] CanvasGradient =
+type [<AllowNullLiteral; Global>] CanvasGradient =
     abstract addColorStop: offset: float * color: string -> unit
 
 type [<AllowNullLiteral>] CanvasGradientType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> CanvasGradient
 
-type [<AllowNullLiteral>] CanvasPattern =
+type [<AllowNullLiteral; Global>] CanvasPattern =
     interface end
 
 type [<AllowNullLiteral>] CanvasPatternType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> CanvasPattern
 
-type [<AllowNullLiteral>] CanvasRenderingContext2D =
+type [<AllowNullLiteral; Global>] CanvasRenderingContext2D =
     abstract canvas: HTMLCanvasElement with get, set
     abstract fillStyle: U3<string, CanvasGradient, CanvasPattern> with get, set
     abstract font: string with get, set
@@ -2821,7 +2821,7 @@ type [<AllowNullLiteral>] CanvasRenderingContext2D =
 type [<AllowNullLiteral>] CanvasRenderingContext2DType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> CanvasRenderingContext2D
 
-type [<AllowNullLiteral>] ImageData =
+type [<AllowNullLiteral; Global>] ImageData =
     abstract data: uint8[] with get, set
     abstract height: float with get, set
     abstract width: float with get, set
@@ -2832,13 +2832,13 @@ type [<AllowNullLiteral>] ImageDataType =
 
 // ## OTHER HTML INTERFACES
 
-type [<AllowNullLiteral>] TextMetrics =
+type [<AllowNullLiteral; Global>] TextMetrics =
     abstract width: float with get, set
 
 type [<AllowNullLiteral>] TextMetricsType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> TextMetrics
 
-type [<AllowNullLiteral>] MediaError =
+type [<AllowNullLiteral; Global>] MediaError =
     abstract code: float with get, set
     abstract MEDIA_ERR_ABORTED: float with get, set
     abstract MEDIA_ERR_DECODE: float with get, set
@@ -2852,7 +2852,7 @@ type [<AllowNullLiteral>] MediaErrorType =
     abstract MEDIA_ERR_SRC_NOT_SUPPORTED: float with get, set
     [<Emit("new $0($1...)")>] abstract Create: unit -> MediaError
 
-type [<AllowNullLiteral>] ValidityState =
+type [<AllowNullLiteral; Global>] ValidityState =
     abstract badInput: bool with get, set
     abstract customError: bool with get, set
     abstract patternMismatch: bool with get, set
@@ -2870,17 +2870,17 @@ type [<AllowNullLiteral>] ValidityStateType =
 
 // ## EVENTS
 
-type [<AllowNullLiteral>] UIEvent =
+type [<AllowNullLiteral; Global>] UIEvent =
     inherit Event
     abstract detail: float
     abstract view: Window
 
-type [<AllowNullLiteral>] AnimationEvent =
+type [<AllowNullLiteral; Global>] AnimationEvent =
     inherit Event
     abstract animationName: string with get, set
     abstract elapsedTime: float with get, set
 
-type [<AllowNullLiteral>] MouseEvent =
+type [<AllowNullLiteral; Global>] MouseEvent =
     inherit UIEvent
     abstract altKey: bool
     abstract button: float
@@ -2908,29 +2908,29 @@ type [<AllowNullLiteral>] MouseEvent =
     abstract y: float
     abstract getModifierState: keyArg: string -> bool
 
-type [<AllowNullLiteral>] MouseWheelEvent =
+type [<AllowNullLiteral; Global>] MouseWheelEvent =
     inherit MouseEvent
     abstract wheelDelta: float
     abstract wheelDeltaX: float
     abstract wheelDeltaY: float
 
-type [<AllowNullLiteral>] DocumentEvent =
+type [<AllowNullLiteral; Global>] DocumentEvent =
     abstract createEvent: eventInterface: string -> Event
 
-type [<AllowNullLiteral>] DragEvent =
+type [<AllowNullLiteral; Global>] DragEvent =
     inherit MouseEvent
     abstract dataTransfer: DataTransfer
 
-type [<AllowNullLiteral>] ClipboardEvent =
+type [<AllowNullLiteral; Global>] ClipboardEvent =
     inherit Event
     abstract clipboardData: DataTransfer
 
-type [<AllowNullLiteral>] CompositionEvent =
+type [<AllowNullLiteral; Global>] CompositionEvent =
     inherit UIEvent
     abstract data: string
     abstract locale: string
 
-type [<AllowNullLiteral>] DataTransfer =
+type [<AllowNullLiteral; Global>] DataTransfer =
     abstract dropEffect: string with get, set
     abstract effectAllowed: string with get, set
     abstract files: FileList with get, set
@@ -2940,13 +2940,13 @@ type [<AllowNullLiteral>] DataTransfer =
     abstract getData: format: string -> string
     abstract setData: format: string * data: string -> bool
 
-type [<AllowNullLiteral>] DataTransferItem =
+type [<AllowNullLiteral; Global>] DataTransferItem =
     abstract kind: string
     abstract ``type``: string
     abstract getAsFile: unit -> File
     abstract getAsString: _callback: (string -> unit) -> unit
 
-type [<AllowNullLiteral>] DataTransferItemList =
+type [<AllowNullLiteral; Global>] DataTransferItemList =
     abstract length: int
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: index: int -> DataTransferItem
     abstract add: data: File -> DataTransferItem
@@ -2954,11 +2954,11 @@ type [<AllowNullLiteral>] DataTransferItemList =
     abstract item: index: float -> DataTransferItem
     abstract remove: index: float -> unit
 
-type [<AllowNullLiteral>] FocusEvent =
+type [<AllowNullLiteral; Global>] FocusEvent =
     inherit UIEvent
     abstract relatedTarget: EventTarget
 
-type [<AllowNullLiteral>] PointerEvent =
+type [<AllowNullLiteral; Global>] PointerEvent =
     inherit MouseEvent
     abstract currentPoint: obj
     abstract height: float
@@ -2975,11 +2975,11 @@ type [<AllowNullLiteral>] PointerEvent =
     abstract getCurrentPoint: element: Element -> unit
     abstract getIntermediatePoints: element: Element -> unit
 
-type [<AllowNullLiteral>] PopStateEvent =
+type [<AllowNullLiteral; Global>] PopStateEvent =
     inherit Event
     abstract state: obj
 
-type [<AllowNullLiteral>] KeyboardEvent =
+type [<AllowNullLiteral; Global>] KeyboardEvent =
     inherit UIEvent
     abstract altKey: bool
     abstract char: string
@@ -3003,13 +3003,13 @@ type [<AllowNullLiteral>] KeyboardEvent =
     abstract DOM_KEY_LOCATION_STANDARD: float
     abstract getModifierState: keyArg: string -> bool
 
-type [<AllowNullLiteral>] ProgressEvent =
+type [<AllowNullLiteral; Global>] ProgressEvent =
     inherit Event
     abstract lengthComputable: bool
     abstract loaded: float
     abstract total: float
 
-type [<AllowNullLiteral>] Touch =
+type [<AllowNullLiteral; Global>] Touch =
     abstract clientX: float
     abstract clientY: float
     abstract identifier: float
@@ -3019,7 +3019,7 @@ type [<AllowNullLiteral>] Touch =
     abstract screenY: float
     abstract target: EventTarget
 
-type [<AllowNullLiteral>] TouchEvent =
+type [<AllowNullLiteral; Global>] TouchEvent =
     inherit UIEvent
     abstract altKey: bool
     abstract changedTouches: Touch[]
@@ -3029,28 +3029,28 @@ type [<AllowNullLiteral>] TouchEvent =
     abstract targetTouches: Touch[]
     abstract touches: Touch[]
 
-type [<AllowNullLiteral>] AriaRequestEvent =
+type [<AllowNullLiteral; Global>] AriaRequestEvent =
     inherit Event
     abstract attributeName: string
     abstract attributeValue: string
 
-type [<AllowNullLiteral>] CommandEvent =
+type [<AllowNullLiteral; Global>] CommandEvent =
     inherit Event
     abstract commandName: string
     abstract detail: string
 
-type [<AllowNullLiteral>] BeforeUnloadEvent =
+type [<AllowNullLiteral; Global>] BeforeUnloadEvent =
     inherit Event
     abstract returnValue: obj
 
-type [<AllowNullLiteral>] DeviceMotionEvent =
+type [<AllowNullLiteral; Global>] DeviceMotionEvent =
     inherit Event
     abstract acceleration: DeviceAcceleration
     abstract accelerationIncludingGravity: DeviceAcceleration
     abstract interval: float
     abstract rotationRate: DeviceRotationRate
 
-type [<AllowNullLiteral>] DeviceOrientationEvent =
+type [<AllowNullLiteral; Global>] DeviceOrientationEvent =
     inherit Event
     abstract absolute: bool
     abstract alpha: float
@@ -3067,25 +3067,25 @@ type [<AllowNullLiteral>] DeviceRotationRate =
     abstract beta: float
     abstract gamma: float
 
-type [<AllowNullLiteral>] TransitionEvent =
+type [<AllowNullLiteral; Global>] TransitionEvent =
     inherit Event
     abstract elapsedTime: float with get, set
     abstract propertyName: string with get, set
 
-type [<AllowNullLiteral>] PageTransitionEvent =
+type [<AllowNullLiteral; Global>] PageTransitionEvent =
     inherit Event
     abstract persisted: bool
 
-type [<AllowNullLiteral>] HashChangeEvent =
+type [<AllowNullLiteral; Global>] HashChangeEvent =
     inherit Event
     abstract newURL: string
     abstract oldURL: string
 
-type [<AllowNullLiteral>] TrackEvent =
+type [<AllowNullLiteral; Global>] TrackEvent =
     inherit Event
     abstract track: obj
 
-type [<AllowNullLiteral>] WheelEvent =
+type [<AllowNullLiteral; Global>] WheelEvent =
     inherit MouseEvent
     abstract deltaMode: float
     abstract deltaX: float

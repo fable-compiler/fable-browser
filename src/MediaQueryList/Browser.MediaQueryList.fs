@@ -3,7 +3,7 @@ namespace rec Browser.Types
 open Fable.Core
 open Browser.Types
 
-type [<AllowNullLiteral>] MediaQueryList =
+type [<AllowNullLiteral; Global>] MediaQueryList =
     inherit EventTarget
     abstract matches: bool with get, set
     abstract media: string with get, set

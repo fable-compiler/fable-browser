@@ -9,13 +9,13 @@ type WebSocketState =
     | CLOSING = 2
     | CLOSED = 3
 
-type [<AllowNullLiteral>] CloseEvent =
+type [<AllowNullLiteral; Global>] CloseEvent =
     inherit Event
     abstract code: int
     abstract reason: string
     abstract wasClean: bool
 
-type [<AllowNullLiteral>] WebSocket =
+type [<AllowNullLiteral; Global>] WebSocket =
     inherit EventTarget
     abstract binaryType: string with get, set
     abstract bufferedAmount: float

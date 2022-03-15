@@ -2,11 +2,11 @@
 
 open Fable.Core
 
-type GamepadButton =
+type [<Global>] GamepadButton =
     abstract value: float
     abstract pressed: bool
 
-type Gamepad =
+type [<Global>] Gamepad =
     abstract axes: ResizeArray<float>
     abstract buttons: ResizeArray<GamepadButton>
     abstract connected: bool

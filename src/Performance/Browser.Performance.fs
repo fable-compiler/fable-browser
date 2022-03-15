@@ -3,7 +3,7 @@ namespace Browser.Types
 open System
 open Fable.Core
 
-type [<AllowNullLiteral>] Performance =
+type [<AllowNullLiteral; Global>] Performance =
     abstract clearMarks: ?markName: string -> unit
     abstract clearMeasures: ?measureName: string -> unit
     abstract clearResourceTimings: unit -> unit

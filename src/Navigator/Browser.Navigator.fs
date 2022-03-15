@@ -4,13 +4,13 @@ open System
 open Fable.Core
 open Fable.Core.JS
 
-type MimeType =
+type [<Global>] MimeType =
     abstract description: string
     abstract enabledPlugin: Plugin
     abstract suffixes: string
     abstract ``type``: string
 
-and Plugin =
+and [<Global>] Plugin =
     abstract description: string
     abstract filename: string
     abstract length: int
@@ -24,7 +24,7 @@ type ShareData =
     abstract text: string with get, set
     abstract title: string with get, set
 
-type Clipboard =
+type [<Global>] Clipboard =
     abstract writeText: string -> Promise<unit>
     abstract readText: unit -> Promise<string>
 
@@ -85,12 +85,12 @@ type PermissionDescriptor =
     abstract userVisibleOnly: bool with get, set
     abstract sysex: bool with get, set
 
-type Permissions =
+type [<Global>] Permissions =
     abstract query: (PermissionDescriptor -> JS.Promise<PermissionStatus>)
     // TODO, currently not supported in any browser: abstract request: unit -> unit
     // TODO, currently not supported in any browser: abstract requestAll: unit -> unit
 
-type Navigator =
+type [<Global>] Navigator =
     inherit NavigatorID
     inherit NavigatorOnLine
     // TODO: abstract activeVRDisplays

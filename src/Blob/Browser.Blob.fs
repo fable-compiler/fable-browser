@@ -15,7 +15,7 @@ type [<AllowNullLiteral>] BlobPropertyBag =
     abstract ``type``: string with get, set
     abstract endings: BlobEndings with get, set
 
-type [<AllowNullLiteral>] Blob =
+type [<AllowNullLiteral; Global>] Blob =
     abstract arrayBuffer: unit -> Promise<ArrayBuffer>
     abstract size: int
     abstract ``type``: string
@@ -24,7 +24,7 @@ type [<AllowNullLiteral>] Blob =
 type [<AllowNullLiteral>] BlobType =
     [<Emit("new $0($1...)")>] abstract Create: ?blobParts: obj[] * ?options: BlobPropertyBag -> Blob
 
-type [<AllowNullLiteral>] FormData =
+type [<AllowNullLiteral; Global>] FormData =
     abstract append: name: string * value: string -> unit
     abstract append: name: string * value: Blob * ?filename: string -> unit
     abstract delete: name: string -> unit

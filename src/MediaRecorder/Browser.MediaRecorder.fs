@@ -11,7 +11,7 @@ type MediaRecorderState =
 
 type DOMHighResTimeStamp = System.Double
 
-type [<AllowNullLiteral>] BlobEvent =
+type [<AllowNullLiteral; Global>] BlobEvent =
     inherit Event
     abstract data: Blob
     abstract timecode: DOMHighResTimeStamp
@@ -23,7 +23,7 @@ type [<AllowNullLiteral>] MediaRecorderErrorEvent =
     inherit Event
     abstract error: DOMException
 
-type MediaRecorder =
+type [<Global>] MediaRecorder =
     abstract mimeType: string
     abstract state: MediaRecorderState
     abstract stream: MediaStream

@@ -3,7 +3,7 @@ namespace rec Browser.Types
 open System
 open Fable.Core
 
-type [<AllowNullLiteral>] Event =
+type [<AllowNullLiteral; Global>] Event =
     abstract bubbles: bool with get, set
     abstract cancelBubble: bool with get, set
     abstract cancelable: bool with get, set
@@ -42,7 +42,7 @@ type [<AllowNullLiteral>] AddEventListenerOptions =
 type [<AllowNullLiteral>] RemoveEventListenerOptions =
     abstract capture: bool with get, set
 
-type [<AllowNullLiteral>] EventTarget =
+type [<AllowNullLiteral; Global>] EventTarget =
     abstract addEventListener: ``type``: string * listener: (Event->unit) -> unit
     abstract addEventListener: ``type``: string * listener: (Event->unit) * useCapture: bool -> unit
     abstract addEventListener: ``type``: string * listener: (Event->unit) * options: AddEventListenerOptions -> unit
@@ -54,7 +54,7 @@ type [<AllowNullLiteral>] EventTarget =
 type [<AllowNullLiteral>] EventTargetType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> EventTarget
 
-type [<AllowNullLiteral>] CustomEvent =
+type [<AllowNullLiteral; Global>] CustomEvent =
     inherit Event
     abstract detail: obj
 
@@ -62,7 +62,7 @@ type [<AllowNullLiteral>] CustomEventInit =
     inherit EventInit
     abstract detail: obj with get, set
 
-type [<AllowNullLiteral>] CustomEvent<'T> =
+type [<AllowNullLiteral; Global>] CustomEvent<'T> =
     inherit Event
     abstract detail: 'T option
 
@@ -74,7 +74,7 @@ type [<AllowNullLiteral>] CustomEventType =
     [<Emit("new $0($1...)")>] abstract Create : typeArg: string * ?eventInitDict: CustomEventInit -> CustomEvent
     [<Emit("new $0($1...)")>] abstract Create : typeArg: string * ?eventInitDict: CustomEventInit<'T> -> CustomEvent<'T>
 
-type [<AllowNullLiteral>] ErrorEvent =
+type [<AllowNullLiteral; Global>] ErrorEvent =
     inherit Event
     abstract colno: int
     abstract error: obj
@@ -83,7 +83,7 @@ type [<AllowNullLiteral>] ErrorEvent =
     abstract message: string
 
 // MessageEvent is used by several packages (WebSockets, Dom)
-type [<AllowNullLiteral>] MessageEvent =
+type [<AllowNullLiteral; Global>] MessageEvent =
     inherit Event
     abstract data: obj
     abstract origin: string
@@ -96,7 +96,7 @@ type GamepadEventType =
     | [<CompiledName("gamepadconnected")>] GamepadConnected
     | [<CompiledName("gamepaddisconnected")>] GamepadDisconnected
 
-type [<AllowNullLiteral>] GamepadEvent =
+type [<AllowNullLiteral; Global>] GamepadEvent =
     inherit Event
     [<Emit("new $0($1...)")>] abstract Create: typeArg: GamepadEventType * ?options: Gamepad
     abstract gamepad: Gamepad
