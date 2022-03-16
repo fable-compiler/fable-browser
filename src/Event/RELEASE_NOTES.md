@@ -1,3 +1,7 @@
+### 1.5.0
+
+* Add Global attribute to global interfaces @chkn
+
 ### 1.4.6
 
 * Fix Event and CustomEvent constructors

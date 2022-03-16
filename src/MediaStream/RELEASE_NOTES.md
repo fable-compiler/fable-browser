@@ -1,3 +1,7 @@
+### 3.2.0
+
+* Add Global attribute to global interfaces @chkn
+
 ### 3.1.0
 
 * Fix #70: Wrong type for MediaStreamConstraints in Browser.MediaStream (by @Nhowka)

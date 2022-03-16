@@ -1,3 +1,7 @@
+### 2.10.0
+
+* Add Global attribute to global interfaces @chkn
+
 ### 2.9.0
 
 * PR #91: Add support for `Element.toggleAttribute`

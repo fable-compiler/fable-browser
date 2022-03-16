@@ -1,3 +1,7 @@
+### 2.2.0
+
+* Add Global attribute to global interfaces @chkn
+
 ### 2.1.0
 
 * Fix #78: Invalid IL @jwosty

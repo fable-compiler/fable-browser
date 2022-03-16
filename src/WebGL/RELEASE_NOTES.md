@@ -1,3 +1,7 @@
+### 1.1.0
+
+* Add Global attribute to global interfaces @chkn
+
 ### 1.0.3
 
 * Downgrade FSharp.Core to 4.7.2
