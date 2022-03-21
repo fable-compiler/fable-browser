@@ -53,6 +53,7 @@ type MediaRecorderOptions =
 
 type MediaRecorderType =
     [<Emit("new $0($1...)")>] abstract Create: stream: MediaStream * ?options: MediaRecorderOptions -> MediaRecorder
+    abstract isTypeSupported: mimeType: string -> bool
 
 namespace Browser
 
