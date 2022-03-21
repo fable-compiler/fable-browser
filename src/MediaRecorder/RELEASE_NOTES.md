@@ -1,6 +1,10 @@
-### 1.2.0
+### 1.2.1
 
 * Add `MediaRecorder.isTypeSupported` (by @kerams)
+
+### 1.2.0
+
+* Unreleased because, I forgot to pulling the changes before releasing...
 
 ### 1.1.0
 
