@@ -22,6 +22,7 @@
     <ProjectReference Include="..\Event\Browser.Event.fsproj" />
     <ProjectReference Include="..\WebStorage\Browser.WebStorage.fsproj" />
     <ProjectReference Include="..\Blob\Browser.Blob.fsproj" />
+    <ProjectReference Include="..\IndexedDB\Browser.IndexedDB.fsproj" />
   </ItemGroup>
   <!-- This package doesn't contain actual code
        so we don't need to add the sources -->

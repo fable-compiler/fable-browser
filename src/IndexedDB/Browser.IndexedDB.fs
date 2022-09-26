@@ -16,8 +16,13 @@ type IDBFactory =
 // type IDBTransaction = ()
 // type IDBVersionChangeEvent = ()
 
-type IndexedDBType =
+type [<AllowNullLiteral; Global>] IndexedDBType =
     abstract ``open``: string -> unit
+
+namespace Browser
+
+open Fable.Core
+open Browser.Types
 
 [<AutoOpen>]
 module IndexedDB =

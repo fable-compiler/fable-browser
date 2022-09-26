@@ -887,6 +887,9 @@ type [<AllowNullLiteral>] WindowLocalStorage =
 type [<AllowNullLiteral>] WindowSessionStorage =
     abstract sessionStorage: Storage with get, set
 
+type [<AllowNullLiteral>] WindowIndexedDB =
+    abstract indexedDB: IndexedDBType with get, set
+
 type [<AllowNullLiteral>] WindowBase64 =
     abstract atob: encodedString: string -> string
     abstract btoa: rawString: string -> string
@@ -905,6 +908,7 @@ type [<AllowNullLiteral; Global>] Window =
     inherit GlobalEventHandlers
     inherit WindowBase64
     inherit WindowURI
+    inherit WindowIndexedDB
     // TODO
     // abstract performance: Performance with get, set
     // abstract clientInformation: Navigator with get, set
