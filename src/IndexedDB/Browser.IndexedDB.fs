@@ -9,6 +9,12 @@ type DatabasesType = {
 }
 
 // type IDBCursorWithValue = ()
+type IDBKeyRange =
+    abstract lower: obj with get
+    abstract upper: obj with get
+    abstract lowerOpen: obj with get
+    abstract upperOpen: obj with get
+
 type [<AllowNullLiteral; Global>] IDBCursor =
     abstract source: IDBObjectStore with get
     abstract direction: string with get
@@ -54,11 +60,12 @@ type IDBRequest =
     inherit EventTarget
 
     abstract error: exn with get
-    abstract result: IDBDatabase with get
+    abstract result: obj option with get
     abstract source: string option with get
     abstract readyState: obj with get
     abstract transaction: IDBTransaction with get
 
+    abstract onerror: (Event -> unit) with get, set
     abstract onsuccess: (Event -> unit) with get, set
     abstract onupgradeneeded: (Event -> unit) with get, set
 
@@ -75,12 +82,12 @@ type IDBObjectStore =
     abstract createIndex: indexName: string * keyPath: string * ?objectParameters: obj -> IDBRequest
     abstract delete: unit -> IDBRequest
     abstract deleteIndex: unit -> IDBRequest
-    abstract get: unit -> IDBRequest
+    abstract get: obj -> IDBRequest
     abstract getKey: unit -> IDBRequest
     abstract getAll: unit -> IDBRequest
     abstract getAllKeys: unit -> IDBRequest
     abstract index: unit -> IDBRequest
-    abstract openCursor: unit -> IDBRequest
+    abstract openCursor: ?query: IDBKeyRange -> IDBRequest
     abstract openKeyCursor: unit -> IDBRequest
     abstract put: unit -> IDBRequest
 
@@ -92,7 +99,6 @@ type IDBFactory =
     // NOTE(SimenLK): Not yet implemented
     abstract databases: unit -> JS.Promise<DatabasesType array>
 // type IDBIndex = ()
-// type IDBKeyRange = ()
 // type IDBVersionChangeEvent = ()
 
 namespace Browser
