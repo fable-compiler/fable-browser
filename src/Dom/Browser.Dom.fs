@@ -887,9 +887,6 @@ type [<AllowNullLiteral>] WindowLocalStorage =
 type [<AllowNullLiteral>] WindowSessionStorage =
     abstract sessionStorage: Storage with get, set
 
-type [<AllowNullLiteral>] WindowIndexedDB =
-    abstract indexedDB: IDBFactory with get, set
-
 type [<AllowNullLiteral>] WindowBase64 =
     abstract atob: encodedString: string -> string
     abstract btoa: rawString: string -> string
@@ -908,8 +905,6 @@ type [<AllowNullLiteral; Global>] Window =
     inherit GlobalEventHandlers
     inherit WindowBase64
     inherit WindowURI
-    // NOTE(SimenLK): indexedDB needs dom types, so it creates a circular dependency
-    inherit WindowIndexedDB
     // TODO
     // abstract performance: Performance with get, set
     // abstract clientInformation: Navigator with get, set

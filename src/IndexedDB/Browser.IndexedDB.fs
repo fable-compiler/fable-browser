@@ -3,13 +3,35 @@
 open System
 open Fable.Core
 
-type DatabasesType = {
-    name: string
-    version: string
-}
+type IDBRequestSource =
+    | Index of IDBIndex
+    | ObjectStore of IDBObjectStore
+
+type [<AllowNullLiteral>] DatabasesType =
+    abstract name: string
+    abstract version: string
+
+type [<AllowNullLiteral; Global>] IDBIndex =
+    abstract isAutoLocale: bool with get
+    abstract locale: string with get
+    abstract name: string with get
+    abstract objectStore: IDBObjectStore with get
+    abstract keyPath: obj with get
+    abstract multiEntry: bool with get
+    abstract unique: bool with get
+
+    abstract count: ?key: obj -> IDBRequest
+    abstract get: ?key: obj -> IDBRequest
+    abstract getKey: ?key: obj -> IDBRequest
+    abstract getAll: ?query: obj * ?count: int -> IDBRequest
+    abstract getAllKeys: ?query: obj * ?count: int -> IDBRequest
+    abstract openCursor: ?range: obj * ?direction: string -> IDBRequest
+    abstract openKeyCursor: unit -> IDBRequest
 
 // type IDBCursorWithValue = ()
-type IDBKeyRange =
+// type IDBVersionChangeEvent = ()
+
+type [<AllowNullLiteral; Global>] IDBKeyRange =
     abstract lower: obj with get
     abstract upper: obj with get
     abstract lowerOpen: obj with get
@@ -31,9 +53,9 @@ type [<AllowNullLiteral; Global>] IDBCursor =
 type [<AllowNullLiteral; Global>] IDBTransaction =
     abstract db: IDBDatabase with get
     abstract durability: obj with get
-    abstract error: exn with get
+    abstract error: DOMException with get
     abstract mode: string with get
-    abstract objectStoreNames: string array with get
+    abstract objectStoreNames: DOMStringList with get
 
     abstract abort: unit -> unit
     abstract objectStore: name: string -> IDBObjectStore
@@ -56,12 +78,12 @@ type [<AllowNullLiteral; Global>] IDBDatabase =
 
     abstract onerror: (Event -> unit) with get, set
 
-type IDBRequest =
+type [<AllowNullLiteral; Global>] IDBRequest =
     inherit EventTarget
 
-    abstract error: exn with get
+    abstract error: DOMException with get
     abstract result: obj option with get
-    abstract source: string option with get
+    abstract source: IDBRequestSource with get
     abstract readyState: obj with get
     abstract transaction: IDBTransaction with get
 
@@ -69,8 +91,8 @@ type IDBRequest =
     abstract onsuccess: (Event -> unit) with get, set
     abstract onupgradeneeded: (Event -> unit) with get, set
 
-type IDBObjectStore =
-    abstract indexNames: string array with get
+type [<AllowNullLiteral; Global>] IDBObjectStore =
+    abstract indexNames: DOMStringList with get
     abstract keyPath: obj with get
     abstract name: string with get
     abstract transaction: IDBTransaction with get
@@ -91,21 +113,10 @@ type IDBObjectStore =
     abstract openKeyCursor: unit -> IDBRequest
     abstract put: unit -> IDBRequest
 
-type IDBOpenDBRequest =
+type [<AllowNullLiteral; Global>] IDBOpenDBRequest =
     inherit IDBRequest
 
-type IDBFactory =
+type [<AllowNullLiteral; Global>] IDBFactory =
     abstract ``open``: string -> IDBOpenDBRequest
     // NOTE(SimenLK): Not yet implemented
-    abstract databases: unit -> JS.Promise<DatabasesType array>
-// type IDBIndex = ()
-// type IDBVersionChangeEvent = ()
-
-namespace Browser
-
-open Fable.Core
-open Browser.Types
-
-[<AutoOpen>]
-module IndexedDB =
-    let [<Global>] indexedDB: IDBFactory = jsNative
+    // abstract databases: unit -> JS.Promise<DatabasesType array>
