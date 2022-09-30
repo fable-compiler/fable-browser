@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+      <PackageId>Fable.Browser.IndexedDB</PackageId>
+      <TargetFramework>netstandard2.0</TargetFramework>
+      <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Include="Browser.IndexedDB.fs" />
+      <Compile Include="Browser.IndexedDB.Ext.fs" />
+      <Compile Include="Browser.IndexedDB.Api.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Fable.Core" Version="3.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="../Event/Browser.Event.fsproj" />
+      <ProjectReference Include="../Dom/Browser.Dom.fsproj" />
+    </ItemGroup>
+</Project>
