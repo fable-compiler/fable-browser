@@ -26,6 +26,7 @@ let packages =
       "MediaQueryList"
       "WebRTC"
       "WebGL"
+      "IndexedDB"
     ]
 
 let ignoreCaseEquals (str1: string) (str2: string) =

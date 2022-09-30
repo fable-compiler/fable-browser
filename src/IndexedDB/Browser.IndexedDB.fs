@@ -3,17 +3,16 @@
 open System
 open Fable.Core
 
-
 [<Erase>]
 type IDBRequestSource =
     | Index of IDBIndex
     | ObjectStore of IDBObjectStore
     | Cursor of IDBCursor
 
-[<Erase>]
+[<StringEnum>]
 type IDBRequestReadyState =
     | Pending
-    | ``Done``
+    | Done
 
 type [<AllowNullLiteral>] DatabasesType =
     abstract name: string
@@ -56,7 +55,7 @@ type [<AllowNullLiteral; Global>] IDBCursor =
     abstract request: IDBRequest with get
 
     abstract advance: count: int -> unit
-    abstract continue: ?key: obj -> unit
+    abstract ``continue``: ?key: obj -> unit
     abstract continuePrimaryKey: key: obj * primaryKey: obj -> unit
     abstract delete: unit -> IDBRequest
     abstract update: value: obj -> IDBRequest
@@ -137,7 +136,6 @@ type [<AllowNullLiteral; Global>] IDBOpenDBRequest =
 
 type [<AllowNullLiteral; Global>] IDBFactory =
     abstract ``open``: name: string * ?version: int64 -> IDBOpenDBRequest
-    abstract cmp: first: string -> second: string -> int
+    abstract cmp: first: 'T * second: 'T -> int
     abstract deleteDatabase: name: string -> IDBOpenDBRequest
-    // NOTE(SimenLK): Not yet implemented
-    // abstract databases: unit -> JS.Promise<DatabasesType array>
+    abstract databases: unit -> JS.Promise<DatabasesType array>
