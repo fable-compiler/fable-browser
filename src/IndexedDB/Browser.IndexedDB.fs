@@ -7,6 +7,11 @@ type IDBRequestSource =
     | Index of IDBIndex
     | ObjectStore of IDBObjectStore
 
+[<Erase>]
+type IDBRequestReadyState =
+    | Pending
+    | ``Done``
+
 type [<AllowNullLiteral>] DatabasesType =
     abstract name: string
     abstract version: string
@@ -83,8 +88,8 @@ type [<AllowNullLiteral; Global>] IDBRequest =
 
     abstract error: DOMException with get
     abstract result: obj option with get
-    abstract source: IDBRequestSource with get
-    abstract readyState: obj with get
+    abstract source: IDBRequestSource option with get
+    abstract readyState: IDBRequestReadyState with get
     abstract transaction: IDBTransaction with get
 
     abstract onerror: (Event -> unit) with get, set
