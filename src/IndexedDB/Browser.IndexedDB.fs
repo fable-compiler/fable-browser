@@ -36,8 +36,11 @@ type [<AllowNullLiteral; Global>] IDBIndex =
     abstract openCursor: ?range: obj * ?direction: string -> IDBRequest
     abstract openKeyCursor: unit -> IDBRequest
 
-// type IDBCursorWithValue = ()
-// type IDBVersionChangeEvent = ()
+type [<AllowNullLiteral; Global>] IDBVersionChangeEvent =
+    inherit Event
+
+    abstract oldVersion: int64 with get
+    abstract newVersion: int64 with get
 
 type [<AllowNullLiteral; Global>] IDBKeyRange =
     abstract lower: obj with get
@@ -58,6 +61,11 @@ type [<AllowNullLiteral; Global>] IDBCursor =
     abstract delete: unit -> IDBRequest
     abstract update: value: obj -> IDBRequest
 
+type [<AllowNullLiteral; Global>] IDBCursorWithValue =
+    inherit IDBCursor
+
+    abstract value: obj option with get
+
 type [<AllowNullLiteral; Global>] IDBTransaction =
     abstract db: IDBDatabase with get
     abstract durability: obj with get
@@ -72,20 +80,6 @@ type [<AllowNullLiteral; Global>] IDBTransaction =
     abstract oncomplete: (Event -> unit) with get, set
     abstract onerror: (Event -> unit) with get, set
 
-type [<AllowNullLiteral; Global>] IDBDatabase =
-    inherit EventTarget
-
-    abstract name: string with get
-    abstract version: int64 with get
-    abstract objectStoreNames: string array with get
-
-    abstract close: unit -> unit
-    abstract createObjectStore: name: string * ?options: obj -> IDBObjectStore
-    abstract deleteObjectStore: name: string -> unit
-    abstract transaction: storeNames: #seq<string> * ?mode: string * ?options: obj -> IDBTransaction
-
-    abstract onerror: (Event -> unit) with get, set
-
 type [<AllowNullLiteral; Global>] IDBRequest =
     inherit EventTarget
 
@@ -97,7 +91,6 @@ type [<AllowNullLiteral; Global>] IDBRequest =
 
     abstract onerror: (Event -> unit) with get, set
     abstract onsuccess: (Event -> unit) with get, set
-    abstract onupgradeneeded: (Event -> unit) with get, set
 
 type [<AllowNullLiteral; Global>] IDBObjectStore =
     abstract indexNames: DOMStringList with get
@@ -116,15 +109,35 @@ type [<AllowNullLiteral; Global>] IDBObjectStore =
     abstract getKey: unit -> IDBRequest
     abstract getAll: unit -> IDBRequest
     abstract getAllKeys: unit -> IDBRequest
-    abstract index: unit -> IDBRequest
+    abstract index: string -> IDBIndex
     abstract openCursor: ?query: IDBKeyRange -> IDBRequest
     abstract openKeyCursor: unit -> IDBRequest
     abstract put: unit -> IDBRequest
 
+type [<AllowNullLiteral; Global>] IDBDatabase =
+    inherit EventTarget
+
+    abstract name: string with get
+    abstract version: int64 with get
+    abstract objectStoreNames: DOMStringList with get
+
+    abstract close: unit -> unit
+    abstract createObjectStore: name: string * ?options: obj -> IDBObjectStore
+    abstract deleteObjectStore: name: string -> unit
+    abstract transaction: storeNames: #seq<string> * ?mode: string * ?options: obj -> IDBTransaction
+    abstract transaction: storeNames: string * ?mode: string * ?options: obj -> IDBTransaction
+
+    abstract onerror: (Event -> unit) with get, set
+
 type [<AllowNullLiteral; Global>] IDBOpenDBRequest =
     inherit IDBRequest
 
+    abstract blocked: (Event -> unit) with get, set
+    abstract onupgradeneeded: (Event -> unit) with get, set
+
 type [<AllowNullLiteral; Global>] IDBFactory =
-    abstract ``open``: string -> IDBOpenDBRequest
+    abstract ``open``: name: string * ?version: int64 -> IDBOpenDBRequest
+    abstract cmp: first: string -> second: string -> int
+    abstract deleteDatabase: name: string -> IDBOpenDBRequest
     // NOTE(SimenLK): Not yet implemented
     // abstract databases: unit -> JS.Promise<DatabasesType array>
