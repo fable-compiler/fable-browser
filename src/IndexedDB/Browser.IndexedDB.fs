@@ -3,9 +3,12 @@
 open System
 open Fable.Core
 
+
+[<Erase>]
 type IDBRequestSource =
     | Index of IDBIndex
     | ObjectStore of IDBObjectStore
+    | Cursor of IDBCursor
 
 [<Erase>]
 type IDBRequestReadyState =
