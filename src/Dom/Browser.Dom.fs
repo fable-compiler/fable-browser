@@ -2817,6 +2817,7 @@ type [<AllowNullLiteral; Global>] CanvasRenderingContext2D =
     abstract ellipse: x: float * y: float * radiusX: float * radiusY: float * rotation: float * startAngle: float * endAngle:float * ?anticlockwise: bool -> unit
     abstract isPointInStroke: x:float * y: float -> bool
     abstract isPointInStroke: path: string * x: float * y: float -> bool
+    abstract imageSmoothingEnabled: bool with get, set 
 
 type [<AllowNullLiteral>] CanvasRenderingContext2DType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> CanvasRenderingContext2D

@@ -1,3 +1,5 @@
+### 2.10.1
+* Add `CanvasRenderingContext2D.imageSmoothingEnabled`
 ### 2.10.0
 
 * Add Global attribute to global interfaces @chkn
