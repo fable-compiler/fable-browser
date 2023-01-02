@@ -4,7 +4,7 @@ open Fable.Core
 
 type IntersectionObserverEntry =
     /// A rectangle describing the smallest rectangle that contains the entire target element
-    abstract boundingClientRect: Node
+    abstract boundingClientRect: ClientRect
     /// How much of the target element is currently visible within the root's intersection ratio, as a value between 0.0 and 1.0
     abstract intersectionRatio: float
     /// The smallest rectangle that contains the entire portion of the target element which is currently visible within the intersection root
