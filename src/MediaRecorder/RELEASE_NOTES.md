@@ -1,3 +1,7 @@
+### 1.3.0 
+
+* Add `tags` to make binding displayed on Fable.Packages
+
 ### 1.2.1
 
 * Add `MediaRecorder.isTypeSupported` (by @kerams)

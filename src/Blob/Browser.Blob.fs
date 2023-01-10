@@ -20,6 +20,7 @@ type [<AllowNullLiteral; Global>] Blob =
     abstract size: int
     abstract ``type``: string
     abstract slice: ?start: int * ?``end``: int * ?contentType: string -> Blob
+    abstract text: unit -> Promise<string>
 
 type [<AllowNullLiteral>] BlobType =
     [<Emit("new $0($1...)")>] abstract Create: ?blobParts: obj[] * ?options: BlobPropertyBag -> Blob

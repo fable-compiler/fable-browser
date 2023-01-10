@@ -2,6 +2,7 @@ namespace Browser.Types
 
 open System
 open Fable.Core
+open Fable.Core.JS
 
 type FileReaderState =
     | EMPTY = 0
@@ -16,6 +17,7 @@ type [<AllowNullLiteral; Global>] File =
     inherit Blob
     abstract lastModified: float
     abstract name: string
+    abstract text: Promise<string>
 
 type [<AllowNullLiteral>] FileType =
     [<Emit("new $0($1...)")>] abstract Create: parts: obj[] * filename: string * ?properties: FilePropertyBag -> File

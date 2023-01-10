@@ -1,3 +1,7 @@
+### 1.4.0 
+
+* Add `tags` to make binding displayed on Fable.Packages
+
 ### 1.3.0
 
 * Add Global attribute to global interfaces @chkn

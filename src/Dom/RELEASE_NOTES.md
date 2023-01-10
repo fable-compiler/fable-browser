@@ -1,3 +1,8 @@
+### 2.11.0
+
+* Add `tags` to make binding displayed on Fable.Packages
+* Fix #106: Add missing `file.text()`
+
 ### 2.10.1
 
 * Add `CanvasRenderingContext2D.imageSmoothingEnabled`

@@ -1,3 +1,8 @@
+### 1.3.0 
+
+* Add `tags` to make binding displayed on Fable.Packages
+* Fix #106: Add missing `blob.text()`
+
 ### 1.2.0
 
 * Add Global attribute to global interfaces @chkn
