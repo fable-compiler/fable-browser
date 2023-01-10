@@ -27,6 +27,7 @@ let packages =
       "WebRTC"
       "WebGL"
       "IndexedDB"
+      "IntersectionObserver"
     ]
 
 let ignoreCaseEquals (str1: string) (str2: string) =

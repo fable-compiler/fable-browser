@@ -22,6 +22,7 @@ Fable bindings for [Browser Web APIs](https://developer.mozilla.org/docs/Web/API
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.MediaRecorder.svg)](https://www.nuget.org/packages/Fable.Browser.MediaRecorder)|[Fable.Browser.MediaRecorder](src/MediaRecorder)|Bindings for the browser MediaRecorder API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.MediaQueryList.svg)](https://www.nuget.org/packages/Fable.Browser.MediaQueryList)|[Fable.Browser.MediaQueryList](src/MediaQueryList)|Bindings for the browser MediaQueryList API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.WebGL.svg)](https://www.nuget.org/packages/Fable.Browser.WebGL)|[Fable.Browser.WebGL](src/WebGL)|Bindings for the browser WebGL API|
+|[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.IntersectionObserver.svg)](https://www.nuget.org/packages/Fable.Browser.IntersectionObserver)|[Fable.Browser.IntersectionObserver](src/IntersectionObserver)|Bindings for the browser Intersection Observer API|
 
 ## Usage
 
