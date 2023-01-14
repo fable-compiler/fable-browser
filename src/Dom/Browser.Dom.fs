@@ -1367,6 +1367,14 @@ type [<AllowNullLiteral; Global>] HTMLDataListElement =
 type [<AllowNullLiteral>] HTMLDataListElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLDataListElement
 
+type [<AllowNullLiteral; Global>] HTMLDialogElement =
+    inherit HTMLElement
+    abstract open: bool with get, set
+    abstract returnValue: string with get, set
+    abstract close: ?returnValue: string -> unit
+    abstract show: unit -> unit
+    abstract showModal: unit -> unit
+
 type [<AllowNullLiteral; Global>] HTMLDirectoryElement =
     inherit HTMLElement
     abstract compact: bool with get, set
@@ -1414,10 +1422,12 @@ type [<AllowNullLiteral; Global>] HTMLElement =
     abstract onbeforedeactivate: (UIEvent -> unit) with get, set
     abstract onbeforepaste: (ClipboardEvent -> unit) with get, set
     abstract onblur: (FocusEvent -> unit) with get, set
+    abstract oncancel: (Event -> unit) with get, set
     abstract oncanplay: (Event -> unit) with get, set
     abstract oncanplaythrough: (Event -> unit) with get, set
     abstract onchange: (Event -> unit) with get, set
     abstract onclick: (MouseEvent -> unit) with get, set
+    abstract onclose: (Event -> unit) with get, set
     abstract oncontextmenu: (PointerEvent -> unit) with get, set
     abstract oncopy: (ClipboardEvent -> unit) with get, set
     abstract oncuechange: (Event -> unit) with get, set
@@ -2814,7 +2824,7 @@ type [<AllowNullLiteral; Global>] CanvasRenderingContext2D =
     abstract ellipse: x: float * y: float * radiusX: float * radiusY: float * rotation: float * startAngle: float * endAngle:float * ?anticlockwise: bool -> unit
     abstract isPointInStroke: x:float * y: float -> bool
     abstract isPointInStroke: path: string * x: float * y: float -> bool
-    abstract imageSmoothingEnabled: bool with get, set 
+    abstract imageSmoothingEnabled: bool with get, set
 
 type [<AllowNullLiteral>] CanvasRenderingContext2DType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> CanvasRenderingContext2D
