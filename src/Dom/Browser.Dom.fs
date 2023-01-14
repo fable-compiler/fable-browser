@@ -1380,9 +1380,6 @@ type [<AllowNullLiteral; Global>] HTMLDivElement =
     abstract align: string with get, set
     abstract noWrap: bool with get, set
 
-type [<AllowNullLiteral>] HTMLDivElementType =
-    [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLDivElement
-
 type [<AllowNullLiteral; Global>] HTMLDocument =
     inherit Document
 
