@@ -1369,7 +1369,7 @@ type [<AllowNullLiteral>] HTMLDataListElementType =
 
 type [<AllowNullLiteral; Global>] HTMLDialogElement =
     inherit HTMLElement
-    abstract open: bool with get, set
+    abstract ``open``: bool with get, set
     abstract returnValue: string with get, set
     abstract close: ?returnValue: string -> unit
     abstract show: unit -> unit

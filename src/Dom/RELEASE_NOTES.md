@@ -1,3 +1,8 @@
+### 2.12.0
+
+* Add `HTMLDialogElement` by @IanManske
+* Remove `HTMLDivElementType` because `HTMLDivElement` doesn't have a constructor in JS
+
 ### 2.11.0
 
 * Add `tags` to make binding displayed on Fable.Packages

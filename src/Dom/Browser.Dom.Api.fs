@@ -57,7 +57,6 @@ module Dom =
     let [<Global>] HTMLDTElement: HTMLDTElementType = jsNative
     let [<Global>] HTMLDataListElement: HTMLDataListElementType = jsNative
     let [<Global>] HTMLDirectoryElement: HTMLDirectoryElementType = jsNative
-    let [<Global>] HTMLDivElement: HTMLDivElementType = jsNative
     let [<Global>] HTMLDocument: HTMLDocumentType = jsNative
     let [<Global>] HTMLElement: HTMLElementType = jsNative
     let [<Global>] HTMLEmbedElement: HTMLEmbedElementType = jsNative
