@@ -1312,9 +1312,6 @@ type [<AllowNullLiteral; Global>] HTMLButtonElement =
     /// <summary>Sets a custom error message that is displayed when a form is submitted.</summary>
     /// <param name="error">Sets a custom error message that is displayed when a form is submitted.</param>
     abstract setCustomValidity: error: string -> unit
-    /// The reportValidity() method of the HTMLInputElement interface performs the same validity checking steps as the checkValidity() method. If the value is invalid, this method also fires the invalid event on the element, and (if the event isn't canceled) reports the problem to the user.
-    /// Returns true if the element's value has no validity problems; otherwise, returns false.
-    abstract reportValidity: unit -> bool
 
 type [<AllowNullLiteral>] HTMLButtonElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLButtonElement
@@ -1602,6 +1599,9 @@ type [<AllowNullLiteral; Global>] HTMLFormElement =
     [<Emit("$0[$1]{{=$2}}")>] abstract Item: name: string -> obj with get, set
     /// Returns whether a form will validate when it is submitted, without having to submit it.
     abstract checkValidity: unit -> bool
+    /// Performs the same validity checking steps as the checkValidity function. If the value is invalid, this method also fires the invalid event on the element, and (if the event isn't canceled) reports the problem to the user.
+    /// Returns true if the element's value has no validity problems; otherwise, returns false.
+    abstract reportValidity: unit -> bool
     /// <summary>Retrieves a form object or an object from an elements collection.</summary>
     /// <param name="name">Variant of type Number or String that specifies the object or collection to retrieve. If this parameter is a Number, it is the zero-based index of the object. If this parameter is a string, all objects with matching name or id properties are retrieved, and a collection is returned if more than one match is made.</param>
     /// <param name="index">Variant of type Number that specifies the zero-based index of the object to retrieve when a collection is returned.</param>
@@ -1875,6 +1875,9 @@ type [<AllowNullLiteral; Global>] HTMLInputElement =
     abstract willValidate: bool with get, set
     /// Returns whether a form will validate when it is submitted, without having to submit it.
     abstract checkValidity: unit -> bool
+    /// Performs the same validity checking steps as the checkValidity function. If the value is invalid, this method also fires the invalid event on the element, and (if the event isn't canceled) reports the problem to the user.
+    /// Returns true if the element's value has no validity problems; otherwise, returns false.
+    abstract reportValidity: unit -> bool
     abstract select: unit -> unit
     /// <summary>Sets a custom error message that is displayed when a form is submitted.</summary>
     /// <param name="error">Sets a custom error message that is displayed when a form is submitted.</param>
