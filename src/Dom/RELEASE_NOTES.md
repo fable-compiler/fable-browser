@@ -1,3 +1,9 @@
+### 2.13.0
+
+* Remove `HTMLButtonElement.reportValidity` (by @aronerben)
+* Add `HTMLFormElement.reportValidity` (by @aronerben)
+* Add `HTMLInputElement.reportValidity` (by @aronerben)
+
 ### 2.12.0
 
 * Add `HTMLDialogElement` by @IanManske

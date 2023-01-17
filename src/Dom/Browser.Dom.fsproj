@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Fable.Browser.Dom</PackageId>
-    <Version>2.12.0</Version>
-    <PackageVersion>2.12.0</PackageVersion>
+    <Version>2.13.0</Version>
+    <PackageVersion>2.13.0</PackageVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Tags>fable;fable-binding;fable-javascript</Tags>
