@@ -17,7 +17,6 @@ type [<AllowNullLiteral; Global>] File =
     inherit Blob
     abstract lastModified: float
     abstract name: string
-    abstract text: Promise<string>
 
 type [<AllowNullLiteral>] FileType =
     [<Emit("new $0($1...)")>] abstract Create: parts: obj[] * filename: string * ?properties: FilePropertyBag -> File
