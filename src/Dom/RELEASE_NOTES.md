@@ -1,3 +1,7 @@
+### 2.14.0
+
+* PR #114: Remove `File.text` which was defined as a getter instead of a function. Moreover the method is already available via `Blob` inheritance. (by @IanManske)
+
 ### 2.13.0
 
 * Remove `HTMLButtonElement.reportValidity` (by @aronerben)
