@@ -37,7 +37,7 @@ type [<AllowNullLiteral; Global>] URL =
     abstract toJSON: unit -> string
 
 type [<AllowNullLiteral>] URLType =
-    [<Emit("new $0($1...)")>] abstract Create: url: string -> URL
+    [<Emit("new $0($1...)")>] abstract Create: url: string * ?``base``: string -> URL
     /// Returns a DOMString containing a unique blob URL, that is a URL with blob: as its scheme, followed by an opaque string uniquely identifying the object in the browser.
     abstract createObjectURL: obj -> string
     /// Revokes an object URL previously created using URL.createObjectURL().
