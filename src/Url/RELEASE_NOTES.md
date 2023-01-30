@@ -1,3 +1,7 @@
+### 1.3.0
+
+* Add optional base url parameter to URL constructor (by @IanManske)
+
 ### 1.2.0 
 
 * Add `tags` to make binding displayed on Fable.Packages
