@@ -1,3 +1,7 @@
+### 1.3.1
+
+* Re-add previous signature for URL constructor, to try work around F#/.NET limitations
+
 ### 1.3.0
 
 * Add optional base url parameter to URL constructor (by @IanManske)
