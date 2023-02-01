@@ -37,14 +37,6 @@ type [<AllowNullLiteral; Global>] URL =
     abstract toJSON: unit -> string
 
 type [<AllowNullLiteral>] URLType =
-    // In theory only <c>abstract Create: url: string * ?``base``: string -> URL</c> is needed, but
-    // F#/.NET fails to compile existing library that use the old signature 
-    // <c>abstract Create: url: string -> URL</c>
-    // because it can't find it anymore even if the new signature is backward compatible.
-    // To avoid having to recompile all the packages that depends on Fable.Browser.URL 
-    // I am trying to keep both signatures for now.
-    // See https://github.com/fable-compiler/fable-browser/issues/116
-    [<Emit("new $0($1...)")>] abstract Create: url: string -> URL
     [<Emit("new $0($1...)")>] abstract Create: url: string * ?``base``: string -> URL
     /// Returns a DOMString containing a unique blob URL, that is a URL with blob: as its scheme, followed by an opaque string uniquely identifying the object in the browser.
     abstract createObjectURL: obj -> string
