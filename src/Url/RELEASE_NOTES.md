@@ -1,3 +1,7 @@
+### 1.3.2 
+
+* Remove previous "hack" in favor of asking packages dependents on Fable.Browser.Url and that use `URL.Create` to publish a new version.
+
 ### 1.3.1
 
 * Re-add previous signature for URL constructor, to try work around F#/.NET limitations
