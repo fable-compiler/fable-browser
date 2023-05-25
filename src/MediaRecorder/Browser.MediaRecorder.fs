@@ -27,8 +27,8 @@ type [<Global>] MediaRecorder =
     abstract mimeType: string
     abstract state: MediaRecorderState
     abstract stream: MediaStream
-    abstract videoBitsPerSecond: uint64
-    abstract audioBitsPerSecond: uint64
+    abstract videoBitsPerSecond: uint32
+    abstract audioBitsPerSecond: uint32
 
     abstract pause: unit -> unit
     abstract requestData: unit -> unit
@@ -47,9 +47,9 @@ type [<Global>] MediaRecorder =
 
 type MediaRecorderOptions =
     abstract mimeType: string with get, set
-    abstract audioBitsPerSecond: uint64 with get, set
-    abstract videoBitsPerSecond: uint64 with get, set
-    abstract bitsPerSecond: uint64 with get, set
+    abstract audioBitsPerSecond: uint32 with get, set
+    abstract videoBitsPerSecond: uint32 with get, set
+    abstract bitsPerSecond: uint32 with get, set
 
 type MediaRecorderType =
     [<Emit("new $0($1...)")>] abstract Create: stream: MediaStream * ?options: MediaRecorderOptions -> MediaRecorder
