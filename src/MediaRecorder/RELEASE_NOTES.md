@@ -1,3 +1,11 @@
+### 2.0.0
+
+* Change `MediaRecorder.videoBitsPerSecond` from `uint64` to `uint32` kerams (by @kerams)
+* Change `MediaRecorder.audioBitsPerSecond` from `uint64` to `uint32` kerams (by @kerams)
+* Change `MediaRecorderOptions.audioBitsPerSecond` from `uint64` to `uint32` kerams (by @kerams)
+* Change `MediaRecorderOptions.videoBitsPerSecond` from `uint64` to `uint32` kerams (by @kerams)
+* Change `MediaRecorderOptions.bitsPerSecond` from `uint64` to `uint32` kerams (by @kerams)
+
 ### 1.3.0 
 
 * Add `tags` to make binding displayed on Fable.Packages

@@ -53,3 +53,4 @@ match args with
         if publish then
             pushFableNuget (projDir </> file) [] doNothing
 | _ -> ()
+ 
