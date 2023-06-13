@@ -33,7 +33,7 @@ type [<Global>] MediaRecorder =
     abstract pause: unit -> unit
     abstract requestData: unit -> unit
     abstract resume: unit -> unit
-    abstract start: unit -> unit
+    abstract start: ?timesliceMilliseconds: float -> unit
     abstract stop: unit -> unit
 
     abstract isTypeSupported: string -> bool
