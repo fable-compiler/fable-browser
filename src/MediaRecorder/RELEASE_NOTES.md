@@ -1,3 +1,7 @@
+### 2.1.0
+
+* Fix #120: Change `MediaRecorder.start` from `unit -> unit` to `?timeslice: float -> unit`
+
 ### 2.0.0
 
 * Change `MediaRecorder.videoBitsPerSecond` from `uint64` to `uint32` kerams (by @kerams)
