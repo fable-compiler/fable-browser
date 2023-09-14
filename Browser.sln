@@ -1,53 +1,55 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D9506C1D-DF7A-4975-B4A9-80B2EF4ADA2E}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Blob", "src\Blob\Browser.Blob.fsproj", "{BBB5024A-52F8-463B-B8CC-04DEB842852B}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.Blob", "src\Blob\Browser.Blob.fsproj", "{BBB5024A-52F8-463B-B8CC-04DEB842852B}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Dom", "src\Dom\Browser.Dom.fsproj", "{705432F3-33D0-44E6-9778-39F8E2209A13}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.Dom", "src\Dom\Browser.Dom.fsproj", "{705432F3-33D0-44E6-9778-39F8E2209A13}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Event", "src\Event\Browser.Event.fsproj", "{5DBD3E48-7769-466D-A850-63F78CAE4158}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.Event", "src\Event\Browser.Event.fsproj", "{5DBD3E48-7769-466D-A850-63F78CAE4158}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.WebStorage", "src\WebStorage\Browser.WebStorage.fsproj", "{71693453-1A54-4354-B0F3-48F0272643E5}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.WebStorage", "src\WebStorage\Browser.WebStorage.fsproj", "{71693453-1A54-4354-B0F3-48F0272643E5}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Performance", "src\Performance\Browser.Performance.fsproj", "{A33C795C-3945-4F0A-9205-44EE3B418496}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.Performance", "src\Performance\Browser.Performance.fsproj", "{A33C795C-3945-4F0A-9205-44EE3B418496}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Url", "src\Url\Browser.Url.fsproj", "{3BE1F106-50B6-4315-BF76-D0457ADA80A6}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.Url", "src\Url\Browser.Url.fsproj", "{3BE1F106-50B6-4315-BF76-D0457ADA80A6}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.WebSocket", "src\WebSocket\Browser.WebSocket.fsproj", "{B82D218C-35D3-4342-B19B-89030EB99C9B}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.WebSocket", "src\WebSocket\Browser.WebSocket.fsproj", "{B82D218C-35D3-4342-B19B-89030EB99C9B}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.MediaStream", "src\MediaStream\Browser.MediaStream.fsproj", "{004CD236-189F-4785-AF39-B996B22BB8B0}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.MediaStream", "src\MediaStream\Browser.MediaStream.fsproj", "{004CD236-189F-4785-AF39-B996B22BB8B0}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.WebRTC", "src\WebRTC\Browser.WebRTC.fsproj", "{874902A3-1F54-449F-94F1-85695EAB81B4}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.WebRTC", "src\WebRTC\Browser.WebRTC.fsproj", "{874902A3-1F54-449F-94F1-85695EAB81B4}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.WebGL", "src\WebGL\Browser.WebGL.fsproj", "{FCE1F9B5-6FD7-43E3-8CA2-639E330AD1D1}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.WebGL", "src\WebGL\Browser.WebGL.fsproj", "{FCE1F9B5-6FD7-43E3-8CA2-639E330AD1D1}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Css", "src\Css\Browser.Css.fsproj", "{0CB9E2E7-E831-4F80-9213-2144315C67F5}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.Css", "src\Css\Browser.Css.fsproj", "{0CB9E2E7-E831-4F80-9213-2144315C67F5}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Geolocation", "src\Geolocation\Browser.Geolocation.fsproj", "{0F9D084C-71A2-44B0-B84C-99D952BABB04}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.Geolocation", "src\Geolocation\Browser.Geolocation.fsproj", "{0F9D084C-71A2-44B0-B84C-99D952BABB04}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.MediaQueryList", "src\MediaQueryList\Browser.MediaQueryList.fsproj", "{91132F16-97E0-44C4-BB4A-1E0DE8C4A506}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.MediaQueryList", "src\MediaQueryList\Browser.MediaQueryList.fsproj", "{91132F16-97E0-44C4-BB4A-1E0DE8C4A506}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Navigator", "src\Navigator\Browser.Navigator.fsproj", "{FF33724F-45C0-44B7-A28B-DB5432BB5A0C}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.Navigator", "src\Navigator\Browser.Navigator.fsproj", "{FF33724F-45C0-44B7-A28B-DB5432BB5A0C}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Svg", "src\Svg\Browser.Svg.fsproj", "{8A8CA2FA-7264-447A-B6B8-3136DE926F8F}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.Svg", "src\Svg\Browser.Svg.fsproj", "{8A8CA2FA-7264-447A-B6B8-3136DE926F8F}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Worker", "src\Worker\Browser.Worker.fsproj", "{D3C3EC66-1CEA-4E2B-B232-669AD9401060}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.Worker", "src\Worker\Browser.Worker.fsproj", "{D3C3EC66-1CEA-4E2B-B232-669AD9401060}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.XMLHttpRequest", "src\XMLHttpRequest\Browser.XMLHttpRequest.fsproj", "{3A172DF0-7F37-4506-8DF2-77B087F4F753}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.XMLHttpRequest", "src\XMLHttpRequest\Browser.XMLHttpRequest.fsproj", "{3A172DF0-7F37-4506-8DF2-77B087F4F753}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.Gamepad", "src\Gamepad\Browser.Gamepad.fsproj", "{8A976D4C-F48B-4E83-B8C1-58B85C8E2AFF}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.Gamepad", "src\Gamepad\Browser.Gamepad.fsproj", "{8A976D4C-F48B-4E83-B8C1-58B85C8E2AFF}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.MediaRecorder", "src\MediaRecorder\Browser.MediaRecorder.fsproj", "{9254BB43-8051-4E34-8D27-790B8B754B21}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.MediaRecorder", "src\MediaRecorder\Browser.MediaRecorder.fsproj", "{9254BB43-8051-4E34-8D27-790B8B754B21}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Test", "test\Test.fsproj", "{090973C4-D7EE-4161-B76A-81F04C666713}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Test", "test\Test.fsproj", "{090973C4-D7EE-4161-B76A-81F04C666713}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.IndexedDB", "src\IndexedDB\Browser.IndexedDB.fsproj", "{937E046F-818B-47E1-930F-3B0A0068D83B}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.IndexedDB", "src\IndexedDB\Browser.IndexedDB.fsproj", "{937E046F-818B-47E1-930F-3B0A0068D83B}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Browser.IntersectionObserver", "src\IntersectionObserver\Browser.IntersectionObserver.fsproj", "{B74AA790-1B29-448A-8D75-8399C6C86C71}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.IntersectionObserver", "src\IntersectionObserver\Browser.IntersectionObserver.fsproj", "{B74AA790-1B29-448A-8D75-8399C6C86C71}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Browser.ResizeObserver", "src\ResizeObserver\Browser.ResizeObserver.fsproj", "{CFEB63B4-8CDC-4FD2-B0C5-4D09BE37D00B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,9 +59,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BBB5024A-52F8-463B-B8CC-04DEB842852B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -278,18 +277,6 @@ Global
 		{8A976D4C-F48B-4E83-B8C1-58B85C8E2AFF}.Release|x64.Build.0 = Release|Any CPU
 		{8A976D4C-F48B-4E83-B8C1-58B85C8E2AFF}.Release|x86.ActiveCfg = Release|Any CPU
 		{8A976D4C-F48B-4E83-B8C1-58B85C8E2AFF}.Release|x86.Build.0 = Release|Any CPU
-		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|x64.Build.0 = Debug|Any CPU
-		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|x86.Build.0 = Debug|Any CPU
-		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|Any CPU.Build.0 = Release|Any CPU
-		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|x64.ActiveCfg = Release|Any CPU
-		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|x64.Build.0 = Release|Any CPU
-		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|x86.ActiveCfg = Release|Any CPU
-		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|x86.Build.0 = Release|Any CPU
 		{9254BB43-8051-4E34-8D27-790B8B754B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9254BB43-8051-4E34-8D27-790B8B754B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9254BB43-8051-4E34-8D27-790B8B754B21}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -302,6 +289,18 @@ Global
 		{9254BB43-8051-4E34-8D27-790B8B754B21}.Release|x64.Build.0 = Release|Any CPU
 		{9254BB43-8051-4E34-8D27-790B8B754B21}.Release|x86.ActiveCfg = Release|Any CPU
 		{9254BB43-8051-4E34-8D27-790B8B754B21}.Release|x86.Build.0 = Release|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|x64.Build.0 = Debug|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Debug|x86.Build.0 = Debug|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|x64.ActiveCfg = Release|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|x64.Build.0 = Release|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|x86.ActiveCfg = Release|Any CPU
+		{090973C4-D7EE-4161-B76A-81F04C666713}.Release|x86.Build.0 = Release|Any CPU
 		{937E046F-818B-47E1-930F-3B0A0068D83B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{937E046F-818B-47E1-930F-3B0A0068D83B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{937E046F-818B-47E1-930F-3B0A0068D83B}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -326,6 +325,21 @@ Global
 		{B74AA790-1B29-448A-8D75-8399C6C86C71}.Release|x64.Build.0 = Release|Any CPU
 		{B74AA790-1B29-448A-8D75-8399C6C86C71}.Release|x86.ActiveCfg = Release|Any CPU
 		{B74AA790-1B29-448A-8D75-8399C6C86C71}.Release|x86.Build.0 = Release|Any CPU
+		{CFEB63B4-8CDC-4FD2-B0C5-4D09BE37D00B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFEB63B4-8CDC-4FD2-B0C5-4D09BE37D00B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFEB63B4-8CDC-4FD2-B0C5-4D09BE37D00B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CFEB63B4-8CDC-4FD2-B0C5-4D09BE37D00B}.Debug|x64.Build.0 = Debug|Any CPU
+		{CFEB63B4-8CDC-4FD2-B0C5-4D09BE37D00B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CFEB63B4-8CDC-4FD2-B0C5-4D09BE37D00B}.Debug|x86.Build.0 = Debug|Any CPU
+		{CFEB63B4-8CDC-4FD2-B0C5-4D09BE37D00B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFEB63B4-8CDC-4FD2-B0C5-4D09BE37D00B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFEB63B4-8CDC-4FD2-B0C5-4D09BE37D00B}.Release|x64.ActiveCfg = Release|Any CPU
+		{CFEB63B4-8CDC-4FD2-B0C5-4D09BE37D00B}.Release|x64.Build.0 = Release|Any CPU
+		{CFEB63B4-8CDC-4FD2-B0C5-4D09BE37D00B}.Release|x86.ActiveCfg = Release|Any CPU
+		{CFEB63B4-8CDC-4FD2-B0C5-4D09BE37D00B}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BBB5024A-52F8-463B-B8CC-04DEB842852B} = {D9506C1D-DF7A-4975-B4A9-80B2EF4ADA2E}
@@ -349,5 +363,9 @@ Global
 		{9254BB43-8051-4E34-8D27-790B8B754B21} = {D9506C1D-DF7A-4975-B4A9-80B2EF4ADA2E}
 		{937E046F-818B-47E1-930F-3B0A0068D83B} = {D9506C1D-DF7A-4975-B4A9-80B2EF4ADA2E}
 		{B74AA790-1B29-448A-8D75-8399C6C86C71} = {D9506C1D-DF7A-4975-B4A9-80B2EF4ADA2E}
+		{CFEB63B4-8CDC-4FD2-B0C5-4D09BE37D00B} = {D9506C1D-DF7A-4975-B4A9-80B2EF4ADA2E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F62BBD2A-9074-44FF-8208-43DA064745DE}
 	EndGlobalSection
 EndGlobal

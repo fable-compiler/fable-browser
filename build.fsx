@@ -28,6 +28,7 @@ let packages =
       "WebGL"
       "IndexedDB"
       "IntersectionObserver"
+      "ResizeObserver"
     ]
 
 let ignoreCaseEquals (str1: string) (str2: string) =
