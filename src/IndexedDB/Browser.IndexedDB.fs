@@ -1,6 +1,5 @@
 ﻿namespace rec Browser.Types
 
-open System
 open Fable.Core
 
 [<Erase>]
@@ -60,12 +59,24 @@ type [<AllowNullLiteral; Global>] IDBVersionChangeEvent =
     abstract oldVersion: int64 with get
     abstract newVersion: int64 with get
 
-type [<AllowNullLiteral; Global>] IDBKeyRange =
+type [<AbstractClass; AllowNullLiteral; Global>] IDBKeyRange =
     abstract lower: obj with get
     abstract upper: obj with get
     abstract lowerOpen: bool with get
     abstract upperOpen: bool with get
     abstract includes: obj -> bool
+
+    [<Emit("IDBKeyRange.bound($0, $1, $2, $3)")>]
+    static member bound(lower: obj, upper: obj, ?lowerOpen: bool, ?upperOpen: bool) = jsNative<IDBKeyRange>
+
+    [<Emit("IDBKeyRange.only($0)")>]
+    static member only(only: obj) = jsNative<IDBKeyRange>
+
+    [<Emit("IDBKeyRange.lowerBound($0, $1)")>]
+    static member lowerBound(lower: obj, ?``open``: bool) = jsNative<IDBKeyRange>
+
+    [<Emit("IDBKeyRange.upperBound($0, $1)")>]
+    static member upperBound(upper: obj, ?``open``: bool) = jsNative<IDBKeyRange>
 
 type [<AllowNullLiteral; Global>] IDBCursor =
     abstract source: IDBObjectStore with get
@@ -176,18 +187,3 @@ type [<AllowNullLiteral; Global>] IDBFactory =
     abstract cmp: first: 'T * second: 'T -> int
     abstract deleteDatabase: name: string -> IDBOpenDBRequest
     abstract databases: unit -> JS.Promise<DatabasesType array>
-
-[<AutoOpen>]
-module Static =
-    type IDBKeyRange with
-        [<Emit("IDBKeyRange.bound($0, $1, $2, $3)")>]
-        static member bound(lower: obj, upper: obj, ?lowerOpen: bool, ?upperOpen: bool) = jsNative<IDBKeyRange>
-
-        [<Emit("IDBKeyRange.only($0)")>]
-        static member only(only: obj) = jsNative<IDBKeyRange>
-
-        [<Emit("IDBKeyRange.lowerBound($0, $1)")>]
-        static member lowerBound(lower: obj, ?``open``: bool) = jsNative<IDBKeyRange>
-
-        [<Emit("IDBKeyRange.upperBound($0, $1)")>]
-        static member upperBound(upper: obj, ?``open``: bool) = jsNative<IDBKeyRange>
