@@ -254,6 +254,22 @@ type [<AllowNullLiteral; Global>] CSSStyleDeclaration =
     abstract fontWeight: string with get, set
     abstract glyphOrientationHorizontal: string with get, set
     abstract glyphOrientationVertical: string with get, set
+    abstract gap: string with get, set
+    abstract grid: string with get, set
+    abstract gridArea: string with get, set
+    abstract gridAutoColumns: string with get, set
+    abstract gridAutoFlow: string with get, set
+    abstract gridAutoRows: string with get, set
+    abstract gridColumn: string with get, set
+    abstract gridColumnEnd: string with get, set
+    abstract gridColumnStart: string with get, set
+    abstract gridRow: string with get, set
+    abstract gridRowEnd: string with get, set
+    abstract gridRowStart: string with get, set
+    abstract gridTemplate: string with get, set
+    abstract gridTemplateAreas: string with get, set
+    abstract gridTemplateColumns: string with get, set
+    abstract gridTemplateRows: string with get, set
     abstract height: string with get, set
     abstract imeMode: string with get, set
     abstract justifyContent: string with get, set
@@ -353,6 +369,7 @@ type [<AllowNullLiteral; Global>] CSSStyleDeclaration =
     abstract position: string with get, set
     abstract quotes: string with get, set
     abstract right: string with get, set
+    abstract rowGap: string with get, set
     abstract rubyAlign: string with get, set
     abstract rubyOverhang: string with get, set
     abstract rubyPosition: string with get, set
