@@ -1,3 +1,23 @@
+### 2.4.0
+
+- `AddCSSStyleDeclaration.gap` (by @chkn)
+- `AddCSSStyleDeclaration.grid` (by @chkn)
+- `AddCSSStyleDeclaration.gridArea` (by @chkn)
+- `AddCSSStyleDeclaration.gridAutoColumns` (by @chkn)
+- `AddCSSStyleDeclaration.gridAutoFlow` (by @chkn)
+- `AddCSSStyleDeclaration.gridAutoRows` (by @chkn)
+- `AddCSSStyleDeclaration.gridColumn` (by @chkn)
+- `AddCSSStyleDeclaration.gridColumnEnd` (by @chkn)
+- `AddCSSStyleDeclaration.gridColumnStart` (by @chkn)
+- `AddCSSStyleDeclaration.gridRow` (by @chkn)
+- `AddCSSStyleDeclaration.gridRowEnd` (by @chkn)
+- `AddCSSStyleDeclaration.gridRowStart` (by @chkn)
+- `AddCSSStyleDeclaration.gridTemplate` (by @chkn)
+- `AddCSSStyleDeclaration.gridTemplateAreas` (by @chkn)
+- `AddCSSStyleDeclaration.gridTemplateColumns` (by @chkn)
+- `AddCSSStyleDeclaration.gridTemplateRows` (by @chkn)
+- `AddCSSStyleDeclaration.rowGap` (by @chkn)
+
 ### 2.3.0 
 
 * Add `tags` to make binding displayed on Fable.Packages
