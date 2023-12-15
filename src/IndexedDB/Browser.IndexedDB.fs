@@ -34,7 +34,7 @@ type IDBCursorDirection =
 
 type [<AllowNullLiteral>] DatabasesType =
     abstract name: string
-    abstract version: string
+    abstract version: int64
 
 type [<AllowNullLiteral; Global>] IDBIndex =
     abstract isAutoLocale: bool with get
