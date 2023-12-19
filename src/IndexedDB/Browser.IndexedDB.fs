@@ -41,7 +41,7 @@ type [<AllowNullLiteral; Global>] IDBIndex =
     abstract locale: string with get
     abstract name: string with get
     abstract objectStore: IDBObjectStore with get
-    abstract keyPath: obj with get
+    abstract keyPath: U2<string, ResizeArray<string>> with get
     abstract multiEntry: bool with get
     abstract unique: bool with get
 
@@ -131,7 +131,7 @@ type [<AllowNullLiteral; Global>] IDBCreateIndexOptions =
 
 type [<AllowNullLiteral; Global>] IDBObjectStore =
     abstract indexNames: DOMStringList with get
-    abstract keyPath: obj with get
+    abstract keyPath: U2<string, ResizeArray<string>> with get
     abstract name: string with get
     abstract transaction: IDBTransaction with get
     abstract autoIncrement: bool with get
@@ -139,6 +139,7 @@ type [<AllowNullLiteral; Global>] IDBObjectStore =
     abstract add: value: obj * ?key: obj -> IDBRequest
     abstract clear: unit -> IDBRequest
     abstract count: ?query: IDBKeyRange -> IDBRequest
+    abstract createIndex: indexName: string * keyPath: ResizeArray<string> * ?options: IDBCreateIndexOptions -> IDBRequest
     abstract createIndex: indexName: string * keyPath: string * ?options: IDBCreateIndexOptions -> IDBRequest
     abstract delete: key: obj -> IDBRequest
     abstract deleteIndex: string -> IDBRequest
@@ -152,8 +153,8 @@ type [<AllowNullLiteral; Global>] IDBObjectStore =
     abstract put: item: obj * ?key: obj -> IDBRequest
 
 type [<AllowNullLiteral; Global>] IDBCreateStoreOptions =
-    abstract keyPath: obj with get, set
-    abstract autoIncrement: bool with get, set
+    abstract autoIncrement: bool option with get, set
+    abstract keyPath: U2<string, ResizeArray<string>> option with get, set
 
 type [<AllowNullLiteral; Global>] IDBTransactionOptions =
     abstract durability: IDBTransactionDuarability with get, set
