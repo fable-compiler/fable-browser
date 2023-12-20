@@ -141,6 +141,7 @@ type [<AllowNullLiteral; Global>] IDBObjectStore =
     abstract count: ?query: IDBKeyRange -> IDBRequest
     abstract createIndex: indexName: string * keyPath: ResizeArray<string> * ?options: IDBCreateIndexOptions -> IDBRequest
     abstract createIndex: indexName: string * keyPath: string * ?options: IDBCreateIndexOptions -> IDBRequest
+    abstract createIndex: indexName: string * keyPath: U2<string, ResizeArray<string>> * ?options: IDBCreateIndexOptions -> IDBRequest
     abstract delete: key: obj -> IDBRequest
     abstract deleteIndex: string -> IDBRequest
     abstract get: key: obj -> IDBRequest
