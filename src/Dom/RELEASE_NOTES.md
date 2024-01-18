@@ -1,3 +1,11 @@
+### 2.16.0
+
+* Move `children` from `HTMLElement` to `Element` (by @chkn)
+
+### 2.15.0
+
+* Oupsy seems like I lost that release in a black hole...
+
 ### 2.14.0
 
 * PR #114: Remove `File.text` which was defined as a getter instead of a function. Moreover the method is already available via `Blob` inheritance. (by @IanManske)
