@@ -426,6 +426,7 @@ type [<AllowNullLiteral; Global>] Element =
     inherit GlobalEventHandlers
     inherit NodeSelector
     inherit ChildNode
+    abstract children: HTMLCollection with get, set
     abstract classList: DOMTokenList with get, set
     abstract clientHeight: float with get, set
     abstract clientLeft: float with get, set
@@ -1394,7 +1395,6 @@ type [<AllowNullLiteral>] HTMLDocumentType =
 type [<AllowNullLiteral; Global>] HTMLElement =
     inherit Element
     abstract accessKey: string with get, set
-    abstract children: HTMLCollection with get, set
     abstract contentEditable: string with get, set
     /// Sets or retrieves the URL that references the data of the object.
     abstract dataset: DOMStringMap with get, set
