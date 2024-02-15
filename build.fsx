@@ -29,6 +29,7 @@ let packages =
       "IndexedDB"
       "IntersectionObserver"
       "ResizeObserver"
+      "EventSource"
     ]
 
 let ignoreCaseEquals (str1: string) (str2: string) =
