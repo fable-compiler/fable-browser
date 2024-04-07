@@ -12,7 +12,7 @@
     <Compile Include="Browser.Navigator.fs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Fable.Core" Version="3.1.5" />
+    <PackageReference Include="Fable.Core" Version="3.2.8" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Geolocation\Browser.Geolocation.fsproj" />

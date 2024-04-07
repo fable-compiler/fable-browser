@@ -1,3 +1,7 @@
+### 2.5.0
+
+- Align Fable.Core version to 3.2.8 for all of fable-browser packages
+
 ### 2.4.0
 
 - `AddCSSStyleDeclaration.gap` (by @chkn)

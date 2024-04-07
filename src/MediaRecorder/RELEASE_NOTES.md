@@ -1,3 +1,7 @@
+### 2.2.0
+
+* Align Fable.Core version to 3.2.8 for all of fable-browser packages
+
 ### 2.1.0
 
 * Fix #120: Change `MediaRecorder.start` from `unit -> unit` to `?timeslice: float -> unit`

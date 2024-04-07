@@ -1,3 +1,7 @@
+### 1.4.0
+
+- Align Fable.Core version to 3.2.8 for all of fable-browser packages
+
 ### 1.3.0 
 
 * Add `tags` to make binding displayed on Fable.Packages

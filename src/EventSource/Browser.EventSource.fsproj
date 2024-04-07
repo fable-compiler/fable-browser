@@ -1,6 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Fable.Browser.EventSource</PackageId>
+    <Version>1.2.0</Version>
+    <PackageVersion>1.2.0</PackageVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Tags>fable;fable-binding;fable-javascript</Tags>
@@ -9,7 +11,7 @@
     <Compile Include="Browser.EventSource.fs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Fable.Core" Version="3.0.0" />
+    <PackageReference Include="Fable.Core" Version="3.2.8" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Event\Browser.Event.fsproj" />

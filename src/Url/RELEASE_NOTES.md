@@ -1,3 +1,7 @@
+### 1.4.0
+
+* Align Fable.Core version to 3.2.8 for all of fable-browser packages
+
 ### 1.3.2 
 
 * Remove previous "hack" in favor of asking packages dependents on Fable.Browser.Url and that use `URL.Create` to publish a new version.
