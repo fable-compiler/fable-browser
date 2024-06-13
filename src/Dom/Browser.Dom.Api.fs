@@ -121,5 +121,4 @@ module Dom =
     let [<Global>] Selection: SelectionType = jsNative
     let [<Global>] SourceBuffer: SourceBufferType = jsNative
     let [<Global>] SourceBufferList: SourceBufferListType = jsNative
-    let [<Global>] Worker: WorkerType = jsNative
     let [<Global>] XMLDocument: XMLDocumentType = jsNative

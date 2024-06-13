@@ -1060,19 +1060,6 @@ type [<AllowNullLiteral; Global>] Window =
     [<Emit("$0.scrollTo({ top: $1, left: $2, behavior: $3 })")>]
     abstract scrollTo: top: float * left: float * behavior: ScrollBehavior -> unit
 
-type [<AllowNullLiteral>] AbstractWorker =
-    abstract onerror: (Event -> unit) with get, set
-
-type [<AllowNullLiteral; Global>] Worker =
-    inherit EventTarget
-    inherit AbstractWorker
-    abstract onmessage: (MessageEvent -> unit) with get, set
-    abstract postMessage: message: obj * ?ports: obj -> unit
-    abstract terminate: unit -> unit
-
-type [<AllowNullLiteral>] WorkerType =
-    [<Emit("new $0($1...)")>] abstract Create: stringUrl: string -> Worker
-
 type [<AllowNullLiteral; Global>] XMLDocument =
     inherit Document
 
