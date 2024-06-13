@@ -1,3 +1,7 @@
+### 2.17.0
+
+* Fix #137: Remove `Worker` related types, use `Fable.Browser.Worker` if needed (by @MangelMaxime)
+
 ### 2.16.0
 
 * Move `children` from `HTMLElement` to `Element` (by @chkn)
