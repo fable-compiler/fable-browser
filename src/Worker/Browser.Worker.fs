@@ -73,6 +73,7 @@ type [<Global>] ServiceWorkerContainer =
     abstract onerror: (Event -> unit) with get, set
     abstract onmessage: (Event -> unit) with get, set
     abstract register: url: string * ?options: ServiceWorkerRegistrationOptions -> JS.Promise<ServiceWorkerRegistration>
+    abstract register: url: URL * ?options: ServiceWorkerRegistrationOptions -> JS.Promise<ServiceWorkerRegistration>
     abstract getRegistration: ?scope: string -> JS.Promise<ServiceWorkerRegistration>
     abstract getRegistrations: unit -> JS.Promise<ServiceWorkerRegistration[]>
     abstract startMessages: unit -> unit

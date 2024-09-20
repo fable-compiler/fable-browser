@@ -1,3 +1,7 @@
+### 1.4.0 
+
+* Add `abstract register: url: URL * ?options: ServiceWorkerRegistrationOptions -> JS.Promise<ServiceWorkerRegistration>` overload to `ServiceWorkerContainer` (by @MangelMaxime)
+
 ### 1.3.0 
 
 * Align Fable.Core version to 3.2.8 for all of fable-browser packages

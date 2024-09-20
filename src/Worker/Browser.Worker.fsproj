@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Fable.Browser.Worker</PackageId>
-    <Version>1.3.0</Version>
-    <PackageVersion>1.3.0</PackageVersion>
+    <Version>1.4.0</Version>
+    <PackageVersion>1.4.0</PackageVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Tags>fable;fable-binding;fable-javascript</Tags>
@@ -16,6 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Event\Browser.Event.fsproj" />
+    <ProjectReference Include="..\Url\Browser.Url.fsproj" />
   </ItemGroup>
   <!-- This package doesn't contain actual code
        so we don't need to add the sources -->
