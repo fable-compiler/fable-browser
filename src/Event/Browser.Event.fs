@@ -5,8 +5,8 @@ open Fable.Core
 
 type [<AllowNullLiteral; Global>] Event =
     abstract bubbles: bool with get, set
-    abstract cancelBubble: bool with get, set
     abstract cancelable: bool with get, set
+    abstract composed: bool with get, set
     abstract currentTarget: EventTarget with get, set
     abstract defaultPrevented: bool with get, set
     abstract eventPhase: float with get, set
@@ -18,6 +18,8 @@ type [<AllowNullLiteral; Global>] Event =
     abstract AT_TARGET: float with get, set
     abstract BUBBLING_PHASE: float with get, set
     abstract CAPTURING_PHASE: float with get, set
+    abstract cancelBubble: unit -> unit
+    abstract composedPath: unit -> EventTarget[]
     abstract initEvent: eventTypeArg: string * canBubbleArg: bool * cancelableArg: bool -> unit
     abstract preventDefault: unit -> unit
     abstract stopImmediatePropagation: unit -> unit

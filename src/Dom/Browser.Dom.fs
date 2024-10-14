@@ -170,7 +170,7 @@ type [<AllowNullLiteral; Global>] Document =
     abstract onfocus: (FocusEvent -> unit) with get, set
     abstract onfullscreenchange: (Event -> unit) with get, set
     abstract onfullscreenerror: (Event -> unit) with get, set
-    abstract oninput: (Event -> unit) with get, set
+    abstract oninput: (InputEvent -> unit) with get, set
     /// Fires when the user presses a key.
     abstract onkeydown: (KeyboardEvent -> unit) with get, set
     /// Fires when the user presses an alphanumeric key.
@@ -233,6 +233,7 @@ type [<AllowNullLiteral; Global>] Document =
     abstract onsuspend: (Event -> unit) with get, set
     /// Occurs to indicate the current playback position.
     abstract ontimeupdate: (Event -> unit) with get, set
+    abstract ontoggle: (ToggleEvent -> unit) with get, set
     abstract ontouchcancel: (TouchEvent -> unit) with get, set
     abstract ontouchend: (TouchEvent -> unit) with get, set
     abstract ontouchmove: (TouchEvent -> unit) with get, set
@@ -997,7 +998,7 @@ type [<AllowNullLiteral; Global>] Window =
     abstract onselect: (UIEvent -> unit) with get, set
     abstract onstalled: (Event -> unit) with get, set
     abstract onstorage: (StorageEvent -> unit) with get, set
-    abstract onsubmit: (Event -> unit) with get, set
+    abstract onsubmit: (SubmitEvent -> unit) with get, set
     abstract onsuspend: (Event -> unit) with get, set
     abstract ontimeupdate: (Event -> unit) with get, set
     abstract ongamepadconnected: (GamepadEvent -> unit) with get, set
@@ -2877,6 +2878,7 @@ type [<AllowNullLiteral; Global>] AnimationEvent =
     inherit Event
     abstract animationName: string with get, set
     abstract elapsedTime: float with get, set
+    abstract pseudoElement: string with get, set
 
 type [<AllowNullLiteral; Global>] MouseEvent =
     inherit UIEvent
@@ -2937,6 +2939,7 @@ type [<AllowNullLiteral; Global>] DataTransfer =
     abstract clearData: ?format: string -> bool
     abstract getData: format: string -> string
     abstract setData: format: string * data: string -> bool
+    abstract setDragImage: image: Element * x: float * y: float -> unit
 
 type [<AllowNullLiteral; Global>] DataTransferItem =
     abstract kind: string
@@ -2958,20 +2961,18 @@ type [<AllowNullLiteral; Global>] FocusEvent =
 
 type [<AllowNullLiteral; Global>] PointerEvent =
     inherit MouseEvent
-    abstract currentPoint: obj
     abstract height: float
-    abstract hwTimestamp: float
-    abstract intermediatePoints: obj
     abstract isPrimary: bool
     abstract pointerId: float
-    abstract pointerType: obj
+    abstract pointerType: string
     abstract pressure: float
-    abstract rotation: float
+    abstract tangentialPressure: float
     abstract tiltX: float
     abstract tiltY: float
+    abstract twist: float
     abstract width: float
-    abstract getCurrentPoint: element: Element -> unit
-    abstract getIntermediatePoints: element: Element -> unit
+    abstract getCoalescedEvents: unit -> PointerEvent[]
+    abstract getPredictedEvents: unit -> PointerEvent[]
 
 type [<AllowNullLiteral; Global>] PopStateEvent =
     inherit Event
@@ -2980,22 +2981,18 @@ type [<AllowNullLiteral; Global>] PopStateEvent =
 type [<AllowNullLiteral; Global>] KeyboardEvent =
     inherit UIEvent
     abstract altKey: bool
-    abstract char: string
+    [<Obsolete("event.keyCode is deprecated see https://developer.mozilla.org/docs/Web/API/KeyboardEvent/charCode for more information")>]
     abstract charCode: float
+    abstract code: string
     abstract ctrlKey: bool
     abstract key: string
-    [<Obsolete("event.keyCode is deprecated see https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode for more information")>]
+    [<Obsolete("event.keyCode is deprecated see https://developer.mozilla.org/docs/Web/API/KeyboardEvent/keyCode for more information")>]
     abstract keyCode: float
-    abstract code: string
-    abstract locale: string
     abstract location: float
     abstract metaKey: bool
     abstract repeat: bool
     abstract shiftKey: bool
-    abstract which: float
-    abstract DOM_KEY_LOCATION_JOYSTICK: float
     abstract DOM_KEY_LOCATION_LEFT: float
-    abstract DOM_KEY_LOCATION_MOBILE: float
     abstract DOM_KEY_LOCATION_NUMPAD: float
     abstract DOM_KEY_LOCATION_RIGHT: float
     abstract DOM_KEY_LOCATION_STANDARD: float
@@ -3005,6 +3002,7 @@ type [<AllowNullLiteral; Global>] ProgressEvent =
     inherit Event
     abstract lengthComputable: bool
     abstract loaded: float
+    abstract target: EventTarget
     abstract total: float
 
 type [<AllowNullLiteral; Global>] Touch =
@@ -3069,6 +3067,7 @@ type [<AllowNullLiteral; Global>] TransitionEvent =
     inherit Event
     abstract elapsedTime: float with get, set
     abstract propertyName: string with get, set
+    abstract pseudoElement: string with get, set
 
 type [<AllowNullLiteral; Global>] PageTransitionEvent =
     inherit Event
@@ -3092,10 +3091,30 @@ type [<AllowNullLiteral; Global>] WheelEvent =
     abstract DOM_DELTA_LINE: float
     abstract DOM_DELTA_PAGE: float
     abstract DOM_DELTA_PIXEL: float
-    abstract getCurrentPoint: element: Element -> unit
 
-// type [<AllowNullLiteral>] WheelEventType =
-//     abstract DOM_DELTA_LINE: float
-//     abstract DOM_DELTA_PAGE: float
-//     abstract DOM_DELTA_PIXEL: float
-//     [<Emit("new $0($1...)")>] abstract Create: typeArg: string * ?eventInitDict: WheelEventInit -> WheelEvent
+type [<AllowNullLiteral; Global>] AbstractRange =
+    abstract collapsed: bool
+    abstract endContainer: Node
+    abstract endOffset: float
+    abstract startContainer: Node
+    abstract startOffset: float
+
+type StaticRange =
+    inherit AbstractRange
+
+type [<AllowNullLiteral; Global>] InputEvent =
+    inherit UIEvent
+    abstract data: string
+    abstract dataTransfer: DataTransfer
+    abstract inputType: string
+    abstract isComposing: bool
+    abstract getTargetRanges: unit -> StaticRange[]
+
+type [<AllowNullLiteral; Global>] ToggleEvent =
+    inherit Event
+    abstract newState: string
+    abstract oldState: string
+
+type [<AllowNullLiteral; Global>] SubmitEvent =
+    inherit Event
+    abstract submitter: HTMLElement
