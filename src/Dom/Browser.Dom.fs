@@ -2981,7 +2981,7 @@ type [<AllowNullLiteral; Global>] PopStateEvent =
 type [<AllowNullLiteral; Global>] KeyboardEvent =
     inherit UIEvent
     abstract altKey: bool
-    [<Obsolete("event.keyCode is deprecated see https://developer.mozilla.org/docs/Web/API/KeyboardEvent/charCode for more information")>]
+    [<Obsolete("event.charCode is deprecated see https://developer.mozilla.org/docs/Web/API/KeyboardEvent/charCode for more information")>]
     abstract charCode: float
     abstract code: string
     abstract ctrlKey: bool
