@@ -1,3 +1,7 @@
+### 1.7.0 
+
+* Add `Event.compose`, `Event.cancelBubble` and `Event.composedPath` (by @Lanayx)
+
 ### 1.6.0 
 
 * Align Fable.Core version to 3.2.8 for all of fable-browser packages

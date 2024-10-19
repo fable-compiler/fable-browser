@@ -1,3 +1,9 @@
+### 2.18.0
+
+* Better type event by replacing `Event` with things like `InputEvent` (by @Lanayx)
+* Add missing event properties (by @Lanayx)
+* Remove incorrect APIs (by @Lanayx)
+
 ### 2.17.0
 
 * Fix #137: Remove `Worker` related types, use `Fable.Browser.Worker` if needed (by @MangelMaxime)
