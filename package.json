@@ -1,5 +1,6 @@
 {
   "private": true,
+  "name": "fable-browser",
   "scripts": {
     "postinstall": "dotnet tool restore && dotnet paket restore",
     "publish": "dotnet fsi build.fsx Publish",

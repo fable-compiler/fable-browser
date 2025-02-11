@@ -1,3 +1,7 @@
+### 2.18.1
+
+* Fix #146: Replace `Browser.Dom.HTMLAudioElement` with `Browser.Dom.Audio` (by @MangelMaxime)
+
 ### 2.18.0
 
 * Better type event by replacing `Event` with things like `InputEvent` (by @Lanayx)
