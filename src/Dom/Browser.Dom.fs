@@ -458,6 +458,9 @@ type [<AllowNullLiteral; Global>] Element =
     abstract id: string with get, set
     abstract className: string with get, set
     abstract innerHTML: string with get, set
+    abstract after: [<ParamArray>] nodes: U2<Node, string>[] -> unit
+    abstract append: [<ParamArray>] nodes: U2<Node, string>[] -> unit
+    abstract before: [<ParamArray>] nodes: U2<Node, string>[] -> unit
     abstract getAttribute: ?name: string -> string
     abstract getAttributeNS: namespaceURI: string * localName: string -> string
     abstract getAttributeNode: name: string -> Attr
@@ -468,6 +471,7 @@ type [<AllowNullLiteral; Global>] Element =
     abstract getElementsByTagNameNS: namespaceURI: string * localName: string -> NodeListOf<Element>
     abstract hasAttribute: name: string -> bool
     abstract hasAttributeNS: namespaceURI: string * localName: string -> bool
+    abstract prepend: [<ParamArray>] nodes: U2<Node, string>[] -> unit
     abstract releasePointerCapture: pointerId: float -> unit
     abstract removeAttribute: ?name: string -> unit
     abstract removeAttributeNS: namespaceURI: string * localName: string -> unit
