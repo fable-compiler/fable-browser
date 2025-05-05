@@ -1355,10 +1355,28 @@ type [<AllowNullLiteral>] HTMLDataListElementType =
 
 type [<AllowNullLiteral; Global>] HTMLDialogElement =
     inherit HTMLElement
+    /// A string that sets or returns the closedby attribute value of the <dialog> element,
+    /// which indicates the types of user actions that can be used to close the dialog.
+    abstract closedBy: string with get, set
+    /// A boolean value reflecting the open HTML attribute,
+    /// indicating whether the dialog is available for interaction.
     abstract ``open``: bool with get, set
+    /// A string that sets or returns the return value for the dialog.
     abstract returnValue: string with get, set
+    /// Closes the dialog. 
+    /// An optional string may be passed as an argument,
+    /// updating the returnValue of the dialog.
     abstract close: ?returnValue: string -> unit
+    /// Requests to close the dialog. 
+    /// An optional string may be passed as an argument, 
+    /// updating the returnValue of the dialog.
+    abstract requestClose: ?returnValue: string -> unit
+    /// Displays the dialog modelessly, i.e., 
+    /// still allowing interaction with content outside of the dialog.
     abstract show: unit -> unit
+    /// Displays the dialog as a modal, 
+    /// over the top of any other dialogs that might be present. 
+    /// Everything outside the dialog are inert with interactions outside the dialog being blocked.
     abstract showModal: unit -> unit
 
 type [<AllowNullLiteral; Global>] HTMLDirectoryElement =
