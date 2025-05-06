@@ -1,6 +1,7 @@
-### unreleased 
+### 2.19.0
 
-* Fix #151: Add HTMLDialogElement properties and methods for better dialog management. Add help comments for properties and methods.
+* Fix #151: Add HTMLDialogElement properties and methods for better dialog management. Add help comments for properties and methods. (by @slyshykO)
+* Add missing Node insertion methods #150 (by @BennieCopeland)
 
 ### 2.18.1
 
