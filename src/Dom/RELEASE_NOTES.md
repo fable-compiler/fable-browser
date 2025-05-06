@@ -1,3 +1,7 @@
+### unreleased 
+
+* Fix #151: Add HTMLDialogElement properties and methods for better dialog management. Add help comments for properties and methods.
+
 ### 2.18.1
 
 * Fix #146: Replace `Browser.Dom.HTMLAudioElement` with `Browser.Dom.Audio` (by @MangelMaxime)
