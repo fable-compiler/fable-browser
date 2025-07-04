@@ -2500,6 +2500,22 @@ type [<AllowNullLiteral; Global>] HTMLTableSectionElement =
 type [<AllowNullLiteral>] HTMLTableSectionElementType =
     [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTableSectionElement
 
+type [<AllowNullLiteral>] HTMLTemplateElement =
+    inherit HTMLElement
+    /// A read-only `DocumentFragment` which contains the DOM subtree representing the `<template>` element's template contents.
+    abstract member content: Browser.Types.DocumentFragment with get
+    /// A string that reflects the value of the `shadowrootmode` attribute of the associated `<template>` element.
+    abstract member shadowRootMode: string option with get, set
+    /// A boolean that reflects the value of the `shadowrootdelegatesfocus` attribute of the associated `<template>` element.
+    abstract member shadowRootDelegatesFocus: bool option with get, set
+    /// A boolean that reflects the value of the `shadowrootclonable` attribute of the associated `<template>` element.
+    abstract member shadowRootClonable: bool option with get, set
+    /// A boolean that reflects the value of the `shadowrootserializable` attribute of the associated `<template>` element.
+    abstract member shadowRootSerializable: bool option with get, set
+
+type [<AllowNullLiteral>] HTMLTemplateElementType =
+    [<Emit("new $0($1...)")>] abstract Create: unit -> HTMLTemplateElement
+
 type [<AllowNullLiteral; Global>] HTMLTextAreaElement =
     inherit HTMLElement
     /// Provides a way to direct a user to a specific field when a document loads. This can provide both direction and convenience for a user, reducing the need to click or tab to a field when a page opens. This attribute is true when present on an element, and false when missing.
