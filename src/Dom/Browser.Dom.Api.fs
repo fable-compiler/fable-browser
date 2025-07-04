@@ -105,6 +105,7 @@ module Dom =
     let [<Global>] HTMLTableHeaderCellElement: HTMLTableHeaderCellElementType = jsNative
     let [<Global>] HTMLTableRowElement: HTMLTableRowElementType = jsNative
     let [<Global>] HTMLTableSectionElement: HTMLTableSectionElementType = jsNative
+    let [<Global>] HTMLTemplateElement: HTMLTemplateElementType = jsNative
     let [<Global>] HTMLTextAreaElement: HTMLTextAreaElementType = jsNative
     let [<Global>] HTMLTitleElement: HTMLTitleElementType = jsNative
     let [<Global>] HTMLTrackElement: HTMLTrackElementType = jsNative
