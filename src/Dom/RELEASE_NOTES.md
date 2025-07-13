@@ -1,3 +1,7 @@
+### Unreleased
+
+* Add HTMLTemplateElement type (by @roboz0r)
+
 ### 2.19.0
 
 * Fix #151: Add HTMLDialogElement properties and methods for better dialog management. Add help comments for properties and methods. (by @slyshykO)
