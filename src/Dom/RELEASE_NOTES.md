@@ -1,4 +1,4 @@
-### Unreleased
+### 2.20.0
 
 * Add HTMLTemplateElement type (by @roboz0r)
 
