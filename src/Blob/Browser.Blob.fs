@@ -3,6 +3,7 @@ namespace Browser.Types
 open System
 open Fable.Core
 open Fable.Core.JS
+open Browser.Dom
 
 [<StringEnum; RequireQualifiedAccess>]
 type BlobEndings =
@@ -39,7 +40,7 @@ type [<AllowNullLiteral; Global>] FormData =
     abstract values: unit -> obj seq
 
 type [<AllowNullLiteral>] FormDataType =
-    [<Emit("new $0($1...)")>] abstract Create: unit -> FormData
+    [<Emit("new $0($1...)")>] abstract Create: ?form : HTMLFormElement -> FormData
 
 namespace Browser
 
