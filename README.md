@@ -25,6 +25,7 @@ Fable bindings for [Browser Web APIs](https://developer.mozilla.org/docs/Web/API
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.IntersectionObserver.svg)](https://www.nuget.org/packages/Fable.Browser.IntersectionObserver)|[Fable.Browser.IntersectionObserver](src/IntersectionObserver)|Bindings for the browser Intersection Observer API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.ResizeObserver.svg)](https://www.nuget.org/packages/Fable.Browser.ResizeObserver)|[Fable.Browser.ResizeObserver](src/ResizeObserver)|Bindings for the browser Resize Observer API|
 |[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.IndexedDB.svg)](https://www.nuget.org/packages/Fable.Browser.IndexedDB)|[Fable.Browser.IndexedDB](src/IndexedDB)|Bindings for the browser IndexedDB API|
+|[![Nuget Package](https://img.shields.io/nuget/v/Fable.Browser.Canvas.svg)](https://www.nuget.org/packages/Fable.Browser.Canvas)|[Fable.Browser.ResizeObserver](src/Canvas)|Bindings for the browser Canvas API|
 
 ## Usage
 

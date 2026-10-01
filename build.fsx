@@ -30,6 +30,7 @@ let packages =
       "IntersectionObserver"
       "ResizeObserver"
       "EventSource"
+      "Canvas"
     ]
 
 let ignoreCaseEquals (str1: string) (str2: string) =
